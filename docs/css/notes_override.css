@@ -1,0 +1,112 @@
+html  {
+  scroll-behavior: smooth;
+}
+
+@media screen and (min-width: 960px) {
+  .aside {
+    max-width: 400px;
+  }
+  .aside-supplemental {
+    max-width: 300px;
+  }
+}
+
+b, strong {
+  color: var(--bs-primary);
+  font-weight: 800;
+}
+ pre code {
+   font-size: 1.2em;
+ }
+ 
+code {
+  font-family: 'Source Code Pro', 'Courier New', Courier, monospace;
+  margin: 1px;
+  padding: 0 0.5em;
+  display: inline-block;
+  cursor: text;
+  border-radius: 8px;
+  background: var(--bs-gray);
+  color: var(--bs-light);
+}
+
+.code-primary {
+  background: var(--bs-primary) !important;
+  margin: 5px;
+  color: var(--bs-light) !important;
+}
+
+.code-success {
+  background-color: var(--bs-success) !important;
+  margin: 5px;
+  color: var(--bs-light) !important;
+}
+
+.code-info {
+  background-color: var(--bs-info) !important;
+  margin: 5px;
+  color: var(--bs-light) !important;
+}
+
+.code-warning {
+  background-color: var(--bs-warning) !important;
+  margin: 5px;
+  color: var(--bs-dark) !important;
+}
+
+.code-danger {
+  background-color: var(--bs-danger) !important;
+  margin: 5px;
+  color: var(--bs-light) !important;
+}
+
+.code-royal {
+  background-color: var(--bs-royal) !important;
+  margin: 5px;
+  color: var(--bs-light) !important;
+}
+
+.code-exciting {
+  background-color: var(--bs-exciting) !important;
+  margin: 5px;
+  color: var(--bs-light) !important;
+}
+
+
+.tip span {
+  background: var(--bs-dark);
+  bottom: 100%;
+  display: block;
+  font-family: 'Source Code Pro', 'Courier New', Courier, monospace;
+  font-size: 0.7em;
+  left: -20px;
+  opacity: 0;
+  padding: 2px 10px;
+  margin-bottom: 5px;
+  pointer-events: none;
+  position: absolute;
+  border-radius: 10px;
+  box-shadow: none;
+  border: 2px solid var(--bs-light);
+  transform: translateY(25px);
+  transition: all 0.25s ease-out;
+  white-space: nowrap;
+  transform: translateY(0px);
+}
+
+.tip:hover span {
+  display: inline-block;
+  opacity: 1;
+  animation: fadeInDown;
+  animation-duration: 0.5s;
+}
+
+a.tip span {
+  font-weight: 600;
+  color: var(--bs-light) !important;
+}
+
+a code,
+.tip {
+  cursor: pointer !important;
+}

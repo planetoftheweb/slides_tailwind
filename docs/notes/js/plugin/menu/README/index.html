@@ -1,0 +1,319 @@
+<h1 id="reveal.js-menu">reveal.js-menu <a class="direct-link" href="#reveal.js-menu"> </a></h1>
+<p>A slideout menu plugin for <a href="https://github.com/hakimel/reveal.js">Reveal.js</a> to quickly jump to any slide by title. Also optionally change the theme and set the default transition. <a href="https://denehyg.github.io/reveal.js-menu">Check out the live demo</a></p>
+<h2 id="installation">Installation <a class="direct-link" href="#installation"> </a></h2>
+<h3 id="bower">Bower <a class="direct-link" href="#bower"> </a></h3>
+<p>Download and install the package in your project:</p>
+<p><code>bower install reveal.js-menu</code></p>
+<p>Add the plugin to your presentation, as below.</p>
+<pre><code class="language-javascript">&lt;script src=&quot;bower_components/reveal.js-menu/menu.js&quot;&gt;&lt;/script&gt;
+&lt;script&gt;
+  Reveal.initialize({
+    plugins: [ RevealMenu ]
+  });
+&lt;/script&gt;
+</code></pre>
+<h3 id="npm">npm <a class="direct-link" href="#npm"> </a></h3>
+<p>Download and install the package in your project:</p>
+<p><code>npm install --save reveal.js-menu</code></p>
+<p>Add the plugin to your presentation, as below.</p>
+<pre><code class="language-javascript">&lt;script src=&quot;node_modules/reveal.js-menu/menu.js&quot;&gt;&lt;/script&gt;
+&lt;script&gt;
+  Reveal.initialize({
+    plugins: [ RevealMenu ]
+  });
+&lt;/script&gt;
+</code></pre>
+<h3 id="manual">Manual <a class="direct-link" href="#manual"> </a></h3>
+<p>Copy this repository into the plugins folder of your reveal.js presentation, ie <code>plugins/menu</code>.</p>
+<p>Add the plugin to the dependencies in your presentation, as below.</p>
+<pre><code class="language-javascript">&lt;script src=&quot;plugin/menu/menu.js&quot;&gt;&lt;/script&gt;
+&lt;script&gt;
+  Reveal.initialize({
+    plugins: [ RevealMenu ]
+  });
+&lt;/script&gt;
+</code></pre>
+<h2 id="configuration">Configuration <a class="direct-link" href="#configuration"> </a></h2>
+<p>You can configure the menu for your presentation by providing a <code>menu</code> option in the reveal.js initialization options. Note that all config values are optional and will default as specified below.</p>
+<pre><code class="language-javascript">Reveal.initialize({
+  // ...
+
+  menu: {
+    // Specifies which side of the presentation the menu will
+    // be shown. Use 'left' or 'right'.
+    side: 'left',
+
+    // Specifies the width of the menu.
+    // Can be one of the following:
+    // 'normal', 'wide', 'third', 'half', 'full', or
+    // any valid css length value
+    width: 'normal',
+
+    // Add slide numbers to the titles in the slide list.
+    // Use 'true' or format string (same as reveal.js slide numbers)
+    numbers: false,
+
+    // Specifies which slide elements will be used for generating
+    // the slide titles in the menu. The default selects the first
+    // heading element found in the slide, but you can specify any
+    // valid css selector and the text from the first matching
+    // element will be used.
+    // Note: that a section data-menu-title attribute or an element
+    // with a menu-title class will take precedence over this option
+    titleSelector: 'h1, h2, h3, h4, h5, h6',
+
+    // If slides do not have a matching title, attempt to use the
+    // start of the text content as the title instead
+    useTextContentForMissingTitles: false,
+
+    // Hide slides from the menu that do not have a title.
+    // Set to 'true' to only list slides with titles.
+    hideMissingTitles: false,
+
+    // Adds markers to the slide titles to indicate the
+    // progress through the presentation. Set to 'false'
+    // to hide the markers.
+    markers: true,
+
+    // Specify custom panels to be included in the menu, by
+    // providing an array of objects with 'title', 'icon'
+    // properties, and either a 'src' or 'content' property.
+    custom: false,
+
+    // Specifies the themes that will be available in the themes
+    // menu panel. Set to 'true' to show the themes menu panel
+    // with the default themes list. Alternatively, provide an
+    // array to specify the themes to make available in the
+    // themes menu panel, for example...
+    //
+    // [
+    //     { name: 'Black', theme: 'dist/theme/black.css' },
+    //     { name: 'White', theme: 'dist/theme/white.css' },
+    //     { name: 'League', theme: 'dist/theme/league.css' },
+    //     {
+    //       name: 'Dark',
+    //       theme: 'lib/reveal.js/dist/theme/black.css',
+    //       highlightTheme: 'lib/reveal.js/plugin/highlight/monokai.css'
+    //     },
+    //     {
+    //       name: 'Code: Zenburn',
+    //       highlightTheme: 'lib/reveal.js/plugin/highlight/zenburn.css'
+    //     }
+    // ]
+    //
+    // Note: specifying highlightTheme without a theme will
+    // change the code highlight theme while leaving the
+    // presentation theme unchanged.
+    themes: false,
+
+    // Specifies the path to the default theme files. If your
+    // presentation uses a different path to the standard reveal
+    // layout then you need to provide this option, but only
+    // when 'themes' is set to 'true'. If you provide your own
+    // list of themes or 'themes' is set to 'false' the
+    // 'themesPath' option is ignored.
+    themesPath: 'dist/theme/',
+
+    // Specifies if the transitions menu panel will be shown.
+    // Set to 'true' to show the transitions menu panel with
+    // the default transitions list. Alternatively, provide an
+    // array to specify the transitions to make available in
+    // the transitions panel, for example...
+    // ['None', 'Fade', 'Slide']
+    transitions: false,
+
+    // Adds a menu button to the slides to open the menu panel.
+    // Set to 'false' to hide the button.
+    openButton: true,
+
+    // If 'true' allows the slide number in the presentation to
+    // open the menu panel. The reveal.js slideNumber option must
+    // be displayed for this to take effect
+    openSlideNumber: false,
+
+    // If true allows the user to open and navigate the menu using
+    // the keyboard. Standard keyboard interaction with reveal
+    // will be disabled while the menu is open.
+    keyboard: true,
+
+    // Normally the menu will close on user actions such as
+    // selecting a menu item, or clicking the presentation area.
+    // If 'true', the sticky option will leave the menu open
+    // until it is explicitly closed, that is, using the close
+    // button or pressing the ESC or m key (when the keyboard
+    // interaction option is enabled).
+    sticky: false,
+
+    // If 'true' standard menu items will be automatically opened
+    // when navigating using the keyboard. Note: this only takes
+    // effect when both the 'keyboard' and 'sticky' options are enabled.
+    autoOpen: true,
+
+    // If 'true' the menu will not be created until it is explicitly
+    // requested by calling RevealMenu.init(). Note this will delay
+    // the creation of all menu panels, including custom panels, and
+    // the menu button.
+    delayInit: false,
+
+    // If 'true' the menu will be shown when the menu is initialised.
+    openOnInit: false,
+
+    // By default the menu will load it's own font-awesome library
+    // icons. If your presentation needs to load a different
+    // font-awesome library the 'loadIcons' option can be set to false
+    // and the menu will not attempt to load the font-awesome library.
+    loadIcons: true
+  }
+});
+</code></pre>
+<h3 id="themes-stylesheet">Themes Stylesheet <a class="direct-link" href="#themes-stylesheet"> </a></h3>
+<p>If you are using the themes panel you need to ensure the theme stylesheet in the presentation uses the <code>id=&quot;theme&quot;</code> attribute. For example...</p>
+<pre><code class="language-html">&lt;link rel=&quot;stylesheet&quot; href=&quot;css/theme/black.css&quot; id=&quot;theme&quot; /&gt;
+</code></pre>
+<p>If your themes configuration includes code highlight themes you need to ensure the highlights theme stylesheet in the presentation uses the <code>id=&quot;highlight-theme&quot;</code> attribute. For example...</p>
+<pre><code class="language-html">&lt;link
+  rel=&quot;stylesheet&quot;
+  href=&quot;plugin/highlight/zenburn.css&quot;
+  id=&quot;highlight-theme&quot;
+/&gt;
+</code></pre>
+<h2 id="slide-titles">Slide Titles <a class="direct-link" href="#slide-titles"> </a></h2>
+<p>The slide titles used in the menu can be supplied explicitly or are taken directly from the presentation, using the following rules...</p>
+<h6 id="1.-the-section's-data-menu-title-attribute.">1. The section's <code>data-menu-title</code> attribute. <a class="direct-link" href="#1.-the-section's-data-menu-title-attribute."> </a></h6>
+<p>If the slide's section element contains a <code>data-menu-title</code> attribute this will be used for the slide title in the menu. For example...</p>
+<pre><code class="language-html">&lt;section data-menu-title=&quot;Custom Menu Title&quot;&gt;
+  &lt;h1&gt;Title&lt;/h1&gt;
+  &lt;p&gt;...&lt;/p&gt;
+&lt;/section&gt;
+</code></pre>
+<h6 id="2.-any-element-with-the-class-menu-title.">2. Any element with the class <code>menu-title</code>. <a class="direct-link" href="#2.-any-element-with-the-class-menu-title."> </a></h6>
+<p>If the slide's section contains an element with the class <code>menu-title</code> then the element's text will be used for the title. The first such element found will be used if there are more than one. Note the element need not be displayed to be used. For example...</p>
+<pre><code class="language-html">&lt;section&gt;
+  &lt;h1&gt;Title&lt;/h1&gt;
+  &lt;span class=&quot;menu-title&quot; style=&quot;display: none&quot;&gt;Custom Menu Title&lt;/span&gt;
+  &lt;p&gt;...&lt;/p&gt;
+&lt;/section&gt;
+</code></pre>
+<h6 id="3.-the-first-heading-found-or-a-custom-element-selector">3. The first heading found or a custom element selector <a class="direct-link" href="#3.-the-first-heading-found-or-a-custom-element-selector"> </a></h6>
+<p>The <code>titleSelector</code> option can be used to customise the elements that will be used to generate the slide titles in the menu. The default option selects the first heading element found in the slide. For example...</p>
+<pre><code class="language-html">&lt;section&gt;
+  &lt;h3&gt;This will be the slide title in the menu&lt;/h3&gt;
+  &lt;h1&gt;Title&lt;/h1&gt;
+  &lt;p&gt;...&lt;/p&gt;
+&lt;/section&gt;
+</code></pre>
+<p>Any valid CSS selector should work but note the selector will only be applied to elements contained within the slide section. You could use the <code>'h1'</code> selector to only use level 1 headings or <code>'p'</code> to use the first paragraph element. For example, <code>titleSelector: 'p.lead'</code> would be used like this...</p>
+<pre><code class="language-html">&lt;section&gt;
+  &lt;h1&gt;Title&lt;/h1&gt;
+  &lt;p class=&quot;lead&quot;&gt;This will be the slide title in the menu&lt;/p&gt;
+  &lt;p&gt;...&lt;/p&gt;
+&lt;/section&gt;
+</code></pre>
+<p>Using <code>titleSelector: ''</code> will ignore all elements and no title will be provided, unless the slide section contains a <code>data-menu-title</code> attribute or an element with the <code>menu-title</code> class.</p>
+<h6 id="4.-no-title-is-provided">4. No title is provided <a class="direct-link" href="#4.-no-title-is-provided"> </a></h6>
+<p>If no title can be found using the above methods, a default title incorporating the slide number will be used. For example, the following would result in a slide title in the format of 'Slide 12'...</p>
+<pre><code class="language-html">&lt;section&gt;
+  &lt;p&gt;...&lt;/p&gt;
+&lt;/section&gt;
+</code></pre>
+<p>If the <code>hideMissingTitles</code> option is set to <code>true</code>, however, the slide will not be listed in the menu.</p>
+<h2 id="custom-menu-panels">Custom Menu Panels <a class="direct-link" href="#custom-menu-panels"> </a></h2>
+<p>Additional custom panels can be added the menu using the <code>custom</code> option.</p>
+<pre><code class="language-javascript">Reveal.initialize({
+  // ...
+
+  menu: {
+    // ...
+
+    custom: [
+      {
+        title: 'Links',
+        icon: '&lt;i class=&quot;fa fa-external-link&quot;&gt;',
+        src: 'links.html'
+      },
+      {
+        title: 'About',
+        icon: '&lt;i class=&quot;fa fa-info&quot;&gt;',
+        content: '&lt;p&gt;This slidedeck is created with reveal.js&lt;/p&gt;'
+      }
+    ]
+  }
+});
+</code></pre>
+<p><code>title</code> and <code>icon</code> are used for the toolbar buttons at the top of the menu. There are two approaches you can use to provide content for the panels...</p>
+<ul>
+<li>You can provide a URL in <code>src</code> to load html from another file.</li>
+<li>Alternatively, you can provide html in <code>content</code> and this will be added to the custom panel.</li>
+</ul>
+<h6 id="custom-slide-menu-items">Custom slide menu items <a class="direct-link" href="#custom-slide-menu-items"> </a></h6>
+<p>You can provide menu items in your custom panels using the following format. This allows you to define your own navigation links for your presentation.</p>
+<pre><code class="language-html">&lt;h1&gt;Links&lt;/h1&gt;
+&lt;ul class=&quot;slide-menu-items&quot;&gt;
+  &lt;li class=&quot;slide-menu-item&quot;&gt;&lt;a href=&quot;#/transitions&quot;&gt;Transitions&lt;/a&gt;&lt;/li&gt;
+  &lt;li class=&quot;slide-menu-item&quot;&gt;&lt;a href=&quot;#/13&quot;&gt;Code highlighting&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</code></pre>
+<p>You are not limited to linking to presentation slides. You can provide any link you wish.</p>
+<pre><code class="language-html">&lt;h1&gt;External Links&lt;/h1&gt;
+&lt;ul class=&quot;slide-menu-items&quot;&gt;
+  &lt;li class=&quot;slide-menu-item&quot;&gt;
+    &lt;a href=&quot;https://github.com/denehyg/reveal.js-menu&quot;&gt;Reveal.js-menu&lt;/a&gt;
+  &lt;/li&gt;
+  &lt;li class=&quot;slide-menu-item&quot;&gt;
+    &lt;a href=&quot;https://github.com/hakimel/reveal.js&quot;&gt;Reveal.js&lt;/a&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+</code></pre>
+<p>Using menu items enables keyboard navigation of your links as with the other panels. However, you don't have to use menu items for your links. You can simply provide standard links and unordered lists in your html. Notice you can provide your custom menu items mixed with other html if you wish.</p>
+<h2 id="ready-event">Ready Event <a class="direct-link" href="#ready-event"> </a></h2>
+<p>A 'menu-ready' event is fired when reveal.js-menu has loaded all non-async dependencies and is ready to start navigating.</p>
+<pre><code class="language-javascript">Reveal.addEventListener('menu-ready', function (event) {
+  // your code
+});
+</code></pre>
+<h2 id="api">API <a class="direct-link" href="#api"> </a></h2>
+<p>The <code>RevealMenu</code> object exposes a JavaScript API for controlling the menu:</p>
+<table>
+<thead>
+<tr>
+<th>Function</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>toggle(event)</td>
+<td>Toggles the open state of the menu, ie open if it is closed, and close if it is open</td>
+</tr>
+<tr>
+<td>openMenu(event)</td>
+<td>Opens the menu</td>
+</tr>
+<tr>
+<td>closeMenu(event, force)</td>
+<td>Closes the menu. To force the menu to close (ie when <code>sticky</code> option is <code>true</code>) call <code>closeMenu(null, true)</code></td>
+</tr>
+<tr>
+<td>openPanel(event, ref)</td>
+<td>Opens the menu to a specific panel, passing the name of the panel or the panel element itself</td>
+</tr>
+<tr>
+<td>isOpen()</td>
+<td>Returns true if the menu is open</td>
+</tr>
+<tr>
+<td>initialiseMenu()</td>
+<td>Initialises the menu if it has not already been initialised. Used in conjunction with the <code>delayInit</code> option</td>
+</tr>
+<tr>
+<td>isMenuInitialised()</td>
+<td>Returns true if the menu has been initialised</td>
+</tr>
+</tbody>
+</table>
+<h2 id="compatibility">Compatibility <a class="direct-link" href="#compatibility"> </a></h2>
+<p>reveal.js-menu v2.0 is built for reveal.js v4. It will not work with reveal.js v3. If you require a menu for reveal.js v3 you will need to install reveal.js-menu v1.2.0.</p>
+<p>v2.0 also introduces API changes that are not backwards compatible. <code>init()</code> has been renamed to <code>initMenu()</code> to deconflict with the reveal.js v4 plugin API. <code>isInit()</code> has also been changed to <code>isMenuInitialised()</code>.</p>
+<h2 id="license">License <a class="direct-link" href="#license"> </a></h2>
+<p>MIT licensed</p>
+<p>Copyright (C) 2020 Greg Denehy</p>

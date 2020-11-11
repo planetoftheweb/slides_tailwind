@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
+    />
+
+    <title>Learning</title>
+
+    <meta
+      http-equiv="Cache-Control"
+      content="no-cache, no-store, must-revalidate"
+    />
+    <meta http-equiv="Pragma" content="no-cache" />
+    <meta http-equiv="Expires" content="0" />
+
+    <link rel="stylesheet" href="css/reset.css" />
+    <link rel="stylesheet" href="css/reveal.css" />
+    <link rel="stylesheet" href="css/bootstrap-rayveal.css" />
+    <link rel="stylesheet" href="css/fontawesome.css" />
+    <link rel="stylesheet" href="css/animate.min.css" />
+    <link rel="stylesheet" href="css/syntax/color-brewer.css" />
+    <link rel="stylesheet" href="css/twemoji-amazing.css" />
+    <link rel="stylesheet" href="css/learning.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Source+Code+Pro:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,900;1,200;1,300;1,400;1,500;1,600;1,700;1,900&family=Source+Sans+Pro:ital,wght@0,200;0,300;0,400;0,600;0,700;0,900;1,200;1,300;1,400;1,600;1,700;1,900&display=swap"
+      rel="stylesheet"
+    />
+
+    <script
+      src="https://twemoji.maxcdn.com/v/latest/twemoji.min.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+
+  <body spellcheck="false">
+    <div class="reveal">
+      <div class="slides">
+        <section
+          data-markdown="slides/demo.md"
+          data-separator="\r?\n---"
+          data-separator-notes="\r?\n> >"
+          data-charset="utf-8"
+        ></section>
+      </div>
+      <!-- slides -->
+    </div>
+    <!-- reveal -->
+
+    <script src="js/reveal.js"></script>
+    <script src="js/plugin/markdown/markdown.js"></script>
+    <script src="js/plugin/highlight/highlight.js"></script>
+    <script src="js/plugin/search/search.js"></script>
+    <script src="js/plugin/notes/notes.js"></script>
+    <script src="js/plugin/math/math.js"></script>
+    <script src="js/plugin/zoom/zoom.js"></script>
+    <script src="js/plugin/menu/menu.js"></script>
+    <script src="js/plugin/chart/Chart.min.js"></script>
+    <script src="js/plugin/chart/plugin.js"></script>
+
+    <script>
+      //get URL Variables so we can load external files if necessary
+      function getUrlVars() {
+        let vars = [],
+          hash;
+        let hashes = window.location.href
+          .slice(window.location.href.indexOf('?') + 1)
+          .split('&');
+        for (let i = 0; i < hashes.length; i++) {
+          hash = hashes[i].split('=');
+          vars.push(hash[0]);
+          vars[hash[0]] = hash[1];
+        }
+        return vars;
+      }
+
+      // Load external markdown from URL if it exists
+      if (getUrlVars().d) {
+        let dataFile = getUrlVars().d;
+        document.querySelector('section').dataset.markdown =
+          'slides/' + dataFile + '.md';
+      }
+
+      // Initialize Reveal.js
+      Reveal.initialize({
+        plugins: [
+          RevealMarkdown,
+          RevealHighlight,
+          RevealSearch,
+          RevealNotes,
+          RevealMath,
+          RevealZoom,
+          RevealMenu,
+          RevealChart,
+        ],
+        menu: {
+          transitions: false,
+          themes: false,
+          slides: false,
+          openButton: false,
+          loadIcons: false,
+        },
+        fragments: true, // Globally turn off fragments
+        width: 1152,
+        height: 720,
+        minScale: 0,
+        maxScale: 4,
+        display: 'flex',
+        history: true,
+
+        center: false,
+        hideCursorTime: 250,
+        controls: false,
+        progress: false,
+        rollingLinks: false,
+      });
+
+      //Add keyboard shortcut to toggle the footer
+
+      Reveal.addKeyBinding(
+        { keyCode: 84, key: 'T', description: 'Toggle footer display' },
+        () => {
+          var myNode = document.querySelector('.footer');
+          if (myNode !== null) {
+            myNode.classList.toggle('fadeout');
+          }
+        }
+      );
+
+      // When Reveal.js has finished loading
+      Reveal.on('ready', (event) => {
+        let mySlides = Reveal.getSlides(); // get all the slides
+
+        mySlides.forEach((currSlide) => {
+          //go through each slide
+
+          // Does the slide use the no-fragment option (see demo)
+          let hasFragments = null;
+
+          (currSlide.dataset.state &&
+            currSlide.dataset.state.includes('no-fragment')) ||
+          !Reveal.getConfig().fragments
+            ? (hasFragments = false)
+            : (hasFragments = true);
+
+          if (hasFragments) {
+            // Control which items to add fragments
+            let fragmentNodes = currSlide.querySelectorAll(
+              'li,  section > p, pre code:not(.has-highlights),embed, iframe:not(data-allowfullscreen), table:not(.hljs-ln), canvas'
+            );
+
+            fragmentNodes.forEach((item) =>
+              // Add the fragment class as well as an animation
+              item.classList.add('fragment', 'fade-left')
+            );
+          }
+
+          //Add line numbers to all fenced code
+          let preCodeNodes = currSlide.querySelectorAll('pre code');
+          preCodeNodes.forEach((item) => (item.dataset.lineNumbers = true));
+
+          //Make code tags automatically editable
+          let codeNodes = currSlide.querySelectorAll('code');
+          codeNodes.forEach((item) => (item.contentEditable = true));
+        }); // Go through Each slide
+
+        //Hide bottom toolbar automatically after 5 seconds
+        setTimeout(function () {
+          let myNode = document.querySelector('.footer');
+          if (myNode !== null) {
+           myNode.classList.toggle('fadeout');
+          }
+        }, 5000);
+      }); // Slides are ready to display
+
+      Reveal.on('menu-ready', (event) => {
+        // Customize how the menu plugin works
+        // This makes it ignore the current slideshow
+        // and look for the index.json file
+        // with the list of slides
+
+        fetch('slides/index.json')
+          .then((response) => response.json())
+          .then((data) => {
+            var menuData = data.map(function (slide) {
+              simpleName = slide.replace(/\/(.*)\.md/i, '$1');
+              return (
+                '<div class="slide-menu-item"><a href="?d=' +
+                simpleName +
+                '&">' +
+                simpleName +
+                '</a> | <a href="notes/slides/' +
+                simpleName +
+                '/' +
+                'index.html">notes</a></div>'
+              );
+            });
+            document.querySelector(
+              '.slide-menu-items'
+            ).innerHTML = menuData.join('');
+          });
+      });
+
+      // When the menu plugin has finished loading.
+    </script>
+  </body>
+</html>

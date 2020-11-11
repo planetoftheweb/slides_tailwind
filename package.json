@@ -1,0 +1,31 @@
+{
+  "name": "rayveal",
+  "version": "2.1.0",
+  "description": "RayVeal.js is an opinionated install of the awesome reveal.js with a mardown focused workflow.",
+  "scripts": {
+    "start": "npm-run-all --parallel dev:*",
+    "dev:bootstrap-rayveal": "node-sass ./src/bootstrap-rayveal/scss/bootstrap-rayveal.scss ./docs/css/bootstrap-rayveal.css",
+    "dev:gulp": "gulp",
+    "dev:eleventy": "eleventy --watch",
+    "now": "now ./docs -A ../now.json && now alias"
+  },
+  "main": "gulpfile.js",
+  "license": "MIT",
+  "devDependencies": {
+    "browser-sync": "^2.26.12",
+    "gulp": "^4.0.0",
+    "gulp-folder-index": "0.0.3",
+    "node-sass": "^4.14.1",
+    "@11ty/eleventy": "^0.11.0",
+    "@11ty/eleventy-navigation": "^0.1.6",
+    "@11ty/eleventy-plugin-rss": "^1.0.9",
+    "@11ty/eleventy-plugin-syntaxhighlight": "^3.0.2",
+    "eleventy-plugin-nesting-toc": "^1.2.0",
+    "gulp-cli": "^2.2.0",
+    "luxon": "^1.25.0",
+    "markdown-it-anchor": "^6.0.0",
+    "npm-run-all": "^4.1.5",
+    "sass": "^1.26.10"
+  },
+  "author": "Ray Villalobos"
+}

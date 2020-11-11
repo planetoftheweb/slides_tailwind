@@ -1,0 +1,151 @@
+<h1 id="chart">Chart <a class="direct-link" href="#chart"> </a></h1>
+<p>A plugin for <a href="https://github.com/hakimel/reveal.js">Reveal.js</a> allowing to easily add charts using <a href="http://www.chartjs.org/">Chart.js</a>.</p>
+<p><a href="https://rajgoel.github.io/reveal.js-demos/chart-demo.html">Check out the live demo</a></p>
+<h2 id="installation">Installation <a class="direct-link" href="#installation"> </a></h2>
+<p>Copy the files <code>Chart.min.js</code> and <code>plugin.js</code> into the plugin folder of your reveal.js presentation, i.e. <code>plugin/chart</code>.</p>
+<p>Add the plugins to the dependencies in your presentation, as below.</p>
+<pre><code class="language-html">&lt;script src=&quot;plugin/chart/Chart.min.js&quot;&gt;&lt;/script&gt;
+&lt;script src=&quot;plugin/chart/plugin.js&quot;&gt;&lt;/script&gt;
+
+&lt;script&gt;
+  Reveal.initialize({
+    // ...
+    plugins: [RevealChart],
+    // ...
+  })
+&lt;/script&gt;
+</code></pre>
+<h2 id="configuration">Configuration <a class="direct-link" href="#configuration"> </a></h2>
+<p>The plugin has several parameters that you can set for your presentation by providing an <code>chart</code> option in the reveal.js initialization options.<br>
+Note that all configuration parameters are optional and the defaults of <a href="http://nnnick.github.io/Chart.js/docs-v2/">Chart.js</a> will be used for parameters that are not specified.</p>
+<pre><code class="language-javascript">Reveal.initialize({
+  // ...
+  chart: {
+    defaults: {
+      global: {
+        title: { fontColor: '#FFF' },
+        legend: {
+          labels: { fontColor: '#FFF' },
+        },
+      },
+      scale: {
+        scaleLabel: { fontColor: '#FFF' },
+        gridLines: { color: '#FFF', zeroLineColor: '#FFF' },
+        ticks: { fontColor: '#FFF' },
+      },
+    },
+    line: {
+      borderColor: ['rgba(20,220,220,.8)', 'rgba(220,120,120,.8)', 'rgba(20,120,220,.8)'],
+      'borderDash': [
+        [5, 10],
+        [0, 0],
+      ],
+    },
+    bar: {
+      backgroundColor: ['rgba(20,220,220,.8)', 'rgba(220,120,120,.8)', 'rgba(20,120,220,.8)'],
+    },
+    pie: {
+      backgroundColor: [
+        [
+          'rgba(0,0,0,.8)',
+          'rgba(220,20,20,.8)',
+          'rgba(20,220,20,.8)',
+          'rgba(220,220,20,.8)',
+          'rgba(20,20,220,.8)',
+        ],
+      ],
+    },
+    radar: { borderColor: ['rgba(20,220,220,.8)', 'rgba(220,120,120,.8)', 'rgba(20,120,220,.8)'] },
+  },
+  // ...
+})
+</code></pre>
+<p>The <code>defaults</code> parameter will overwrite <code>Chart.defaults</code>. Furthermore, for any chart type, e.g. line, bar, etc., the parameters for the individual datasets can be specified. Where Chart.js allows to specify a single parameter for a particular dataset, the plugin allows to specify an array of values for this parameter, which will automatically be assigned to the different datasets. Note that if there are more datasets than elements in the array, the plugin will start again with the first value in the array.</p>
+<h2 id="usage">Usage <a class="direct-link" href="#usage"> </a></h2>
+<p>A chart can be included in a slide by adding a <code>canvas</code> element with the <code>data-chart</code> attribute set to the desired chart type.</p>
+<p>The chart can be configured within the canvas body by a JSON string embedded into an HTML comment.</p>
+<pre><code class="language-html">&lt;canvas data-chart=&quot;line&quot;&gt;
+  &lt;!--
+{
+ &quot;data&quot;: {
+  &quot;labels&quot;: [&quot;January&quot;,&quot; February&quot;,&quot; March&quot;,&quot; April&quot;,&quot; May&quot;,&quot; June&quot;,&quot; July&quot;],
+  &quot;datasets&quot;: [
+   {
+    &quot;data&quot;:[65,59,80,81,56,55,40],
+    &quot;label&quot;:&quot;My first dataset&quot;,&quot;backgroundColor&quot;:&quot;rgba(20,220,220,.8)&quot;
+   },
+   {
+    &quot;data&quot;:[28,48,40,19,86,27,90],
+    &quot;label&quot;:&quot;My second dataset&quot;,&quot;backgroundColor&quot;:&quot;rgba(220,120,120,.8)&quot;
+   }
+  ]
+ },
+ &quot;options&quot;: { &quot;responsive&quot;: &quot;true&quot; }
+}
+--&gt;
+&lt;/canvas&gt;
+</code></pre>
+<p>It is possible to provide the chart data by comma separated values and use the JSON string within the HTML comment to configure the chart layout.</p>
+<pre><code class="language-html">&lt;canvas class=&quot;stretch&quot; data-chart=&quot;line&quot;&gt;
+  My first dataset, 65, 59, 80, 81, 56, 55, 40
+  &lt;!-- This is a comment that will be ignored --&gt;
+  My second dataset, 28, 48, 40, 19, 86, 27, 90
+  &lt;!--
+{
+ &quot;data&quot; : {
+  &quot;labels&quot; : [&quot;Enero&quot;, &quot;Febrero&quot;, &quot;Marzo&quot;, &quot;Avril&quot;, &quot;Mayo&quot;, &quot;Junio&quot;, &quot;Julio&quot;],
+  &quot;datasets&quot; : [{ &quot;borderColor&quot;: &quot;#0f0&quot;, &quot;borderDash&quot;: [&quot;5&quot;,&quot;10&quot;] }, { &quot;borderColor&quot;: &quot;#0ff&quot; } ]
+ }
+}
+--&gt;
+&lt;/canvas&gt;
+</code></pre>
+<p>The layout configuration provided in <code>chart</code> parameter (see Configuration) will be used by default and only those parameters that are specified in a JSON string are used to overwrite the default values. If no JSON string is provided to configure the chart layout the default configuration is used. Note, that if no labels for the data points are provided by a JSON string, the plugin expects that the first row provides table headers.</p>
+<pre><code class="language-html">&lt;canvas data-chart=&quot;line&quot;&gt;
+  Month, January, February, March, April, May, June, July My first dataset, 65, 59, 80, 81, 56, 55,
+  40 My second dataset, 28, 48, 40, 19, 86, 27, 90
+&lt;/canvas&gt;
+</code></pre>
+<p>The chart data can also be provided in an external CSV file. To include external data, the filename must be specified using the <code>data-chart-src</code> attribute of the <code>canvas</code> element. The CSV file is expected to only contain data values, whereas options for drawing the chart can be given as described above.</p>
+<pre><code class="language-html">&lt;canvas data-chart=&quot;bar&quot; data-chart-src=&quot;data.csv&quot;&gt;
+  &lt;!--
+{
+&quot;data&quot; : {
+&quot;datasets&quot; : [{ &quot;backgroundColor&quot;: &quot;#0f0&quot; }, { &quot;backgroundColor&quot;: &quot;#0ff&quot; } ]
+},
+&quot;options&quot;: { &quot;responsive&quot;: true, &quot;scales&quot;: { &quot;xAxes&quot;: [{ &quot;stacked&quot;: true }], &quot;yAxes&quot;: [{ &quot;stacked&quot;: true }] } }
+}
+--&gt;
+&lt;/canvas&gt;
+</code></pre>
+<h2 id="animation">Animation <a class="direct-link" href="#animation"> </a></h2>
+<p>The plugin recreates the charts on a slide change to show the Chart.js animations. These animation can be turned off globally in the configuration by</p>
+<pre><code class="language-javascript">Reveal.initialize({
+  // ...
+  chart: {
+    defaults: {
+      global: {
+        animation: null,
+        // ...
+      },
+      // ...
+    },
+  },
+  // ...
+})
+</code></pre>
+<p>or within a chart, e.g. by</p>
+<pre><code class="language-html">&lt;canvas class=&quot;stretch&quot; data-chart=&quot;line&quot;&gt;
+  &lt;!--
+{
+ &quot;data&quot;: {
+	// ...
+ },
+ &quot;options&quot;: { &quot;responsive&quot;: &quot;true&quot;, &quot;animation&quot;: &quot;&quot; }
+}
+--&gt;
+&lt;/canvas&gt;
+</code></pre>
+<h2 id="license">License <a class="direct-link" href="#license"> </a></h2>
+<p>MIT licensed</p>
+<p>Copyright (C) 2020 Asvin Goel</p>
