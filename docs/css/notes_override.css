@@ -1,4 +1,4 @@
-html  {
+html {
   scroll-behavior: smooth;
 }
 
@@ -11,16 +11,16 @@ html  {
   }
 }
 
-b, strong {
+b,
+strong {
   color: var(--bs-primary);
   font-weight: 800;
 }
- pre code {
-   font-size: 1.2em;
- }
- 
+pre code {
+  font-size: 1.2em;
+}
+
 code {
-  font-family: 'Source Code Pro', 'Courier New', Courier, monospace;
   margin: 1px;
   padding: 0 0.5em;
   display: inline-block;
@@ -33,13 +33,12 @@ code {
 .code-primary {
   background: var(--bs-primary) !important;
   margin: 5px;
-  color: var(--bs-light) !important;
+  color: white !important;
 }
 
 .code-success {
   background-color: var(--bs-success) !important;
   margin: 5px;
-  color: var(--bs-light) !important;
 }
 
 .code-info {
@@ -71,7 +70,6 @@ code {
   margin: 5px;
   color: var(--bs-light) !important;
 }
-
 
 .tip span {
   background: var(--bs-dark);
@@ -109,4 +107,8 @@ a.tip span {
 a code,
 .tip {
   cursor: pointer !important;
+}
+
+.main * {
+  max-width: 100%;
 }

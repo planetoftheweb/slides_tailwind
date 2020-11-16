@@ -1,0 +1,110 @@
+<!-- .slide: data-state="layout-title" class="bg-dark"-->
+<h1 id="rendering-lists">Rendering Lists <a class="direct-link" href="#rendering-lists"> </a></h1>
+<div class="slide-link"><a href="https://go.raybo.org/2CqA"><i class="fab fa-slideshare"></i> go.raybo.org/2CqA</a></div>
+<blockquote>
+<blockquote></blockquote>
+</blockquote>
+<p>One of the most useful things that vue can help you with is rendering lists of data.</p>
+<hr>
+<h1 id="v-for-directive">v-for directive <a class="direct-link" href="#v-for-directive"> </a></h1>
+<pre><code class="language-html">&lt;div v-for=&quot;myItem in myElements&quot;&gt;&lt;/div&gt;
+</code></pre>
+<blockquote>
+<blockquote></blockquote>
+</blockquote>
+<p>To do that, we use a directive called <code>v-for</code>. Here's what it looks like. The <code>v-for</code> directive lets you create a temporary variable, which I'm calling here <code>myItem</code> from a number, an array or an object that I'm calling here <code>myElements</code>. Then you can use that temporary variable in an expression or a more complicated template as you loop through each of the values in myElements.</p>
+<hr>
+<h1 id="using-a-number">Using a Number <a class="direct-link" href="#using-a-number"> </a></h1>
+<pre><code class="language-html">&lt;div v-for=&quot;myNumber in 10&quot;&gt;&lt;/div&gt;
+</code></pre>
+<blockquote>
+<blockquote></blockquote>
+</blockquote>
+<p>If you just want to repeat a something a few times, you can use a number for the element and then the loop will repeat the expression or template that many times.</p>
+<hr>
+<h1 id="using-of">Using of <a class="direct-link" href="#using-of"> </a></h1>
+<pre><code class="language-html">&lt;div v-for=&quot;myAlias of myArray&quot;&gt;&lt;/div&gt;
+</code></pre>
+<blockquote>
+<blockquote></blockquote>
+</blockquote>
+<p>You can use <code>of</code> instead of <code>in</code> so that it looks more like how JavaScript's similar command would be written. You'll probably see the <code>in</code> notation more often when looking at Vue code.</p>
+<hr>
+<h1 id="getting-an-index">Getting an Index <a class="direct-link" href="#getting-an-index"> </a></h1>
+<pre><code class="language-html">&lt;div v-for=&quot;(myAlias, myIndex) in myArray&quot;&gt;
+  : 
+&lt;/div&gt;
+</code></pre>
+<blockquote>
+<blockquote></blockquote>
+</blockquote>
+<p>You can add an index variable and this will give you a number of each instance of the array. Like with any other array, the number starts with 0 instead of 1.</p>
+<hr>
+<h1 id="providing-a-key">Providing a Key <a class="direct-link" href="#providing-a-key"> </a></h1>
+<pre><code class="language-html">&lt;div v-for=&quot;myAlias in myArray&quot; :key=&quot;myAlias.id&quot;&gt;&lt;/div&gt;
+</code></pre>
+<blockquote>
+<blockquote></blockquote>
+</blockquote>
+<p>Let's go back to arrays. Vue.js will keep track of changes to your list, but it uses a strategy where it patches elements displayed in place without moving them. If you want Vue to be more precise, it's a good idea to include a unique key for each element separately.</p>
+<hr>
+<h1 id="looping-through-objects">Looping through Objects <a class="direct-link" href="#looping-through-objects"> </a></h1>
+<pre><code class="language-html">&lt;div v-for=&quot;(myAlias, myKey, myIndex) in myObject&quot;&gt;
+   :  -- 
+&lt;/div&gt;
+</code></pre>
+<blockquote>
+<blockquote></blockquote>
+</blockquote>
+<p>You can use v-for to loop through an <code>Object</code> instead of an <code>Array</code> and that would let you navigate through all the properties in an object, which can be useful.</p>
+<p>If you include a second parameter, you can use that to output the key of the object, a third parameter will become the index.</p>
+<p><strong>Note:</strong> Just like with JavaScript, the order of the object's keys isn't guaranteed to be consistent.</p>
+<hr>
+<h1 id="using-a-template">Using a template <a class="direct-link" href="#using-a-template"> </a></h1>
+<pre><code class="language-html">&lt;ul v-for=&quot;myAlias in myObject&quot;&gt;
+  &lt;li&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</code></pre>
+<pre><code class="language-html">&lt;template v-for=&quot;myAlias in myObject&quot;&gt;
+  &lt;span&gt;&lt;/span&gt;
+&lt;/template&gt;
+</code></pre>
+<blockquote>
+<blockquote></blockquote>
+</blockquote>
+<p>Because you're rendering lists of items, it's natural to use HTML list tags which have a parent UL or OL container. However, sometimes you just want to render items without having to display a parent container. In that case you can use an html template tag, which will not be rendered. Instead, you'll get copies of the content inside.</p>
+<hr>
+<h1 id="array-change-detection">Array Change Detection <a class="direct-link" href="#array-change-detection"> </a></h1>
+<p><span class="h3 text-secondary font-weight-bold">Mutation</span><br><code class="code-primary">push()</code> <code class="code-primary">pop()</code> <code class="code-primary">shift()</code> <code class="code-primary">unshift()</code><br><code class="code-primary">splice()</code> <code class="code-primary">sort()</code> <code class="code-primary">reverse()</code></p>
+<p><span class="h3 text-secondary font-weight-bold">Replacement</span><br><code class="code-royal">filter()</code> <code class="code-royal">concat()</code> <code class="code-royal">slice()</code></p>
+<p><a class="tip" href="https://go.raybo.org/2CrM" target="_blank"><code class="code-exciting">Docs</code><span> go.raybo.org/2CrM</span></a></p>
+<blockquote>
+<blockquote></blockquote>
+</blockquote>
+<p>v-for supports javascript mutation methods, which change arrays and trigger updates to your project. You can also use replacement methods like filter and concat, which won't change the array.</p>
+<hr>
+<!-- .slide: data-state="layout-title" data-transition="zoom" class="bg-dark"-->
+<h1 id="practice">Practice <a class="direct-link" href="#practice"> </a></h1>
+<div class="btn-group mt-3" role="group" aria-label="Basic example">
+  <a type="button" class="animate__animated animate__backInLeft tip btn btn-lg btn-exciting text-white" href="https://go.raybo.org/2CrN" target="_blank">Problem<span>go.raybo.org/2CrN</span></a>
+  <a type="button" class="animate__animated animate__zoomInDown tip btn btn-lg btn-royal text-white" href="https://go.raybo.org/2CrO" target="_blank">Diff<span>go.raybo.org/2CrO</span></a>
+  <a type="button" class="animate__animated animate__backInRight animate__slow tip btn btn-lg btn-primary text-white" href="https://go.raybo.org/2CrP" target="_blank">Solution<span>go.raybo.org/2CrP</span></a>
+</div>
+<ol>
+<li>Use <code>v-for</code> to repeat 10 times</li>
+<li>Modify to display <code>products</code></li>
+<li>Display item number with <code>index</code></li>
+<li>Pass <code>products.id</code> as a <code>key</code></li>
+</ol>
+<p><strong>Bonus:</strong> Change the displayed list so that it starts with 1 instead of 0.</p>
+<blockquote>
+<blockquote></blockquote>
+</blockquote>
+<p>Let's take a look at how you can practice this. Let's take a look at some sample code.</p>
+<p>I've prepared some code with a products array in the data object. Each of the elements has several name/value pairs like the name and price of the item. There's also a unique ID for each of the products.</p>
+<p>Our template has a div with an id of display-list which is where we'll add our v-for statement.</p>
+<p>Start by using the v-for directive to repeat our template 10 times.</p>
+<p>Modify the template so that it displays the products array in the javascript section.</p>
+<p>Use an index to display an item number</p>
+<p>Pass the id in the products array as a key to each element.</p>
+<p>As a bonus, modify list so that the item number starts with a 1 instead of a 0</p>

@@ -1,6 +1,6 @@
 <!-- .slide: data-state="layout-title" class="bg-dark"-->
 
-# Transitions
+# Transitions that I made somedays
 
 <div class="slide-link"><a href="https://go.raybo.org/2EPv"><i class="fab fa-slideshare"></i> go.raybo.org/2EPv</a></div>
 

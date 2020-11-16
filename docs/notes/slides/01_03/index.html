@@ -1,0 +1,82 @@
+<!-- .slide: data-state="layout-title" class="bg-dark"-->
+<h1 id="binding-with-directives">Binding with Directives <a class="direct-link" href="#binding-with-directives"> </a></h1>
+<div class="slide-link"><a href="https://go.raybo.org/2Cjn"><i class="fab fa-slideshare"></i> go.raybo.org/2Cjn</a></div>
+<blockquote>
+<blockquote></blockquote>
+</blockquote>
+<p>In Vue.js, you don't use double curly braces inside html tags. Instead we use a directive that looks like an HTML attribute when we want to bind...or connect a variable to an HTML tag.</p>
+<hr>
+<h1 id="regular-html">Regular HTML <a class="direct-link" href="#regular-html"> </a></h1>
+<pre><code class="language-html">&lt;img src=&quot;image.png&quot; alt=&quot;Some Image&quot; /&gt;
+</code></pre>
+<ul>
+<li>Mustaches `` don't work</li>
+</ul>
+<blockquote>
+<blockquote></blockquote>
+</blockquote>
+<p>This is the way a typical attribute would look in HTML a name and then a value. When you first get started, you might be tempted to try to use the expression syntax with the double curly quotes.</p>
+<p>Type in: `` instead of img.png</p>
+<p>But that won't work. The mustache syntax doesn't work inside tag attributes, you have to use different syntax.</p>
+<hr>
+<h1 id="using-directives">Using Directives <a class="direct-link" href="#using-directives"> </a></h1>
+<pre><code class="language-html">&lt;img v-bind:src=&quot;imgSrc&quot; alt=&quot;Some Image&quot; /&gt;
+</code></pre>
+<ul>
+<li>The <code>v-bind:id=&quot;expression&quot;</code> directive</li>
+</ul>
+<blockquote>
+<blockquote></blockquote>
+</blockquote>
+<p>In attributes we have to use something called a directive. This is a fancy word for a command that is understood by Vue.js and handles some  functionality.</p>
+<p>In this case, we using this directive to bind...or connect the attribute like <code>src</code> to a variable in our Vue code. So, the page would display whatever is in the <code>imgSrc</code> variable</p>
+<p>You can bind to lots of different attributes using this syntax. You can see the formula here <code>v-bind</code>, then some <code>id</code> like <code>src</code> and an expression. So you can add more than just a variable value, but a calculation or some sort if you need to.</p>
+<hr>
+<h1 id="shortcut-to-v-bind">Shortcut to v-bind <a class="direct-link" href="#shortcut-to-v-bind"> </a></h1>
+<pre><code class="language-html">&lt;img :src=&quot;myVariable&quot; alt=&quot;Some Image&quot; /&gt;
+</code></pre>
+<blockquote>
+<blockquote></blockquote>
+</blockquote>
+<p>There's a shortcut to v-bind that removes the keyword and just uses a colon instead. It's so much easier to write that you'll probably never USE the v-bind keyword.</p>
+<hr>
+<h1 id="directives">Directives <a class="direct-link" href="#directives"> </a></h1>
+<ul>
+<li>Attributes with <code>v-</code> prefix</li>
+<li>Take arguments (v-<strong>bind</strong>)</li>
+<li>Single JavaScript expressions</li>
+<li>Reactive Binding</li>
+</ul>
+<p><a class="tip" href="https://go.raybo.org/2Cji" target="_blank"><code class="code-exciting">Docs</code><span>go.raybo.org/2Cji</span></a></p>
+<blockquote>
+<blockquote></blockquote>
+</blockquote>
+<p>v-bind is part of a family of commands called directives. Here's some of the features.</p>
+<p>They look like attributes and all start with the keyword v-dash</p>
+<p>They take arguments, so for example the keyword bind is an argument, but there are lots of others.</p>
+<p>Normally they expect single javascript expressions with a couple of exceptions like the <code>v-for</code> and <code>v-on</code> directives. This means that the formulas you add here can't be very complicated. However they can and often do use the ternary operator, which is a shortened if then else statement. If you're not familiar with that don't worry, keep watching and you'll get plenty of experience with it.</p>
+<p>The job of directives is to provide Vue's Reactive Binding feature. This means that Vue modifies the DOM for you when the value of a variable changes magically.</p>
+<p>That's enough about directives for now, although there are lots of other options. For a full list, check out this URL for more info.</p>
+<hr>
+<!-- .slide: data-state="layout-title" data-transition="zoom" class="bg-dark"-->
+<h1 id="practice">Practice <a class="direct-link" href="#practice"> </a></h1>
+<div class="btn-group mt-3" role="group" aria-label="Basic example">
+  <a type="button" class="animate__animated animate__backInLeft tip btn btn-lg btn-exciting text-white" href="https://go.raybo.org/2Cjw" target="_blank">Problem<span>go.raybo.org/2Cjw</span></a>
+  <a type="button" class="animate__animated animate__zoomInDown tip btn btn-lg btn-royal text-white" href="https://go.raybo.org/2Cjx" target="_blank">Diff<span>go.raybo.org/2Cjx</span></a>
+  <a type="button" class="animate__animated animate__backInRight animate__slow tip btn btn-lg btn-primary text-white" href="https://go.raybo.org/2Ck0" target="_blank">Solution<span>go.raybo.org/2Ck0</span></a>
+</div>
+<ol>
+<li>Add an <code>img</code> tag</li>
+<li>Use <code>v-bind</code> with <code>imgSrc</code> variable</li>
+<li>Try the shortcut <code>:src</code> version</li>
+<li>Add <code>:alt</code> with the <code>name</code> variable</li>
+</ol>
+<p><strong>Bonus:</strong> Add <code>img-fluid</code> bootstrap class</p>
+<blockquote>
+<blockquote></blockquote>
+</blockquote>
+<p>I've created a codepen for you with this starter code for you to practice.</p>
+<p>First, Add an image tag on underneath the heading.</p>
+<p>Use the v-bind directive using the <code>imgSrc</code> variable from the data</p>
+<p>You can get rid of the v-bind keyword and use the shortcut.</p>
+<p>Don't forget to add the alt attribute using the name variable.</p>

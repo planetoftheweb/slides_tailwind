@@ -176,27 +176,14 @@
       }); // Slides are ready to display
 
       Reveal.on('menu-ready', (event) => {
-        // Customize how the menu plugin works
-        // This makes it ignore the current slideshow
-        // and look for the index.json file
-        // with the list of slides
 
         fetch('slides/index.json')
           .then((response) => response.json())
-          .then((data) => {
-            var menuData = data.map(function (slide) {
-              simpleName = slide.replace(/\/(.*)\.md/i, '$1');
-              return (
-                '<div class="slide-menu-item"><a href="?d=' +
-                simpleName +
-                '&">' +
-                simpleName +
-                '</a> | <a href="notes/slides/' +
-                simpleName +
-                '/' +
-                'index.html">notes</a></div>'
-              );
-            });
+          .then( (data) => {
+            let menuData = []
+            for (const prop in data) {
+              menuData.push(`<div class="slide-menu-item"><a href="?d=${data[prop].filename}&">${data[prop].filename} ${data[prop].title}</a> | <a href="notes/slides/${data[prop].filename}/index.html">notes</a></div>`)
+            }
             document.querySelector(
               '.slide-menu-items'
             ).innerHTML = menuData.join('');
