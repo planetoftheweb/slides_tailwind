@@ -47,11 +47,11 @@
                     </a>
                   </div>
                 
-                  <div class="d-flex justify-content-end align-items-right border-bottom p-2  bg-primary ">
-                    <a class="text-decoration-none  fw-bolder link-light  link-primary" href="../../../notes/slides/01_02/index.html">
-                      <i class="fas fa-file-alt mr-2 lh-1  text-light "></i>01_02
+                  <div class="d-flex justify-content-end align-items-right border-bottom p-2 ">
+                    <a class="text-decoration-none  link-secondary  link-primary" href="../../../notes/slides/01_02/index.html">
+                      <i class="fas fa-file-alt mr-2 lh-1  text-primary "></i>01_02
                       Basic Setup</a>
-                    <a class=" link-light  flex-fill ml-3 text-right" href="../../../?d=01_02&#">
+                    <a class=" link-secondary  flex-fill ml-3 text-right" href="../../../?d=01_02&#">
                       <i class="fab fa-slideshare"></i>
                     </a>
                   </div>
@@ -101,11 +101,11 @@
                     </a>
                   </div>
                 
-                  <div class="d-flex justify-content-end align-items-right border-bottom p-2 ">
-                    <a class="text-decoration-none  link-secondary  link-primary" href="../../../notes/slides/02_03/index.html">
-                      <i class="fas fa-file-alt mr-2 lh-1  text-primary "></i>02_03
+                  <div class="d-flex justify-content-end align-items-right border-bottom p-2  bg-primary ">
+                    <a class="text-decoration-none  fw-bolder link-light  link-primary" href="../../../notes/slides/02_03/index.html">
+                      <i class="fas fa-file-alt mr-2 lh-1  text-light "></i>02_03
                       Events</a>
-                    <a class=" link-secondary  flex-fill ml-3 text-right" href="../../../?d=02_03&#">
+                    <a class=" link-light  flex-fill ml-3 text-right" href="../../../?d=02_03&#">
                       <i class="fab fa-slideshare"></i>
                     </a>
                   </div>
@@ -141,107 +141,135 @@
 
         <main class="main col">
           <!-- .slide: data-state="layout-title" class="bg-dark"-->
-<h1 id="basic-setup">Basic Setup <a class="direct-link" href="#basic-setup"> </a></h1>
-<div class="slide-link"><a href="https://go.raybo.org/2CjJ"><i class="fab fa-slideshare"></i> go.raybo.org/2CjJ</a></div>
+<h1 id="events">Events <a class="direct-link" href="#events"> </a></h1>
+<div class="slide-link"><a href="https://go.raybo.org/2Czb"><i class="fab fa-slideshare"></i> go.raybo.org/2Czb</a></div>
 <blockquote>
 <blockquote></blockquote>
 </blockquote>
-<p>Besides adding a script tag or building a project, let's examine what makes Vue.js special and talk about how it's different from building regular javascript apps.</p>
+<p>Let's take a look at how events work in Vue.js</p>
 <hr>
-<h1 id="vue-template">Vue Template <a class="direct-link" href="#vue-template"> </a></h1>
-<pre><code class="language-html[1|2]">&lt;div id=&quot;app&quot;&gt;
-  &lt;h1&gt;&lt;/h1&gt;
-&lt;/div&gt;
+<h1 id="events-with-v-on">Events with <strong>v-on</strong> <a class="direct-link" href="#events-with-v-on"> </a></h1>
+<pre><code class="language-html">&lt;div v-on:event=&quot;expression&quot;&gt;&lt;/div&gt;
 </code></pre>
 <blockquote>
 <blockquote></blockquote>
 </blockquote>
-<h2 id="target-dom-element">Target DOM Element <a class="direct-link" href="#target-dom-element"> </a></h2>
-<p>To use Vue.js in your code, you'll need to create an HTML element that you can target so that Vue.js can control it.</p>
-<p>That's usually done by adding an <strong>ID</strong> to the element and that's often the keyword <strong>app</strong>, but it can really be anything else. This also means that you can add vue to more than one place on your page.</p>
-<h2 id="use-vue-features">Use Vue Features <a class="direct-link" href="#use-vue-features"> </a></h2>
-<p>Once you have that ID, then you can use Vue.js features inside your container, So for example here we can use a template expression.</p>
-<p>The template expression looks just like HTML with some extra directives (which are what we call vue commands, but the directives get converted by Vue and replaced with the code needed to build your app.</p>
-<p>One of the directives you can use is the expression syntax, which uses double curly braces (also called mustaches) to print the value of a variable.</p>
+<p>The <code>v-on</code> directive can listen to the DOM and run some JavaScript when events are triggered.</p>
+<p>The expression can be either regular javascript or a call to a method.</p>
+<p>The event is a normal javascript event like as @click or @keyup or @blur</p>
 <hr>
-<h1 id="vue-apis">Vue APIs <a class="direct-link" href="#vue-apis"> </a></h1>
-<p><a class="tip" href="https://go.raybo.org/2CjL" target="_blank"><code class="code-primary ">Global API</code><span>go.raybo.org/2CjK</span></a></p>
-<p><a class="tip" href="https://go.raybo.org/2CjN" target="_blank"><code class="code-royal mt-3">Application API</code><span>go.raybo.org/2CjK</span></a></p>
-<blockquote>
-<blockquote></blockquote>
-</blockquote>
-<p>Vue.js has two slightly different APIs or Application Programming Interfaces...think of them as slightly different flavors of your favorite sodas. Which one you use depends on how you've installed it.</p>
-<p>The Global API, is what you use when you add the script tag to an HTML page. We'll be using that for about the first half of the course.</p>
-<p>The Application API is what you use when you install Vue with the CLI or a Package Manager like NPM.</p>
-<hr>
-<h1 id="global-api-initialization">Global API Initialization <a class="direct-link" href="#global-api-initialization"> </a></h1>
-<pre><code class="language-js[1|2-6|4|7]">Vue.createApp({
-  data() {
-    return {
-      name: 'Bamboo Thermal Ski Coat',
-    };
-  },
-}).mount('#app');
-</code></pre>
-<blockquote>
-<blockquote></blockquote>
-</blockquote>
-<p>If you use the Global API, you'll get access to the <code>Vue</code> object, which you can use to create content in your HTML page using the <code>createApp</code> method.</p>
-<p>createApp takes a configuration object with a series of methods.</p>
-<p>One of the most important methods sets up the data for our project.</p>
-<p>The method needs to return an object with the data you want our application to have. in this case, we're returning a simple variable called name with some text.</p>
-<p>To load this onto our page, we use the mount method to replace our template with our Vue application.</p>
-<hr>
-<!-- .slide: data-state="no-fragment" -->
-<h1 id="separate-app-object">Separate App Object <a class="direct-link" href="#separate-app-object"> </a></h1>
-<pre><code class="language-js">const App = {
-  data() {
-    return {
-      name: 'Bamboo Thermal Ski Coat',
-    };
-  },
-};
+<h1 id="%40-shortcut"><strong>@</strong> Shortcut <a class="direct-link" href="#%40-shortcut"> </a></h1>
+<pre><code class="language-js[1|4|5]">&lt;div @event=&quot;myMethod()&quot;&gt;&lt;/div&gt;
 
-Vue.createApp(App).mount('#app');
+methods: {
+  myMethod(myEvent) {
+    console.log(myEvent.target)
+  }
+}
 </code></pre>
 <blockquote>
 <blockquote></blockquote>
 </blockquote>
-<p>You'll often see the object written out like this a separate variable to keep things simpler.</p>
+<p>Although the directive is technically <code>v-on</code>, you can shorten it by using the AT symbol and that's the way you'll normally see it used. If you use a method, the parenthesis are optional.</p>
+<p>When called, it automatically passes along information about the event</p>
+<p>...you can use that inside the method.</p>
 <hr>
-<h1 id="vue-features">Vue Features <a class="direct-link" href="#vue-features"> </a></h1>
-<ul>
-<li>Declarative rendering</li>
-<li>Text interpolation</li>
-<li>Reactive data</li>
-</ul>
+<h1 id="passing-arguments">Passing Arguments <a class="direct-link" href="#passing-arguments"> </a></h1>
+<pre><code class="language-html[1|4]">&lt;div @event=&quot;myMethod(someVar, $event)&quot;&gt;&lt;/div&gt;
+...
+methods: {
+  myMethod(myVar, myEvent) {
+    console.log(myEvent.target)
+  }
+}
+</code></pre>
 <blockquote>
 <blockquote></blockquote>
 </blockquote>
-<p>There's a few things happening behind the scenes we should mention that make Vue.js special.</p>
-<p>Vue uses something called <strong>Declarative Rendering</strong>. Vue makes you feel like you're writing HTML, but in reality you're using a language that looks like HTML, but allows us to use features that extend the capabilities of HTML. Those commands are then converted...or rendered into code that the browser displays.</p>
-<p>One of the features we get when using Vue is called <strong>text interpolation</strong>...using double curly braces to print out variables and other code...The curly braces are sometimes called mustaches because of their shape. Inside you can put more than just variables, but more complex formulas also called <strong>expressions</strong>.</p>
-<p>One thing that's not obvious from our example is that the data assigned to the template in our script is reactive. That means that if something modifies our data, Vue would take care of modifying the template for us automatically. This is one of the best features of Vue.js because you don't have to worry about updating your HTML, just writing commands that modify the data.</p>
+<p>Of course you can also pass variables to the method if you want. If you still need to pass event info, you can send it with a special variable callend <code>$event</code>.</p>
+<p>You can then capture that event into a javascript variable on your function.</p>
 <hr>
-<!-- .slide: data-state="layout-title" class="bg-dark"-->
+<h1 id="multiple-methods">Multiple Methods <a class="direct-link" href="#multiple-methods"> </a></h1>
+<pre><code>&lt;div @event=&quot;firstMethod, secondMethod&quot;&gt;&lt;/div&gt;
+</code></pre>
+<blockquote>
+<blockquote></blockquote>
+</blockquote>
+<p>You can also have an event run multiple methods by separating them like arguments with commas.</p>
+<hr>
+<h1 id="event-modifiers">Event Modifiers <a class="direct-link" href="#event-modifiers"> </a></h1>
+<p><code class="code-primary tip  position-relative">.stop<span>Stop propagation</span></code> <code class="code-primary tip  position-relative">.prevent<span>Prevent default behavior</span></code> <code class="code-primary tip  position-relative">.capture<span>Capture an inner element</span></code> <code class="code-primary tip  position-relative">.self <span>Only trigger on self events</span></code><code class="code-primary tip  position-relative">.once<span>Trigger only once</span></code><br>
+<code class="code-primary tip  position-relative">.passive<span>Don't call preventDefault</span></code></p>
+<pre><code class="language-html">&lt;div @event.stop.prevent=&quot;myMethod&quot;&gt;&lt;/div&gt;
+</code></pre>
+<p><a class="tip" href="https://go.raybo.org/2Czm" target="_blank"><code class="code-exciting">Docs</code><span>go.raybo.org/2Czm</span></a></p>
+<blockquote>
+<blockquote></blockquote>
+</blockquote>
+<p>You can add one or more modifiers that control how the events are handled. These events are similar to the options you'd pass to a javascript event listener. So for example you can use prevent to stop a form from submitting.</p>
+<p>You can pass along multiple modifiers, but be careful because the order makes a difference.</p>
+<p>For more information look at the documentation for event listener parameters.</p>
+<hr>
+<h1 id="key-modifiers">Key Modifiers <a class="direct-link" href="#key-modifiers"> </a></h1>
+<p><code class="code-primary">.enter</code> <code class="code-primary">.tab</code> <code class="code-primary">.delete</code> <code class="code-primary">.esc</code><br><code class="code-primary">.space</code> <code class="code-primary">.up</code> <code class="code-primary">.down</code> <code class="code-primary">.left</code> <code class="code-primary">.right</code></p>
+<p><code class="code-royal">.ctrl</code> <code class="code-royal">.alt</code> <code class="code-royal">.shift</code> <code class="code-royal">.meta</code></p>
+<pre><code class="language-html">&lt;input @keyevent.ctrl.enter=&quot;submit&quot; /&gt;
+</code></pre>
+<blockquote>
+<blockquote></blockquote>
+</blockquote>
+<p>Some of the key methods have their own special modifiers</p>
+<p><strong>Note:</strong> the meta key is the command key on a mac and the windows key on a PC.</p>
+<hr>
+<h1 id="exact-modifier"><strong>exact</strong> modifier <a class="direct-link" href="#exact-modifier"> </a></h1>
+<p><code class="code-primary">.exact</code></p>
+<pre><code>&lt;div @event.modifier.exact=&quot;myMethod&quot;&gt;A&lt;/div&gt;
+
+</code></pre>
+<pre><code>&lt;button @click.ctrl.exact=&quot;myMethod&quot;&gt;A&lt;/button&gt;
+
+</code></pre>
+<blockquote>
+<blockquote></blockquote>
+</blockquote>
+<p>There's a special modifier called exact. If you add it to an event, then it will only trigger our script if the combination matches exactly.</p>
+<p>For example here, it would only execute myMethod if the ctrl key was pressed when the button was clicked. If you removed the modifier, then the method would only be called if no keys were pressed.</p>
+<hr>
+<h1 id="mouse-modifiers">Mouse Modifiers <a class="direct-link" href="#mouse-modifiers"> </a></h1>
+<p><code class="code-primary">.left</code> <code class="code-primary">.right</code> <code class="code-primary">.middle</code></p>
+<blockquote>
+<blockquote>
+<p>You can also check for clicks on specific buttons with the mouse button modifiers.</p>
+</blockquote>
+</blockquote>
+<div @event.right="myMethod"></div>
+<p><a class="tip" href="https://go.raybo.org/2Czh" target="_blank"><code class="code-exciting">Docs</code><span> go.raybo.org/2Czh</span></a></p>
+<hr>
+<!-- .slide: data-state="layout-title" data-transition="zoom" class="bg-dark"-->
 <h1 id="practice">Practice <a class="direct-link" href="#practice"> </a></h1>
 <div class="btn-group mt-3" role="group" aria-label="Basic example">
-  <a type="button" class="animate__animated animate__backInLeft tip btn btn-lg btn-exciting text-white" href="https://go.raybo.org/2CjQ" target="_blank">Problem<span>go.raybo.org/2CjQ</span></a>
-  <a type="button" class="animate__animated animate__zoomInDown tip btn btn-lg btn-royal text-white" href="https://go.raybo.org/2CjR" target="_blank">Diff<span>go.raybo.org/2CjR</span></a>
-  <a type="button" class="animate__animated animate__backInRight animate__slow tip btn btn-lg btn-primary text-white" href="https://go.raybo.org/2CjS" target="_blank">Solution<span>raybo.org/2CjS</span></a>
+  <a type="button" class="animate__animated animate__backInLeft tip btn btn-lg btn-exciting text-white" href="https://go.raybo.org/2Czj" target="_blank">Problem<span>go.raybo.org/2Czj</span></a>
+  <a type="button" class="animate__animated animate__zoomInDown tip btn btn-lg btn-royal text-white" href="https://go.raybo.org/2C-A" target="_blank">Diff<span>https://go.raybo.org/2C-A</span></a>
+  <a type="button" class="animate__animated animate__backInRight animate__slow tip btn btn-lg btn-primary text-white" href="https://go.raybo.org/2Czi" target="_blank">Solution<span>go.raybo.org/2Czi</span></a>
 </div>
 <ol>
-<li>Create more than one App</li>
-<li>Change <code>name</code> in new app</li>
-<li>Feed <code>createApp</code> an <br> object instead of a variable</li>
+<li>Create a <code>cart</code> array</li>
+<li>Click <code>plus</code> to add items</li>
+<li>Display cart items</li>
+<li>Make cart icon toggle menu</li>
 </ol>
+<p><strong>bonus:</strong> Show cart <code>total</code> and <code>qty</code> on menu</p>
 <blockquote>
 <blockquote></blockquote>
 </blockquote>
-<p>I've created a codepen for you with this starter code. Here's some things you can try.</p>
-<p>First, you can try adding another variable to the data section and then see if you can add it to the page using an expression.</p>
-<p>To see that you can create more than one app on the same page, try creating another app with a separate <code>createApp</code> command. Remember that you'll need another ID as well as a variable name.</p>
-<p>Experiment using the Object notation instead of creating a separate variable. I'll be using the variable notation on this course, but you might like it better the other way.</p>
+<p>Here's a good practice project. Here's the link to the starting code.</p>
+<p>I have a simpler version of our previous code that displays our items.</p>
+<p>First, create a currency filter that formats the number used for pricing so that they all have consistent decimal points. Apply that filter to the pricing of each item.</p>
+<p>Next we want to display the amount of items the user has filtered when they change the max price.</p>
+<p>However the original array never changes, but you can filter the array based on the choice and calculate the quantity properly.</p>
+<p>That means that we'll need to change the array we're using in v-for with our new array.</p>
+<p>It also means that we can remove the v-if statement that filters our display.</p>
+<p>Use the new filtered array to display a label with the amount of elements based on the value of max.</p>
 
         </main>
         <aside class="aside aside-supplemental d-none d-md-block">
@@ -250,22 +278,31 @@ Vue.createApp(App).mount('#app');
             <div class="">
                 <ol>
                     
-                    <li><a href="#basic-setup">Basic Setup  </a>
+                    <li><a href="#events">Events  </a>
             		</li>
 
-                    <li><a href="#vue-template">Vue Template  </a>
+                    <li><a href="#events-with-v-on">Events with v-on  </a>
             		</li>
 
-                    <li><a href="#vue-apis">Vue APIs  </a>
+                    <li><a href="#%40-shortcut">@ Shortcut  </a>
             		</li>
 
-                    <li><a href="#global-api-initialization">Global API Initialization  </a>
+                    <li><a href="#passing-arguments">Passing Arguments  </a>
             		</li>
 
-                    <li><a href="#separate-app-object">Separate App Object  </a>
+                    <li><a href="#multiple-methods">Multiple Methods  </a>
             		</li>
 
-                    <li><a href="#vue-features">Vue Features  </a>
+                    <li><a href="#event-modifiers">Event Modifiers  </a>
+            		</li>
+
+                    <li><a href="#key-modifiers">Key Modifiers  </a>
+            		</li>
+
+                    <li><a href="#exact-modifier">exact modifier  </a>
+            		</li>
+
+                    <li><a href="#mouse-modifiers">Mouse Modifiers  </a>
             		</li>
 
                     <li><a href="#practice">Practice  </a>

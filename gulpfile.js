@@ -29,10 +29,11 @@ function markdown() {
       data.filename = file.path.split('/').pop().replace(/\.[^/.]+$/, "");
       return data;
     }))
-    .pipe(jsoncombine("index.json", function (data, meta) {
+    .pipe(jsoncombine("slideindex.json", function (data, meta) {
       return new Buffer.from(JSON.stringify(data));
     }))
     .pipe(gulp.dest(dest + 'slides'))
+    .pipe(gulp.dest(dest + '_data'))
 }
 
 

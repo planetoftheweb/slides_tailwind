@@ -4,48 +4,48 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <title>{{ metadata.title }}</title>
-    <link rel="stylesheet" href="../../../css/twemoji-amazing.css" />
-    <link rel="stylesheet" href="../../../css/bootstrap-rayveal.css" />
-    <link rel="stylesheet" href="../../../css/fontawesome.css" />
-    <link rel="stylesheet" href="../../../css/twemoji-amazing.css" />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Source+Code+Pro:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,900;1,200;1,300;1,400;1,500;1,600;1,700;1,900&family=Source+Sans+Pro:ital,wght@0,200;0,300;0,400;0,600;0,700;0,900;1,200;1,300;1,400;1,600;1,700;1,900&display=swap"
-      rel="stylesheet" />
+    <link rel="stylesheet" href="../../../css/twemoji-amazing.css"/>
+    <link rel="stylesheet" href="../../../css/bootstrap-rayveal.css"/>
+    <link rel="stylesheet" href="../../../css/fontawesome.css"/>
+    <link rel="stylesheet" href="../../../css/twemoji-amazing.css"/>
+    <link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,900;1,200;1,300;1,400;1,500;1,600;1,700;1,900&family=Source+Sans+Pro:ital,wght@0,200;0,300;0,400;0,600;0,700;0,900;1,200;1,300;1,400;1,600;1,700;1,900&display=swap" rel="stylesheet"/>
     <link rel="stylesheet" href="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.2.1/build/styles/default.min.css">
-    <link rel="stylesheet" href="../../../css/syntax/color-brewer.css" />
-    <link rel="stylesheet" href="../../../css/notes_override.css" />
+    <link rel="stylesheet" href="../../../css/syntax/nord.css"/>
+    <link rel="stylesheet" href="../../../css/notes_override.css"/>
     <script src="https://twemoji.maxcdn.com/v/latest/twemoji.min.js" crossorigin="anonymous"></script>
   </head>
   <body class="bg-subdued">
-    <div class="post post-sidebar container-fluid">      
+    <div class="post post-sidebar container-fluid">
       <div class="row justify-content-md-center">
         {% if collections.slides.length > 1 -%}
-        <aside class="aside aside-main col-lg-3">
-          <nav class="sticky-top font-weight-medium pb-2 lh-sm pt-2 ">
-            <h3>All Docs</h3>
-            {% set sidebarNav = collections.slides | sortBySlugs %}
-            {%- for item in sidebarNav -%}
-            {% if item.fileSlug !== 'demo' %}
-            <div class="d-flex justify-content-end align-items-right ml-3 border-bottom py-2">
-              <a class="text-decoration-none {% if page.url  == item.url %} font-weight-bold link-primary {% else %} link-secondary {% endif %}" href="../../../notes{{ item.url | url }}">
-              <i class="fas fa-file-alt mr-2  lh-1 text-primary"></i>{{ item.fileSlug | safe }}</a>
-              <a class="link-royal flex-fill ml-3 text-right" href="../../../?d={{ item.fileSlug }}&#"><i class="fab fa-slideshare"></i></a>
-            </div>
-            {% endif %}
-            {%- endfor -%}
-          </nav>
-        </aside>
+          <aside class="aside aside-main col-md-3 gx-0">
+            <nav class="sticky-top fw-medium lh-sm pt-2 ">
+              <h3 class="text-secondary">All Docs</h3>
 
+              {%- for name, item in slideindex -%}
+                {% if item.filename !== 'demo' %}
+                  <div class="d-flex justify-content-end align-items-right border-bottom p-2 {% if page.fileSlug  == item.filename %} bg-primary {% endif %}">
+                    <a class="text-decoration-none {% if page.fileSlug  == item.filename %} fw-bolder link-light {% else %} link-secondary {% endif %} link-primary" href="../../../notes/slides/{{ item.filename }}/index.html">
+                      <i class="fas fa-file-alt mr-2 lh-1 {% if page.fileSlug  == item.filename %} text-light {% else %} text-primary {% endif %}"></i>{{ item.filename | safe }}
+                      {{ item.title | safe }}</a>
+                    <a class="{% if page.fileSlug  == item.filename %} link-light {% else %} link-secondary {% endif %} flex-fill ml-3 text-right" href="../../../?d={{ item.filename }}&#">
+                      <i class="fab fa-slideshare"></i>
+                    </a>
+                  </div>
+                {% endif %}
+              {%- endfor -%}
+
+            </nav>
+          </aside>
 
         {% endif -%}
         <main class="main col">
-        <h1 class="display-4 text-primary font-weight-lighter lh-1 py-2"><i class="fab fa-slideshare pt-2 pr-3"></i>{{ page.fileSlug }}</h1>
-        {{ content | safe }}
+          {{ content | safe }}
         </main>
-        <aside class="aside aside-supplemental d-none d-lg-block col-lg-2 col-xl-2  pt-2" >
+        <aside class="aside aside-supplemental d-none d-md-block">
           <nav class="sticky-top">
-          <h3>This Slide</h3>
-          {{ content | toc | safe }}
+            <h3 class="pt-2">This Slide</h3>
+            {{ content | toc | safe }}
           </nav>
         </aside>
       </div>
@@ -53,6 +53,8 @@
   </div>
   <script src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.2.1/build/highlight.min.js"></script>
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha2/js/bootstrap.bundle.min.js" integrity="sha384-BOsAfwzjNJHrJ8cZidOg56tcQWfp6y72vEJ8xQ9w6Quywb24iOsW913URv1IS4GD" crossorigin="anonymous"></script>
-  <script>hljs.initHighlightingOnLoad();</script>
-  </body>
+  <script>
+    hljs.initHighlightingOnLoad();
+  </script>
+</body>
 </html>

@@ -177,7 +177,7 @@
 
       Reveal.on('menu-ready', (event) => {
 
-        fetch('slides/index.json')
+        fetch('slides/slideindex.json')
           .then((response) => response.json())
           .then( (data) => {
             let menuData = []

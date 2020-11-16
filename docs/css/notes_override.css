@@ -75,7 +75,6 @@ code {
   background: var(--bs-dark);
   bottom: 100%;
   display: block;
-  font-family: 'Source Code Pro', 'Courier New', Courier, monospace;
   font-size: 0.7em;
   left: -20px;
   opacity: 0;
@@ -109,6 +108,58 @@ a code,
   cursor: pointer !important;
 }
 
-.main * {
+.main img {
   max-width: 100%;
+}
+
+.main h1 {
+  color: var(--bs-secondary);
+  font-size: 1.8em;
+}
+
+.main h2 {
+  font-size: 1.4em;
+}
+
+.main h1:first-of-type {
+  color: var(--bs-primary);
+  font-size: 4em;
+  font-weight: 800;
+  line-height: 90%;
+  margin-bottom: 0.3em;
+}
+
+.aside-main,
+.aside-supplemental {
+  font-size: 0.8em;
+}
+
+.aside-main {
+  background-color: var(--bs-gray-light);
+  min-height: 100vh;
+}
+
+.main ul,
+.main ol {
+  margin-top: 1em;
+}
+.main li {
+  margin-bottom: 0.5em;
+}
+
+hr {
+  opacity: 0;
+  margin-top: 2em;
+}
+
+.slide-link {
+  background-color: var(--bs-danger);
+  padding: 0.4em;
+  border-radius: 0.5em;
+  display: inline;
+}
+
+.slide-link a {
+  color: var(--bs-light);
+  text-decoration: none;
 }
