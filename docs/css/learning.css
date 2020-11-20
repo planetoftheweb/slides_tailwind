@@ -184,12 +184,13 @@ h3::selection {
 .reveal-viewport h1 + h3 {
   margin-top: 0.2em;
   line-height: 120%;
+  opacity: 0;
 }
 
 .reveal-viewport section > h1 {
   overflow: hidden;
   white-space: nowrap;
-  animation: typing 1.5s steps(40, end) !important;
+  animation: typing 1.5s steps(40, end) forwards !important;
 }
 
 /*********************************************
@@ -525,6 +526,10 @@ h3::selection {
 
 .reveal-viewport.layout-title .footer {
   background: #333;
+}
+
+.reveal-viewport.layout-title:nth-of-type(1) section > h1 {
+  animation: typing 1.5s 1.5s steps(40, end) forwards !important;
 }
 
 /*********************************************
@@ -910,13 +915,10 @@ footer.fadeout {
   font-weight: 300;
 }
 
-
-
-
 /*********************************************
  * Layout Codelist
  *********************************************/
- .reveal-viewport.layout-scroll-image {
+.reveal-viewport.layout-scroll-image {
   width: 100% !important;
   height: 100% !important;
   left: 0 !important;
@@ -924,7 +926,7 @@ footer.fadeout {
   bottom: 0 !important;
   right: 0 !important;
   transform: none !important;
- }
+}
 
 .reveal-viewport.layout-scroll-image section {
   display: initial !important;
@@ -938,11 +940,21 @@ footer.fadeout {
   -ms-overflow-style: none; /* For Internet Explorer and Edge */
 }
 
-.reveal-viewport.layout-scroll-image *::-webkit-scrollbar{
+.reveal-viewport.layout-scroll-image *::-webkit-scrollbar {
   width: 0px; /* For Chrome, Safari, and Opera */
 }
 
+/*********************************************
+ * Layout Longcode
+ *********************************************/
+.reveal-viewport.layout-longcode pre {
+  max-width: 95%;
+}
 
+.reveal-viewport.layout-longcode pre code {
+  max-height: 450px;
+  overflow: auto;
+}
 
 /*********************************************
  * Bootstrap Adjustments
@@ -1029,8 +1041,8 @@ footer.fadeout {
   background: var(--bs-royal);
   opacity: 0;
   font-family: 'Source Code Pro', 'Courier New', Courier, monospace;
-  animation: slideOutLink 0.7s 4s ease-in-out backwards,
-    slideInLink 0.7s 1s ease-in-out backwards;
+  animation: slideOutLink 0.7s 6s ease-in-out backwards,
+    slideInLink 0.7s 2.5s ease-in-out backwards;
   font-size: 0.5em !important;
   display: flex !important;
   align-items: center !important;
@@ -1097,6 +1109,7 @@ footer.fadeout {
 
   100% {
     width: 100%;
+    opacity: 1;
   }
 }
 

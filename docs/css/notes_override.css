@@ -2,22 +2,13 @@ html {
   scroll-behavior: smooth;
 }
 
-@media screen and (min-width: 960px) {
-  .aside {
-    max-width: 400px;
-  }
-  .aside-supplemental {
-    max-width: 300px;
-  }
-}
-
 b,
 strong {
   color: var(--bs-primary);
   font-weight: 800;
 }
 pre code {
-  font-size: 1.2em;
+  font-size: 0.9em;
 }
 
 code {
@@ -108,25 +99,51 @@ a code,
   cursor: pointer !important;
 }
 
+.main {
+  font-family: 'Source Serif Pro';
+  font-size: 1.6em;
+  line-height: 150%;
+  color: #444;
+  font-weight: 300;
+}
 .main img {
   max-width: 100%;
 }
 
-.main h1 {
-  color: var(--bs-secondary);
-  font-size: 1.8em;
+.main pre code {
+  max-width: 100%;
+  line-height: 130%;
+  overflow: auto;
+  margin: 2em auto;
 }
 
-.main h2 {
-  font-size: 1.4em;
+.main h1 {
+  font-family: 'Source Sans Pro';
+  font-size: 2em;
+  font-weight: 600;
 }
 
 .main h1:first-of-type {
-  color: var(--bs-primary);
-  font-size: 4em;
+  font-size: 4.5em;
   font-weight: 800;
   line-height: 90%;
   margin-bottom: 0.3em;
+  margin-top: 0.25em;
+}
+
+.main h2 {
+  font-family: 'Source Sans Pro';
+  font-size: 1.4em;
+}
+.main h3,
+.main h4,
+.main h5,
+.main h6 {
+  font-family: 'Source Sans Pro';
+}
+
+.main p {
+  margin-bottom: 1em;
 }
 
 .aside-main,
@@ -136,20 +153,21 @@ a code,
 
 .aside-main {
   background-color: var(--bs-gray-light);
-  min-height: 100vh;
 }
 
 .main ul,
 .main ol {
-  margin-top: 1em;
+  margin-top: 2em;
+  margin-bottom: 2em;
 }
 .main li {
   margin-bottom: 0.5em;
 }
 
 hr {
-  opacity: 0;
-  margin-top: 2em;
+  color: transparent;
+  margin: 2em 30%;
+  border-bottom: 15px dotted var(--bs-danger);
 }
 
 .slide-link {

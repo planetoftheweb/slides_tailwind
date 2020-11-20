@@ -8,7 +8,9 @@
     <link rel="stylesheet" href="../../../css/bootstrap-rayveal.css"/>
     <link rel="stylesheet" href="../../../css/fontawesome.css"/>
     <link rel="stylesheet" href="../../../css/twemoji-amazing.css"/>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,900;1,200;1,300;1,400;1,500;1,600;1,700;1,900&family=Source+Sans+Pro:ital,wght@0,200;0,300;0,400;0,600;0,700;0,900;1,200;1,300;1,400;1,600;1,700;1,900&display=swap" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Source+Serif+Pro:wght@200;300&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.2.1/build/styles/default.min.css">
     <link rel="stylesheet" href="../../../css/syntax/nord.css"/>
     <link rel="stylesheet" href="../../../css/notes_override.css"/>
@@ -18,7 +20,7 @@
     <div class="post post-sidebar container-fluid">
       <div class="row justify-content-md-center">
         {% if collections.slides.length > 1 -%}
-          <aside class="aside aside-main col-md-3 gx-0">
+          <aside class="aside aside-main col col-md-3 col-lg-2 gx-0">
             <nav class="sticky-top fw-medium lh-sm pt-2 ">
               <h3 class="text-secondary">All Docs</h3>
 
@@ -39,10 +41,10 @@
           </aside>
 
         {% endif -%}
-        <main class="main col">
+        <main class="main col col-md-6 col-lg-8">
           {{ content | safe }}
         </main>
-        <aside class="aside aside-supplemental d-none d-md-block">
+        <aside class="aside aside-supplemental col col-md-3 col-lg-2 d-none d-md-block">
           <nav class="sticky-top">
             <h3 class="pt-2">This Slide</h3>
             {{ content | toc | safe }}
