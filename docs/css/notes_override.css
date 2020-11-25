@@ -101,7 +101,7 @@ a code,
 
 .main {
   font-family: 'Source Serif Pro';
-  font-size: 1.6em;
+  font-size: 1.3em;
   line-height: 150%;
   color: #444;
   font-weight: 300;
@@ -119,16 +119,18 @@ a code,
 
 .main h1 {
   font-family: 'Source Sans Pro';
-  font-size: 2em;
+  font-size: 1.8em;
   font-weight: 600;
 }
 
 .main h1:first-of-type {
-  font-size: 4.5em;
+  font-size: 4.25em;
   font-weight: 800;
-  line-height: 90%;
+  line-height: 95%;
   margin-bottom: 0.3em;
   margin-top: 0.25em;
+  letter-spacing: -0.025em;
+  color: var(--bs-gray);
 }
 
 .main h2 {

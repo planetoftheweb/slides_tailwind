@@ -49,11 +49,11 @@
                     </a>
                   </div>
                 
-                  <div class="d-flex justify-content-end align-items-right border-bottom p-2  bg-primary ">
-                    <a class="text-decoration-none  fw-bolder link-light  link-primary" href="../../../notes/slides/01_02/index.html">
-                      <i class="fas fa-file-alt mr-2 lh-1  text-light "></i>01_02
+                  <div class="d-flex justify-content-end align-items-right border-bottom p-2 ">
+                    <a class="text-decoration-none  link-secondary  link-primary" href="../../../notes/slides/01_02/index.html">
+                      <i class="fas fa-file-alt mr-2 lh-1  text-primary "></i>01_02
                       Basic Customization</a>
-                    <a class=" link-light  flex-fill ml-3 text-right" href="../../../?d=01_02&#">
+                    <a class=" link-secondary  flex-fill ml-3 text-right" href="../../../?d=01_02&#">
                       <i class="fab fa-slideshare"></i>
                     </a>
                   </div>
@@ -103,11 +103,11 @@
                     </a>
                   </div>
                 
-                  <div class="d-flex justify-content-end align-items-right border-bottom p-2 ">
-                    <a class="text-decoration-none  link-secondary  link-primary" href="../../../notes/slides/99_99-copy/index.html">
-                      <i class="fas fa-file-alt mr-2 lh-1  text-primary "></i>99_99-copy
+                  <div class="d-flex justify-content-end align-items-right border-bottom p-2  bg-primary ">
+                    <a class="text-decoration-none  fw-bolder link-light  link-primary" href="../../../notes/slides/99_99-copy/index.html">
+                      <i class="fas fa-file-alt mr-2 lh-1  text-light "></i>99_99-copy
                       Title</a>
-                    <a class=" link-secondary  flex-fill ml-3 text-right" href="../../../?d=99_99-copy&#">
+                    <a class=" link-light  flex-fill ml-3 text-right" href="../../../?d=99_99-copy&#">
                       <i class="fab fa-slideshare"></i>
                     </a>
                   </div>
@@ -125,88 +125,38 @@
 
         <main class="main col col-md-6 col-lg-8">
           <!-- .slide: data-state="layout-title" class="bg-dark"-->
-<h1 id="basic-customization">Basic Customization <a class="direct-link" href="#basic-customization"> </a></h1>
+<h1 id="title">Title <a class="direct-link" href="#title"> </a></h1>
 <div class="slide-link"><a href="URL"><i class="fab fa-slideshare"></i> URL</a></div>
 <blockquote>
 <blockquote></blockquote>
 </blockquote>
-<p>Let's talk a bit about why the basic install looks like it does and how we can customize Tailwind a bit.</p>
-<hr>
-<h1 id="standard-modules">Standard Modules <a class="direct-link" href="#standard-modules"> </a></h1>
-<ul>
-<li><code>@base</code></li>
-<li><code>@components</code></li>
-<li><code>@utilities</code></li>
-</ul>
-<blockquote>
-<blockquote></blockquote>
-</blockquote>
-<p>Our basic CSS file imports three modules.</p>
-<p>The @base styles are defaults for things like the body, anchor tag, box sixing. It also includes a CSS reset tool called Preflight, more of that on the next slide.</p>
-<p>The @component styles consists of mainly media queries for the container.</p>
-<p>@utilities is where the bulk of Tailwind styles live.</p>
-<p>You can see how this gets converted into CSS in the <code>build/css/styles.css</code> file and they can also be found in <code>node_modules/tailwind/dist</code>.</p>
-<hr>
-<h1 id="preflight">Preflight <a class="direct-link" href="#preflight"> </a></h1>
-<ul>
-<li>Opinionated <a href="https://github.com/sindresorhus/modern-normalize">modern-normalize</a></li>
-<li>Margins removed</li>
-<li>Headings, lists unstyled</li>
-<li><code>block-level</code> images</li>
-<li><code>border</code>, <code>button</code> borders</li>
-</ul>
-<p><a href="https://tailwindcss.com/docs/preflight">https://tailwindcss.com/docs/preflight</a></p>
-<blockquote>
-<blockquote></blockquote>
-</blockquote>
-<p>Preflight is an opinionated version of the popular <code>modern-normalize</code> project. It's job is to make different browsers display the same page as close as possible, since browsers often use their own similar default styles. However, preflight goes beyond normalize in that it resets and clears out the styling from some major tags.</p>
-<p>First, it removes all margins from headings and lists. As a designer, I'm almost always overriding the default margins, so pre-flights assumes you'll be doing that anyways.</p>
-<p>Next, it removes all styles from all headings and lists. I'm never happy with those styles anyways and spend a lot of time overwriting things, so once I get past being appalled by this move, it makes sense.</p>
-<p>Images are set to <code>display: block</code> and <code>vertical-align: middle</code>. The default for images is display inline and I almost never want my images to display as inline.</p>
-<p>Two more that get modified are the borders as well as the button styles. These are more for conveniently setting up how the border classes work in Tailwind, assuming that you're going to add a border to buttons and setting the border styles to a one pixel buttons.</p>
-<p>At first, these style changes are really disconcerting, but after a while you'll realize how nice these changes work, so give them a chance.</p>
-<hr>
-<h1 id="preflight-off">Preflight Off <a class="direct-link" href="#preflight-off"> </a></h1>
-<pre><code class="language-js">// tailwind.config.js
-  corePlugins: {
-    preflight: false
-  }
-</code></pre>
-<blockquote>
-<blockquote></blockquote>
-</blockquote>
-<p>If you're not happy with the preflight changes, you can easily turn it off by modifying the corePlugins object in the <code>tailwind.config.js</code> file. Now, this might turn things off that you don't want like give you the browser default serif font, but it can be useful if you're using tailwind with another library or your own resets.</p>
-<p>By the way, corePlugins is where you can also customize</p>
-<hr>
-<h1 id="modifying-styles">Modifying styles <a class="direct-link" href="#modifying-styles"> </a></h1>
-<pre><code class="language-scss">@layer base {
-  h1 {
-    color: #00bff3;
-    @apply text-6xl;
+<h2 id="intro">INTRO <a class="direct-link" href="#intro"> </a></h2>
+<h1 id="customizing-themes">Customizing Themes <a class="direct-link" href="#customizing-themes"> </a></h1>
+<pre><code class="language-js">theme: {
+  fontSize: {
+    'xs': '1rem',
+    'huge': ['10rem', '10.5rem'],
+    'monster': ['12rem', { letterSpacing: '-0.01em', lineHeight: '13rem'}]
   }
 }
 </code></pre>
-<p>Use on <code>base</code>, <code>components</code> or <code>layout</code></p>
 <blockquote>
 <blockquote></blockquote>
 </blockquote>
-<p>You can also modify the base file and override whatever style you want. So, for example we can modify the level one headings so that they match our logo.</p>
-<p>There's also a way to add a style from Tailwind using the <code>@apply</code> directive. This works like a sass mixin and you simply call it using a name from any Tailwind style.</p>
-<p>You can use apply not just to modify something in the base layer, but on any other css you write to base on style</p>
-<p>You can use this same process to create additional components or layouts by using the @layer and @apply directives on components or</p>
+<p>You can also override the font sizes in the <code>tailwind.config.js</code> using the <code>theme.fontSize</code> object. You can speficy just a size  using a string.</p>
+<p>You can choose to just override an existing class or create a new one.</p>
+<p>You can also choose a size and line-height using array notation.</p>
+<p>And if you want to also control the <code>letter-spacing</code> with the <code>line-height</code> you can do that using the notation above.</p>
+<p>Finally, if you want to turn off all of the available custom sizes, you can create an entry in corePlugins.</p>
+<p>You can actually both customize or turn off all of the other properties in this fashion. For the next properties, I'll mention where you can do those in a bit shorter notation.</p>
 <hr>
 <!-- .slide: data-state="layout-title" data-transition="zoom" class="bg-dark"-->
 <h1 id="practice">Practice <a class="direct-link" href="#practice"> </a></h1>
 <div class="btn-group mt-3" role="group" aria-label="Basic example">
-  <a type="button" class="animate__animated animate__backInLeft btn btn-lg btn-exciting text-white" href="https://github.com/LinkedInLearning/tailwind-css-2841311/tree/01_02b" target="_blank">Start</a>
-  <a type="button" class="animate__animated animate__zoomInDown btn btn-lg btn-royal text-white" href="htthttps://github.com/LinkedInLearning/vue3-esst-2834032/compare/01_02b..01_02e" target="_blank">Diff</a>
-  <a type="button" class="animate__animated animate__backInRight animate__slow btn btn-lg btn-primary text-white" href="https://github.com/LinkedInLearning/tailwind-css-2841311/tree/01_02e" target="_blank">End</a>
+  <a type="button" class="animate__animated animate__backInLeft btn btn-lg btn-exciting text-white" href="https://github.com/LinkedInLearning/tailwind-css-2841311/tree/02_01b" target="_blank">Start</a>
+  <a type="button" class="animate__animated animate__zoomInDown btn btn-lg btn-royal text-white" href="htthttps://github.com/LinkedInLearning/vue3-esst-2834032/compare/02_01b..02_01e" target="_blank">Diff</a>
+  <a type="button" class="animate__animated animate__backInRight animate__slow btn btn-lg btn-primary text-white" href="https://github.com/LinkedInLearning/tailwind-css-2841311/tree/02_01e" target="_blank">End</a>
 </div>
-<ol>
-<li>Standard modules<br><code>@base</code>, <code>@components</code>, <code>@utilities</code></li>
-<li>Discussed Preflight</li>
-<li>Modify styles with<br><code>@layer</code>, <code>@apply</code></li>
-</ol>
 <blockquote>
 <blockquote></blockquote>
 </blockquote>
@@ -219,19 +169,10 @@
             <div class="">
                 <ol>
                     
-                    <li><a href="#basic-customization">Basic Customization  </a>
+                    <li><a href="#title">Title  </a>
             		</li>
 
-                    <li><a href="#standard-modules">Standard Modules  </a>
-            		</li>
-
-                    <li><a href="#preflight">Preflight  </a>
-            		</li>
-
-                    <li><a href="#preflight-off">Preflight Off  </a>
-            		</li>
-
-                    <li><a href="#modifying-styles">Modifying styles  </a>
+                    <li><a href="#customizing-themes">Customizing Themes  </a>
             		</li>
 
                     <li><a href="#practice">Practice  </a>
