@@ -247,13 +247,13 @@
 </ul>
 </li>
 </ul>
-<p><a href="https://tailwindcss.com/docs/text-opacity" target="_blank"><code class="code-exciting">Docs</code></a> <a href="https://codepen.io/planetoftheweb/pen/RwGbWWw?editors=1000" target="_blank"><code class="code-royal">Try it</code></a></p>
+<p><a href="https://tailwindcss.com/docs/text-opacity" target="_blank"><code class="code-exciting">Docs</code></a> <a href="https://codepen.io/planetoftheweb/pen/LYRPyLd?editors=1000" target="_blank"><code class="code-royal">Try it</code></a></p>
 <blockquote>
 <blockquote></blockquote>
 </blockquote>
-<p>In addition to the color stregths you can add a text-opacity class to change the transparency of text. The amount is a number and you can see that it goes from 0-100 with a few more steps on the lower until 30 and a few more steps from 90-100.</p>
-<p>A usual you can modify or add to these values by changing either the general opacity or just the opacity of the text.</p>
-<p>You can also turn this feature off in corePlugins using <code>textOpacity</code></p>
+<p>In addition to the color strengths you can add a text-opacity class to change the transparency of text. The amount is a number and you can see that it goes from 0-100 with a few more steps on the lower until 30 and a few more steps from 90-100.</p>
+<p>Something interesting about this text-opacity is that it will only affect the text, not the background color. You're probably aware that changing the opacity on an element is a bit annoying in that it will cause both backgrounds on text, so this is pretty awesome.</p>
+<p>If you look at the example code, you can see that it's actually modifying a</p>
 <hr>
 <!-- .slide: data-state="layout-code-list" -->
 <h1 id="text-alignment">Text Alignment <a class="direct-link" href="#text-alignment"> </a></h1>
@@ -265,6 +265,7 @@
 </ul>
 </li>
 </ul>
+<p><a href="https://tailwindcss.com/docs/text-alignment" target="_blank"><code class="code-exciting">Docs</code></a> <a href="https://codepen.io/planetoftheweb/pen/WNGeXjj?editors=1000" target="_blank"><code class="code-royal">Try it</code></a></p>
 <blockquote>
 <blockquote></blockquote>
 </blockquote>
@@ -274,6 +275,7 @@
 <ul>
 <li><code>underline</code> <code>line-through</code> <code>no-underline</code></li>
 </ul>
+<p><a href="https://tailwindcss.com/docs/text-decoration" target="_blank"><code class="code-exciting">Docs</code></a> <a href="https://codepen.io/planetoftheweb/pen/wvzwPmd?editors=1000" target="_blank"><code class="code-royal">Try it</code></a></p>
 <blockquote>
 <blockquote></blockquote>
 </blockquote>
@@ -284,12 +286,31 @@
 <ul>
 <li><code>uppercase</code> <code>lowercase</code> <code>capitalize</code> <code>normal-case</code></li>
 </ul>
+<p><a href="https://tailwindcss.com/docs/text-decoration" target="_blank"><code class="code-exciting">Docs</code></a> <a href="https://codepen.io/planetoftheweb/pen/gOwYXBL?editors=1000" target="_blank"><code class="code-royal">Try it</code></a></p>
 <blockquote>
 <blockquote></blockquote>
 </blockquote>
-<p>These options let you set values for the <code>text-transform</code> property. the values here are what they're set to and they are pretty much self explanatory, so uppercase makes the text uppercase and so on and so forth, except for <code>normal-case</code>, which sets the value of <code>text-transform</code> to none.</p>
+<p>These options let you set values for the <code>text-transform</code> property. the values are pretty self explanatory, so uppercase makes the text uppercase and so on and so forth, except for <code>normal-case</code>, which sets the value of <code>text-transform</code> to none.</p>
 <hr>
 <h1 id="text-overflow">Text Overflow <a class="direct-link" href="#text-overflow"> </a></h1>
+<ul>
+<li><code>overflow(-DIR)(-TYP)</code>
+<ul>
+<li><strong>DIR</strong> (overflow)<br><br>
+<code>x</code> <code>y</code></li>
+<li><strong>TYP</strong> (overflow)<br><br>
+<code>auto</code> <code>hidden</code> <code>visible</code> <code>scroll</code></li>
+</ul>
+</li>
+</ul>
+<p><a href="https://tailwindcss.com/docs/overflow" target="_blank"><code class="code-exciting">Docs</code></a> <a href="https://codepen.io/planetoftheweb/pen/WNGeWxJ?editors=1000" target="_blank"><code class="code-royal">Try it</code></a></p>
+<blockquote>
+<blockquote></blockquote>
+</blockquote>
+<p>Overflow controls what happens once an element gets too big to hold it's container.</p>
+<p>You can use the overflow class and then optionally add a direction, which is x or y. This will force the overflow to happen only on a specific direction.</p>
+<p>Then you can add a type, which is the value of the parameters.  That can be auto, which is the default, where it automatically tries to calculate what you need, or hidden, where it hides whatever the overflow is, visible, where it shows the content ignoring the container, scroll, where it gives you scrollbars.</p>
+<p>If you take a look at the example, you can see that I've had to adjust a few of the elements being displayed depending on what I was trying to show. The yellow is the background color for the container.</p>
 <hr>
 <!-- .slide: data-state="layout-title" data-transition="zoom" class="bg-dark"-->
 <h1 id="practice">Practice <a class="direct-link" href="#practice"> </a></h1>
