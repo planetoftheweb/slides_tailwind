@@ -879,15 +879,22 @@ footer.fadeout {
  *********************************************/
 
 .reveal-viewport.layout-code-list strong {
-  font-size: 1.5em;
   color: var(--bs-orange);
+}
+
+.reveal-viewport.layout-code-list p {
+  margin: 0;
+  padding: 0;
 }
 
 .reveal-viewport.layout-code-list ul li,
 .reveal-viewport.layout-code-list ol li {
+  font-size: 0.9em;
+  list-style: none;
   margin-top: 0.5em;
-  line-height: 120%;
+  line-height: 110%;
   font-weight: 300;
+  white-space: wrap;
 }
 
 .reveal-viewport.layout-code-list ul ul,
@@ -912,7 +919,7 @@ footer.fadeout {
   font-weight: 300;
 }
 .reveal-viewport.layout-code-list ul li ul li:nth-child(2) code {
-  background-color: var(--bs-danger);
+  background-color: var(--bs-info);
   color: var(--bs-light);
   font-weight: 300;
 }
@@ -922,10 +929,9 @@ footer.fadeout {
   font-weight: 300;
 }
 .reveal-viewport.layout-code-list ul li ul li:nth-child(4) code {
-  background-color: var(--bs-warning);
+  background-color: var(--bs-danger);
   color: var(--bs-light);
   font-weight: 300;
-  color: var(--bs-dark) !important;
 }
 .reveal-viewport.layout-code-list ul li ul li:nth-child(5) code {
   background-color: var(--bs-info);

@@ -121,11 +121,11 @@
                     </a>
                   </div>
                 
-                  <div class="d-flex justify-content-end align-items-right border-bottom p-2 ">
-                    <a class="text-decoration-none  link-secondary  link-primary" href="../../../notes/slides/02_08/index.html">
-                      <i class="fas fa-file-alt mr-2 lh-1  text-primary "></i>02_08
+                  <div class="d-flex justify-content-end align-items-right border-bottom p-2  bg-primary ">
+                    <a class="text-decoration-none  fw-bolder link-light  link-primary" href="../../../notes/slides/02_08/index.html">
+                      <i class="fas fa-file-alt mr-2 lh-1  text-light "></i>02_08
                       Divide</a>
-                    <a class=" link-secondary  flex-fill ml-3 text-right" href="../../../?d=02_08&#">
+                    <a class=" link-light  flex-fill ml-3 text-right" href="../../../?d=02_08&#">
                       <i class="fab fa-slideshare"></i>
                     </a>
                   </div>
@@ -139,11 +139,11 @@
                     </a>
                   </div>
                 
-                  <div class="d-flex justify-content-end align-items-right border-bottom p-2  bg-primary ">
-                    <a class="text-decoration-none  fw-bolder link-light  link-primary" href="../../../notes/slides/99_99-copy/index.html">
-                      <i class="fas fa-file-alt mr-2 lh-1  text-light "></i>99_99-copy
+                  <div class="d-flex justify-content-end align-items-right border-bottom p-2 ">
+                    <a class="text-decoration-none  link-secondary  link-primary" href="../../../notes/slides/99_99-copy/index.html">
+                      <i class="fas fa-file-alt mr-2 lh-1  text-primary "></i>99_99-copy
                       Title</a>
-                    <a class=" link-light  flex-fill ml-3 text-right" href="../../../?d=99_99-copy&#">
+                    <a class=" link-secondary  flex-fill ml-3 text-right" href="../../../?d=99_99-copy&#">
                       <i class="fab fa-slideshare"></i>
                     </a>
                   </div>
@@ -161,32 +161,162 @@
 
         <main class="main col col-md-6 col-lg-8">
           <!-- .slide: data-state="layout-title" class="bg-dark"-->
-<h1 id="title">Title <a class="direct-link" href="#title"> </a></h1>
+<h1 id="divide">Divide <a class="direct-link" href="#divide"> </a></h1>
 <div class="slide-link"><a href="URL"><i class="fab fa-slideshare"></i> URL</a></div>
 <blockquote>
 <blockquote></blockquote>
 </blockquote>
-<h2 id="intro">INTRO <a class="direct-link" href="#intro"> </a></h2>
-<h1 id="customizing-themes">Customizing Themes <a class="direct-link" href="#customizing-themes"> </a></h1>
-<pre><code class="language-js">theme: {
-  fontSize: {
-    'xs': '1rem',
-    'huge': ['10rem', '10.5rem'],
-    'monster': ['12rem', { letterSpacing: '-0.01em', lineHeight: '13rem'}]
-  }
-}
-</code></pre>
+<p>The divide classes allow you to easily set up borders between elements</p>
+<hr>
+<h1 id="divide-width">Divide Width <a class="direct-link" href="#divide-width"> </a></h1>
+<ul>
+<li><code>border(-DIR)(-AMT)</code>
+<ul>
+<li><strong>SID</strong><br><br>
+<code>x</code> <code>y</code></li>
+<li><strong>AMT</strong> (border)<br><br>
+<code>0</code> <code>2</code> <code>4</code> <code>8</code> <code>reverse</code></li>
+</ul>
+</li>
+</ul>
+<p><a href="https://tailwindcss.com/docs/divide-width" target="_blank"><code class="code-exciting">Docs</code></a> <a href="https://codepen.io/planetoftheweb/pen/ExgVzEY?editors=1000" target="_blank"><code class="code-royal">Try it</code></a></p>
 <blockquote>
 <blockquote></blockquote>
 </blockquote>
-<p>You can also override the font sizes in the <code>tailwind.config.js</code> using the <code>theme.fontSize</code> object. You can speficy just a size  using a string.</p>
-<p>You can choose to just override an existing class or create a new one.</p>
-<p>You can also choose a size and line-height using array notation.</p>
-<p>And if you want to also control the <code>letter-spacing</code> with the <code>line-height</code> you can do that using the notation above.</p>
-<p>Finally, if you want to turn off all of the available custom sizes, you can create an entry in corePlugins.</p>
-<p>You can actually both customize or turn off all of the other properties in this fashion. For the next properties, I'll mention where you can do those in a bit shorter notation.</p>
+<p>You can set the direction or the width of the lines that will appear between elements and Tailwind will automatically add the borders in between the elements. Although there is no single pixel border, if you simply use <code>divide-x</code> or <code>divide-y</code> without an amount, you'll get one pixel.</p>
+<p>You may also need some classes like <code>inline-block</code> or a span tag for divides that run in the x order.</p>
+<p>There's an interesting additional reverse option here. If you're using flexbox to reverse the position of the elements, this extra class will make sure that the borders appear in the right place with something like <code>divide-y-reverse flex flex-col-reverse</code></p>
 <hr>
-<!-- .slide: data-state="layout-title" data-transition="zoom" class="bg-dark"-->
+<h1 id="divide-opacity">Divide Opacity <a class="direct-link" href="#divide-opacity"> </a></h1>
+<ul>
+<li><code>divide-opacity-AMT</code>
+<ul>
+<li><strong>AMT</strong> (opacity/100)<br><br>
+<code>0</code> <code>5</code> <code>10</code> <code>20</code> <code>25</code> <code>30</code> <code>40</code> <code>50</code><br><code>60</code> <code>70</code> <code>75</code> <code>80</code> <code>90</code> <code>95</code> <code>100</code></li>
+</ul>
+</li>
+</ul>
+<p><a href="https://tailwindcss.com/docs/divide-opacity" target="_blank"><code class="code-exciting">Docs</code></a> <a href="https://codepen.io/planetoftheweb/pen/VwKeKwG?editors=1000" target="_blank"><code class="code-royal">Try it</code></a></p>
+<blockquote>
+<blockquote></blockquote>
+</blockquote>
+<p>Divide opacity of course lets you control the opacity of the divides, you can include values from 0 to 100% and notice that there are more values at the beginning and the end. The 0 and 100 values are to reset things if they already have values, which you usually do in dynamic applications.</p>
+<hr>
+<h1 id="divide-color">Divide Color <a class="direct-link" href="#divide-color"> </a></h1>
+<ul>
+<li><code>border-COL-STR</code>
+<ul>
+<li><strong>COL</strong> (border-color)<br><br>
+<code>transparent</code> <code>current</code> <code>black</code> <code>white</code><br><br>
+<code>gray</code> <code>red</code> <code>yellow</code> <code>green</code> <code>blue</code> <code>indigo</code> <code>purple</code> <code>pink</code></li>
+<li><strong>AMT</strong><br><br>
+<code>100</code> <code>200</code> <code>300</code> <code>400</code> <code>500</code> <code>600</code> <code>700</code> <code>800</code> <code>900</code></li>
+</ul>
+</li>
+</ul>
+<p><a href="https://tailwindcss.com/docs/divide-color" target="_blank"><code class="code-exciting">Docs</code></a> <a href="https://codepen.io/planetoftheweb/pen/OJRMpZV?editors=1000" target="_blank"><code class="code-royal">Try it</code></a></p>
+<blockquote>
+<blockquote></blockquote>
+</blockquote>
+<p>The border colors just as you'd expect are trasnparent, black white and current...which sets the color to whatever the current color is set to. Plus the traditional gray, red, yellow, etc. and the strengths go from 100 to 900.</p>
+<hr>
+<h1 id="divide-style">Divide Style <a class="direct-link" href="#divide-style"> </a></h1>
+<ul>
+<li><code>divide-(STL)</code>
+<ul>
+<li><strong>STL</strong> (divide-style)<br><br>
+<code>none</code> <code>solid</code> <code>dashed</code> <code>dotted</code> <code>double</code></li>
+</ul>
+</li>
+</ul>
+<p><a href="https://tailwindcss.com/docs/divide-style" target="_blank"><code class="code-exciting">Docs</code></a> <a href="https://codepen.io/planetoftheweb/pen/vYXGBJN" target="_blank"><code class="code-royal">Try it</code></a></p>
+<blockquote>
+<blockquote></blockquote>
+</blockquote>
+<p>There's a few border styles available. Interstingly enough the double style doesn't work well unless the border is set to 4 or 8 pixels.</p>
+<hr>
+<h1 id="ring-width">Ring Width <a class="direct-link" href="#ring-width"> </a></h1>
+<ul>
+<li><code>ring(-AMT)</code>
+<ul>
+<li><strong>AMT</strong> (--tw-ring-offset-width)<br><br>
+<code>0</code> <code>1</code> <code>2</code> <code>4</code> <code>8</code> <code>inset</code></li>
+</ul>
+</li>
+</ul>
+<p><a href="https://tailwindcss.com/docs/ring-width" target="_blank"><code class="code-exciting">Docs</code></a> <a href="https://codepen.io/planetoftheweb/pen/mdreowK?editors=1000" target="_blank"><code class="code-royal">Try it</code></a></p>
+<blockquote>
+<blockquote></blockquote>
+</blockquote>
+<p>Rings are another type of style. It's similar to borders, but it uses box-shadows instead.</p>
+<p>There are four sizes besides 0, but interestingly enough, if you just use ring without a size you get an extra size, which is the equivalent of three pixels. You can also add an inset option to any of these sizes to make the box shadow display inside.</p>
+<hr>
+<h1 id="ring-opacity">Ring Opacity <a class="direct-link" href="#ring-opacity"> </a></h1>
+<ul>
+<li><code>ring-opacity-AMT</code>
+<ul>
+<li><strong>AMT</strong> (--tw-ring-opacity)<br><br>
+<code>0</code> <code>5</code> <code>10</code> <code>20</code> <code>25</code> <code>30</code> <code>40</code> <code>50</code><br><code>60</code> <code>70</code> <code>75</code> <code>80</code> <code>90</code> <code>95</code> <code>100</code></li>
+</ul>
+</li>
+</ul>
+<p><a href="https://tailwindcss.com/docs/ring-opacity" target="_blank"><code class="code-exciting">Docs</code></a> <a href="https://codepen.io/planetoftheweb/pen/LYRpawm?editors=1000" target="_blank"><code class="code-royal">Try it</code></a></p>
+<blockquote>
+<blockquote></blockquote>
+</blockquote>
+<p>Opacity is similar to the border opacity with each value listed here being the equivalent in decimal measurements. So 20 means an opacity of .2. Again the nice thing here is that you can do the opacity of just the outline in the same place that you set the background color and border with. It's part of Tailwind's charm by using a variable.</p>
+<hr>
+<h1 id="ring-color">Ring Color <a class="direct-link" href="#ring-color"> </a></h1>
+<ul>
+<li><code>ring-COL-STR</code>
+<ul>
+<li><strong>COL</strong> (--tw-ring-color)<br><br>
+<code>transparent</code> <code>current</code> <code>black</code> <code>white</code><br><br>
+<code>gray</code> <code>red</code> <code>yellow</code> <code>green</code> <code>blue</code> <code>indigo</code> <code>purple</code> <code>pink</code></li>
+<li><strong>AMT</strong> (--tw-ring-opacity)<br><br>
+<code>100</code> <code>200</code> <code>300</code> <code>400</code> <code>500</code> <code>600</code> <code>700</code> <code>800</code> <code>900</code></li>
+</ul>
+</li>
+</ul>
+<p><a href="https://tailwindcss.com/docs/ring-color" target="_blank"><code class="code-exciting">Docs</code></a> <a href="https://codepen.io/planetoftheweb/pen/XWjmQpV?editors=1000" target="_blank"><code class="code-royal">Try it</code></a></p>
+<blockquote>
+<blockquote></blockquote>
+</blockquote>
+<p>Colors and it's options are exactly the same as borders, so there's not much to say here, other than the default color for a ring is blue, so if you don't specify a color, but have a ring, it will be a light blue.</p>
+<p>Just like with the ring color, a variable controls the color so that you can set all options at the same level.</p>
+<hr>
+<h1 id="ring-offset-width">Ring Offset Width <a class="direct-link" href="#ring-offset-width"> </a></h1>
+<ul>
+<li><code>ring-offset-WDT</code>
+<ul>
+<li><strong>WDT</strong>  (--tw-ring-offset-width)<br><br>
+<code>0</code> <code>1</code> <code>2</code> <code>4</code> <code>8</code></li>
+</ul>
+</li>
+</ul>
+<p><a href="https://tailwindcss.com/docs/ring-offset-width" target="_blank"><code class="code-exciting">Docs</code></a> <a href="https://codepen.io/planetoftheweb/pen/RwGWOjX?editors=1000" target="_blank"><code class="code-royal">Try it</code></a></p>
+<blockquote>
+<blockquote></blockquote>
+</blockquote>
+<p>The offset width lets you simulate an offset of the ring by adding a solid white border of a certain size.</p>
+<hr>
+<h1 id="ring-offset-color">Ring Offset Color <a class="direct-link" href="#ring-offset-color"> </a></h1>
+<ul>
+<li><code>ring-offset-COL-STR</code>
+<ul>
+<li><strong>COL</strong> (--tw-ring-offset-color)<br><br>
+<code>transparent</code> <code>current</code> <code>black</code> <code>white</code><br><br>
+<code>gray</code> <code>red</code> <code>yellow</code> <code>green</code> <code>blue</code> <code>indigo</code> <code>purple</code> <code>pink</code></li>
+</ul>
+</li>
+</ul>
+<p><a href="https://tailwindcss.com/docs/ring-color" target="_blank"><code class="code-exciting">Docs</code></a> <a href="https://codepen.io/planetoftheweb/pen/qBaOwMg" target="_blank"><code class="code-royal">Try it</code></a></p>
+<blockquote>
+<blockquote></blockquote>
+</blockquote>
+<p>You can also set the color of the ring's space to whatever color you want, which gives you some other options for styles. The color are the usual variables, which includes black, white and transparent, plus the current color option as well.</p>
+<hr>
+<!-- .slide: data-state="layout-title" class="bg-dark"-->
 <h1 id="practice">Practice <a class="direct-link" href="#practice"> </a></h1>
 <div class="btn-group mt-3" role="group" aria-label="Basic example">
   <a type="button" class="animate__animated animate__backInLeft btn btn-lg btn-exciting text-white" href="https://github.com/LinkedInLearning/tailwind-css-2841311/tree/02_01b" target="_blank">Start</a>
@@ -205,10 +335,34 @@
             <div class="">
                 <ol>
                     
-                    <li><a href="#title">Title  </a>
+                    <li><a href="#divide">Divide  </a>
             		</li>
 
-                    <li><a href="#customizing-themes">Customizing Themes  </a>
+                    <li><a href="#divide-width">Divide Width  </a>
+            		</li>
+
+                    <li><a href="#divide-opacity">Divide Opacity  </a>
+            		</li>
+
+                    <li><a href="#divide-color">Divide Color  </a>
+            		</li>
+
+                    <li><a href="#divide-style">Divide Style  </a>
+            		</li>
+
+                    <li><a href="#ring-width">Ring Width  </a>
+            		</li>
+
+                    <li><a href="#ring-opacity">Ring Opacity  </a>
+            		</li>
+
+                    <li><a href="#ring-color">Ring Color  </a>
+            		</li>
+
+                    <li><a href="#ring-offset-width">Ring Offset Width  </a>
+            		</li>
+
+                    <li><a href="#ring-offset-color">Ring Offset Color  </a>
             		</li>
 
                     <li><a href="#practice">Practice  </a>
