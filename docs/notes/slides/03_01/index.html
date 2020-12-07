@@ -52,8 +52,26 @@
                   <div class="d-flex justify-content-end align-items-right border-bottom p-2 ">
                     <a class="text-decoration-none  link-secondary  link-primary" href="../../../notes/slides/01_02/index.html">
                       <i class="fas fa-file-alt mr-2 lh-1  text-primary "></i>01_02
-                      Basic Customization</a>
+                      Basic Configuration</a>
                     <a class=" link-secondary  flex-fill ml-3 text-right" href="../../../?d=01_02&#">
+                      <i class="fab fa-slideshare"></i>
+                    </a>
+                  </div>
+                
+                  <div class="d-flex justify-content-end align-items-right border-bottom p-2 ">
+                    <a class="text-decoration-none  link-secondary  link-primary" href="../../../notes/slides/01_03/index.html">
+                      <i class="fas fa-file-alt mr-2 lh-1  text-primary "></i>01_03
+                      Variants</a>
+                    <a class=" link-secondary  flex-fill ml-3 text-right" href="../../../?d=01_03&#">
+                      <i class="fab fa-slideshare"></i>
+                    </a>
+                  </div>
+                
+                  <div class="d-flex justify-content-end align-items-right border-bottom p-2 ">
+                    <a class="text-decoration-none  link-secondary  link-primary" href="../../../notes/slides/01_04/index.html">
+                      <i class="fas fa-file-alt mr-2 lh-1  text-primary "></i>01_04
+                      Configuring Classes</a>
+                    <a class=" link-secondary  flex-fill ml-3 text-right" href="../../../?d=01_04&#">
                       <i class="fab fa-slideshare"></i>
                     </a>
                   </div>
@@ -151,17 +169,8 @@
                   <div class="d-flex justify-content-end align-items-right border-bottom p-2  bg-primary ">
                     <a class="text-decoration-none  fw-bolder link-light  link-primary" href="../../../notes/slides/03_01/index.html">
                       <i class="fas fa-file-alt mr-2 lh-1  text-light "></i>03_01
-                      Title</a>
+                      Container</a>
                     <a class=" link-light  flex-fill ml-3 text-right" href="../../../?d=03_01&#">
-                      <i class="fab fa-slideshare"></i>
-                    </a>
-                  </div>
-                
-                  <div class="d-flex justify-content-end align-items-right border-bottom p-2 ">
-                    <a class="text-decoration-none  link-secondary  link-primary" href="../../../notes/slides/99_99-copy/index.html">
-                      <i class="fas fa-file-alt mr-2 lh-1  text-primary "></i>99_99-copy
-                      Title</a>
-                    <a class=" link-secondary  flex-fill ml-3 text-right" href="../../../?d=99_99-copy&#">
                       <i class="fab fa-slideshare"></i>
                     </a>
                   </div>
@@ -179,24 +188,27 @@
 
         <main class="main col col-md-6 col-lg-8">
           <!-- .slide: data-state="layout-title" class="bg-dark"-->
-<h1 id="title">Title <a class="direct-link" href="#title"> </a></h1>
+<h1 id="container">Container <a class="direct-link" href="#container"> </a></h1>
 <div class="slide-link"><a href="URL"><i class="fab fa-slideshare"></i> URL</a></div>
 <blockquote>
 <blockquote></blockquote>
 </blockquote>
-<h2 id="intro">INTRO <a class="direct-link" href="#intro"> </a></h2>
 <hr>
-<!-- .slide: data-state="layout-title" data-transition="zoom" class="bg-dark"-->
-<h1 id="practice">Practice <a class="direct-link" href="#practice"> </a></h1>
-<div class="btn-group mt-3" role="group" aria-label="Basic example">
-  <a type="button" class="animate__animated animate__backInLeft btn btn-lg btn-exciting text-white" href="https://github.com/LinkedInLearning/tailwind-css-2841311/tree/02_01b" target="_blank">Start</a>
-  <a type="button" class="animate__animated animate__zoomInDown btn btn-lg btn-royal text-white" href="htthttps://github.com/LinkedInLearning/vue3-esst-2834032/compare/02_01b..02_01e" target="_blank">Diff</a>
-  <a type="button" class="animate__animated animate__backInRight animate__slow btn btn-lg btn-primary text-white" href="https://github.com/LinkedInLearning/tailwind-css-2841311/tree/02_01e" target="_blank">End</a>
-</div>
+<h1 id="container-1">Container <a class="direct-link" href="#container-1"> </a></h1>
+<ul>
+<li><code>container(-SIZ)</code>
+<ul>
+<li><strong>AMT</strong><br><br>
+<code>sm</code>(640px) <code>md</code>(768px) <code>lg</code>(1024px) <code>xl</code>(1280px) <code>2xl</code>(1536px)</li>
+</ul>
+</li>
+</ul>
+<p><a href="https://tailwindcss.com/docs/box-shadow" target="_blank"><code class="code-exciting">Docs</code></a> <a href="https://codepen.io/planetoftheweb/pen/KKgzXpq?editors=1000" target="_blank"><code class="code-royal">Try it</code></a></p>
 <blockquote>
 <blockquote></blockquote>
 </blockquote>
-<p>Here's where you can find what we did in this video.</p>
+<p>Tailwind has a simple way of adding drop shadows to box elements. There are two special sizes. none, which serves as a reset and inner which places a slight shadow effect inside the box element. It's important to note that you can't make any of the other sizes an inner size.</p>
+<p>Then there are the traditional sizes <code>sm</code>, <code>md</code>, <code>lg</code>, <code>xl</code> and <code>2xl</code>. If you just use the keyword shadow without the size, you get a shadow that's 1 pixels wide and 3 pixels to the right. You can see them at work in the example.</p>
 
         </main>
         <aside class="aside aside-supplemental col col-md-3 col-lg-2 d-none d-md-block">
@@ -205,10 +217,10 @@
             <div class="">
                 <ol>
                     
-                    <li><a href="#title">Title  </a>
+                    <li><a href="#container">Container  </a>
             		</li>
 
-                    <li><a href="#practice">Practice  </a>
+                    <li><a href="#container-1">Container  </a>
             		</li>
                 </ol>
             </div>
