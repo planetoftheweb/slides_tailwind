@@ -1065,8 +1065,8 @@ footer.fadeout {
   background: var(--bs-royal);
   opacity: 0;
   font-family: 'Source Code Pro', 'Courier New', Courier, monospace;
-  animation: slideOutLink 0.7s 6.5s ease-in-out backwards,
-    slideInLink 0.7s 1.5s ease-in-out backwards;
+  animation: slideOutLink 1s 6.5s ease-in-out backwards,
+    slideInLink 0.7s 2s ease-in-out backwards;
   font-size: 0.5em !important;
   display: flex !important;
   align-items: center !important;
