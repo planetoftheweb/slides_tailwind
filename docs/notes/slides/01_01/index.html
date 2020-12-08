@@ -222,7 +222,7 @@
 <p>If you need help working with these tools, do a search for PostCSS, NPM and Gulp in the library. Otherwise, if you're comfortable with these pre-requisites, let's do this.</p>
 <hr>
 <h1 id="using-a-cdn">Using a CDN <a class="direct-link" href="#using-a-cdn"> </a></h1>
-<pre><code>&lt;link href=&quot;https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css&quot; rel=&quot;stylesheet&quot;&gt;
+<pre><code>&lt;link href=&quot;https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css&quot; rel=&quot;stylesheet&quot;&gt;
 </code></pre>
 <ul>
 <li>No customization</li>
@@ -239,13 +239,14 @@
 <hr>
 <h1 id="extensions-for-vscode">Extensions for VSCode <a class="direct-link" href="#extensions-for-vscode"> </a></h1>
 <ul>
+<li><a href="https://marketplace.visualstudio.com/items?itemName=cpylua.language-postcss">PostCSS Language Support</a></li>
 <li><a href="https://marketplace.visualstudio.com/items?itemName=bradlc.vscode-tailwindcss">Tailwind CSS IntelliSense</a></li>
 <li><a href="https://marketplace.visualstudio.com/items?itemName=austenc.tailwind-docs">Tailwind Docs</a></li>
 </ul>
 <blockquote>
 <blockquote></blockquote>
 </blockquote>
-<p>Here's a couple of Visual Studio Code extensions you might consider installing.</p>
+<p>Here's a few Visual Studio Code extensions you might consider installing.</p>
 <p>First is one that should be pretty obvious and that's intellisense for VS Code. That's so that you get recommendations as you type code.</p>
 <p>The second is a quick way to get to the documentation. You can find these in the Visual Studio Marketplace, or directly under extensions in Visual Studio Code.</p>
 <hr>
@@ -263,27 +264,32 @@ npm i postcss autoprefixer tailwindcss gulp gulp-postcss browser-sync
 <hr>
 <!-- .slide: data-state="layout-longcode" -->
 <h1 id="create-a-gulpfile.js">Create a <strong>gulpfile.js</strong> <a class="direct-link" href="#create-a-gulpfile.js"> </a></h1>
-<pre><code class="language-[1-5|7-18|20-23|25-33|35-36]">  browserSync = require('browser-sync').create(),
-  postcss = require('gulp-postcss'),
-  source = './src/',
-  dest = './build/';
+<pre><code class="language-[1-7|9-20|22-26|28-36|38-39]">const gulp = require(&quot;gulp&quot;),
+  browserSync = require(&quot;browser-sync&quot;).create(),
+  postcss = require(&quot;gulp-postcss&quot;),
+  source = &quot;./src/&quot;,
+  dest = &quot;./build/&quot;;
 
 function html() {
-  return gulp.src(dest + '**/*.html');
+  return gulp.src(dest + &quot;**/*.html&quot;);
 }
 
 function styles() {
-  return gulp.src(source + '**/*.css')
-    .pipe(postcss([
-      require('tailwindcss'),
-      require('autoprefixer'),
-    ]))
-    .pipe(gulp.dest(dest))
+  return gulp
+    .src(source + &quot;**/*.css&quot;)
+    .pipe(postcss([require(&quot;tailwindcss&quot;), require(&quot;autoprefixer&quot;)]))
+    .pipe(gulp.dest(dest));
 }
 
 function watch() {
-  gulp.watch(source + 'css/**/*.css', styles).on('change', browserSync.reload);
-  gulp.watch(dest + 'index.html', html).on('change', browserSync.reload);
+  gulp.watch(source + &quot;css/**/*.css&quot;, styles).on(&quot;change&quot;, browserSync.reload);
+  gulp.watch(dest + &quot;index.html&quot;, html).on(&quot;change&quot;, browserSync.reload);
+  gulp
+    .watch(
+      [&quot;./tailwind.config.js&quot;, &quot;./postcss.config.js&quot;, &quot;./gulpfile.js&quot;],
+      styles
+    )
+    .on(&quot;change&quot;, browserSync.reload);
 }
 
 function server() {
@@ -293,11 +299,11 @@ function server() {
       baseDir: dest,
     },
   });
-  styles();
+  watch();
 }
 
-let build = gulp.series(gulp.parallel(styles, html), server, watch);
-gulp.task('default', build);
+var build = gulp.series(gulp.parallel(styles, html), server, watch);
+gulp.task(&quot;default&quot;, build);
 
 </code></pre>
 <p><strong>Search for:</strong> <a href="https://www.linkedin.com/learning/search?keywords=gulp.js">Gulp.js</a> on LinkedIn Learning</p>
@@ -322,22 +328,18 @@ gulp.task('default', build);
 <hr>
 <!-- .slide: data-state="layout-longcode" -->
 <h1 id="html-template">HTML Template <a class="direct-link" href="#html-template"> </a></h1>
-<pre><code class="language-html">&lt;script type=&quot;text/template&quot;&gt;
-&lt;!DOCTYPE html&gt;
-&lt;html lang=&quot;en&quot;&gt;
-&lt;head&gt;
+<pre><code class="language-html">&amp;lt;!DOCTYPE html&gt;
+&amp;lt;html lang=&quot;en&quot;&gt;
+&amp;lt;head&gt;
   &lt;meta charset=&quot;UTF-8&quot;&gt;
   &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;
   &lt;link rel=&quot;stylesheet&quot; href=&quot;css/styles.css&quot;&gt;
   &lt;title&gt;Tailwind CSS&lt;/title&gt;
-&lt;/head&gt;
-&lt;body&gt;
-
+&amp;lt;/head&gt;
+&amp;lt;body&gt;
 &lt;!-- Content Starts Here --&gt;
 
-&lt;img src=&quot;images/Logo.svg&quot; alt=&quot;Binaryville Logo&quot;&gt;
 &lt;h1&gt;About Binaryville&lt;/h1&gt;
-
 &lt;p&gt;On the edge of the world stands the progressive town of Binaryville, where technology is a way of life. The robots who
 live, work, and play in Binaryville learn from an early age that magic is made simply by combining 0's and 1's. For the
 Binaryville robots, every waking thought and every sleeping dream is consumed with unique permutations…and endless
@@ -345,9 +347,8 @@ possibilities.&lt;/p&gt;
 
 &lt;!-- Content Ends Here --&gt;
 
-&lt;/body&gt;
-&lt;/html&gt;
-&lt;/script&gt;
+&amp;lt;/body&gt;
+&amp;lt;/html&gt;
 </code></pre>
 <blockquote>
 <blockquote></blockquote>
@@ -369,9 +370,7 @@ possibilities.&lt;/p&gt;
 <!-- .slide: data-state="layout-title" data-transition="zoom" class="bg-dark"-->
 <h1 id="practice">Practice <a class="direct-link" href="#practice"> </a></h1>
 <div class="btn-group mt-3" role="group" aria-label="Basic example">
-  <a type="button" class="animate__animated animate__backInLeft btn btn-lg btn-exciting text-white" href="https://github.com/LinkedInLearning/tailwind-css-2841311/tree/01_01b" target="_blank">Start</a>
-  <a type="button" class="animate__animated animate__zoomInDown btn btn-lg btn-royal text-white" href="htthttps://github.com/LinkedInLearning/vue3-esst-2834032/compare/01_01b..01_01e" target="_blank">Diff</a>
-  <a type="button" class="animate__animated animate__backInRight animate__slow btn btn-lg btn-primary text-white" href="https://github.com/LinkedInLearning/tailwind-css-2841311/tree/01_01e" target="_blank">End</a>
+  <a type="button" class="animate__animated animate__backInRight animate__slow btn btn-lg btn-primary text-white" href="https://github.com/LinkedInLearning/tailwind-css-2841311/tree/01_01e" target="_blank">Github Repo</a>
 </div>
 <ol>
 <li>Looked at installation options</li>
