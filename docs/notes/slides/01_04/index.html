@@ -77,6 +77,15 @@
                   </div>
                 
                   <div class="d-flex justify-content-end align-items-right border-bottom p-2 ">
+                    <a class="text-decoration-none  link-secondary  link-primary" href="../../../notes/slides/01_05/index.html">
+                      <i class="fas fa-file-alt mr-2 lh-1  text-primary "></i>01_05
+                      Extracting Components</a>
+                    <a class=" link-secondary  flex-fill ml-3 text-right" href="../../../?d=01_05&#">
+                      <i class="fab fa-slideshare"></i>
+                    </a>
+                  </div>
+                
+                  <div class="d-flex justify-content-end align-items-right border-bottom p-2 ">
                     <a class="text-decoration-none  link-secondary  link-primary" href="../../../notes/slides/02_01/index.html">
                       <i class="fas fa-file-alt mr-2 lh-1  text-primary "></i>02_01
                       Font Directives</a>
@@ -195,11 +204,9 @@
 </blockquote>
 <p>Using the <code>tailwind.config.js</code> file you can configure just about any part of Tailwind, we'll take a look at an example with breakpoints, but this applies to any other classes.</p>
 <hr>
-<h1 id="container">Container <a class="direct-link" href="#container"> </a></h1>
-<ul>
-<li><code>tailwind.config.js</code></li>
-</ul>
-<pre><code>// tailwind.config.js
+<h1 id="modifying-containers">Modifying Containers <a class="direct-link" href="#modifying-containers"> </a></h1>
+<pre><code class="language-js">// tailwind.config.js
+
 module.exports = {
   theme: {
     screens: {
@@ -212,49 +219,41 @@ module.exports = {
   }
 }
 </code></pre>
+<p><a href="https://tailwindcss.com/docs/breakpoints" target="_blank"><code class="code-exciting">Docs</code></a></p>
 <blockquote>
 <blockquote></blockquote>
 </blockquote>
-<p>You can add a container class to an element and Tailwind will make layouts snap to those breakpoints. The breakpoints are important because you can use them as variants to create responsive content.</p>
-<p>Containers don't add any padding to elements, so you have to do that manually, they don't auto center either, so take a look at the example for how you might do this.</p>
+<p>Here is how the default breakpoints are set up. You can modify the values for any of these breakpoints, add more of them, or rename the existing breakpoints to whatever you want.</p>
+<p>You can take a look at the documentation for more samples.</p>
 <hr>
-<h1 id="media-query-variants">Media Query Variants <a class="direct-link" href="#media-query-variants"> </a></h1>
-<p><code>sm</code> <code>md</code> <code>lg</code> <code>xl</code> <code>2xl</code><br><br>
-<code>motion-safe</code> <code>motion-reduce</code></p>
-<p><a href="https://tailwindcss.com/docs/responsive-design" target="_blank"><code class="code-exciting">Docs</code></a></p>
+<h1 id="adding-variants">Adding Variants <a class="direct-link" href="#adding-variants"> </a></h1>
+<pre><code class="language-js">// tailwind.config.js
+
+module.exports = {
+  variants: {
+    extend: {
+      backgroundColor: ['active']
+    }
+  }
+}
+</code></pre>
+<p><a href="https://tailwindcss.com/docs/configuring-variants#overriding-default-variants" target="_blank"><code class="code-exciting">Docs</code></a></p>
 <blockquote>
 <blockquote></blockquote>
 </blockquote>
-<p>There are a number of variants that act as modifiers. When the browser reaches a certain state they can trigger a specific class. Some variants work with most classes and some work with only certain classes.</p>
-<p>There's a couple of media query variants I'm listing here that will activate depending on the state of the browser, so motion safe or motion reduce will only work if motion safe or reduce motion has been activated on a user's system.</p>
-<p>In case of these media query variants, they take over when the browser reaches certain size. Take a look at the example to see how this works.</p>
+<p>Another way to extend the functionality of elements is to extend the variants available to specific classes. Not all variants are turned on by default and here, I'm telling Tailwind to add an active variant to the background color.</p>
+<p>On every class' page, you'll find the options for adding variants if they're available.</p>
 <hr>
-<h1 id="state-variants">State Variants <a class="direct-link" href="#state-variants"> </a></h1>
-<p><code>hover</code> <code>group-hover</code> <code>disable``active</code></p>
-<p><a href="https://tailwindcss.com/docs/hover-focus-and-other-states" target="_blank"><code class="code-exciting">Docs</code></a> <a href="https://codepen.io/planetoftheweb/pen/zYKqQzJ?editors=1000" target="_blank"><code class="code-royal">Try it</code></a></p>
+<h1 id="practice">Practice <a class="direct-link" href="#practice"> </a></h1>
+<div class="btn-group mt-3" role="group" aria-label="Basic example">
+  <a type="button" class="animate__animated animate__backInLeft btn btn-lg btn-exciting text-white" href="https://github.com/LinkedInLearning/tailwind-css-2841311/tree/01_04b" target="_blank">Start</a>
+  <a type="button" class="animate__animated animate__zoomInDown btn btn-lg btn-royal text-white" href="https://github.com/LinkedInLearning/vue3-esst-2834032/compare/01_04b..01_04e" target="_blank">Diff</a>
+  <a type="button" class="animate__animated animate__backInRight animate__slow btn btn-lg btn-primary text-white" href="https://github.com/LinkedInLearning/tailwind-css-2841311/tree/01_04e" target="_blank">End</a>
+</div>
 <blockquote>
 <blockquote></blockquote>
 </blockquote>
-<p>There are some variants that are available to you that deal with state, so they work when certain aspects of the elements are available.</p>
-<p>The most common is the hover class. When you hover over an element, you can specify how that element changes. There's a real interesting group option to control what happens to a child when a parent has a group class.</p>
-<p>Before we look at the example you'll note that there are two other available classes here, but they are not turned on by default, so I can't show them to you. I'll show you how to turn off some of these classes that are off by default.</p>
-<hr>
-<h1 id="other-variants">Other Variants <a class="direct-link" href="#other-variants"> </a></h1>
-<p><strong>Pseudo-Class</strong><br><br>
-<code>first</code> <code>last</code> <code>odd</code> <code>even</code></p>
-<p><strong>Form</strong><br><br>
-<code>checked</code> <code>disabled</code> <code>focus</code> <code>focus-visible</code> <code>focus-within</code>  <code>group-focus</code></p>
-<p><strong>Other</strong><br><br>
-<code>dark</code> <code>visited</code></p>
-<p><a href="https://tailwindcss.com/docs/hover-focus-and-other-states" target="_blank"><code class="code-exciting">Docs</code></a></p>
-<blockquote>
-<blockquote></blockquote>
-</blockquote>
-<p>There's a bunch of other less common variants, but I think you get the idea with the ones I showed you.</p>
-<p>Some of these varients like the ones that depend on pseudo classes are really meant for when you're using loops in frameworks like Vue or React.</p>
-<p>The form variants obviously belong to form elements so you can control what items look like when they're checked focused, diable, etc.</p>
-<p>There's a new and interesting variant that will let you control what happens if a browser is supporting dark mode.</p>
-<p>You can look at the documentation for more information and how to use these.</p>
+<p>Here's what we did and where you can find the code in Github. Remember that the code is always at <code>raybo.org/slides_tailwind</code></p>
 
         </main>
         <aside class="aside aside-supplemental col col-md-3 col-lg-2 d-none d-md-block">
@@ -266,16 +265,13 @@ module.exports = {
                     <li><a href="#configuring-classes">Configuring Classes  </a>
             		</li>
 
-                    <li><a href="#container">Container  </a>
+                    <li><a href="#modifying-containers">Modifying Containers  </a>
             		</li>
 
-                    <li><a href="#media-query-variants">Media Query Variants  </a>
+                    <li><a href="#adding-variants">Adding Variants  </a>
             		</li>
 
-                    <li><a href="#state-variants">State Variants  </a>
-            		</li>
-
-                    <li><a href="#other-variants">Other Variants  </a>
+                    <li><a href="#practice">Practice  </a>
             		</li>
                 </ol>
             </div>
