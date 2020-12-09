@@ -198,7 +198,7 @@
         <main class="main col col-md-6 col-lg-8">
           <!-- .slide: data-state="layout-title" class="bg-dark"-->
 <h1 id="basic-configuration">Basic Configuration <a class="direct-link" href="#basic-configuration"> </a></h1>
-<div class="slide-link"><a href="URL"><i class="fab fa-slideshare"></i> URL</a></div>
+<div class="slide-link"><a href="https://go.raybo.org/2XsN"><i class="fab fa-slideshare"></i> go.raybo.org/2XsN</a></div>
 <blockquote>
 <blockquote></blockquote>
 </blockquote>
@@ -213,8 +213,8 @@
 <blockquote>
 <blockquote></blockquote>
 </blockquote>
-<p>Our basic CSS file imports three modules.</p>
-<p>The @base styles are defaults for things like the body, anchor tag, box sixing. It also includes a CSS reset tool called Preflight, more of that on the next slide.</p>
+<p>Our basic CSS file import three modules.</p>
+<p>The @base styles are defaults for things like the body, anchor tag, box sixing. It also includes a CSS reset tool called Preflight, more of that in a bit.</p>
 <p>The @component styles consists of mainly media queries for the container.</p>
 <p>@utilities is where the bulk of Tailwind styles live.</p>
 <p>You can see how this gets converted into CSS in the <code>build/css/styles.css</code> file and they can also be found in <code>node_modules/tailwind/dist</code>.</p>
@@ -231,9 +231,9 @@
 <blockquote>
 <blockquote></blockquote>
 </blockquote>
-<p>Preflight is an opinionated version of the popular <code>modern-normalize</code> project. It's job is to make different browsers display the same page as close as possible, since browsers often use their own similar default styles. However, preflight goes beyond normalize in that it resets and clears out the styling from some major tags.</p>
+<p>Preflight is an opinionated version of the popular <strong>normalize</strong> project. It's job is to make different browsers display the same page as close as possible, since browsers often use their own similar default styles. However, preflight goes beyond normalize in that it resets and clears out the styling from some major tags.</p>
 <p>First, it removes all margins from headings and lists. As a designer, I'm almost always overriding the default margins, so pre-flights assumes you'll be doing that anyways.</p>
-<p>Next, it removes all styles from all headings and lists. I'm never happy with those styles anyways and spend a lot of time overwriting things, so once I get past being appalled by this move, it makes sense.</p>
+<p>Next, it removes all styles from all headings and lists. I'm never happy with those styles and spend a lot of time overwriting things, so once I get past being concerned by this move, it does makes a lot sense.</p>
 <p>Images are set to <code>display: block</code> and <code>vertical-align: middle</code>. The default for images is display inline and I almost never want my images to display as inline.</p>
 <p>Two more that get modified are the borders as well as the button styles. These are more for conveniently setting up how the border classes work in Tailwind, assuming that you're going to add a border to buttons and setting the border styles to a one pixel buttons.</p>
 <p>At first, these style changes are really disconcerting, but after a while you'll realize how nice these changes work, so give them a chance.</p>
@@ -247,8 +247,8 @@
 <blockquote>
 <blockquote></blockquote>
 </blockquote>
-<p>If you're not happy with the preflight changes, you can easily turn it off by modifying the corePlugins object in the <code>tailwind.config.js</code> file. Now, this might turn things off that you don't want like give you the browser default serif font, but it can be useful if you're using tailwind with another library or your own resets.</p>
-<p>By the way, corePlugins is where you can also customize</p>
+<p>If you're not happy with the preflight changes, you can easily turn it off by modifying the corePlugins object in the <code>tailwind.config.js</code> file. Now, this might turn things off that you don't want like give you the browser default serif font, but it can be useful if you're using Tailwind with another library or your own resets.</p>
+<p>By the way, corePlugins is where you can also customize other parts of the library.</p>
 <hr>
 <h1 id="modifying-styles">Modifying styles <a class="direct-link" href="#modifying-styles"> </a></h1>
 <pre><code class="language-scss">@layer base {
@@ -264,8 +264,8 @@
 </blockquote>
 <p>You can also modify the base file and override whatever style you want. So, for example we can modify the level one headings so that they match our logo.</p>
 <p>There's also a way to add a style from Tailwind using the <code>@apply</code> directive. This works like a sass mixin and you simply call it using a name from any Tailwind style.</p>
-<p>You can use apply not just to modify something in the base layer, but on any other css you write to base on style</p>
-<p>You can use this same process to create additional components or layouts by using the @layer and @apply directives on components or</p>
+<p>You can use apply not just to modify something in the base layer, but on any other of the three tailwind default files.</p>
+<p>You can use this same process to create additional components or layouts by using the @layer and @apply directives on components or even on specific tags like we've done here with the h1 tag.</p>
 <hr>
 <!-- .slide: data-state="layout-title" data-transition="zoom" class="bg-dark"-->
 <h1 id="practice">Practice <a class="direct-link" href="#practice"> </a></h1>
@@ -282,7 +282,8 @@
 <blockquote>
 <blockquote></blockquote>
 </blockquote>
-<p>Here's where you can find what we did in this video.</p>
+<p>Here's where you can find what we did in this video. We looked at Tailwind's standard modules. base, components and utilities, then we discussed what the preflight styles do in Tailwinds.</p>
+<p>We also learned how we can modify styles with <code>@layer</code> and <code>@apply</code></p>
 
         </main>
         <aside class="aside aside-supplemental col col-md-3 col-lg-2 d-none d-md-block">

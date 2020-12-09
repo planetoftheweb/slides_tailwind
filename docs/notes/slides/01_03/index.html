@@ -198,13 +198,13 @@
         <main class="main col col-md-6 col-lg-8">
           <!-- .slide: data-state="layout-title" class="bg-dark"-->
 <h1 id="variants">Variants <a class="direct-link" href="#variants"> </a></h1>
-<div class="slide-link"><a href="URL"><i class="fab fa-slideshare"></i> URL</a></div>
+<div class="slide-link"><a href="https://go.raybo.org/2Xtq"><i class="fab fa-slideshare"></i> go.raybo.org/2Xtq</a></div>
 <blockquote>
 <blockquote></blockquote>
 </blockquote>
-<p>Containers are at the heart of a lot of layouts, but more importantly they drive the responsiveness of most Tailwind Elements.</p>
+<p>Tailwind has a way of letting you access responsiveness and modify styles based on different property by using something called variants.</p>
 <hr>
-<h1 id="container">Container <a class="direct-link" href="#container"> </a></h1>
+<h1 id="containers">Containers <a class="direct-link" href="#containers"> </a></h1>
 <ul>
 <li><code>container</code></li>
 </ul>
@@ -232,13 +232,15 @@
 <blockquote>
 <blockquote></blockquote>
 </blockquote>
-<p>You can add a container class to an element and Tailwind will make layouts snap to those breakpoints. The breakpoints are important because you can use them as variants to create responsive content.</p>
+<p>In order to show you variants, I need to first talk about containers.</p>
+<p>Containers are at the heart of Tailwind layouts. You can add a container class to an element and Tailwind will make layouts snap to those breakpoints. You can see the value of the breakpoints here.</p>
+<p>The breakpoints are really important because you can use them as variants to create responsive content. More on that in a minute.</p>
 <p>Containers don't add any padding to elements, so you have to do that manually, they don't auto center either, so take a look at the example for how you might do this.</p>
 <hr>
 <h1 id="media-query-variants">Media Query Variants <a class="direct-link" href="#media-query-variants"> </a></h1>
 <p><code>sm</code> <code>md</code> <code>lg</code> <code>xl</code> <code>2xl</code><br><br>
 <code>motion-safe</code> <code>motion-reduce</code></p>
-<p><a href="https://tailwindcss.com/docs/responsive-design" target="_blank"><code class="code-exciting">Docs</code></a></p>
+<p><a href="https://tailwindcss.com/docs/responsive-design" target="_blank"><code class="code-exciting">Docs</code></a> <a href="https://codepen.io/planetoftheweb/pen/yLaOrRV?editors=1000" target="_blank"><code class="code-royal">Try it</code></a></p>
 <blockquote>
 <blockquote></blockquote>
 </blockquote>
@@ -247,7 +249,7 @@
 <p>In case of these media query variants, they take over when the browser reaches certain size. Take a look at the example to see how this works.</p>
 <hr>
 <h1 id="state-variants">State Variants <a class="direct-link" href="#state-variants"> </a></h1>
-<p><code>hover</code> <code>group-hover</code> <code>disable``active</code></p>
+<p><code>hover</code> <code>group-hover</code> <code>disable</code> <code>active</code></p>
 <p><a href="https://tailwindcss.com/docs/hover-focus-and-other-states" target="_blank"><code class="code-exciting">Docs</code></a> <a href="https://codepen.io/planetoftheweb/pen/zYKqQzJ?editors=1000" target="_blank"><code class="code-royal">Try it</code></a></p>
 <blockquote>
 <blockquote></blockquote>
@@ -268,8 +270,8 @@
 <blockquote></blockquote>
 </blockquote>
 <p>There's a bunch of other less common variants, but I think you get the idea with the ones I showed you.</p>
-<p>Some of these varients like the ones that depend on pseudo classes are really meant for when you're using loops in frameworks like Vue or React.</p>
-<p>The form variants obviously belong to form elements so you can control what items look like when they're checked focused, diable, etc.</p>
+<p>Some of these variants like the ones that depend on pseudo classes are really meant for when you're using loops in frameworks like Vue or React.</p>
+<p>The form variants obviously belong to form elements so you can control what items look like when they're checked focused, disabled, etc.</p>
 <p>There's a new and interesting variant that will let you control what happens if a browser is supporting dark mode.</p>
 <p>You can look at the documentation for more information and how to use these.</p>
 
@@ -283,7 +285,7 @@
                     <li><a href="#variants">Variants  </a>
             		</li>
 
-                    <li><a href="#container">Container  </a>
+                    <li><a href="#containers">Containers  </a>
             		</li>
 
                     <li><a href="#media-query-variants">Media Query Variants  </a>

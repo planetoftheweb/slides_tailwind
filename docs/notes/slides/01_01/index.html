@@ -202,7 +202,7 @@
 <blockquote>
 <blockquote></blockquote>
 </blockquote>
-<p>Tailwinds isn't for beginners, it requires some tools in order to work with your projects.</p>
+<p>Tailwind isn't for beginners, it requires some tools in order to work with your projects.</p>
 <hr>
 <h1 id="getting-ready">Getting Ready <a class="direct-link" href="#getting-ready"> </a></h1>
 <ul>
@@ -232,7 +232,7 @@
 <blockquote>
 <blockquote></blockquote>
 </blockquote>
-<p>There's another way you can use Tailwinds, and that's through the CDN, or content delivery network link. We'll be using that in this course, when I want to give you quick examples to try.</p>
+<p>There's another way you can use Tailwind, and that's through the CDN, or content delivery network link. We'll be using that in this course, when I want to give you quick examples to try.</p>
 <p>Unfortunately, this version of Tailwind isn't as customizable as the regular version. It's fine for learning and playing, but not really working.</p>
 <p>You can't use third party plugins with this version, so it makes tailwind harder to extend.</p>
 <p>Finally, some tools can work to remove the css parts of tailwind you don't need. That's called tree-shaking and a CDN link can't do that.</p>
@@ -260,7 +260,7 @@ npm i postcss autoprefixer tailwindcss gulp gulp-postcss browser-sync
 <p>To get things going, we're going to need to create a <code>package.json</code> file. The easiest way to do that is to run an <code>npm init -y</code> command. That will create one for us with the defaults.</p>
 <p>I'm going to update the <code>package.json</code> file license to point to our LinkedIn license, but you can delete everything else after keywords, just make sure you don't get rid of that last curly brace.</p>
 <p>Let's also edit the scripts section and change debug to <code>&quot;start&quot;: &quot;gulp&quot;</code></p>
-<p>Then, we'll need to install some modules. Tailwinds is a postcss plugin, so we'll need postcss and we'll also install the autoprefixer to add support for older browsers. Of course we'll need tailwinds as well as some tools to run things. We're using gulp and we'll need the gulp-postcss module. Finally, we'll add browser-sync for live reloading.</p>
+<p>Then, we'll need to install some modules. Tailwind is a postcss plugin, so we'll need postcss and we'll also install the autoprefixer to add support for older browsers. Of course we'll need tailwind as well as some tools to run things. We're using gulp and we'll need the gulp-postcss module. Finally, we'll add browser-sync for live reloading.</p>
 <hr>
 <!-- .slide: data-state="layout-longcode" -->
 <h1 id="create-a-gulpfile.js">Create a <strong>gulpfile.js</strong> <a class="direct-link" href="#create-a-gulpfile.js"> </a></h1>
@@ -324,7 +324,7 @@ gulp.task(&quot;default&quot;, build);
 <blockquote>
 <blockquote></blockquote>
 </blockquote>
-<p>Tailwinds uses configuration files to set up and modify how it works. You'll need to create at least a basic one and you can do that with this command. The -p option also creates a <code>postcss.config.js</code> file, which is the same thing for postcss.</p>
+<p>Tailwind uses configuration files to set up and modify how it works. You'll need to create at least a basic one and you can do that with this command. The -p option also creates a <code>postcss.config.js</code> file, which is the same thing for postcss.</p>
 <hr>
 <!-- .slide: data-state="layout-longcode" -->
 <h1 id="html-template">HTML Template <a class="direct-link" href="#html-template"> </a></h1>
@@ -363,7 +363,7 @@ possibilities.&lt;/p&gt;
 <blockquote>
 <blockquote></blockquote>
 </blockquote>
-<p>To load up the proper parts of Tailwinds, we'll also need a postcss starter file. Out <code>index.html</code> is looking for a file called <code>styles.css</code>, so we'll create that inside a <code>src/css</code> folder</p>
+<p>To load up the proper parts of Tailwind, we'll also need a postcss starter file. Out <code>index.html</code> is looking for a file called <code>styles.css</code>, so we'll create that inside a <code>src/css</code> folder</p>
 <p>Now that we're done setting up our template, it's time to run our automation. From the terminal run  <code>npm start</code>.</p>
 <p>Now, this is probably the most underwhelming HTML page, you've ever seen. The styles couldn't be more boring. More about that in the next video.</p>
 <hr>
