@@ -70,7 +70,7 @@
                   <div class="d-flex justify-content-end align-items-right border-bottom p-2  bg-primary ">
                     <a class="text-decoration-none  fw-bolder link-light  link-primary" href="../../../notes/slides/01_04/index.html">
                       <i class="fas fa-file-alt mr-2 lh-1  text-light "></i>01_04
-                      Configuring Classes</a>
+                      Configuring Variants</a>
                     <a class=" link-light  flex-fill ml-3 text-right" href="../../../?d=01_04&#">
                       <i class="fab fa-slideshare"></i>
                     </a>
@@ -197,14 +197,14 @@
 
         <main class="main col col-md-6 col-lg-8">
           <!-- .slide: data-state="layout-title" class="bg-dark"-->
-<h1 id="configuring-classes">Configuring Classes <a class="direct-link" href="#configuring-classes"> </a></h1>
-<div class="slide-link"><a href="URL"><i class="fab fa-slideshare"></i> URL</a></div>
+<h1 id="configuring-variants">Configuring Variants <a class="direct-link" href="#configuring-variants"> </a></h1>
+<div class="slide-link"><a href="https://go.raybo.org/2Xup"><i class="fab fa-slideshare"></i> go.raybo.org/2Xup</a></div>
 <blockquote>
 <blockquote></blockquote>
 </blockquote>
 <p>Using the <code>tailwind.config.js</code> file you can configure just about any part of Tailwind, we'll take a look at an example with breakpoints, but this applies to any other classes.</p>
 <hr>
-<h1 id="modifying-containers">Modifying Containers <a class="direct-link" href="#modifying-containers"> </a></h1>
+<h1 id="modifying-variants">Modifying Variants <a class="direct-link" href="#modifying-variants"> </a></h1>
 <pre><code class="language-js">// tailwind.config.js
 
 module.exports = {
@@ -226,7 +226,20 @@ module.exports = {
 <p>Here is how the default breakpoints are set up. You can modify the values for any of these breakpoints, add more of them, or rename the existing breakpoints to whatever you want.</p>
 <p>You can take a look at the documentation for more samples.</p>
 <hr>
-<h1 id="adding-variants">Adding Variants <a class="direct-link" href="#adding-variants"> </a></h1>
+<!-- .slide: data-state="layout-longcode" data-transition="zoom" -->
+<h1 id="variants-code">Variants Code <a class="direct-link" href="#variants-code"> </a></h1>
+<pre><code class="language-html">&lt;div class=&quot;w-full&quot;&gt;
+  &lt;div class=&quot;container mx-auto flex items-center px-4 py-2&quot;&gt;
+    &lt;div&gt;
+      &lt;div class=&quot;text-gray-500 sm:text-purple-500 text-5xl font-light  mb-1&quot;&gt;Bubbles&lt;/div&gt;
+      &lt;p class=&quot;text-sm sm:text-md md:text-lg lg:text-xl xl:text-2xl 2xl:text-3xl font-light&quot;&gt;Bubble Gum robot, or “Bubbles” for short, is from a family of track-footed robots that originated from an experiment melding candy vending machines with robotics in the early 1980s. Bubbles is a favorite of Binaryville, not just because she generously dispenses candy, but also because she has one of the more &quot;bubbly&quot; personalities of the villagers.&lt;/p&gt;
+      &lt;div class=&quot;active:bg-red-600 hover:bg-purple-500 hover:text-white cursor-pointer border-purple-500 border-4 rounded-md inline-block p-2 mt-2 mb-4&quot;&gt;More info&lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt; 
+</code></pre>
+<hr>
+<h1 id="toggle-inactive-variants">Toggle Inactive Variants <a class="direct-link" href="#toggle-inactive-variants"> </a></h1>
 <pre><code class="language-js">// tailwind.config.js
 
 module.exports = {
@@ -242,14 +255,20 @@ module.exports = {
 <blockquote></blockquote>
 </blockquote>
 <p>Another way to extend the functionality of elements is to extend the variants available to specific classes. Not all variants are turned on by default and here, I'm telling Tailwind to add an active variant to the background color.</p>
-<p>On every class' page, you'll find the options for adding variants if they're available.</p>
+<p>On every class' page in the docs, you'll find the options for adding variants if they're available.</p>
 <hr>
-<h1 id="practice">Practice <a class="direct-link" href="#practice"> </a></h1>
+<!-- .slide: data-state="layout-title" data-transition="zoom" class="bg-dark"-->
+<h1 id="the-code">The Code <a class="direct-link" href="#the-code"> </a></h1>
 <div class="btn-group mt-3" role="group" aria-label="Basic example">
   <a type="button" class="animate__animated animate__backInLeft btn btn-lg btn-exciting text-white" href="https://github.com/LinkedInLearning/tailwind-css-2841311/tree/01_04b" target="_blank">Start</a>
   <a type="button" class="animate__animated animate__zoomInDown btn btn-lg btn-royal text-white" href="https://github.com/LinkedInLearning/vue3-esst-2834032/compare/01_04b..01_04e" target="_blank">Diff</a>
   <a type="button" class="animate__animated animate__backInRight animate__slow btn btn-lg btn-primary text-white" href="https://github.com/LinkedInLearning/tailwind-css-2841311/tree/01_04e" target="_blank">End</a>
 </div>
+<ol>
+<li>Learned to modify variants</li>
+<li>Changed the default breakpoints</li>
+<li>Made <code>active</code> variant for backgrounds</li>
+</ol>
 <blockquote>
 <blockquote></blockquote>
 </blockquote>
@@ -262,16 +281,19 @@ module.exports = {
             <div class="">
                 <ol>
                     
-                    <li><a href="#configuring-classes">Configuring Classes  </a>
+                    <li><a href="#configuring-variants">Configuring Variants  </a>
             		</li>
 
-                    <li><a href="#modifying-containers">Modifying Containers  </a>
+                    <li><a href="#modifying-variants">Modifying Variants  </a>
             		</li>
 
-                    <li><a href="#adding-variants">Adding Variants  </a>
+                    <li><a href="#variants-code">Variants Code  </a>
             		</li>
 
-                    <li><a href="#practice">Practice  </a>
+                    <li><a href="#toggle-inactive-variants">Toggle Inactive Variants  </a>
+            		</li>
+
+                    <li><a href="#the-code">The Code  </a>
             		</li>
                 </ol>
             </div>
