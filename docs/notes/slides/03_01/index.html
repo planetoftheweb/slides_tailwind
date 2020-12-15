@@ -178,8 +178,17 @@
                   <div class="d-flex justify-content-end align-items-right border-bottom p-2  bg-primary ">
                     <a class="text-decoration-none  fw-bolder link-light  link-primary" href="../../../notes/slides/03_01/index.html">
                       <i class="fas fa-file-alt mr-2 lh-1  text-light "></i>03_01
-                      Container</a>
+                      Layout</a>
                     <a class=" link-light  flex-fill ml-3 text-right" href="../../../?d=03_01&#">
+                      <i class="fab fa-slideshare"></i>
+                    </a>
+                  </div>
+                
+                  <div class="d-flex justify-content-end align-items-right border-bottom p-2 ">
+                    <a class="text-decoration-none  link-secondary  link-primary" href="../../../notes/slides/03_02/index.html">
+                      <i class="fas fa-file-alt mr-2 lh-1  text-primary "></i>03_02
+                      Container</a>
+                    <a class=" link-secondary  flex-fill ml-3 text-right" href="../../../?d=03_02&#">
                       <i class="fab fa-slideshare"></i>
                     </a>
                   </div>
@@ -197,27 +206,202 @@
 
         <main class="main col col-md-6 col-lg-8">
           <!-- .slide: data-state="layout-title" class="bg-dark"-->
-<h1 id="container">Container <a class="direct-link" href="#container"> </a></h1>
+<h1 id="layout">Layout <a class="direct-link" href="#layout"> </a></h1>
 <div class="slide-link"><a href="URL"><i class="fab fa-slideshare"></i> URL</a></div>
 <blockquote>
 <blockquote></blockquote>
 </blockquote>
 <hr>
-<h1 id="container-1">Container <a class="direct-link" href="#container-1"> </a></h1>
-<ul>
-<li><code>container(-SIZ)</code>
-<ul>
-<li><strong>AMT</strong><br><br>
-<code>sm</code>(640px) <code>md</code>(768px) <code>lg</code>(1024px) <code>xl</code>(1280px) <code>2xl</code>(1536px)</li>
-</ul>
-</li>
-</ul>
-<p><a href="https://tailwindcss.com/docs/box-shadow" target="_blank"><code class="code-exciting">Docs</code></a> <a href="https://codepen.io/planetoftheweb/pen/KKgzXpq?editors=1000" target="_blank"><code class="code-royal">Try it</code></a></p>
+<h1 id="box-sizing">Box Sizing <a class="direct-link" href="#box-sizing"> </a></h1>
+<p><code>box-border</code> <code>box-content</code></p>
+<p><a href="https://tailwindcss.com/docs/box-sizing" target="_blank"><code class="code-exciting">Docs</code></a> <a href="https://codepen.io/planetoftheweb/pen/rNMWXoV?editors=1000" target="_blank"><code class="code-royal">Try it</code></a></p>
 <blockquote>
 <blockquote></blockquote>
 </blockquote>
-<p>Tailwind has a simple way of adding drop shadows to box elements. There are two special sizes. none, which serves as a reset and inner which places a slight shadow effect inside the box element. It's important to note that you can't make any of the other sizes an inner size.</p>
-<p>Then there are the traditional sizes <code>sm</code>, <code>md</code>, <code>lg</code>, <code>xl</code> and <code>2xl</code>. If you just use the keyword shadow without the size, you get a shadow that's 1 pixels wide and 3 pixels to the right. You can see them at work in the example.</p>
+<p>In CSS, the size of elements is often expressed in pixels, but is calculated by adding the border and padding to the element's size. So if you specify a 100px width, but then add 10 pixels of padding, then the size of the element is 120px, 100, plus ten on each side.<br>
+space between</p>
+<p>You can change that by setting the box sizing parameter to border box. This makes the size include the border and padding inside the size specified. So a 100 pixel width will make adjust the size of the element to 80 pixels. That is a much more predictable sizing and is the default for Tailwind.</p>
+<p>However, if you want to change it to the traditional CSS sizing, you can use box-content class.</p>
+<hr>
+<h1 id="float">Float <a class="direct-link" href="#float"> </a></h1>
+<ul>
+<li><code>float-(SID)</code>
+<ul>
+<li><strong>DIR</strong><br><br>
+<code>none</code> <code>left</code> <code>right</code></li>
+</ul>
+</li>
+</ul>
+<p><a href="https://tailwindcss.com/docs/float" target="_blank"><code class="code-exciting">Docs</code></a> <a href="https://codepen.io/planetoftheweb/pen/jOMyZKP" target="_blank"><code class="code-royal">Try it</code></a></p>
+<blockquote>
+<blockquote></blockquote>
+</blockquote>
+<p>Float lets you control how an image wraps onto text. There are three classes. None, which is</p>
+<hr>
+<h1 id="clear">Clear <a class="direct-link" href="#clear"> </a></h1>
+<ul>
+<li><code>clear-(SID)</code>
+<ul>
+<li><strong>DIR</strong><br><br>
+<code>none</code> <code>left</code> <code>right</code> <code>both</code></li>
+</ul>
+</li>
+</ul>
+<p><a href="https://tailwindcss.com/docs/clear" target="_blank"><code class="code-exciting">Docs</code></a> <a href="https://codepen.io/planetoftheweb/pen/XWjpYJm?editors=1000" target="_blank"><code class="code-royal">Try it</code></a></p>
+<blockquote>
+<blockquote></blockquote>
+</blockquote>
+<p>When you use floats in CSS, the clear properties allow you to control how those floats are cleared.</p>
+<p>In the example you can see two images, both floated around some text.</p>
+<p>In the <code>clear-left</code> example, you can see that the text unfloats or is cleared underneath the image on the left. With <code>clear-right</code> the text clears on the image to the right. With <code>clear-both</code> it's clearing the right image, but that's because it's the last thing with a float.</p>
+<hr>
+<h1 id="object-fit">Object Fit <a class="direct-link" href="#object-fit"> </a></h1>
+<ul>
+<li><code>object-(SID)</code>
+<ul>
+<li><strong>DIR</strong><br><br>
+<code>contain</code> <code>cover</code> <code>fill</code> <code>none</code> <code>scale-down</code></li>
+</ul>
+</li>
+</ul>
+<p><a href="https://tailwindcss.com/docs/object-fit" target="_blank"><code class="code-exciting">Docs</code></a> <a href="https://codepen.io/planetoftheweb/pen/ZEpLRJQ?editors=1000" target="_blank"><code class="code-royal">Try it</code></a></p>
+<blockquote>
+<blockquote></blockquote>
+</blockquote>
+<p>Object fit controls how an element is stretched to fit it's container. It's similar to what you'd expect when using bacgkround images.</p>
+<p>In the example, you'll see the same image set to a height of 32 and a full width of the container. Notice how the images differ in size.</p>
+<p><code>object-contain</code> resizes an element's content so that it's contained on the area it's in.</p>
+<p><code>object-cover</code> tries to fit the content proportionally in the space alloted. I like to use that one when I need to make sure an image fits in a container proportionally.</p>
+<p><code>object-fill</code> is similar but it stretches the content to fit. If you don't add anything to an image, this is the default way it will work.</p>
+<p><code>object-none</code> fills the container, but doesn't change the size of the image.</p>
+<p><code>object-scale-down</code> will try to leave the object at it's original size, but shrinks it down if necessary.</p>
+<hr>
+<h1 id="object-position">Object Position <a class="direct-link" href="#object-position"> </a></h1>
+<ul>
+<li><code>object-(POS)</code>
+<ul>
+<li><strong>DIR</strong><br><br>
+<code>left-top</code>  <code>top</code> <code>right-top</code><br><br>
+<code>left</code> <code>center</code> <code>right</code><br><br>
+<code>left-bottom</code> <code>bottom</code> <code>right-bottom</code></li>
+</ul>
+</li>
+</ul>
+<p><a href="https://tailwindcss.com/docs/object-position" target="_blank"><code class="code-exciting">Docs</code></a> <a href="https://codepen.io/planetoftheweb/pen/YzGNjKd?editors=1000" target="_blank"><code class="code-royal">Try it</code></a></p>
+<blockquote>
+<blockquote></blockquote>
+</blockquote>
+<p>Object position controls the position of an item within it's container. It makes sense, but requires some setup.</p>
+<p>In the example, you'll notice that I've set up a logo with the different directions.</p>
+<p>However, you might miss that in order to get this to work, you have to set up the object-none class as well in the element, otherwise, the default behavior is for the element to fill the container.</p>
+<p>Also, I had to give the container a class of full, otherwise, you wouldn't be able to fill the container.</p>
+<hr>
+<h1 id="overscroll">Overscroll <a class="direct-link" href="#overscroll"> </a></h1>
+<ul>
+<li><code>overscroll(-DIR)(-TYP)</code>
+<ul>
+<li><strong>DIR</strong><br><br>
+<code>x</code> <code>y</code></li>
+<li><strong>TYP</strong><br><br>
+<code>auto</code> <code>contain</code> <code>none</code></li>
+</ul>
+</li>
+</ul>
+<p><a href="https://tailwindcss.com/docs/overscroll-behavior" target="_blank"><code class="code-exciting">Docs</code></a> <a href="https://codepen.io/planetoftheweb/pen/QWKdVXY?editors=1000" target="_blank"><code class="code-royal">Try it</code></a></p>
+<blockquote>
+<blockquote></blockquote>
+</blockquote>
+<p>Overscroll controls what happens when an element that is set to scroll is done scrolling. You can control the direction that is affected by this as well as the type.</p>
+<p>auto is the default behavior and means that the page will continue to scroll.</p>
+<p>contain means that once the item stops scrolling the rest of the page will not scroll.</p>
+<p>Finally none is similar to contain, but also prevents bounce effects when scrolling past the end of the container.</p>
+<hr>
+<h1 id="position">Position <a class="direct-link" href="#position"> </a></h1>
+<p><code>static</code> <code>fixed</code> <code>absolute</code> <code>relative</code> <code>sticky</code></p>
+<p><a href="https://tailwindcss.com/docs/position" target="_blank"><code class="code-exciting">Docs</code></a> <a href="https://codepen.io/planetoftheweb/pen/MWjJZEZ?editors=1000" target="_blank"><code class="code-royal">Try it</code></a></p>
+<blockquote>
+<blockquote></blockquote>
+</blockquote>
+<p>Position matches the css positioning atribute</p>
+<p><code>static</code> is the default and means that the element is positioned where it would normally go in the page. Static will also ignore offsets.</p>
+<p>Relative means that the element is placed relative to where it would normally go, but you can use offsets to move the element by a certain amounts.</p>
+<p>Absolute positions an element outside the normal flow as if it didn't exist. Offsets happen from the nearest parent that has a position other than static.</p>
+<p>Fixed means that it is positioned relative to the viewport. Normally the browser window.</p>
+<p>Sticky is one of the newer attributes and means that the element is positioned as relative until it crosses a certain point.</p>
+<hr>
+<h1 id="top-right-bottom-left">Top Right Bottom Left <a class="direct-link" href="#top-right-bottom-left"> </a></h1>
+<ul>
+<li><code>(-)(SID)(-DIR)(-SIZ)</code>
+<ul>
+<li><strong>SID</strong><br>
+<code>inset</code> <code>top</code> <code>right</code> <code>bottom</code> <code>left</code></li>
+<li><strong>DIR</strong><br>
+<code>x</code> <code>y</code></li>
+<li><strong>SIZ</strong><br><br>
+<code>0</code> <code>0.5</code> <code>1</code> <code>1.5</code> <code>2</code> <code>2.5</code> <code>3</code> <code>3.5</code> <code>4</code> <code>5</code> <code>6</code><br><br>
+<code>7</code> <code>8</code> <code>9</code> <code>10</code> <code>11</code> <code>12</code> <code>14</code> <code>16</code> <code>20</code> <code>24</code> <code>28</code><br><br>
+<code>32</code> <code>36</code> <code>40</code> <code>44</code> <code>48</code> <code>52</code> <code>56</code> <code>60</code> <code>64</code> <code>72</code> <code>80</code> <code>96</code><br><br>
+<code>1/2</code> <code>1/3</code> <code>2/3</code> <code>1/4</code> <code>2/4</code> <code>3/4</code> <code>1/5</code> <code>2/5</code> <code>3/5</code><br><br>
+<code>4/5</code> <code>1/6</code> <code>2/6</code> <code>3/6</code> <code>4/6</code> <code>5/6</code> <code>1/12</code> <code>2/12</code> <code>3/12</code><br><br>
+<code>4/12</code> <code>5/12</code> <code>6/12</code> <code>7/12</code> <code>8/12</code> <code>9/12</code> <code>10/12</code> <code>11/12</code><br><br>
+<code>auto</code> <code>px</code> <code>full</code></li>
+</ul>
+</li>
+</ul>
+<p><a href="https://tailwindcss.com/docs/top-right-bottom-left" target="_blank"><code class="code-exciting">Docs</code></a> <a href="https://codepen.io/planetoftheweb/pen/wvzgQvv?editors=1000" target="_blank"><code class="code-royal">Try it</code></a></p>
+<blockquote>
+<blockquote></blockquote>
+</blockquote>
+<p>These directions allow you to position elements in almost any way you want. There is a large range of directions and positions you can use.</p>
+<p><code>inset</code> affects both sides. Also, the numbered sizes are sized relative to the root em, which is normally 16 pixels. A size of 4 in these sizes is 1 rem.</p>
+<p><code>px</code> means a single pixel, while the keyword <code>full</code> means 100% and <code>auto</code> means the browser decides.</p>
+<hr>
+<h1 id="z-index">Z-Index <a class="direct-link" href="#z-index"> </a></h1>
+<ul>
+<li><code>z-(AMT)</code>
+<ul>
+<li><strong>SID</strong><br>
+<code>0</code> <code>10</code> <code>20</code> <code>30</code> <code>40</code> <code>50</code> <code>auto</code></li>
+</ul>
+</li>
+</ul>
+<p><a href="https://tailwindcss.com/docs/z-index" target="_blank"><code class="code-exciting">Docs</code></a> <a href="https://codepen.io/planetoftheweb/pen/MWjJLRb?editors=1000" target="_blank"><code class="code-royal">Try it</code></a></p>
+<blockquote>
+<blockquote></blockquote>
+</blockquote>
+<p>Content is layered in CSS using a property called the z-index. Tailwind gives you 0 plus 5 other values you can use, plus auto. Remember that you can add your own by modifying the <code>tailwind.config.js</code> file.</p>
+<hr>
+<h1 id="visibility">Visibility <a class="direct-link" href="#visibility"> </a></h1>
+<p><code>visible</code> <code>invisible</code></p>
+<p><a href="https://tailwindcss.com/docs/visibility" target="_blank"><code class="code-exciting">Docs</code></a> <a href="https://codepen.io/planetoftheweb/pen/abmpXyJ?editors=1000" target="_blank"><code class="code-royal">Try it</code></a></p>
+<blockquote>
+<blockquote></blockquote>
+</blockquote>
+<p>A couple of classes to make elements show or hide throught their CSS visibility properties. Remember that these can be used with responsive variants to make things show up or hide at different breakpoints.</p>
+<p>However, these only hide the elements while leaving their space showing. If you want to completely hide elements, then use the display properties instead.</p>
+<hr>
+<h1 id="display">Display <a class="direct-link" href="#display"> </a></h1>
+<div class="small">
+<p><code>block</code> <code>inline-block</code> <code>inline</code><br><code>flex</code> <code>inline-flex</code><br><br>
+<code>flow-root</code> <code>grid</code> <code>inline-grid</code> <code>contents</code> <code>hidden</code><br><br>
+<code>table</code> <code>table-caption</code> <code>table-cell</code> <code>table-column</code> <code>table-column-group</code> <code>table-footer-group</code> <code>table-header-group</code> <code>table-row-group</code> <code>table-row</code><br><br>
+<code>flow-root</code> <code>grid</code> <code>inline-grid</code> <code>contents</code> <code>hidden</code></p>
+</div>
+<p><a href="https://tailwindcss.com/docs/display" target="_blank"><code class="code-exciting">Docs</code></a> <a href="https://codepen.io/planetoftheweb/pen/ExgZWMP?editors=1000" target="_blank"><code class="code-royal">Try it</code></a></p>
+<blockquote>
+<blockquote></blockquote>
+</blockquote>
+<p>Let's talk about the display property. It's one of the richest and part of every element in HTML.</p>
+<p>There are classes that allow you to modify the display property to every other type of item and they're meant to match the CSS properties.</p>
+<p>Let's take a look at our example though.</p>
+<p>We have the block, inline an inline-block classes. Block is meant for large areas of content and each block section appears on a new line.</p>
+<p>Inline isn't allowed a width or heights.</p>
+<p>When you choose the inline-block, you have an inline that can take width and heights. Unless there is no spacing between tags, there will be spacing between inline-block items.</p>
+<p>There are a number of classes related to different parts of table elements. That lets any element emulate a table's properties. You'll probably never use this one, but you can take a look at the example.</p>
+<p>There's support for the two newer layout types. Flex and grid. More on those later.</p>
+<p>There's a couple of interesting ones that you might not have used before. Flow root is the Tailwind equivalent of the clearfix and is meant to clear floated elements.</p>
+<p>Contents is super interesting in tha it creates a phantom piece of content that can act as it's own element.</p>
+<p>Finally hidden is mean or hiding certain elements.</p>
 
         </main>
         <aside class="aside aside-supplemental col col-md-3 col-lg-2 d-none d-md-block">
@@ -226,10 +410,40 @@
             <div class="">
                 <ol>
                     
-                    <li><a href="#container">Container  </a>
+                    <li><a href="#layout">Layout  </a>
             		</li>
 
-                    <li><a href="#container-1">Container  </a>
+                    <li><a href="#box-sizing">Box Sizing  </a>
+            		</li>
+
+                    <li><a href="#float">Float  </a>
+            		</li>
+
+                    <li><a href="#clear">Clear  </a>
+            		</li>
+
+                    <li><a href="#object-fit">Object Fit  </a>
+            		</li>
+
+                    <li><a href="#object-position">Object Position  </a>
+            		</li>
+
+                    <li><a href="#overscroll">Overscroll  </a>
+            		</li>
+
+                    <li><a href="#position">Position  </a>
+            		</li>
+
+                    <li><a href="#top-right-bottom-left">Top Right Bottom Left  </a>
+            		</li>
+
+                    <li><a href="#z-index">Z-Index  </a>
+            		</li>
+
+                    <li><a href="#visibility">Visibility  </a>
+            		</li>
+
+                    <li><a href="#display">Display  </a>
             		</li>
                 </ol>
             </div>
