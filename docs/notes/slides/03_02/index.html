@@ -187,8 +187,35 @@
                   <div class="d-flex justify-content-end align-items-right border-bottom p-2  bg-primary ">
                     <a class="text-decoration-none  fw-bolder link-light  link-primary" href="../../../notes/slides/03_02/index.html">
                       <i class="fas fa-file-alt mr-2 lh-1  text-light "></i>03_02
-                      Container</a>
+                      Flexbox</a>
                     <a class=" link-light  flex-fill ml-3 text-right" href="../../../?d=03_02&#">
+                      <i class="fab fa-slideshare"></i>
+                    </a>
+                  </div>
+                
+                  <div class="d-flex justify-content-end align-items-right border-bottom p-2 ">
+                    <a class="text-decoration-none  link-secondary  link-primary" href="../../../notes/slides/03_03/index.html">
+                      <i class="fas fa-file-alt mr-2 lh-1  text-primary "></i>03_03
+                      Grids</a>
+                    <a class=" link-secondary  flex-fill ml-3 text-right" href="../../../?d=03_03&#">
+                      <i class="fab fa-slideshare"></i>
+                    </a>
+                  </div>
+                
+                  <div class="d-flex justify-content-end align-items-right border-bottom p-2 ">
+                    <a class="text-decoration-none  link-secondary  link-primary" href="../../../notes/slides/03_04/index.html">
+                      <i class="fas fa-file-alt mr-2 lh-1  text-primary "></i>03_04
+                      Container</a>
+                    <a class=" link-secondary  flex-fill ml-3 text-right" href="../../../?d=03_04&#">
+                      <i class="fab fa-slideshare"></i>
+                    </a>
+                  </div>
+                
+                  <div class="d-flex justify-content-end align-items-right border-bottom p-2 ">
+                    <a class="text-decoration-none  link-secondary  link-primary" href="../../../notes/slides/03_05/index.html">
+                      <i class="fas fa-file-alt mr-2 lh-1  text-primary "></i>03_05
+                      Container</a>
+                    <a class=" link-secondary  flex-fill ml-3 text-right" href="../../../?d=03_05&#">
                       <i class="fab fa-slideshare"></i>
                     </a>
                   </div>
@@ -206,27 +233,85 @@
 
         <main class="main col col-md-6 col-lg-8">
           <!-- .slide: data-state="layout-title" class="bg-dark"-->
-<h1 id="container">Container <a class="direct-link" href="#container"> </a></h1>
+<h1 id="flexbox">Flexbox <a class="direct-link" href="#flexbox"> </a></h1>
 <div class="slide-link"><a href="URL"><i class="fab fa-slideshare"></i> URL</a></div>
 <blockquote>
 <blockquote></blockquote>
 </blockquote>
 <hr>
-<h1 id="container-1">Container <a class="direct-link" href="#container-1"> </a></h1>
+<h1 id="flex-direction">Flex Direction <a class="direct-link" href="#flex-direction"> </a></h1>
 <ul>
-<li><code>container(-SIZ)</code>
+<li><code>flex(-TYP)(-DIR)</code>
 <ul>
-<li><strong>AMT</strong><br><br>
-<code>sm</code>(640px) <code>md</code>(768px) <code>lg</code>(1024px) <code>xl</code>(1280px) <code>2xl</code>(1536px)</li>
+<li><strong>TYP</strong><br><br>
+<code>row</code> <code>col</code></li>
+<li><strong>DIR</strong><br><br>
+<code>reverse</code></li>
 </ul>
 </li>
 </ul>
-<p><a href="https://tailwindcss.com/docs/box-shadow" target="_blank"><code class="code-exciting">Docs</code></a> <a href="https://codepen.io/planetoftheweb/pen/KKgzXpq?editors=1000" target="_blank"><code class="code-royal">Try it</code></a></p>
+<p><a href="https://tailwindcss.com/docs/flex-direction" target="_blank"><code class="code-exciting">Docs</code></a> <a href="https://codepen.io/planetoftheweb/pen/jOMBmpN?editors=1000" target="_blank"><code class="code-royal">Try it</code></a></p>
 <blockquote>
 <blockquote></blockquote>
 </blockquote>
-<p>Tailwind has a simple way of adding drop shadows to box elements. There are two special sizes. none, which serves as a reset and inner which places a slight shadow effect inside the box element. It's important to note that you can't make any of the other sizes an inner size.</p>
-<p>Then there are the traditional sizes <code>sm</code>, <code>md</code>, <code>lg</code>, <code>xl</code> and <code>2xl</code>. If you just use the keyword shadow without the size, you get a shadow that's 1 pixels wide and 3 pixels to the right. You can see them at work in the example.</p>
+<p>You can control the direction that flexbox operates in a few different ways. In addition to adding a flex class, you can add a direction type with a direction option.</p>
+<hr>
+<h1 id="flex-wrap">Flex Wrap <a class="direct-link" href="#flex-wrap"> </a></h1>
+<p><code>flex-wrap</code> <code>flex-wrap-reverse</code> <code>flex-nowrap</code></p>
+<p><a href="https://tailwindcss.com/docs/flex-wrap" target="_blank"><code class="code-exciting">Docs</code></a> <a href="https://codepen.io/planetoftheweb/pen/NWRpgRq?editors=1000" target="_blank"><code class="code-royal">Try it</code></a></p>
+<blockquote>
+<blockquote></blockquote>
+</blockquote>
+<p>You can tell an item to wrap to a next line or not with these classes. The default is for items not to wrap, but you can also have them wrap in reverse.</p>
+<hr>
+<h1 id="flex">Flex <a class="direct-link" href="#flex"> </a></h1>
+<p><code>flex-1</code> <code>flex-auto</code> <code>flex-initial</code> <code>flex-none</code></p>
+<p><a href="https://tailwindcss.com/docs/flex-wrap" target="_blank"><code class="code-exciting">Docs</code></a> <a href="https://codepen.io/planetoftheweb/pen/NWRpgRq?editors=1000" target="_blank"><code class="code-royal">Try it</code></a></p>
+<blockquote>
+<blockquote></blockquote>
+</blockquote>
+<p>Flex elements can grown and shrink, so there's a set of classes that let you control that.</p>
+<p><code>flex-1</code> lets an item grow and shrink as needed, but ignores the original size.</p>
+<p><code>flex-auto</code> lets an item grow and shrink as needed, taking into account the original size.</p>
+<p><code>flex-initial</code> lets an item shrink, but not grow.</p>
+<p><code>flex-none</code> prevents an item from growing or shrinking.</p>
+<hr>
+<h1 id="flex-grow">Flex Grow <a class="direct-link" href="#flex-grow"> </a></h1>
+<p><code>flex-grow-0</code> <code>flex-grow</code></p>
+<p><a href="https://tailwindcss.com/docs/flex-grow" target="_blank"><code class="code-exciting">Docs</code></a> <a href="https://codepen.io/planetoftheweb/pen/PoGpKoz?editors=1000" target="_blank"><code class="code-royal">Try it</code></a></p>
+<blockquote>
+<blockquote></blockquote>
+</blockquote>
+<p>There's a couple of tags that you can also use to control wether an item grows to fit space as well, but it's a bit different than the previous items.</p>
+<p><code>flex-grow</code> lets an item grow to fit the available space.</p>
+<p><code>flex-grow-0</code> prevents and item from growning.</p>
+<hr>
+<h1 id="flex-shrink">Flex Shrink <a class="direct-link" href="#flex-shrink"> </a></h1>
+<p><code>flex-shrink-0</code> <code>flex-shrink</code></p>
+<p><a href="https://tailwindcss.com/docs/flex-shrink" target="_blank"><code class="code-exciting">Docs</code></a> <a href="https://codepen.io/planetoftheweb/pen/rNMyzxq?editors=1000" target="_blank"><code class="code-royal">Try it</code></a></p>
+<blockquote>
+<blockquote></blockquote>
+</blockquote>
+<p>Like grow, the shrink classes control how an element shrinks.</p>
+<p><code>flex-shrink-0</code> prevents an item from shrinking</p>
+<p><code>flex-shrink</code> allows an item to shrink if needed.</p>
+<hr>
+<h1 id="order">Order <a class="direct-link" href="#order"> </a></h1>
+<ul>
+<li><code>order(-ORD)</code>
+<ul>
+<li><strong>ORD</strong><br><br>
+<code>1</code> <code>2</code> <code>3</code> <code>4</code> <code>5</code> <code>6</code> <code>7</code> <code>8</code> <code>9</code> <code>10</code> <code>11</code> <code>12</code><BR><br>
+<code>first</code> <code>last</code> <code>none</code></li>
+</ul>
+</li>
+</ul>
+<p><a href="https://tailwindcss.com/docs/order" target="_blank"><code class="code-exciting">Docs</code></a> <a href="https://codepen.io/planetoftheweb/pen/ExgWvXJ?editors=1000" target="_blank"><code class="code-royal">Try it</code></a></p>
+<blockquote>
+<blockquote></blockquote>
+</blockquote>
+<p>Order lets you control the order that the items in a container appear in. You can assign more than one item the same order and they sort of work like layers, keeping items with the same order together.</p>
+<p>There's a couple of named classes. <code>first</code> attempts to put an item first and has precendence over the other numbers. <code>last</code> does the same thing for the end. None is like a special order of zero.</p>
 
         </main>
         <aside class="aside aside-supplemental col col-md-3 col-lg-2 d-none d-md-block">
@@ -235,10 +320,25 @@
             <div class="">
                 <ol>
                     
-                    <li><a href="#container">Container  </a>
+                    <li><a href="#flexbox">Flexbox  </a>
             		</li>
 
-                    <li><a href="#container-1">Container  </a>
+                    <li><a href="#flex-direction">Flex Direction  </a>
+            		</li>
+
+                    <li><a href="#flex-wrap">Flex Wrap  </a>
+            		</li>
+
+                    <li><a href="#flex">Flex  </a>
+            		</li>
+
+                    <li><a href="#flex-grow">Flex Grow  </a>
+            		</li>
+
+                    <li><a href="#flex-shrink">Flex Shrink  </a>
+            		</li>
+
+                    <li><a href="#order">Order  </a>
             		</li>
                 </ol>
             </div>
