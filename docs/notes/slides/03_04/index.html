@@ -176,6 +176,15 @@
                   </div>
                 
                   <div class="d-flex justify-content-end align-items-right border-bottom p-2 ">
+                    <a class="text-decoration-none  link-secondary  link-primary" href="../../../notes/slides/02_11/index.html">
+                      <i class="fas fa-file-alt mr-2 lh-1  text-primary "></i>02_11
+                      Tables</a>
+                    <a class=" link-secondary  flex-fill ml-3 text-right" href="../../../?d=02_11&#">
+                      <i class="fab fa-slideshare"></i>
+                    </a>
+                  </div>
+                
+                  <div class="d-flex justify-content-end align-items-right border-bottom p-2 ">
                     <a class="text-decoration-none  link-secondary  link-primary" href="../../../notes/slides/03_01/index.html">
                       <i class="fas fa-file-alt mr-2 lh-1  text-primary "></i>03_01
                       Layout</a>
@@ -205,7 +214,7 @@
                   <div class="d-flex justify-content-end align-items-right border-bottom p-2  bg-primary ">
                     <a class="text-decoration-none  fw-bolder link-light  link-primary" href="../../../notes/slides/03_04/index.html">
                       <i class="fas fa-file-alt mr-2 lh-1  text-light "></i>03_04
-                      Container</a>
+                      Box Alignment</a>
                     <a class=" link-light  flex-fill ml-3 text-right" href="../../../?d=03_04&#">
                       <i class="fab fa-slideshare"></i>
                     </a>
@@ -214,8 +223,26 @@
                   <div class="d-flex justify-content-end align-items-right border-bottom p-2 ">
                     <a class="text-decoration-none  link-secondary  link-primary" href="../../../notes/slides/03_05/index.html">
                       <i class="fas fa-file-alt mr-2 lh-1  text-primary "></i>03_05
-                      Container</a>
+                      Transforms</a>
                     <a class=" link-secondary  flex-fill ml-3 text-right" href="../../../?d=03_05&#">
+                      <i class="fab fa-slideshare"></i>
+                    </a>
+                  </div>
+                
+                  <div class="d-flex justify-content-end align-items-right border-bottom p-2 ">
+                    <a class="text-decoration-none  link-secondary  link-primary" href="../../../notes/slides/03_06/index.html">
+                      <i class="fas fa-file-alt mr-2 lh-1  text-primary "></i>03_06
+                      Container</a>
+                    <a class=" link-secondary  flex-fill ml-3 text-right" href="../../../?d=03_06&#">
+                      <i class="fab fa-slideshare"></i>
+                    </a>
+                  </div>
+                
+                  <div class="d-flex justify-content-end align-items-right border-bottom p-2 ">
+                    <a class="text-decoration-none  link-secondary  link-primary" href="../../../notes/slides/03_07/index.html">
+                      <i class="fas fa-file-alt mr-2 lh-1  text-primary "></i>03_07
+                      Container</a>
+                    <a class=" link-secondary  flex-fill ml-3 text-right" href="../../../?d=03_07&#">
                       <i class="fab fa-slideshare"></i>
                     </a>
                   </div>
@@ -233,26 +260,183 @@
 
         <main class="main col col-md-6 col-lg-8">
           <!-- .slide: data-state="layout-title" class="bg-dark"-->
-<h1 id="container">Container <a class="direct-link" href="#container"> </a></h1>
+<h1 id="box-alignment">Box Alignment <a class="direct-link" href="#box-alignment"> </a></h1>
 <div class="slide-link"><a href="URL"><i class="fab fa-slideshare"></i> URL</a></div>
 <blockquote>
 <blockquote></blockquote>
 </blockquote>
 <hr>
-<h1 id="container-1">Container <a class="direct-link" href="#container-1"> </a></h1>
+<h1 id="space-between">Space Between <a class="direct-link" href="#space-between"> </a></h1>
 <ul>
-<li><code>container(-SIZ)</code>
+<li><code>space(-DIR)(-AMT)</code>
 <ul>
+<li><strong>DIR</strong><br><br>
+<code>x</code> <code>y</code><br></li>
 <li><strong>AMT</strong><br><br>
-<code>sm</code>(640px) <code>md</code>(768px) <code>lg</code>(1024px) <code>xl</code>(1280px) <code>2xl</code>(1536px)</li>
+<code>0</code> <code>0.5</code> <code>1</code> <code>1.5</code> <code>2</code> <code>2.5</code> <code>3</code> <code>3.5</code> <code>4</code><br><br>
+<code>5</code> <code>6</code> <code>7</code> <code>8</code> <code>9</code> <code>10</code> <code>11</code> <code>12</code> <code>14</code> <code>16</code><br><br>
+<code>20</code> <code>24</code> <code>28</code> <code>32</code> <code>36</code> <code>40</code> <code>44</code> <code>48</code> <code>52</code><br><br>
+<code>56</code> <code>60</code> <code>64</code> <code>72</code> <code>80</code> <code>96</code> <code>px</code> <code>reverse</code></li>
 </ul>
 </li>
 </ul>
-<p><a href="https://tailwindcss.com/docs/box-shadow" target="_blank"><code class="code-exciting">Docs</code></a> <a href="https://codepen.io/planetoftheweb/pen/KKgzXpq?editors=1000" target="_blank"><code class="code-royal">Try it</code></a></p>
+<p><a href="https://tailwindcss.com/docs/space" target="_blank"><code class="code-exciting">Docs</code></a> <a href="https://codepen.io/planetoftheweb/pen/yLabKeY?editors=1000" target="_blank"><code class="code-royal">Try it</code></a></p>
 <blockquote>
 <blockquote></blockquote>
 </blockquote>
-<p>Tailwind</p>
+<p>I often just want to put some space in between elements. I know I could use a list, but then I'd have to undo some of the other spacing. Tailwind gives you a real easy set of classes to take care of that.</p>
+<p>You get the typical scale from 0 to 96, plus <code>px</code>, which means one pixel.</p>
+<p>There's a reverse options when you are using a reverse flex. like when you're using <code>space-x-2</code> with <code>flex-row-reverse</code> you'd add <code>space-x-reverse</code>.</p>
+<p>You can use these without flex on simple items like divs or display blocks, but they work real well with flex items.</p>
+<hr>
+<h1 id="justify-content">Justify Content <a class="direct-link" href="#justify-content"> </a></h1>
+<ul>
+<li><code>justify(-DIR)</code>
+<ul>
+<li><strong>DIR</strong><br><br>
+<code>start</code> <code>end</code> <code>center</code><br><code>between</code> <code>around</code> <code>evenly</code></li>
+</ul>
+</li>
+</ul>
+<p><a href="https://tailwindcss.com/docs/justify-content" target="_blank"><code class="code-exciting">Docs</code></a> <a href="https://codepen.io/planetoftheweb/pen/BaLRrVB" target="_blank"><code class="code-royal">Try it</code></a></p>
+<blockquote>
+<blockquote></blockquote>
+</blockquote>
+<p>Justify content works with either grid or flex items and let you control how elements are postioned in the main axis.</p>
+<p><code>justify-start</code> places items at the beginning, <code>justify-end</code> puts them at the end, <code>justify-center</code> centers them.</p>
+<p>Then there's a set of justify classes that spread items around <code>justify-between</code> makes sure there is equal space between the items. <code>justify-around</code> does the same thing, but puts equal space on each side. Finally <code>justify-evenly</code> does the same thing as justify around, but gets rid of the double space.</p>
+<p>All of this is better with some samples.</p>
+<hr>
+<h1 id="justify-items">Justify Items <a class="direct-link" href="#justify-items"> </a></h1>
+<ul>
+<li><code>justify-items(-DIR)</code>
+<ul>
+<li><strong>DIR</strong><br><br>
+<code>auto</code> <code>start</code> <code>end</code> <code>center</code> <code>stretch</code></li>
+</ul>
+</li>
+</ul>
+<p><a href="https://tailwindcss.com/docs/justify-items" target="_blank"><code class="code-exciting">Docs</code></a> <a href="https://codepen.io/planetoftheweb/pen/XWjREwZ?editors=1000" target="_blank"><code class="code-royal">Try it</code></a></p>
+<blockquote>
+<blockquote></blockquote>
+</blockquote>
+<p>Specifically for grid items, you can control how items are placed within their axis. This is similar to Justify Content.</p>
+<p><code>justify-items-auto</code> is the default, which looks the same as <code>justify-items-stretch</code> which stretches the items to fit their grid lines.</p>
+<p><code>justify-items-start</code> makes the items align to the beginning of the grid lines, <code>justify-items-end</code> aligns the items to the end, and <code>justify-items-center</code> aligns them to the center of the grid.</p>
+<hr>
+<h1 id="justify-self">Justify Self <a class="direct-link" href="#justify-self"> </a></h1>
+<ul>
+<li><code>justify-self(-DIR)</code>
+<ul>
+<li><strong>DIR</strong><br><br>
+<code>auto</code> <code>start</code> <code>end</code> <code>center</code> <code>stretch</code></li>
+</ul>
+</li>
+</ul>
+<p><a href="https://tailwindcss.com/docs/justify-self" target="_blank"><code class="code-exciting">Docs</code></a> <a href="https://codepen.io/planetoftheweb/pen/qBamYZg?editors=1000" target="_blank"><code class="code-royal">Try it</code></a></p>
+<blockquote>
+<blockquote></blockquote>
+</blockquote>
+<p>Justify self is similar to Justify items, but applies to a single element.</p>
+<p>In the example, you can see that I've set all of the items to use a <code>justify-items-auto</code> layout, but each of the green ones uses one of the other classes.</p>
+<hr>
+<h1 id="align-content">Align Content <a class="direct-link" href="#align-content"> </a></h1>
+<ul>
+<li><code>content(-DIR)</code>
+<ul>
+<li><strong>DIR</strong><br><br>
+<code>center</code> <code>start</code> <code>end</code><br><br>
+<code>between</code> <code>around</code> <code>evenly</code></li>
+</ul>
+</li>
+</ul>
+<p><a href="https://tailwindcss.com/docs/align-content" target="_blank"><code class="code-exciting">Docs</code></a> <a href="https://codepen.io/planetoftheweb/pen/XWjRqqy?editors=1000" target="_blank"><code class="code-royal">Try it</code></a></p>
+<blockquote>
+<blockquote></blockquote>
+</blockquote>
+<p>Align Content works with flex and grid containers and align based on the cross axis.</p>
+<p>The classes are pretty straightforward and much like the justify content classes with <code>content-evenly</code></p>
+<p>In the example, I've given each of the containers a height of 40 units and made sure that the elements that have been aligned have been sized to full heights.</p>
+<hr>
+<h1 id="align-items">Align Items <a class="direct-link" href="#align-items"> </a></h1>
+<ul>
+<li><code>items(-DIR)</code>
+<ul>
+<li><strong>DIR</strong><br><br>
+<code>center</code> <code>start</code> <code>end</code><br><br>
+<code>baseline</code> <code>stretch</code></li>
+</ul>
+</li>
+</ul>
+<p><a href="https://tailwindcss.com/docs/align-content" target="_blank"><code class="code-exciting">Docs</code></a> <a href="https://codepen.io/planetoftheweb/pen/QWKvxWx?editors=1000" target="_blank"><code class="code-royal">Try it</code></a></p>
+<blockquote>
+<blockquote></blockquote>
+</blockquote>
+<p>Align Items lets you control how different rows are position on flex and grid containers. The example shows you the differences.</p>
+<p>Most are straightforward, but take a look at <code>items-baseline</code>. It's slightly different than <code>items-center</code>. Although the text is different sizes, the browser will try to align the baselines when placing the elements.</p>
+<p>Also, notice that I have no heights, just different padding on the items which gives them the extra heights.</p>
+<hr>
+<h1 id="align-self">Align Self <a class="direct-link" href="#align-self"> </a></h1>
+<ul>
+<li><code>items(-DIR)</code>
+<ul>
+<li><strong>DIR</strong><br><br>
+<code>center</code> <code>start</code> <code>end</code><br><br>
+<code>baseline</code> <code>stretch</code></li>
+</ul>
+</li>
+</ul>
+<p><a href="https://tailwindcss.com/docs/align-self" target="_blank"><code class="code-exciting">Docs</code></a> <a href="https://codepen.io/planetoftheweb/pen/mdrmKOw?editors=1000" target="_blank"><code class="code-royal">Try it</code></a></p>
+<blockquote>
+<blockquote></blockquote>
+</blockquote>
+<p>Align self lets you control the alignment of individual items. Notice that <code>self-auto</code> and <code>self-stretch</code> look the same.</p>
+<hr>
+<h1 id="place-content">Place Content <a class="direct-link" href="#place-content"> </a></h1>
+<ul>
+<li><code>place-content(-DIR)</code>
+<ul>
+<li><strong>DIR</strong><br><br>
+<code>center</code> <code>start</code> <code>end</code><br><br>
+<code>between</code> <code>around</code> <code>evenly</code> <code>stretch</code></li>
+</ul>
+</li>
+</ul>
+<p><a href="https://tailwindcss.com/docs/place-content" target="_blank"><code class="code-exciting">Docs</code></a> <a href="https://codepen.io/planetoftheweb/pen/eYdWKXp?editors=1000" target="_blank"><code class="code-royal">Try it</code></a></p>
+<blockquote>
+<blockquote></blockquote>
+</blockquote>
+<p>Place content lets you take care of justifying and aligning at the same time and you'll see that it's very similar to the content classes, but the names are a combination of content and align.</p>
+<hr>
+<h1 id="place-items">Place Items <a class="direct-link" href="#place-items"> </a></h1>
+<ul>
+<li><code>place-items(-DIR)</code>
+<ul>
+<li><strong>DIR</strong><br><br>
+<code>auto</code> <code>start</code> <code>end</code> <code>center</code> <code>stretch</code></li>
+</ul>
+</li>
+</ul>
+<p><a href="https://tailwindcss.com/docs/place-items" target="_blank"><code class="code-exciting">Docs</code></a> <a href="https://codepen.io/planetoftheweb/pen/RwGVdjq?editors=1000" target="_blank"><code class="code-royal">Try it</code></a></p>
+<blockquote>
+<blockquote></blockquote>
+</blockquote>
+<p>Similarly place items controls how items are justified and aligned.</p>
+<hr>
+<h1 id="place-self">Place Self <a class="direct-link" href="#place-self"> </a></h1>
+<ul>
+<li><code>place-items(-DIR)</code>
+<ul>
+<li><strong>DIR</strong><br><br>
+<code>auto</code> <code>start</code> <code>end</code> <code>center</code> <code>stretch</code></li>
+</ul>
+</li>
+</ul>
+<p><a href="https://tailwindcss.com/docs/place-self" target="_blank"><code class="code-exciting">Docs</code></a> <a href="https://codepen.io/planetoftheweb/pen/dypWLzB?editors=1000" target="_blank"><code class="code-royal">Try it</code></a></p>
+<blockquote>
+<blockquote></blockquote>
+</blockquote>
+<p>Place self lets you control individual items inside place content containers, helping you justify and align them..</p>
 
         </main>
         <aside class="aside aside-supplemental col col-md-3 col-lg-2 d-none d-md-block">
@@ -261,10 +445,37 @@
             <div class="">
                 <ol>
                     
-                    <li><a href="#container">Container  </a>
+                    <li><a href="#box-alignment">Box Alignment  </a>
             		</li>
 
-                    <li><a href="#container-1">Container  </a>
+                    <li><a href="#space-between">Space Between  </a>
+            		</li>
+
+                    <li><a href="#justify-content">Justify Content  </a>
+            		</li>
+
+                    <li><a href="#justify-items">Justify Items  </a>
+            		</li>
+
+                    <li><a href="#justify-self">Justify Self  </a>
+            		</li>
+
+                    <li><a href="#align-content">Align Content  </a>
+            		</li>
+
+                    <li><a href="#align-items">Align Items  </a>
+            		</li>
+
+                    <li><a href="#align-self">Align Self  </a>
+            		</li>
+
+                    <li><a href="#place-content">Place Content  </a>
+            		</li>
+
+                    <li><a href="#place-items">Place Items  </a>
+            		</li>
+
+                    <li><a href="#place-self">Place Self  </a>
             		</li>
                 </ol>
             </div>
