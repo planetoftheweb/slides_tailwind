@@ -232,7 +232,7 @@
                   <div class="d-flex justify-content-end align-items-right border-bottom p-2  bg-primary ">
                     <a class="text-decoration-none  fw-bolder link-light  link-primary" href="../../../notes/slides/03_06/index.html">
                       <i class="fas fa-file-alt mr-2 lh-1  text-light "></i>03_06
-                      Container</a>
+                      Animations</a>
                     <a class=" link-light  flex-fill ml-3 text-right" href="../../../?d=03_06&#">
                       <i class="fab fa-slideshare"></i>
                     </a>
@@ -241,8 +241,17 @@
                   <div class="d-flex justify-content-end align-items-right border-bottom p-2 ">
                     <a class="text-decoration-none  link-secondary  link-primary" href="../../../notes/slides/03_07/index.html">
                       <i class="fas fa-file-alt mr-2 lh-1  text-primary "></i>03_07
-                      Container</a>
+                      SVG</a>
                     <a class=" link-secondary  flex-fill ml-3 text-right" href="../../../?d=03_07&#">
+                      <i class="fab fa-slideshare"></i>
+                    </a>
+                  </div>
+                
+                  <div class="d-flex justify-content-end align-items-right border-bottom p-2 ">
+                    <a class="text-decoration-none  link-secondary  link-primary" href="../../../notes/slides/03_08/index.html">
+                      <i class="fas fa-file-alt mr-2 lh-1  text-primary "></i>03_08
+                      Screen Readers</a>
+                    <a class=" link-secondary  flex-fill ml-3 text-right" href="../../../?d=03_08&#">
                       <i class="fab fa-slideshare"></i>
                     </a>
                   </div>
@@ -260,27 +269,89 @@
 
         <main class="main col col-md-6 col-lg-8">
           <!-- .slide: data-state="layout-title" class="bg-dark"-->
-<h1 id="container">Container <a class="direct-link" href="#container"> </a></h1>
+<h1 id="animations">Animations <a class="direct-link" href="#animations"> </a></h1>
 <div class="slide-link"><a href="URL"><i class="fab fa-slideshare"></i> URL</a></div>
 <blockquote>
 <blockquote></blockquote>
 </blockquote>
 <hr>
-<h1 id="container-1">Container <a class="direct-link" href="#container-1"> </a></h1>
+<h1 id="transitions">Transitions <a class="direct-link" href="#transitions"> </a></h1>
 <ul>
-<li><code>container(-SIZ)</code>
+<li><code>transition(-TYP)</code>
 <ul>
-<li><strong>AMT</strong><br><br>
-<code>sm</code>(640px) <code>md</code>(768px) <code>lg</code>(1024px) <code>xl</code>(1280px) <code>2xl</code>(1536px)</li>
+<li><strong>TYP</strong><br><br>
+<code>none</code> <code>all</code> <code>colors</code> <code>opacity</code> <code>shadow</code> <code>transform</code></li>
 </ul>
 </li>
 </ul>
-<p><a href="https://tailwindcss.com/docs/box-shadow" target="_blank"><code class="code-exciting">Docs</code></a> <a href="https://codepen.io/planetoftheweb/pen/KKgzXpq?editors=1000" target="_blank"><code class="code-royal">Try it</code></a></p>
+<p><a href="https://tailwindcss.com/docs/transition-property" target="_blank"><code class="code-exciting">Docs</code></a> <a href="https://codepen.io/planetoftheweb/pen/YzGQrqq?editors=1000" target="_blank"><code class="code-royal">Try it</code></a></p>
 <blockquote>
 <blockquote></blockquote>
 </blockquote>
-<p>Tailwind has a simple way of adding drop shadows to box elements. There are two special sizes. none, which serves as a reset and inner which places a slight shadow effect inside the box element. It's important to note that you can't make any of the other sizes an inner size.</p>
-<p>Then there are the traditional sizes <code>sm</code>, <code>md</code>, <code>lg</code>, <code>xl</code> and <code>2xl</code>. If you just use the keyword shadow without the size, you get a shadow that's 1 pixels wide and 3 pixels to the right. You can see them at work in the example.</p>
+<p>You can choose to have Tailwind transition to create smooth animations between states on different types of properties. You can use transition without any other properties, in which case it will let you transition on all the properties shown here.</p>
+<p>Or you can use use <code>transition-all</code>, which sets the transition property to all. Similar, but will let you catch any other transitions you're doing manually.</p>
+<hr>
+<h1 id="transition-duration">Transition Duration <a class="direct-link" href="#transition-duration"> </a></h1>
+<ul>
+<li><code>duration(-TYP)</code>
+<ul>
+<li><strong>AMT</strong><br><br>
+75 100 150 200 300 500 700 1000</li>
+</ul>
+</li>
+</ul>
+<p><a href="https://tailwindcss.com/docs/transition-duration" target="_blank"><code class="code-exciting">Docs</code></a> <a href="https://codepen.io/planetoftheweb/pen/zYKzEaY?editors=1000" target="_blank"><code class="code-royal">Try it</code></a></p>
+<blockquote>
+<blockquote></blockquote>
+</blockquote>
+<p>Duration controls how long the transition takes to play.</p>
+<p>The numbers are in milliseconds so 500 is half a second.</p>
+<hr>
+<h1 id="transition-delay">Transition Delay <a class="direct-link" href="#transition-delay"> </a></h1>
+<ul>
+<li><code>delay(-TYP)</code>
+<ul>
+<li><strong>AMT</strong><br><br>
+75 100 150 200 300 500 700 1000</li>
+</ul>
+</li>
+</ul>
+<p><a href="https://tailwindcss.com/docs/transition-delay" target="_blank"><code class="code-exciting">Docs</code></a> <a href="https://codepen.io/planetoftheweb/pen/qBajVxV?editors=1000" target="_blank"><code class="code-royal">Try it</code></a></p>
+<blockquote>
+<blockquote></blockquote>
+</blockquote>
+<p>Similar to the transition duration, the delay lets you control how long to wait before the animation starts playing.</p>
+<p>The numbers are in milliseconds so 1000 is a full second.</p>
+<hr>
+<h1 id="transition-timing-function">Transition Timing Function <a class="direct-link" href="#transition-timing-function"> </a></h1>
+<ul>
+<li><code>delay(-TYP)</code>
+<ul>
+<li><strong>AMT</strong><br><br>
+75 100 150 200 300 500 700 1000</li>
+</ul>
+</li>
+</ul>
+<p><a href="https://tailwindcss.com/docs/transition-timing-function" target="_blank"><code class="code-exciting">Docs</code></a> <a href="https://codepen.io/planetoftheweb/pen/ZEpyaPe?editors=1000" target="_blank"><code class="code-royal">Try it</code></a></p>
+<blockquote>
+<blockquote></blockquote>
+</blockquote>
+<p>Similar to the transition duration, the delay lets</p>
+<h1 id="animate">Animate <a class="direct-link" href="#animate"> </a></h1>
+<ul>
+<li><code>animate(-TYP)</code>
+<ul>
+<li><strong>TYP</strong><br><br>
+<code>none</code> <code>spin</code> <code>ping</code> <code>pulse</code> <code>bounce</code></li>
+</ul>
+</li>
+</ul>
+<p><a href="https://tailwindcss.com/docs/animate" target="_blank"><code class="code-exciting">Docs</code></a> <a href="https://codepen.io/planetoftheweb/pen/ExgXvmp" target="_blank"><code class="code-royal">Try it</code></a></p>
+<blockquote>
+<blockquote></blockquote>
+</blockquote>
+<p>Tailwind has a few built in animations to help you with common animation needs.</p>
+<p>None is the reset and the rest are pretty self explanatory. They set up infinite animations with easing functions.</p>
 
         </main>
         <aside class="aside aside-supplemental col col-md-3 col-lg-2 d-none d-md-block">
@@ -289,10 +360,22 @@
             <div class="">
                 <ol>
                     
-                    <li><a href="#container">Container  </a>
+                    <li><a href="#animations">Animations  </a>
             		</li>
 
-                    <li><a href="#container-1">Container  </a>
+                    <li><a href="#transitions">Transitions  </a>
+            		</li>
+
+                    <li><a href="#transition-duration">Transition Duration  </a>
+            		</li>
+
+                    <li><a href="#transition-delay">Transition Delay  </a>
+            		</li>
+
+                    <li><a href="#transition-timing-function">Transition Timing Function  </a>
+            		</li>
+
+                    <li><a href="#animate">Animate  </a>
             		</li>
                 </ol>
             </div>
