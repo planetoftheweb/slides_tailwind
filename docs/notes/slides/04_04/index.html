@@ -330,6 +330,7 @@
 <blockquote>
 <blockquote></blockquote>
 </blockquote>
+<p>Some classses let you control how objects float around images and how they fit within their containers.</p>
 <hr>
 <h1 id="float">Float <a class="direct-link" href="#float"> </a></h1>
 <ul>
@@ -404,45 +405,6 @@
 <p>However, you might miss that in order to get this to work, you have to set up the object-none class as well in the element, otherwise, the default behavior is for the element to fill the container.</p>
 <p>Also, I had to give the container a class of full, otherwise, you wouldn't be able to fill the container.</p>
 <hr>
-<h1 id="overflow">Overflow <a class="direct-link" href="#overflow"> </a></h1>
-<ul>
-<li><code>overflow(-DIR)(-TYP)</code>
-<ul>
-<li><strong>DIR</strong> (overflow)<br><br>
-<code>x</code> <code>y</code></li>
-<li><strong>TYP</strong> (overflow)<br><br>
-<code>auto</code> <code>hidden</code> <code>visible</code> <code>scroll</code></li>
-</ul>
-</li>
-</ul>
-<p><a href="https://tailwindcss.com/docs/overflow" target="_blank"><code class="code-exciting">Docs</code></a> <a href="https://codepen.io/planetoftheweb/pen/WNGeWxJ?editors=1000" target="_blank"><code class="code-royal">Try it</code></a></p>
-<blockquote>
-<blockquote></blockquote>
-</blockquote>
-<p>Overflow controls what happens once an element gets too big to hold it's container.</p>
-<p>You can use the overflow class and then optionally add a direction, which is x or y. This will force the overflow to happen only on a specific direction.</p>
-<p>Then you can add a type, which is the value of the parameters.  That can be auto, which is the default, where it automatically tries to calculate what you need, or hidden, where it hides whatever the overflow is, visible, where it shows the content ignoring the container, scroll, where it gives you scrollbars.</p>
-<p>If you take a look at the example, you can see that I've had to adjust a few of the elements being displayed depending on what I was trying to show. The yellow is the background color for the container.</p>
-<hr>
-<h1 id="overscroll">Overscroll <a class="direct-link" href="#overscroll"> </a></h1>
-<ul>
-<li><code>overscroll(-DIR)(-TYP)</code>
-<ul>
-<li><strong>DIR</strong><br><br>
-<code>x</code> <code>y</code></li>
-<li><strong>TYP</strong><br><br>
-<code>auto</code> <code>contain</code> <code>none</code></li>
-</ul>
-</li>
-</ul>
-<p><a href="https://tailwindcss.com/docs/overscroll-behavior" target="_blank"><code class="code-exciting">Docs</code></a> <a href="https://codepen.io/planetoftheweb/pen/QWKdVXY?editors=1000" target="_blank"><code class="code-royal">Try it</code></a></p>
-<blockquote>
-<blockquote></blockquote>
-</blockquote>
-<p>Overscroll controls what happens when an element that is set to scroll is done scrolling. You can control the direction that is affected by this as well as the type.</p>
-<p>auto is the default behavior and means that the page will continue to scroll.</p>
-<p>contain means that once the item stops scrolling the rest of the page will not scroll.</p>
-<p>Finally none is similar to contain, but also prevents bounce effects when scrolling past the end of the container.</p>
 
         </main>
         <aside class="aside aside-supplemental col col-md-3 col-lg-2 d-none d-md-block">
@@ -464,12 +426,6 @@
             		</li>
 
                     <li><a href="#object-position">Object Position  </a>
-            		</li>
-
-                    <li><a href="#overflow">Overflow  </a>
-            		</li>
-
-                    <li><a href="#overscroll">Overscroll  </a>
             		</li>
                 </ol>
             </div>
