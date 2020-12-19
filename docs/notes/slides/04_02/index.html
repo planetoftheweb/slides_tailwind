@@ -198,7 +198,7 @@
                   <div class="d-flex justify-content-end align-items-right border-bottom p-2 ">
                     <a class="text-decoration-none  link-secondary  link-primary" href="../../../notes/slides/04_04/index.html">
                       <i class="fas fa-file-alt mr-2 lh-1  text-primary "></i>04_04
-                      Layout</a>
+                      Floating and Containement</a>
                     <a class=" link-secondary  flex-fill ml-3 text-right" href="../../../?d=04_04&#">
                       <i class="fab fa-slideshare"></i>
                     </a>
@@ -207,7 +207,7 @@
                   <div class="d-flex justify-content-end align-items-right border-bottom p-2 ">
                     <a class="text-decoration-none  link-secondary  link-primary" href="../../../notes/slides/04_05/index.html">
                       <i class="fas fa-file-alt mr-2 lh-1  text-primary "></i>04_05
-                      Element Properties</a>
+                      Other Properties</a>
                     <a class=" link-secondary  flex-fill ml-3 text-right" href="../../../?d=04_05&#">
                       <i class="fab fa-slideshare"></i>
                     </a>
@@ -243,7 +243,7 @@
                   <div class="d-flex justify-content-end align-items-right border-bottom p-2 ">
                     <a class="text-decoration-none  link-secondary  link-primary" href="../../../notes/slides/06_01/index.html">
                       <i class="fas fa-file-alt mr-2 lh-1  text-primary "></i>06_01
-                      Transforms</a>
+                      Transformations</a>
                     <a class=" link-secondary  flex-fill ml-3 text-right" href="../../../?d=06_01&#">
                       <i class="fab fa-slideshare"></i>
                     </a>
@@ -261,7 +261,7 @@
                   <div class="d-flex justify-content-end align-items-right border-bottom p-2 ">
                     <a class="text-decoration-none  link-secondary  link-primary" href="../../../notes/slides/06_03/index.html">
                       <i class="fas fa-file-alt mr-2 lh-1  text-primary "></i>06_03
-                      Animate</a>
+                      Animations</a>
                     <a class=" link-secondary  flex-fill ml-3 text-right" href="../../../?d=06_03&#">
                       <i class="fab fa-slideshare"></i>
                     </a>
@@ -326,7 +326,7 @@
         <main class="main col col-md-6 col-lg-8">
           <!-- .slide: data-state="layout-title" class="bg-dark"-->
 <h1 id="padding-and-margin">Padding and Margin <a class="direct-link" href="#padding-and-margin"> </a></h1>
-<div class="slide-link"><a href="URL"><i class="fab fa-slideshare"></i> URL</a></div>
+<div class="slide-link"><a href="https://go.raybo.org/2cEj"><i class="fab fa-slideshare"></i> go.raybo.org/2cEj</a></div>
 <blockquote>
 <blockquote></blockquote>
 </blockquote>
@@ -379,6 +379,17 @@
 <p>You can apply margin on four sides at once using just a p. You can change all vertical margins at once with py, horizontal margin with px or each one of the sides with one of the four letters t- for top r- for right b- for bottom and l- for left. I find it easy to remember by thinking of the word TROUBLE without the consonants</p>
 <p>There are also a ton of size classes here. There are some pretty small classes at the beginning and some large ones towards the end. All sizes are in REMs, or root ems, which is set to 16 pixels except for a special size for a single pixel on all sides.</p>
 <p>If you take a look at the example I've set up, you can see that I've added padding only to one side here as well as one unit of padding o the left.</p>
+<hr>
+<h1 id="box-sizing">Box Sizing <a class="direct-link" href="#box-sizing"> </a></h1>
+<p><code>box-border</code> <code>box-content</code></p>
+<p><a href="https://tailwindcss.com/docs/box-sizing" target="_blank"><code class="code-exciting">Docs</code></a> <a href="https://codepen.io/planetoftheweb/pen/rNMWXoV?editors=1000" target="_blank"><code class="code-royal">Try it</code></a></p>
+<blockquote>
+<blockquote></blockquote>
+</blockquote>
+<p>In CSS, the size of elements is often expressed in pixels, but is calculated by adding the border and padding to the element's size. So if you specify a 100px width, but then add 10 pixels of padding, then the size of the element is 120px, 100, plus ten on each side.<br>
+space between</p>
+<p>You can change that by setting the box sizing parameter to border box. This makes the size include the border and padding inside the size specified. So a 100 pixel width will make adjust the size of the element to 80 pixels. That is a much more predictable sizing and is the default for Tailwind.</p>
+<p>However, if you want to change it to the traditional CSS sizing, you can use box-content class.</p>
 
         </main>
         <aside class="aside aside-supplemental col col-md-3 col-lg-2 d-none d-md-block">
@@ -394,6 +405,9 @@
             		</li>
 
                     <li><a href="#margin">Margin  </a>
+            		</li>
+
+                    <li><a href="#box-sizing">Box Sizing  </a>
             		</li>
                 </ol>
             </div>
