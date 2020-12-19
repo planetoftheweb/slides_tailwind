@@ -3,7 +3,15 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>{{ metadata.title }}</title>
+
+    {%- for name, item in slideindex -%}
+      {% if page.fileSlug == item.filename %}
+        <title>{{ page.fileSlug }}
+          --
+          {{item.title}}</title>
+      {% endif %}
+    {%- endfor -%}
+
     <link rel="stylesheet" href="../../../css/twemoji-amazing.css"/>
     <link rel="stylesheet" href="../../../css/bootstrap-rayveal.css"/>
     <link rel="stylesheet" href="../../../css/fontawesome.css"/>
