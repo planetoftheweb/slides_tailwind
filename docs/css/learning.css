@@ -537,7 +537,7 @@ h3::selection {
 }
 
 .reveal-viewport.layout-title:nth-of-type(1) section > h1 {
-  animation: typing 1.5s 1s steps(40, end) forwards !important;
+  animation: typing 1.5s steps(40, end) forwards !important;
 }
 
 /*********************************************
