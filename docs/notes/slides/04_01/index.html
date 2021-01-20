@@ -3,9 +3,9 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-        <title>01_02
+        <title>04_01
           --
-          Basic Configuration</title>
+          Width and Height</title>
       <link rel="stylesheet" href="../../../css/twemoji-amazing.css"/>
     <link rel="stylesheet" href="../../../css/bootstrap-rayveal.css"/>
     <link rel="stylesheet" href="../../../css/fontawesome.css"/>
@@ -51,11 +51,11 @@
                     </a>
                   </div>
                 
-                  <div class="d-flex justify-content-end align-items-right border-bottom p-2  bg-primary ">
-                    <a class="text-decoration-none  fw-bolder link-light  link-primary" href="../../../notes/slides/01_02/index.html">
-                      <i class="fas fa-file-alt mr-2 lh-1  text-light "></i>01_02
+                  <div class="d-flex justify-content-end align-items-right border-bottom p-2 ">
+                    <a class="text-decoration-none  link-secondary  link-primary" href="../../../notes/slides/01_02/index.html">
+                      <i class="fas fa-file-alt mr-2 lh-1  text-primary "></i>01_02
                       Basic Configuration</a>
-                    <a class=" link-light  flex-fill ml-3 text-right" href="../../../?d=01_02&#">
+                    <a class=" link-secondary  flex-fill ml-3 text-right" href="../../../?d=01_02&#">
                       <i class="fab fa-slideshare"></i>
                     </a>
                   </div>
@@ -123,11 +123,11 @@
                     </a>
                   </div>
                 
-                  <div class="d-flex justify-content-end align-items-right border-bottom p-2 ">
-                    <a class="text-decoration-none  link-secondary  link-primary" href="../../../notes/slides/04_01/index.html">
-                      <i class="fas fa-file-alt mr-2 lh-1  text-primary "></i>04_01
+                  <div class="d-flex justify-content-end align-items-right border-bottom p-2  bg-primary ">
+                    <a class="text-decoration-none  fw-bolder link-light  link-primary" href="../../../notes/slides/04_01/index.html">
+                      <i class="fas fa-file-alt mr-2 lh-1  text-light "></i>04_01
                       Width and Height</a>
-                    <a class=" link-secondary  flex-fill ml-3 text-right" href="../../../?d=04_01&#">
+                    <a class=" link-light  flex-fill ml-3 text-right" href="../../../?d=04_01&#">
                       <i class="fab fa-slideshare"></i>
                     </a>
                   </div>
@@ -244,93 +244,135 @@
 
         <main class="main col col-md-6 col-lg-8">
           <!-- .slide: data-state="layout-title" class="bg-dark"-->
-<h1 id="basic-configuration">Basic Configuration <a class="direct-link" href="#basic-configuration"> </a></h1>
-<div class="slide-link"><a href="https://go.raybo.org/2XsN"><i class="fab fa-slideshare"></i> go.raybo.org/2XsN</a></div>
+<h1 id="width-and-height">Width and Height <a class="direct-link" href="#width-and-height"> </a></h1>
+<div class="slide-link"><a href="https://go.raybo.org/2cEi"><i class="fab fa-slideshare"></i> go.raybo.org/2cEi</a></div>
 <blockquote>
 <blockquote></blockquote>
 </blockquote>
-<p>Let's talk a bit about why the basic install looks like it does and how we can customize Tailwind CSS a bit.</p>
+<p>Some elements attempt to help you control the height and width of items and there are a lot of options for how to accomplish this.</p>
 <hr>
-<h1 id="standard-modules">Standard Modules <a class="direct-link" href="#standard-modules"> </a></h1>
+<!-- .slide: data-state="layout-code-list" -->
+<h1 id="width">Width <a class="direct-link" href="#width"> </a></h1>
 <ul>
-<li><code>@base</code></li>
-<li><code>@components</code></li>
-<li><code>@utilities</code></li>
-</ul>
-<blockquote>
-<blockquote></blockquote>
-</blockquote>
-<p>Our basic CSS file import three modules.</p>
-<p>The @base styles are defaults for things like the body, anchor tag, box sixing. It also includes a CSS reset tool called Preflight, more of that in a bit.</p>
-<p>The @component styles consists of mainly media queries for the container.</p>
-<p>@utilities is where the bulk of Tailwind CSS styles live.</p>
-<p>You can see how this gets converted into CSS in the <code>build/css/styles.css</code> file and they can also be found in <code>node_modules/tailwind/dist</code>.</p>
-<hr>
-<h1 id="preflight">Preflight <a class="direct-link" href="#preflight"> </a></h1>
+<li><code>w-(SIZ)</code>
 <ul>
-<li>Opinionated <a href="https://github.com/sindresorhus/modern-normalize">modern-normalize</a></li>
-<li>Margins removed</li>
-<li>Headings, lists unstyled</li>
-<li><code>block-level</code> images</li>
-<li><code>border</code>, <code>button</code> borders</li>
+<li><strong>SIZ</strong><br>
+<code>0</code> <code>0.5</code> <code>1</code> <code>1.5</code> <code>2</code> <code>2.5</code> <code>3</code> <code>3.5</code> <code>4</code> <code>5</code> <code>6</code><br><br>
+<code>7</code> <code>8</code> <code>9</code> <code>10</code> <code>11</code> <code>12</code> <code>14</code> <code>16</code> <code>20</code> <code>24</code> <code>28</code> <code>32</code><br><br>
+<code>36</code> <code>40</code> <code>44</code> <code>48</code> <code>52</code> <code>56</code> <code>60</code> <code>64</code> <code>72</code> <code>80</code> <code>96</code><br><br>
+<code>1/2</code> <code>1/3</code> <code>2/3</code> <code>1/4</code> <code>2/4</code> <code>3/4</code> <code>1/5</code> <code>2/5</code> <code>3/5</code> <code>4/5</code><br><br>
+<code>1/6</code> <code>2/6</code> <code>3/6</code> <code>4/6</code> <code>5/6</code> <code>1/12</code> <code>2/12</code> <code>3/12</code> <code>4/12</code> <code>5/12</code><br><br>
+<code>6/12</code> <code>7/12</code> <code>8/12</code> <code>9/12</code> <code>10/12</code> <code>11/12</code><br><br>
+<code>auto</code> <code>px</code> <code>full</code> <code>screen</code> <code>min</code> <code>max</code></li>
 </ul>
-<p><a href="https://tailwindcss.com/docs/preflight">https://tailwindcss.com/docs/preflight</a></p>
+</li>
+</ul>
+<p><a href="https://tailwindcss.com/docs/width" target="_blank"><code class="code-exciting">Docs</code></a> <a href="https://codepen.io/planetoftheweb/pen/LYRExRB?editors=1000" target="_blank"><code class="code-royal">Try it</code></a></p>
 <blockquote>
 <blockquote></blockquote>
 </blockquote>
-<p>Preflight is an opinionated version of the popular <strong>normalize</strong> project. It's job is to make different browsers display the same page as close as possible, since browsers often use their own similar default styles. However, preflight goes beyond normalize in that it resets and clears out the styling from some major tags.</p>
-<p>First, it removes all margins from headings and lists. As a designer, I'm almost always overriding the default margins, so pre-flights assumes you'll be doing that anyways.</p>
-<p>Next, it removes all styles from all headings and lists. I'm never happy with those styles and spend a lot of time overwriting things, so once I get past being concerned by this move, it does makes a lot sense.</p>
-<p>Images are set to <code>display: block</code> and <code>vertical-align: middle</code>. The default for images is display inline and I almost never want my images to display as inline.</p>
-<p>Two more that get modified are the borders as well as the button styles. These are more for conveniently setting up how the border classes work in Tailwind, assuming that you're going to add a border to buttons and setting the border styles to a one pixel buttons.</p>
-<p>At first, these style changes are really disconcerting, but after a while you'll realize how nice these changes work, so give them a chance.</p>
+<p>The width is probably one of the richest classes in Tailwind with tons of options. You can see that we have the traditional sizes from 1 to 96, but we also have fractional widths.</p>
+<p>There's a lot of other intersting parameters that you can use. So, for example <code>auto</code> will let the browser decide the width of the content, <code>px</code> will give us the usual 1 pixel width, <code>full</code> will give us a width of 100%, <code>screen</code> gives us 100% of the width of the viewport, which is normally the browser width.</p>
+<p>Finally, we have a couple of interesting values here. <code>min</code> gives us the width of the smallest word in our content, while max gives us the size of the largest word.</p>
+<p>In the example, you'll note that I left a few values out because they're difficult to visualize on the layout I've designed, but please play around with them.</p>
 <hr>
-<h1 id="preflight-off">Preflight Off <a class="direct-link" href="#preflight-off"> </a></h1>
-<pre><code class="language-js">// tailwind.config.js
-  corePlugins: {
-    preflight: false
-  }
-</code></pre>
+<!-- .slide: data-state="layout-code-list" -->
+<h1 id="height">Height <a class="direct-link" href="#height"> </a></h1>
+<ul>
+<li><code>h-(SIZ)</code>
+<ul>
+<li><strong>SIZ</strong><br>
+<code>0</code> <code>0.5</code> <code>1</code> <code>1.5</code> <code>2</code> <code>2.5</code> <code>3</code> <code>3.5</code> <code>4</code> <code>5</code> <code>6</code><br><br>
+<code>7</code> <code>8</code> <code>9</code> <code>10</code> <code>11</code> <code>12</code> <code>14</code> <code>16</code> <code>20</code> <code>24</code> <code>28</code><br><br>
+<code>32</code> <code>36</code> <code>40</code> <code>44</code> <code>48</code> <code>52</code> <code>56</code> <code>60</code> <code>64</code> <code>72</code> <code>80</code> <code>96</code><br><br>
+<code>1/2</code> <code>1/3</code> <code>2/3</code> <code>1/4</code> <code>2/4</code> <code>3/4</code> <code>1/5</code> <code>2/5</code> <code>3/5</code><br><br>
+<code>4/5</code> <code>1/6</code> <code>2/6</code> <code>3/6</code> <code>4/6</code> <code>5/6</code> <code>1/12</code> <code>2/12</code> <code>3/12</code><br><br>
+<code>4/12</code> <code>5/12</code> <code>6/12</code> <code>7/12</code> <code>8/12</code> <code>9/12</code> <code>10/12</code> <code>11/12</code><br><br>
+<code>auto</code> <code>px</code> <code>full</code> <code>screen</code></li>
+</ul>
+</li>
+</ul>
+<p><a href="https://tailwindcss.com/docs/height" target="_blank"><code class="code-exciting">Docs</code></a> <a href="https://codepen.io/planetoftheweb/pen/PoGwQma?editors=1000" target="_blank"><code class="code-royal">Try it</code></a></p>
 <blockquote>
 <blockquote></blockquote>
 </blockquote>
-<p>If you're not happy with the preflight changes, you can easily turn it off by modifying the corePlugins object in the <code>tailwind.config.js</code> file. Now, this might turn things off that you don't want like give you the browser default serif font, but it can be useful if you're using Tailwind CSS with another library or your own resets.</p>
-<p>By the way, corePlugins is where you can also customize other parts of the library.</p>
+<p>Height is pretty similar to width with a lot of the same values, except that it doesn't have the min and max values because they don't make as much sense.</p>
+<p>Height is relative so in the example, you'll note that I'm just giving you a simple layout so you can play around with it.</p>
+<p>Notice that there is a container with a value of screen for the height. That makes the layout the size of the viewport. The height is usually relative to the size of a container and it won't show up, so without the container height, the other heights won't show up properly.</p>
 <hr>
-<h1 id="modifying-styles">Modifying styles <a class="direct-link" href="#modifying-styles"> </a></h1>
-<pre><code class="language-scss">@layer base {
-  h1 {
-    color: #00bff3;
-    @apply text-6xl;
-  }
-}
-</code></pre>
-<p>Use on <code>base</code>, <code>components</code> or <code>layout</code></p>
+<!-- .slide: data-state="layout-code-list" -->
+<h1 id="min-width">Min Width <a class="direct-link" href="#min-width"> </a></h1>
+<ul>
+<li><code>min-w-(SIZ)</code>
+<ul>
+<li><strong>SIZ</strong> <code>0</code> <code>full</code> <code>min</code> <code>max</code></li>
+</ul>
+</li>
+</ul>
+<p><a href="https://tailwindcss.com/docs/min-width" target="_blank"><code class="code-exciting">Docs</code></a> <a href="https://codepen.io/planetoftheweb/pen/xxEbWwP?editors=1000" target="_blank"><code class="code-royal">Try it</code></a></p>
 <blockquote>
 <blockquote></blockquote>
 </blockquote>
-<p>You can also modify the base file and override whatever style you want. So, for example we can modify the level one headings so that they match our logo.</p>
-<p>There's also a way to add a style from Tailwind CSS using the <code>@apply</code> directive. This works like a sass mixin and you simply call it using a name from any Tailwind CSS style.</p>
-<p>You can use apply not just to modify something in the base layer, but on any other of the three tailwind CSS default files.</p>
-<p>You can use this same process to create additional components or layouts by using the @layer and @apply directives on components or even on specific tags like we've done here with the h1 tag.</p>
+<p>The min width parameter lets you specify the minimum width an element should have. It has only four options.</p>
+<p><code>0</code> is meant to reset most elements, <code>full</code> is meant to make the minimum width the size of the container, <code>min</code> means that it will try to fit the smallest word possible and <code>max</code> will try to fit all of the words.</p>
+<p>In our example, notice that we've set the width of this element to 10, and if we didn't have these minimum utilities it would end up making our box too small.</p>
 <hr>
-<!-- .slide: data-state="layout-title" data-transition="zoom" class="bg-dark"-->
-<h1 id="practice">Practice <a class="direct-link" href="#practice"> </a></h1>
-<div class="btn-group mt-3" role="group" aria-label="Basic example">
-  <a type="button" class="animate__animated animate__backInLeft btn btn-lg btn-exciting text-white" href="https://github.com/LinkedInLearning/tailwind-css-2841311/tree/01_02b" target="_blank">Start</a>
-  <a type="button" class="animate__animated animate__zoomInDown btn btn-lg btn-royal text-white" href="htthttps://github.com/LinkedInLearning/vue3-esst-2834032/compare/01_02b..01_02e" target="_blank">Diff</a>
-  <a type="button" class="animate__animated animate__backInRight animate__slow btn btn-lg btn-primary text-white" href="https://github.com/LinkedInLearning/tailwind-css-2841311/tree/01_02e" target="_blank">End</a>
-</div>
-<ol>
-<li>Standard modules<br><code>@base</code>, <code>@components</code>, <code>@utilities</code></li>
-<li>Discussed Preflight</li>
-<li>Modify styles with<br><code>@layer</code>, <code>@apply</code></li>
-</ol>
+<!-- .slide: data-state="layout-code-list" -->
+<h1 id="max-width">Max Width <a class="direct-link" href="#max-width"> </a></h1>
+<ul>
+<li><code>max-w-(SIZ)</code>
+<ul>
+<li><strong>SIZ</strong> <code>0</code> <code>none</code> <code>xs</code> <code>sm</code> <code>md</code> <code>lg</code> <code>xl</code><br><code>2xl</code> <code>3xl</code> <code>4xl</code> <code>5xl</code> <code>6xl</code> <code>7xl</code><br><code>full</code> <code>min</code> <code>max</code> <code>prose</code><br> <code>screen-sm</code> <code>screen-md</code> <code>screen-lg</code> <br><br>
+<code>screen-xl</code> <code>screen-2xl</code></li>
+</ul>
+</li>
+</ul>
+<p><a href="https://tailwindcss.com/docs/max-width" target="_blank"><code class="code-exciting">Docs</code></a> <a href="https://codepen.io/planetoftheweb/pen/ExgaErp?editors=1000" target="_blank"><code class="code-royal">Try it</code></a></p>
 <blockquote>
 <blockquote></blockquote>
 </blockquote>
-<p>Here's where you can find what we did in this video. We looked at Tailwind's standard modules. base, components and utilities, then we discussed what the preflight styles do in Tailwinds.</p>
-<p>We also learned how we can modify styles with <code>@layer</code> and <code>@apply</code></p>
+<p>You'd think that the max-width parameters would be similar to the min-width paramaters, but there are lots more options here. In addition to the traditional sizes, you also have the option here of sizing to different viewport sizes.</p>
+<p>There's one REAL interesting option here called prose. It tries to set the width of the container so that the text fits nicely. you have to see it to believe so head on over to our example.</p>
+<hr>
+<!-- .slide: data-state="layout-code-list" -->
+<h1 id="min-height">Min Height <a class="direct-link" href="#min-height"> </a></h1>
+<ul>
+<li>
+<p><code>min-h-(SIZ)</code></p>
+<ul>
+<li><strong>SIZ</strong></li>
+</ul>
+</li>
+</ul>
+<p><code>0</code> <code>full</code> <code>screen</code></p>
+<p><a href="https://tailwindcss.com/docs/min-height" target="_blank"><code class="code-exciting">Docs</code></a> <a href="https://codepen.io/planetoftheweb/pen/MWjYVop?editors=1000" target="_blank"><code class="code-royal">Try it</code></a></p>
+<blockquote>
+<blockquote></blockquote>
+</blockquote>
+<p>Let's talk about min height. It makes the object attempt to have a size that it doesn't go below.</p>
+<p>There's only a few options here, you can set that to 0, which is a reset. <code>full</code> means that the height of the element will fill the container, finally screen will try to make it fit the height of the viewport; which is usually the height of the browser.</p>
+<hr>
+<!-- .slide: data-state="layout-code-list" -->
+<h1 id="max-height">Max Height <a class="direct-link" href="#max-height"> </a></h1>
+<ul>
+<li><code>max-h-(SIZ)</code>
+<ul>
+<li><strong>SIZ</strong> <code>0</code> <code>px</code> <code>full</code> <code>screen</code><br><br>
+<code>0.5</code> <code>1</code> <code>1.5</code> <code>2</code> <code>2.5</code> <code>3</code> <code>3.5</code> <code>4</code><br><br>
+<code>5</code> <code>6</code> <code>7</code> <code>8</code> <code>9</code> <code>10</code> <code>11</code> <code>12</code> <code>14</code> <code>16</code><br><br>
+<code>20</code> <code>24</code> <code>28</code> <code>32</code> <code>36</code> <code>40</code> <code>44</code> <code>48</code> <code>52</code><br><br>
+<code>56</code> <code>60</code> <code>64</code> <code>72</code> <code>80</code> <code>96</code><br></li>
+</ul>
+</li>
+</ul>
+<p><a href="https://tailwindcss.com/docs/max-height" target="_blank"><code class="code-exciting">Docs</code></a> <a href="https://codepen.io/planetoftheweb/pen/dypPwwM?editors=1000" target="_blank"><code class="code-royal">Try it</code></a></p>
+<blockquote>
+<blockquote></blockquote>
+</blockquote>
+<p>With Max Height, the height of the element will try to be no bigger than the amount specified.</p>
+<p><code>max-height</code> is one of those parameters that doesn't make any sense unless you see it in context. So in our example, it's important that I'm using a maximum height value together with the overflow classes.</p>
+<hr>
+<!-- .slide: data-state="layout-title" class="bg-dark"-->
 
         </main>
         <aside class="aside aside-supplemental col col-md-3 col-lg-2 d-none d-md-block">
@@ -339,22 +381,25 @@
             <div class="">
                 <ol>
                     
-                    <li><a href="#basic-configuration">Basic Configuration  </a>
+                    <li><a href="#width-and-height">Width and Height  </a>
             		</li>
 
-                    <li><a href="#standard-modules">Standard Modules  </a>
+                    <li><a href="#width">Width  </a>
             		</li>
 
-                    <li><a href="#preflight">Preflight  </a>
+                    <li><a href="#height">Height  </a>
             		</li>
 
-                    <li><a href="#preflight-off">Preflight Off  </a>
+                    <li><a href="#min-width">Min Width  </a>
             		</li>
 
-                    <li><a href="#modifying-styles">Modifying styles  </a>
+                    <li><a href="#max-width">Max Width  </a>
             		</li>
 
-                    <li><a href="#practice">Practice  </a>
+                    <li><a href="#min-height">Min Height  </a>
+            		</li>
+
+                    <li><a href="#max-height">Max Height  </a>
             		</li>
                 </ol>
             </div>

@@ -3,9 +3,9 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-        <title>01_02
+        <title>03_01
           --
-          Basic Configuration</title>
+          Borders</title>
       <link rel="stylesheet" href="../../../css/twemoji-amazing.css"/>
     <link rel="stylesheet" href="../../../css/bootstrap-rayveal.css"/>
     <link rel="stylesheet" href="../../../css/fontawesome.css"/>
@@ -51,11 +51,11 @@
                     </a>
                   </div>
                 
-                  <div class="d-flex justify-content-end align-items-right border-bottom p-2  bg-primary ">
-                    <a class="text-decoration-none  fw-bolder link-light  link-primary" href="../../../notes/slides/01_02/index.html">
-                      <i class="fas fa-file-alt mr-2 lh-1  text-light "></i>01_02
+                  <div class="d-flex justify-content-end align-items-right border-bottom p-2 ">
+                    <a class="text-decoration-none  link-secondary  link-primary" href="../../../notes/slides/01_02/index.html">
+                      <i class="fas fa-file-alt mr-2 lh-1  text-primary "></i>01_02
                       Basic Configuration</a>
-                    <a class=" link-light  flex-fill ml-3 text-right" href="../../../?d=01_02&#">
+                    <a class=" link-secondary  flex-fill ml-3 text-right" href="../../../?d=01_02&#">
                       <i class="fab fa-slideshare"></i>
                     </a>
                   </div>
@@ -96,11 +96,11 @@
                     </a>
                   </div>
                 
-                  <div class="d-flex justify-content-end align-items-right border-bottom p-2 ">
-                    <a class="text-decoration-none  link-secondary  link-primary" href="../../../notes/slides/03_01/index.html">
-                      <i class="fas fa-file-alt mr-2 lh-1  text-primary "></i>03_01
+                  <div class="d-flex justify-content-end align-items-right border-bottom p-2  bg-primary ">
+                    <a class="text-decoration-none  fw-bolder link-light  link-primary" href="../../../notes/slides/03_01/index.html">
+                      <i class="fas fa-file-alt mr-2 lh-1  text-light "></i>03_01
                       Borders</a>
-                    <a class=" link-secondary  flex-fill ml-3 text-right" href="../../../?d=03_01&#">
+                    <a class=" link-light  flex-fill ml-3 text-right" href="../../../?d=03_01&#">
                       <i class="fab fa-slideshare"></i>
                     </a>
                   </div>
@@ -244,93 +244,190 @@
 
         <main class="main col col-md-6 col-lg-8">
           <!-- .slide: data-state="layout-title" class="bg-dark"-->
-<h1 id="basic-configuration">Basic Configuration <a class="direct-link" href="#basic-configuration"> </a></h1>
-<div class="slide-link"><a href="https://go.raybo.org/2XsN"><i class="fab fa-slideshare"></i> go.raybo.org/2XsN</a></div>
+<h1 id="borders">Borders <a class="direct-link" href="#borders"> </a></h1>
+<div class="slide-link"><a href="https://go.raybo.org/2cDq"><i class="fab fa-slideshare"></i> go.raybo.org/2cDq</a></div>
 <blockquote>
 <blockquote></blockquote>
 </blockquote>
-<p>Let's talk a bit about why the basic install looks like it does and how we can customize Tailwind CSS a bit.</p>
+<p>There are styles that allow you to control the look of border elements.</p>
 <hr>
-<h1 id="standard-modules">Standard Modules <a class="direct-link" href="#standard-modules"> </a></h1>
+<h1 id="border-width">Border Width <a class="direct-link" href="#border-width"> </a></h1>
 <ul>
-<li><code>@base</code></li>
-<li><code>@components</code></li>
-<li><code>@utilities</code></li>
-</ul>
-<blockquote>
-<blockquote></blockquote>
-</blockquote>
-<p>Our basic CSS file import three modules.</p>
-<p>The @base styles are defaults for things like the body, anchor tag, box sixing. It also includes a CSS reset tool called Preflight, more of that in a bit.</p>
-<p>The @component styles consists of mainly media queries for the container.</p>
-<p>@utilities is where the bulk of Tailwind CSS styles live.</p>
-<p>You can see how this gets converted into CSS in the <code>build/css/styles.css</code> file and they can also be found in <code>node_modules/tailwind/dist</code>.</p>
-<hr>
-<h1 id="preflight">Preflight <a class="direct-link" href="#preflight"> </a></h1>
+<li><code>border(-SID)(-AMT)</code>
 <ul>
-<li>Opinionated <a href="https://github.com/sindresorhus/modern-normalize">modern-normalize</a></li>
-<li>Margins removed</li>
-<li>Headings, lists unstyled</li>
-<li><code>block-level</code> images</li>
-<li><code>border</code>, <code>button</code> borders</li>
+<li><strong>SID</strong><br><br>
+<code>t</code> <code>r</code> <code>b</code> <code>l</code></li>
+<li><strong>AMT</strong> (border-width)<br><br>
+<code>0</code> <code>2</code> <code>4</code> <code>8</code></li>
 </ul>
-<p><a href="https://tailwindcss.com/docs/preflight">https://tailwindcss.com/docs/preflight</a></p>
+</li>
+</ul>
+<p><a href="https://tailwindcss.com/docs/border-width" target="_blank"><code class="code-exciting">Docs</code></a> <a href="https://codepen.io/planetoftheweb/pen/mdryoQN?editors=1000" target="_blank"><code class="code-royal">Try it</code></a></p>
 <blockquote>
 <blockquote></blockquote>
 </blockquote>
-<p>Preflight is an opinionated version of the popular <strong>normalize</strong> project. It's job is to make different browsers display the same page as close as possible, since browsers often use their own similar default styles. However, preflight goes beyond normalize in that it resets and clears out the styling from some major tags.</p>
-<p>First, it removes all margins from headings and lists. As a designer, I'm almost always overriding the default margins, so pre-flights assumes you'll be doing that anyways.</p>
-<p>Next, it removes all styles from all headings and lists. I'm never happy with those styles and spend a lot of time overwriting things, so once I get past being concerned by this move, it does makes a lot sense.</p>
-<p>Images are set to <code>display: block</code> and <code>vertical-align: middle</code>. The default for images is display inline and I almost never want my images to display as inline.</p>
-<p>Two more that get modified are the borders as well as the button styles. These are more for conveniently setting up how the border classes work in Tailwind, assuming that you're going to add a border to buttons and setting the border styles to a one pixel buttons.</p>
-<p>At first, these style changes are really disconcerting, but after a while you'll realize how nice these changes work, so give them a chance.</p>
+<p>You can specify the width of a border in one of four directions. Top, Right Bottom and Left and then you can use a size. It feels sort of odd that there are only four options for size.</p>
+<p>By the way, if you just say border, then it creates a one pixel size, so you can say <code>border-l</code> for a one pixel border on the left side.</p>
 <hr>
-<h1 id="preflight-off">Preflight Off <a class="direct-link" href="#preflight-off"> </a></h1>
-<pre><code class="language-js">// tailwind.config.js
-  corePlugins: {
-    preflight: false
-  }
-</code></pre>
+<h1 id="border-opacity">Border Opacity <a class="direct-link" href="#border-opacity"> </a></h1>
+<ul>
+<li><code>border-opacity-AMT</code>
+<ul>
+<li><strong>AMT</strong> (opacity/100)<br><br>
+<code>0</code> <code>5</code> <code>10</code> <code>20</code> <code>25</code> <code>30</code> <code>40</code> <code>50</code><br><code>60</code> <code>70</code> <code>75</code> <code>80</code> <code>90</code> <code>95</code> <code>100</code></li>
+</ul>
+</li>
+</ul>
+<p><a href="https://tailwindcss.com/docs/border-opacity" target="_blank"><code class="code-exciting">Docs</code></a> <a href="https://codepen.io/planetoftheweb/pen/VwKYqNK?editors=1000" target="_blank"><code class="code-royal">Try it</code></a></p>
 <blockquote>
 <blockquote></blockquote>
 </blockquote>
-<p>If you're not happy with the preflight changes, you can easily turn it off by modifying the corePlugins object in the <code>tailwind.config.js</code> file. Now, this might turn things off that you don't want like give you the browser default serif font, but it can be useful if you're using Tailwind CSS with another library or your own resets.</p>
-<p>By the way, corePlugins is where you can also customize other parts of the library.</p>
+<p>You can modify the border opacity with one of these values. Notice that there are more at the beginning and at the end of this scale, but otherwise they increment by 10 units.</p>
+<p>The nice thing about this way of setting borders is that you don't have to create an extra element to make the text opacity different than the border. Tailwind uses a custom variable to take care of this.</p>
 <hr>
-<h1 id="modifying-styles">Modifying styles <a class="direct-link" href="#modifying-styles"> </a></h1>
-<pre><code class="language-scss">@layer base {
-  h1 {
-    color: #00bff3;
-    @apply text-6xl;
-  }
-}
-</code></pre>
-<p>Use on <code>base</code>, <code>components</code> or <code>layout</code></p>
-<blockquote>
-<blockquote></blockquote>
-</blockquote>
-<p>You can also modify the base file and override whatever style you want. So, for example we can modify the level one headings so that they match our logo.</p>
-<p>There's also a way to add a style from Tailwind CSS using the <code>@apply</code> directive. This works like a sass mixin and you simply call it using a name from any Tailwind CSS style.</p>
-<p>You can use apply not just to modify something in the base layer, but on any other of the three tailwind CSS default files.</p>
-<p>You can use this same process to create additional components or layouts by using the @layer and @apply directives on components or even on specific tags like we've done here with the h1 tag.</p>
-<hr>
-<!-- .slide: data-state="layout-title" data-transition="zoom" class="bg-dark"-->
-<h1 id="practice">Practice <a class="direct-link" href="#practice"> </a></h1>
-<div class="btn-group mt-3" role="group" aria-label="Basic example">
-  <a type="button" class="animate__animated animate__backInLeft btn btn-lg btn-exciting text-white" href="https://github.com/LinkedInLearning/tailwind-css-2841311/tree/01_02b" target="_blank">Start</a>
-  <a type="button" class="animate__animated animate__zoomInDown btn btn-lg btn-royal text-white" href="htthttps://github.com/LinkedInLearning/vue3-esst-2834032/compare/01_02b..01_02e" target="_blank">Diff</a>
-  <a type="button" class="animate__animated animate__backInRight animate__slow btn btn-lg btn-primary text-white" href="https://github.com/LinkedInLearning/tailwind-css-2841311/tree/01_02e" target="_blank">End</a>
+<h1 id="border-color">Border Color <a class="direct-link" href="#border-color"> </a></h1>
+<ul>
+<li><code>border-COL-STR</code></li>
+</ul>
+<div style="font-size: .8em; line-height: 50%">
+    <code style="color: transparent; background: transparent;">transparent</code>
+    <code style="color: var(--bs-gray); background: transparent;">transparent</code>
+    <code style="color: black; background: transparent;">black</code>
+    <code style="color: white;">white</code><br>
+    <code style="color: rgb(107, 114, 128); background: transparent" contenteditable = "false" style="cursor: pointer !important;">gray</code>
+    <code class="text-red-500">red</code>
+    <code style="color: rgb(252, 211, 77); background: transparent">yellow</code>
+    <code style="color: rgb(16, 185, 129); background: transparent">green</code>
+    <code style="color: rgb(59, 130, 246); background: transparent">blue</code>
+    <code style="color: rgb(99, 102, 241); background: transparent">indigo</code>
+    <code style="color: rgb(139, 92, 246); background: transparent">purple</code>
+    <code style="color: rgb(236, 72, 153); background: transparent">pink</code><br>
+    <code style="color: rgb(249, 250, 251); background: transparent">50</code>
+    <code style="color: rgb(243, 244, 246); background: transparent">100</code>
+    <code style="color: rgb(229, 231, 235); background: transparent">200</code>
+    <code style="color: rgb(209, 213, 219); background: transparent">300</code>
+    <code style="color: rgb(156, 163, 175); background: transparent">400</code>
+    <code style="color: rgb(107, 114, 128); background: transparent">500</code>
+    <code style="color: rgb(75, 85, 99); background: transparent">600</code>
+    <code style="color: rgb(55, 65, 81); background: transparent">700</code>
+    <code style="color: rgb(31, 41, 55); background: transparent">800</code>
+    <code style="color: rgb(17, 24, 3); background: transparent">900</code><br>
+    <code style="color: rgb(254, 242, 242); background: transparent">50</code>
+    <code style="color: rgb(254, 226, 226); background: transparent">100</code>
+    <code style="color: rgb(254, 202, 202); background: transparent">200</code>
+    <code style="color: rgb(252, 165, 165); background: transparent">300</code>
+    <code style="color: rgb(248, 113, 113); background: transparent">400</code>
+    <code style="color: rgb(239, 68, 68); background: transparent">500</code>
+    <code style="color: rgb(220, 38, 38); background: transparent">600</code>
+    <code style="color: rgb(185, 28, 28); background: transparent">700</code>
+    <code style="color: rgb(153, 27, 27); background: transparent">800</code>
+    <code style="color: rgb(127, 29, 29); background: transparent">900</code><br>
+    <code style="color: rgb(255, 251, 235); background: transparent">50</code>
+    <code style="color: rgb(254, 243, 199); background: transparent">100</code>
+    <code style="color: rgb(253, 230, 138); background: transparent">200</code>
+    <code style="color: rgb(252, 211, 77); background: transparent">300</code>
+    <code style="color: rgb(251, 191, 36); background: transparent">400</code>
+    <code style="color: rgb(245, 158, 11); background: transparent">500</code>
+    <code style="color: rgb(217, 119, 6); background: transparent">600</code>
+    <code style="color: rgb(180, 83, 9); background: transparent">700</code>
+    <code style="color: rgb(146, 64, 14); background: transparent">800</code>
+    <code style="color: rgb(120, 53, 15); background: transparent">900</code><br>
+    <code style="color: rgb(236, 253, 245); background: transparent">50</code>
+    <code style="color: rgb(209, 250, 229); background: transparent">100</code>
+    <code style="color: rgb(167, 243, 208); background: transparent">200</code>
+    <code style="color: rgb(110, 231, 183); background: transparent">300</code>
+    <code style="color: rgb(52, 211, 153); background: transparent">400</code>
+    <code style="color: rgb(16, 185, 129); background: transparent">500</code>
+    <code style="color: rgb(5, 150, 105); background: transparent">600</code>
+    <code style="color: rgb(4, 120, 87); background: transparent">700</code>
+    <code style="color: rgb(6, 95, 70); background: transparent">800</code>
+    <code style="color: rgb(6, 78, 59); background: transparent">900</code><br>
+    <code style="color: rgb(239, 246, 255); background: transparent">50</code>
+    <code style="color: rgb(219, 234, 254); background: transparent">100</code>
+    <code style="color: rgb(191, 219, 254); background: transparent">200</code>
+    <code style="color: rgb(147, 197, 253); background: transparent">300</code>
+    <code style="color: rgb(96, 165, 250); background: transparent">400</code>
+    <code style="color: rgb(59, 130, 246); background: transparent">500</code>
+    <code style="color: rgb(37, 99, 235); background: transparent">600</code>
+    <code style="color: rgb(29, 78, 216); background: transparent">700</code>
+    <code style="color: rgb(30, 64, 175); background: transparent">800</code>
+    <code style="color: rgb(30, 58, 138); background: transparent">900</code><br>
+    <code style="color: rgb(238, 242, 255); background: transparent">50</code>
+    <code style="color: rgb(224, 231, 255); background: transparent">100</code>
+    <code style="color: rgb(199, 210, 254); background: transparent">200</code>
+    <code style="color: rgb(165, 180, 252); background: transparent">300</code>
+    <code style="color: rgb(129, 140, 248); background: transparent">400</code>
+    <code style="color: rgb(99, 102, 241); background: transparent">500</code>
+    <code style="color: rgb(79, 70, 229); background: transparent">600</code>
+    <code style="color: rgb(67, 56, 202); background: transparent">700</code>
+    <code style="color: rgb(55, 48, 163); background: transparent">800</code>
+    <code style="color: rgb(49, 46, 129); background: transparent">900</code><br>
+    <code style="color: rgb(245, 243, 255); background: transparent">50</code>
+    <code style="color: rgb(237, 233, 254); background: transparent">100</code>
+    <code style="color: rgb(221, 214, 254); background: transparent">200</code>
+    <code style="color: rgb(196, 181, 253); background: transparent">300</code>
+    <code style="color: rgb(167, 139, 250); background: transparent">400</code>
+    <code style="color: rgb(139, 92, 246); background: transparent">500</code>
+    <code style="color: rgb(124, 58, 237); background: transparent">600</code>
+    <code style="color: rgb(109, 40, 217); background: transparent">700</code>
+    <code style="color: rgb(91, 33, 182); background: transparent">800</code>
+    <code style="color: rgb(76, 29, 149); background: transparent">900</code><br>
+    <code style="color: rgb(253, 242, 248); background: transparent">50</code>
+    <code style="color: rgb(252, 231, 243); background: transparent">100</code>
+    <code style="color: rgb(251, 207, 232); background: transparent">200</code>
+    <code style="color: rgb(249, 168, 212); background: transparent">300</code>
+    <code style="color: rgb(244, 114, 182); background: transparent">400</code>
+    <code style="color: rgb(236, 72, 153); background: transparent">500</code>
+    <code style="color: rgb(219, 39, 119); background: transparent">600</code>
+    <code style="color: rgb(190, 24, 93); background: transparent">700</code>
+    <code style="color: rgb(157, 23, 77); background: transparent">800</code>
+    <code style="color: rgb(131, 24, 67); background: transparent">900</code>
 </div>
-<ol>
-<li>Standard modules<br><code>@base</code>, <code>@components</code>, <code>@utilities</code></li>
-<li>Discussed Preflight</li>
-<li>Modify styles with<br><code>@layer</code>, <code>@apply</code></li>
-</ol>
+<p><a href="https://tailwindcss.com/docs/border-color" target="_blank"><code class="code-exciting">Docs</code></a> <a href="https://codepen.io/planetoftheweb/pen/MWjYxLE?editors=1000" target="_blank"><code class="code-royal">Try it</code></a></p>
 <blockquote>
 <blockquote></blockquote>
 </blockquote>
-<p>Here's where you can find what we did in this video. We looked at Tailwind's standard modules. base, components and utilities, then we discussed what the preflight styles do in Tailwinds.</p>
-<p>We also learned how we can modify styles with <code>@layer</code> and <code>@apply</code></p>
+<p>The border colors just as you'd expect are trasnparent, black white and current...which sets the color to whatever the current color is set to. Plus the traditional gray, red, yellow, etc. and the strengths go from 100 to 900.</p>
+<hr>
+<h1 id="border-radius">Border Radius <a class="direct-link" href="#border-radius"> </a></h1>
+<ul>
+<li><code>rounded-(SID)(-AMT)</code>
+<ul>
+<li>
+<p><strong>COL</strong><br><br>
+<code>t</code> <code>tl</code> <code>r</code> <code>tr</code> <code>b</code> <code>br</code> <code>l</code> <code>bl</code></p>
+</li>
+<li>
+<p><strong>AMT</strong><br><br>
+<code>none</code> <code>full</code> <code>sm</code> <code>md</code> <code>lg</code> <code>xl</code> <code>2xl</code> <code>3xl</code></p>
+</li>
+</ul>
+</li>
+</ul>
+<p><a href="https://tailwindcss.com/docs/border-radius" target="_blank"><code class="code-exciting">Docs</code></a> <a href="https://codepen.io/planetoftheweb/pen/oNzgOdg?editors=1000" target="_blank"><code class="code-royal">Try it</code></a></p>
+<blockquote>
+<blockquote></blockquote>
+</blockquote>
+<p>Border radius is one of those interesting classes in that the class isn't named like it's CSS counterpart. It's called rounded instead.</p>
+<p>You can also specify not just the sides, but also he corners, so you use the top right bottom left, but also a combination so you can modify each corner.</p>
+<p>The sizes are pretty standard and are all based on REMs, which is the root ems that browsers typically define as 16 pixels.</p>
+<p>You can also just use the rounded keyword, in which case it will use a .15 rem size. You can see the sizes in action in the example.</p>
+<p>Although the 3xl looks pretty large, the full size is set to an infinite amount, which practically is 9999 pixels.</p>
+<hr>
+<h1 id="border-style">Border Style <a class="direct-link" href="#border-style"> </a></h1>
+<ul>
+<li><code>border-(STL)</code>
+<ul>
+<li><strong>STL</strong> (border-style)<br><br>
+<code>none</code> <code>solid</code> <code>dashed</code> <code>dotted</code> <code>double</code></li>
+</ul>
+</li>
+</ul>
+<p><a href="https://tailwindcss.com/docs/border-style" target="_blank"><code class="code-exciting">Docs</code></a> <a href="https://codepen.io/planetoftheweb/pen/jOMEozo?editors=1000" target="_blank"><code class="code-royal">Try it</code></a></p>
+<blockquote>
+<blockquote></blockquote>
+</blockquote>
+<p>There's a few border styles available. Interstingly enough the double style doesn't work well unless the border is set to 4 or 8 pixels.</p>
 
         </main>
         <aside class="aside aside-supplemental col col-md-3 col-lg-2 d-none d-md-block">
@@ -339,22 +436,22 @@
             <div class="">
                 <ol>
                     
-                    <li><a href="#basic-configuration">Basic Configuration  </a>
+                    <li><a href="#borders">Borders  </a>
             		</li>
 
-                    <li><a href="#standard-modules">Standard Modules  </a>
+                    <li><a href="#border-width">Border Width  </a>
             		</li>
 
-                    <li><a href="#preflight">Preflight  </a>
+                    <li><a href="#border-opacity">Border Opacity  </a>
             		</li>
 
-                    <li><a href="#preflight-off">Preflight Off  </a>
+                    <li><a href="#border-color">Border Color  </a>
             		</li>
 
-                    <li><a href="#modifying-styles">Modifying styles  </a>
+                    <li><a href="#border-radius">Border Radius  </a>
             		</li>
 
-                    <li><a href="#practice">Practice  </a>
+                    <li><a href="#border-style">Border Style  </a>
             		</li>
                 </ol>
             </div>

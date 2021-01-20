@@ -3,9 +3,9 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-        <title>01_02
+        <title>04_03
           --
-          Basic Configuration</title>
+          Display and Position</title>
       <link rel="stylesheet" href="../../../css/twemoji-amazing.css"/>
     <link rel="stylesheet" href="../../../css/bootstrap-rayveal.css"/>
     <link rel="stylesheet" href="../../../css/fontawesome.css"/>
@@ -51,11 +51,11 @@
                     </a>
                   </div>
                 
-                  <div class="d-flex justify-content-end align-items-right border-bottom p-2  bg-primary ">
-                    <a class="text-decoration-none  fw-bolder link-light  link-primary" href="../../../notes/slides/01_02/index.html">
-                      <i class="fas fa-file-alt mr-2 lh-1  text-light "></i>01_02
+                  <div class="d-flex justify-content-end align-items-right border-bottom p-2 ">
+                    <a class="text-decoration-none  link-secondary  link-primary" href="../../../notes/slides/01_02/index.html">
+                      <i class="fas fa-file-alt mr-2 lh-1  text-primary "></i>01_02
                       Basic Configuration</a>
-                    <a class=" link-light  flex-fill ml-3 text-right" href="../../../?d=01_02&#">
+                    <a class=" link-secondary  flex-fill ml-3 text-right" href="../../../?d=01_02&#">
                       <i class="fab fa-slideshare"></i>
                     </a>
                   </div>
@@ -132,11 +132,11 @@
                     </a>
                   </div>
                 
-                  <div class="d-flex justify-content-end align-items-right border-bottom p-2 ">
-                    <a class="text-decoration-none  link-secondary  link-primary" href="../../../notes/slides/04_03/index.html">
-                      <i class="fas fa-file-alt mr-2 lh-1  text-primary "></i>04_03
+                  <div class="d-flex justify-content-end align-items-right border-bottom p-2  bg-primary ">
+                    <a class="text-decoration-none  fw-bolder link-light  link-primary" href="../../../notes/slides/04_03/index.html">
+                      <i class="fas fa-file-alt mr-2 lh-1  text-light "></i>04_03
                       Display and Position</a>
-                    <a class=" link-secondary  flex-fill ml-3 text-right" href="../../../?d=04_03&#">
+                    <a class=" link-light  flex-fill ml-3 text-right" href="../../../?d=04_03&#">
                       <i class="fab fa-slideshare"></i>
                     </a>
                   </div>
@@ -244,93 +244,75 @@
 
         <main class="main col col-md-6 col-lg-8">
           <!-- .slide: data-state="layout-title" class="bg-dark"-->
-<h1 id="basic-configuration">Basic Configuration <a class="direct-link" href="#basic-configuration"> </a></h1>
-<div class="slide-link"><a href="https://go.raybo.org/2XsN"><i class="fab fa-slideshare"></i> go.raybo.org/2XsN</a></div>
+<h1 id="display-and-position">Display and Position <a class="direct-link" href="#display-and-position"> </a></h1>
+<div class="slide-link"><a href="https://go.raybo.org/2cEk"><i class="fab fa-slideshare"></i> go.raybo.org/2cEk</a></div>
 <blockquote>
 <blockquote></blockquote>
 </blockquote>
-<p>Let's talk a bit about why the basic install looks like it does and how we can customize Tailwind CSS a bit.</p>
+<p>There's a lot of classes related to how the element is displayed and positioned within the browser.</p>
 <hr>
-<h1 id="standard-modules">Standard Modules <a class="direct-link" href="#standard-modules"> </a></h1>
-<ul>
-<li><code>@base</code></li>
-<li><code>@components</code></li>
-<li><code>@utilities</code></li>
-</ul>
-<blockquote>
-<blockquote></blockquote>
-</blockquote>
-<p>Our basic CSS file import three modules.</p>
-<p>The @base styles are defaults for things like the body, anchor tag, box sixing. It also includes a CSS reset tool called Preflight, more of that in a bit.</p>
-<p>The @component styles consists of mainly media queries for the container.</p>
-<p>@utilities is where the bulk of Tailwind CSS styles live.</p>
-<p>You can see how this gets converted into CSS in the <code>build/css/styles.css</code> file and they can also be found in <code>node_modules/tailwind/dist</code>.</p>
-<hr>
-<h1 id="preflight">Preflight <a class="direct-link" href="#preflight"> </a></h1>
-<ul>
-<li>Opinionated <a href="https://github.com/sindresorhus/modern-normalize">modern-normalize</a></li>
-<li>Margins removed</li>
-<li>Headings, lists unstyled</li>
-<li><code>block-level</code> images</li>
-<li><code>border</code>, <code>button</code> borders</li>
-</ul>
-<p><a href="https://tailwindcss.com/docs/preflight">https://tailwindcss.com/docs/preflight</a></p>
-<blockquote>
-<blockquote></blockquote>
-</blockquote>
-<p>Preflight is an opinionated version of the popular <strong>normalize</strong> project. It's job is to make different browsers display the same page as close as possible, since browsers often use their own similar default styles. However, preflight goes beyond normalize in that it resets and clears out the styling from some major tags.</p>
-<p>First, it removes all margins from headings and lists. As a designer, I'm almost always overriding the default margins, so pre-flights assumes you'll be doing that anyways.</p>
-<p>Next, it removes all styles from all headings and lists. I'm never happy with those styles and spend a lot of time overwriting things, so once I get past being concerned by this move, it does makes a lot sense.</p>
-<p>Images are set to <code>display: block</code> and <code>vertical-align: middle</code>. The default for images is display inline and I almost never want my images to display as inline.</p>
-<p>Two more that get modified are the borders as well as the button styles. These are more for conveniently setting up how the border classes work in Tailwind, assuming that you're going to add a border to buttons and setting the border styles to a one pixel buttons.</p>
-<p>At first, these style changes are really disconcerting, but after a while you'll realize how nice these changes work, so give them a chance.</p>
-<hr>
-<h1 id="preflight-off">Preflight Off <a class="direct-link" href="#preflight-off"> </a></h1>
-<pre><code class="language-js">// tailwind.config.js
-  corePlugins: {
-    preflight: false
-  }
-</code></pre>
-<blockquote>
-<blockquote></blockquote>
-</blockquote>
-<p>If you're not happy with the preflight changes, you can easily turn it off by modifying the corePlugins object in the <code>tailwind.config.js</code> file. Now, this might turn things off that you don't want like give you the browser default serif font, but it can be useful if you're using Tailwind CSS with another library or your own resets.</p>
-<p>By the way, corePlugins is where you can also customize other parts of the library.</p>
-<hr>
-<h1 id="modifying-styles">Modifying styles <a class="direct-link" href="#modifying-styles"> </a></h1>
-<pre><code class="language-scss">@layer base {
-  h1 {
-    color: #00bff3;
-    @apply text-6xl;
-  }
-}
-</code></pre>
-<p>Use on <code>base</code>, <code>components</code> or <code>layout</code></p>
-<blockquote>
-<blockquote></blockquote>
-</blockquote>
-<p>You can also modify the base file and override whatever style you want. So, for example we can modify the level one headings so that they match our logo.</p>
-<p>There's also a way to add a style from Tailwind CSS using the <code>@apply</code> directive. This works like a sass mixin and you simply call it using a name from any Tailwind CSS style.</p>
-<p>You can use apply not just to modify something in the base layer, but on any other of the three tailwind CSS default files.</p>
-<p>You can use this same process to create additional components or layouts by using the @layer and @apply directives on components or even on specific tags like we've done here with the h1 tag.</p>
-<hr>
-<!-- .slide: data-state="layout-title" data-transition="zoom" class="bg-dark"-->
-<h1 id="practice">Practice <a class="direct-link" href="#practice"> </a></h1>
-<div class="btn-group mt-3" role="group" aria-label="Basic example">
-  <a type="button" class="animate__animated animate__backInLeft btn btn-lg btn-exciting text-white" href="https://github.com/LinkedInLearning/tailwind-css-2841311/tree/01_02b" target="_blank">Start</a>
-  <a type="button" class="animate__animated animate__zoomInDown btn btn-lg btn-royal text-white" href="htthttps://github.com/LinkedInLearning/vue3-esst-2834032/compare/01_02b..01_02e" target="_blank">Diff</a>
-  <a type="button" class="animate__animated animate__backInRight animate__slow btn btn-lg btn-primary text-white" href="https://github.com/LinkedInLearning/tailwind-css-2841311/tree/01_02e" target="_blank">End</a>
+<h1 id="display">Display <a class="direct-link" href="#display"> </a></h1>
+<div class="small">
+<p><code>block</code> <code>inline-block</code> <code>inline</code><br><code>flex</code> <code>inline-flex</code><br><br>
+<code>flow-root</code> <code>grid</code> <code>inline-grid</code> <code>contents</code> <code>hidden</code><br><br>
+<code>table</code> <code>table-caption</code> <code>table-cell</code> <code>table-column</code> <code>table-column-group</code> <code>table-footer-group</code> <code>table-header-group</code> <code>table-row-group</code> <code>table-row</code><br><br>
+<code>flow-root</code> <code>grid</code> <code>inline-grid</code> <code>contents</code> <code>hidden</code></p>
 </div>
-<ol>
-<li>Standard modules<br><code>@base</code>, <code>@components</code>, <code>@utilities</code></li>
-<li>Discussed Preflight</li>
-<li>Modify styles with<br><code>@layer</code>, <code>@apply</code></li>
-</ol>
+<p><a href="https://tailwindcss.com/docs/display" target="_blank"><code class="code-exciting">Docs</code></a> <a href="https://codepen.io/planetoftheweb/pen/ExgZWMP?editors=1000" target="_blank"><code class="code-royal">Try it</code></a></p>
 <blockquote>
 <blockquote></blockquote>
 </blockquote>
-<p>Here's where you can find what we did in this video. We looked at Tailwind's standard modules. base, components and utilities, then we discussed what the preflight styles do in Tailwinds.</p>
-<p>We also learned how we can modify styles with <code>@layer</code> and <code>@apply</code></p>
+<p>Let's talk about the display property. It's one of the richest and part of every element in HTML.</p>
+<p>There are classes that allow you to modify the display property to every other type of item and they're meant to match the CSS properties.</p>
+<p>Let's take a look at our example though.</p>
+<p>We have the block, inline an inline-block classes. Block is meant for large areas of content and each block section appears on a new line.</p>
+<p>Inline isn't allowed a width or heights.</p>
+<p>When you choose the inline-block, you have an inline that can take width and heights. Unless there is no spacing between tags, there will be spacing between inline-block items.</p>
+<p>There are a number of classes related to different parts of table elements. That lets any element emulate a table's properties. You'll probably never use this one, but you can take a look at the example.</p>
+<p>There's support for the two newer layout types. Flex and grid. More on those later.</p>
+<p>There's a couple of interesting ones that you might not have used before. Flow root is the Tailwind equivalent of the clearfix and is meant to clear floated elements.</p>
+<p>Contents is super interesting in tha it creates a phantom piece of content that can act as it's own element.</p>
+<p>Finally hidden is mean or hiding certain elements.</p>
+<hr>
+<h1 id="position">Position <a class="direct-link" href="#position"> </a></h1>
+<p><code>static</code> <code>fixed</code> <code>absolute</code> <code>relative</code> <code>sticky</code></p>
+<p><a href="https://tailwindcss.com/docs/position" target="_blank"><code class="code-exciting">Docs</code></a> <a href="https://codepen.io/planetoftheweb/pen/wvzgQvv?editors=1000" target="_blank"><code class="code-royal">Try it</code></a></p>
+<blockquote>
+<blockquote></blockquote>
+</blockquote>
+<p>Position matches the css positioning atribute</p>
+<p><code>static</code> is the default and means that the element is positioned where it would normally go in the page. Static will also ignore offsets.</p>
+<p>Relative means that the element is placed relative to where it would normally go, but you can use offsets to move the element by a certain amounts.</p>
+<p>Absolute positions an element outside the normal flow as if it didn't exist. Offsets happen from the nearest parent that has a position other than static.</p>
+<p>Fixed means that it is positioned relative to the viewport. Normally the browser window.</p>
+<p>Sticky is one of the newer attributes and means that the element is positioned as relative until it crosses a certain point.</p>
+<hr>
+<h1 id="top-right-bottom-left">Top Right Bottom Left <a class="direct-link" href="#top-right-bottom-left"> </a></h1>
+<ul>
+<li><code>(-)(SID)(-DIR)(-SIZ)</code>
+<ul>
+<li><strong>SID</strong><br>
+<code>inset</code> <code>top</code> <code>right</code> <code>bottom</code> <code>left</code></li>
+<li><strong>DIR</strong><br>
+<code>x</code> <code>y</code></li>
+<li><strong>SIZ</strong><br><br>
+<code>0</code> <code>0.5</code> <code>1</code> <code>1.5</code> <code>2</code> <code>2.5</code> <code>3</code> <code>3.5</code> <code>4</code> <code>5</code> <code>6</code><br><br>
+<code>7</code> <code>8</code> <code>9</code> <code>10</code> <code>11</code> <code>12</code> <code>14</code> <code>16</code> <code>20</code> <code>24</code> <code>28</code><br><br>
+<code>32</code> <code>36</code> <code>40</code> <code>44</code> <code>48</code> <code>52</code> <code>56</code> <code>60</code> <code>64</code> <code>72</code> <code>80</code> <code>96</code><br><br>
+<code>1/2</code> <code>1/3</code> <code>2/3</code> <code>1/4</code> <code>2/4</code> <code>3/4</code> <code>1/5</code> <code>2/5</code> <code>3/5</code><br><br>
+<code>4/5</code> <code>1/6</code> <code>2/6</code> <code>3/6</code> <code>4/6</code> <code>5/6</code> <code>1/12</code> <code>2/12</code> <code>3/12</code><br><br>
+<code>4/12</code> <code>5/12</code> <code>6/12</code> <code>7/12</code> <code>8/12</code> <code>9/12</code> <code>10/12</code> <code>11/12</code><br><br>
+<code>auto</code> <code>px</code> <code>full</code></li>
+</ul>
+</li>
+</ul>
+<p><a href="https://tailwindcss.com/docs/top-right-bottom-left" target="_blank"><code class="code-exciting">Docs</code></a> <a href="https://codepen.io/planetoftheweb/pen/MWjJZEZ?editors=1000" target="_blank"><code class="code-royal">Try it</code></a></p>
+<blockquote>
+<blockquote></blockquote>
+</blockquote>
+<p>These directions allow you to position elements in almost any way you want. There is a large range of directions and positions you can use.</p>
+<p><code>inset</code> affects both sides. Also, the numbered sizes are sized relative to the root em, which is normally 16 pixels. A size of 4 in these sizes is 1 rem.</p>
+<p><code>px</code> means a single pixel, while the keyword <code>full</code> means 100% and <code>auto</code> means the browser decides.</p>
 
         </main>
         <aside class="aside aside-supplemental col col-md-3 col-lg-2 d-none d-md-block">
@@ -339,22 +321,16 @@
             <div class="">
                 <ol>
                     
-                    <li><a href="#basic-configuration">Basic Configuration  </a>
+                    <li><a href="#display-and-position">Display and Position  </a>
             		</li>
 
-                    <li><a href="#standard-modules">Standard Modules  </a>
+                    <li><a href="#display">Display  </a>
             		</li>
 
-                    <li><a href="#preflight">Preflight  </a>
+                    <li><a href="#position">Position  </a>
             		</li>
 
-                    <li><a href="#preflight-off">Preflight Off  </a>
-            		</li>
-
-                    <li><a href="#modifying-styles">Modifying styles  </a>
-            		</li>
-
-                    <li><a href="#practice">Practice  </a>
+                    <li><a href="#top-right-bottom-left">Top Right Bottom Left  </a>
             		</li>
                 </ol>
             </div>

@@ -3,9 +3,9 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-        <title>01_02
+        <title>02_01
           --
-          Basic Configuration</title>
+          Font Directives</title>
       <link rel="stylesheet" href="../../../css/twemoji-amazing.css"/>
     <link rel="stylesheet" href="../../../css/bootstrap-rayveal.css"/>
     <link rel="stylesheet" href="../../../css/fontawesome.css"/>
@@ -51,11 +51,11 @@
                     </a>
                   </div>
                 
-                  <div class="d-flex justify-content-end align-items-right border-bottom p-2  bg-primary ">
-                    <a class="text-decoration-none  fw-bolder link-light  link-primary" href="../../../notes/slides/01_02/index.html">
-                      <i class="fas fa-file-alt mr-2 lh-1  text-light "></i>01_02
+                  <div class="d-flex justify-content-end align-items-right border-bottom p-2 ">
+                    <a class="text-decoration-none  link-secondary  link-primary" href="../../../notes/slides/01_02/index.html">
+                      <i class="fas fa-file-alt mr-2 lh-1  text-primary "></i>01_02
                       Basic Configuration</a>
-                    <a class=" link-light  flex-fill ml-3 text-right" href="../../../?d=01_02&#">
+                    <a class=" link-secondary  flex-fill ml-3 text-right" href="../../../?d=01_02&#">
                       <i class="fab fa-slideshare"></i>
                     </a>
                   </div>
@@ -87,11 +87,11 @@
                     </a>
                   </div>
                 
-                  <div class="d-flex justify-content-end align-items-right border-bottom p-2 ">
-                    <a class="text-decoration-none  link-secondary  link-primary" href="../../../notes/slides/02_01/index.html">
-                      <i class="fas fa-file-alt mr-2 lh-1  text-primary "></i>02_01
+                  <div class="d-flex justify-content-end align-items-right border-bottom p-2  bg-primary ">
+                    <a class="text-decoration-none  fw-bolder link-light  link-primary" href="../../../notes/slides/02_01/index.html">
+                      <i class="fas fa-file-alt mr-2 lh-1  text-light "></i>02_01
                       Font Directives</a>
-                    <a class=" link-secondary  flex-fill ml-3 text-right" href="../../../?d=02_01&#">
+                    <a class=" link-light  flex-fill ml-3 text-right" href="../../../?d=02_01&#">
                       <i class="fab fa-slideshare"></i>
                     </a>
                   </div>
@@ -244,93 +244,96 @@
 
         <main class="main col col-md-6 col-lg-8">
           <!-- .slide: data-state="layout-title" class="bg-dark"-->
-<h1 id="basic-configuration">Basic Configuration <a class="direct-link" href="#basic-configuration"> </a></h1>
-<div class="slide-link"><a href="https://go.raybo.org/2XsN"><i class="fab fa-slideshare"></i> go.raybo.org/2XsN</a></div>
+<h1 id="font-directives">Font Directives <a class="direct-link" href="#font-directives"> </a></h1>
+<div class="slide-link"><a href="https://go.raybo.org/2Xv4"><i class="fab fa-slideshare"></i> go.raybo.org/2Xv4</a></div>
 <blockquote>
 <blockquote></blockquote>
 </blockquote>
-<p>Let's talk a bit about why the basic install looks like it does and how we can customize Tailwind CSS a bit.</p>
+<p>There are two types of typography classes, let's take a look at the types that are related to fonts.</p>
 <hr>
-<h1 id="standard-modules">Standard Modules <a class="direct-link" href="#standard-modules"> </a></h1>
-<ul>
-<li><code>@base</code></li>
-<li><code>@components</code></li>
-<li><code>@utilities</code></li>
-</ul>
-<blockquote>
-<blockquote></blockquote>
-</blockquote>
-<p>Our basic CSS file import three modules.</p>
-<p>The @base styles are defaults for things like the body, anchor tag, box sixing. It also includes a CSS reset tool called Preflight, more of that in a bit.</p>
-<p>The @component styles consists of mainly media queries for the container.</p>
-<p>@utilities is where the bulk of Tailwind CSS styles live.</p>
-<p>You can see how this gets converted into CSS in the <code>build/css/styles.css</code> file and they can also be found in <code>node_modules/tailwind/dist</code>.</p>
-<hr>
-<h1 id="preflight">Preflight <a class="direct-link" href="#preflight"> </a></h1>
-<ul>
-<li>Opinionated <a href="https://github.com/sindresorhus/modern-normalize">modern-normalize</a></li>
-<li>Margins removed</li>
-<li>Headings, lists unstyled</li>
-<li><code>block-level</code> images</li>
-<li><code>border</code>, <code>button</code> borders</li>
-</ul>
-<p><a href="https://tailwindcss.com/docs/preflight">https://tailwindcss.com/docs/preflight</a></p>
-<blockquote>
-<blockquote></blockquote>
-</blockquote>
-<p>Preflight is an opinionated version of the popular <strong>normalize</strong> project. It's job is to make different browsers display the same page as close as possible, since browsers often use their own similar default styles. However, preflight goes beyond normalize in that it resets and clears out the styling from some major tags.</p>
-<p>First, it removes all margins from headings and lists. As a designer, I'm almost always overriding the default margins, so pre-flights assumes you'll be doing that anyways.</p>
-<p>Next, it removes all styles from all headings and lists. I'm never happy with those styles and spend a lot of time overwriting things, so once I get past being concerned by this move, it does makes a lot sense.</p>
-<p>Images are set to <code>display: block</code> and <code>vertical-align: middle</code>. The default for images is display inline and I almost never want my images to display as inline.</p>
-<p>Two more that get modified are the borders as well as the button styles. These are more for conveniently setting up how the border classes work in Tailwind, assuming that you're going to add a border to buttons and setting the border styles to a one pixel buttons.</p>
-<p>At first, these style changes are really disconcerting, but after a while you'll realize how nice these changes work, so give them a chance.</p>
-<hr>
-<h1 id="preflight-off">Preflight Off <a class="direct-link" href="#preflight-off"> </a></h1>
-<pre><code class="language-js">// tailwind.config.js
-  corePlugins: {
-    preflight: false
-  }
-</code></pre>
-<blockquote>
-<blockquote></blockquote>
-</blockquote>
-<p>If you're not happy with the preflight changes, you can easily turn it off by modifying the corePlugins object in the <code>tailwind.config.js</code> file. Now, this might turn things off that you don't want like give you the browser default serif font, but it can be useful if you're using Tailwind CSS with another library or your own resets.</p>
-<p>By the way, corePlugins is where you can also customize other parts of the library.</p>
-<hr>
-<h1 id="modifying-styles">Modifying styles <a class="direct-link" href="#modifying-styles"> </a></h1>
-<pre><code class="language-scss">@layer base {
-  h1 {
-    color: #00bff3;
-    @apply text-6xl;
+<h1 id="font-family">Font Family <a class="direct-link" href="#font-family"> </a></h1>
+<p><code>font-sans</code> <code>font-serif</code> <code>font-mono</code></p>
+<pre><code class="language-js">theme: {
+  fontFamily: {
+    'sans': ['Helvetica', 'Arial', 'sans-serif'],
+    'display': ['Custom Font', 'Other Font'],
   }
 }
 </code></pre>
-<p>Use on <code>base</code>, <code>components</code> or <code>layout</code></p>
+<p><a href="https://tailwindcss.com/docs/font-family" target="_blank"><code class="code-exciting">Docs</code></a> <a href="https://codepen.io/planetoftheweb/full/abZeMdP?editors=1000" target="_blank"><code class="code-royal">Try it</code></a></p>
 <blockquote>
 <blockquote></blockquote>
 </blockquote>
-<p>You can also modify the base file and override whatever style you want. So, for example we can modify the level one headings so that they match our logo.</p>
-<p>There's also a way to add a style from Tailwind CSS using the <code>@apply</code> directive. This works like a sass mixin and you simply call it using a name from any Tailwind CSS style.</p>
-<p>You can use apply not just to modify something in the base layer, but on any other of the three tailwind CSS default files.</p>
-<p>You can use this same process to create additional components or layouts by using the @layer and @apply directives on components or even on specific tags like we've done here with the h1 tag.</p>
+<p>There are three diferent classes that you can use to specify what type of font you want to use in a project. The default styles</p>
+<p>The <code>font-sans</code> style is already applied to the page by default. By default, it will try to apply default system fonts for the styles, but you can override any of the default families by modifying the <code>theme.fontFamily element in </code>tailwind.config.js`</p>
+<p>You can even create a new font by adding one or more elements to that object.</p>
 <hr>
-<!-- .slide: data-state="layout-title" data-transition="zoom" class="bg-dark"-->
-<h1 id="practice">Practice <a class="direct-link" href="#practice"> </a></h1>
-<div class="btn-group mt-3" role="group" aria-label="Basic example">
-  <a type="button" class="animate__animated animate__backInLeft btn btn-lg btn-exciting text-white" href="https://github.com/LinkedInLearning/tailwind-css-2841311/tree/01_02b" target="_blank">Start</a>
-  <a type="button" class="animate__animated animate__zoomInDown btn btn-lg btn-royal text-white" href="htthttps://github.com/LinkedInLearning/vue3-esst-2834032/compare/01_02b..01_02e" target="_blank">Diff</a>
-  <a type="button" class="animate__animated animate__backInRight animate__slow btn btn-lg btn-primary text-white" href="https://github.com/LinkedInLearning/tailwind-css-2841311/tree/01_02e" target="_blank">End</a>
-</div>
-<ol>
-<li>Standard modules<br><code>@base</code>, <code>@components</code>, <code>@utilities</code></li>
-<li>Discussed Preflight</li>
-<li>Modify styles with<br><code>@layer</code>, <code>@apply</code></li>
-</ol>
+<h1 id="font-size">Font Size <a class="direct-link" href="#font-size"> </a></h1>
+<ul>
+<li><code>text-SIZ</code>
+<ul>
+<li><strong>SIZ</strong> (font-size/line-height...in rems)<br><br>
+<code>xs</code> .75/1 <code>sm</code> .875/1.25 <code>base</code>	1/1.5 <code>lg</code> 1.125/1.75 <code>xl</code> 1.25/1.75<br><code>2xl</code> 1.5/2 <code>3xl</code> 1.875/2.25 <code>4xl</code> 2.25/2.5 <code>5xl</code> 3/1 <code>6xl</code> 3.75/1<br><code>7xl</code> 4.5/1 <code>8xl</code> 6/1 <code>9xl</code> 8/1</li>
+</ul>
+</li>
+</ul>
+<p><a href="https://tailwindcss.com/docs/font-size" target="_blank"><code class="code-exciting">Docs</code></a> <a href="https://codepen.io/planetoftheweb/full/BazXEor?editors=1000" target="_blank"><code class="code-royal">Try it</code></a></p>
 <blockquote>
 <blockquote></blockquote>
 </blockquote>
-<p>Here's where you can find what we did in this video. We looked at Tailwind's standard modules. base, components and utilities, then we discussed what the preflight styles do in Tailwinds.</p>
-<p>We also learned how we can modify styles with <code>@layer</code> and <code>@apply</code></p>
+<p>Font size is handled through the text class and you add a size option here. this changes two parameters at the same time...font-size and line-height and you can see the values here.</p>
+<p>The size and height is in rems so it's relative to the root size of the browser, which is usually 16 pixels.</p>
+<hr>
+<h1 id="font-weight">Font Weight <a class="direct-link" href="#font-weight"> </a></h1>
+<ul>
+<li><code>font-WGT</code>
+<ul>
+<li><strong>WGT</strong> (font-weight)<br><br>
+<code>thin</code> 100 <code>extralight</code> 200 <code>light</code> 300 <code>normal</code> 400 <code>medium</code> 500<br><code>semibold</code> 600 <code>bold</code> 700 <code>extrabold</code> 800 <code>black</code> 900</li>
+</ul>
+</li>
+</ul>
+<p><a href="https://tailwindcss.com/docs/font-weight" target="_blank"><code class="code-exciting">Docs</code></a> <a href="https://codepen.io/planetoftheweb/full/RwRXOGZ?editors=1000" target="_blank"><code class="code-royal">Try it</code></a></p>
+<blockquote>
+<blockquote></blockquote>
+</blockquote>
+<p>Font weight is handled through a series of named classes starting with the font keyword. I'm not sure I like this, I think it'd be better if they just made them numbers, but the names seem to make sense...just harder to remember.</p>
+<p>If you're checking out the example, you'll notice that I loaded up a font here to make sure you could see the differences between the weights. Some fonts will only contain specific weights.</p>
+<hr>
+<h1 id="font-style">Font Style <a class="direct-link" href="#font-style"> </a></h1>
+<ul>
+<li><code>italic</code> <code>not-italic</code> (font-style)</li>
+</ul>
+<blockquote>
+<blockquote></blockquote>
+</blockquote>
+<p>There are only two styles you can modify under font style, wether an item is italic or not. <code>not-italic</code> sets font-style to normal and it's obviously for changing things that would normally be bold, like headlines to not display as bold.</p>
+<p><a href="https://tailwindcss.com/docs/font-style" target="_blank"><code class="code-exciting">Docs</code></a> <a href="https://codepen.io/planetoftheweb/pen/RwGbWWw?editors=1000" target="_blank"><code class="code-royal">Try it</code></a></p>
+<hr>
+<h1 id="font-smoothing">Font Smoothing <a class="direct-link" href="#font-smoothing"> </a></h1>
+<ul>
+<li><code>antialiased</code> <code>subpixel-antialiased</code></li>
+</ul>
+<p><a href="https://tailwindcss.com/docs/font-smoothing" target="_blank"><code class="code-exciting">Docs</code></a> <a href="https://codepen.io/planetoftheweb/pen/wvzvaOv?editors=1000" target="_blank"><code class="code-royal">Try it</code></a></p>
+<blockquote>
+<blockquote></blockquote>
+</blockquote>
+<p>There are two different types of font smoothing you can use. The default is called subpixel antialiased, if you want to switch it you simply add the aliased keyword and to override it, you use subpixel-antialiased. Note, these are pretty cutting edge classes and might not work in every browser.</p>
+<hr>
+<h1 id="font-variant-numeric">Font Variant Numeric <a class="direct-link" href="#font-variant-numeric"> </a></h1>
+<p><code>normal-nums</code> <code>ordinal</code> <code>slashed-zero</code> <code>lining-nums</code><br><code>oldstyle-nums</code> <code>proportional-nums</code> <code>tabular-nums</code><br><code>diagonal-fractions</code> <code>stacked-fractions</code></p>
+<p><a href="https://tailwindcss.com/docs/font-variant-numeric" target="_blank"><code class="code-exciting">Docs</code></a> <a href="https://codepen.io/planetoftheweb/pen/OJRJzMm?editors=1000" target="_blank"><code class="code-royal">Try it</code></a></p>
+<blockquote>
+<blockquote></blockquote>
+</blockquote>
+<p>Tailwind comes with some pretty esoteric classes for controlling advanced styles for fonts.</p>
+<p>The important thing to know is that not all fonts support these features and as a matter of fact most Google Fonts, even ones that point to fonts that would normally support these features will work.</p>
+<p>Apparently, it needs to be a font in the OpenType format, so just be careful.</p>
+<p>Having said that, you can see what they do in the example, you can control how ordinal numbers are formatted, wether a 0 character has a internal line or dot as in this font that shows it's not an O.</p>
+<p>The oldstyle numbers show better looking numbers that go below and above the baseline.</p>
+<p>With tabular numbers, you force numbers to line up the numbers sort of like with mono-spaced fonts.</p>
+<p>Finally, you have a couple of options for showing fractions. They look pretty good, specially diagonal fractions.</p>
+<p>I think these styles look pretty good and will still look fine if the font doesn't support it, so it doesn't hurt to use them.</p>
 
         </main>
         <aside class="aside aside-supplemental col col-md-3 col-lg-2 d-none d-md-block">
@@ -339,22 +342,25 @@
             <div class="">
                 <ol>
                     
-                    <li><a href="#basic-configuration">Basic Configuration  </a>
+                    <li><a href="#font-directives">Font Directives  </a>
             		</li>
 
-                    <li><a href="#standard-modules">Standard Modules  </a>
+                    <li><a href="#font-family">Font Family  </a>
             		</li>
 
-                    <li><a href="#preflight">Preflight  </a>
+                    <li><a href="#font-size">Font Size  </a>
             		</li>
 
-                    <li><a href="#preflight-off">Preflight Off  </a>
+                    <li><a href="#font-weight">Font Weight  </a>
             		</li>
 
-                    <li><a href="#modifying-styles">Modifying styles  </a>
+                    <li><a href="#font-style">Font Style  </a>
             		</li>
 
-                    <li><a href="#practice">Practice  </a>
+                    <li><a href="#font-smoothing">Font Smoothing  </a>
+            		</li>
+
+                    <li><a href="#font-variant-numeric">Font Variant Numeric  </a>
             		</li>
                 </ol>
             </div>

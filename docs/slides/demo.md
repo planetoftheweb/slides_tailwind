@@ -1,8 +1,8 @@
 <!-- .slide: data-state="layout-title no-fragment"  -->
 
-# GraphQL &amp; React
+# Tailwind CSS
 
-raybo.org/slides_graphqlreact
+raybo.org/slides_tailwind
 
 <p class="small mt-4"><span class="badge bg-light text-dark mr-1 ml-2">&larr; &rarr;</span> navigate
 <span class="badge bg-light text-dark mr-1 ml-2">t</span>toolbar

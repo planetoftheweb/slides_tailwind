@@ -3,9 +3,9 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-        <title>01_02
+        <title>05_01
           --
-          Basic Configuration</title>
+          Flexbox</title>
       <link rel="stylesheet" href="../../../css/twemoji-amazing.css"/>
     <link rel="stylesheet" href="../../../css/bootstrap-rayveal.css"/>
     <link rel="stylesheet" href="../../../css/fontawesome.css"/>
@@ -51,11 +51,11 @@
                     </a>
                   </div>
                 
-                  <div class="d-flex justify-content-end align-items-right border-bottom p-2  bg-primary ">
-                    <a class="text-decoration-none  fw-bolder link-light  link-primary" href="../../../notes/slides/01_02/index.html">
-                      <i class="fas fa-file-alt mr-2 lh-1  text-light "></i>01_02
+                  <div class="d-flex justify-content-end align-items-right border-bottom p-2 ">
+                    <a class="text-decoration-none  link-secondary  link-primary" href="../../../notes/slides/01_02/index.html">
+                      <i class="fas fa-file-alt mr-2 lh-1  text-primary "></i>01_02
                       Basic Configuration</a>
-                    <a class=" link-light  flex-fill ml-3 text-right" href="../../../?d=01_02&#">
+                    <a class=" link-secondary  flex-fill ml-3 text-right" href="../../../?d=01_02&#">
                       <i class="fab fa-slideshare"></i>
                     </a>
                   </div>
@@ -141,11 +141,11 @@
                     </a>
                   </div>
                 
-                  <div class="d-flex justify-content-end align-items-right border-bottom p-2 ">
-                    <a class="text-decoration-none  link-secondary  link-primary" href="../../../notes/slides/05_01/index.html">
-                      <i class="fas fa-file-alt mr-2 lh-1  text-primary "></i>05_01
+                  <div class="d-flex justify-content-end align-items-right border-bottom p-2  bg-primary ">
+                    <a class="text-decoration-none  fw-bolder link-light  link-primary" href="../../../notes/slides/05_01/index.html">
+                      <i class="fas fa-file-alt mr-2 lh-1  text-light "></i>05_01
                       Flexbox</a>
-                    <a class=" link-secondary  flex-fill ml-3 text-right" href="../../../?d=05_01&#">
+                    <a class=" link-light  flex-fill ml-3 text-right" href="../../../?d=05_01&#">
                       <i class="fab fa-slideshare"></i>
                     </a>
                   </div>
@@ -244,93 +244,86 @@
 
         <main class="main col col-md-6 col-lg-8">
           <!-- .slide: data-state="layout-title" class="bg-dark"-->
-<h1 id="basic-configuration">Basic Configuration <a class="direct-link" href="#basic-configuration"> </a></h1>
-<div class="slide-link"><a href="https://go.raybo.org/2XsN"><i class="fab fa-slideshare"></i> go.raybo.org/2XsN</a></div>
+<h1 id="flexbox">Flexbox <a class="direct-link" href="#flexbox"> </a></h1>
+<div class="slide-link"><a href="https://go.raybo.org/2cEn"><i class="fab fa-slideshare"></i> go.raybo.org/2cEn</a></div>
 <blockquote>
 <blockquote></blockquote>
 </blockquote>
-<p>Let's talk a bit about why the basic install looks like it does and how we can customize Tailwind CSS a bit.</p>
+<p>One of the ways you can choose to organize your layouts is using the flexbox properties.</p>
 <hr>
-<h1 id="standard-modules">Standard Modules <a class="direct-link" href="#standard-modules"> </a></h1>
+<h1 id="flex-direction">Flex Direction <a class="direct-link" href="#flex-direction"> </a></h1>
 <ul>
-<li><code>@base</code></li>
-<li><code>@components</code></li>
-<li><code>@utilities</code></li>
-</ul>
-<blockquote>
-<blockquote></blockquote>
-</blockquote>
-<p>Our basic CSS file import three modules.</p>
-<p>The @base styles are defaults for things like the body, anchor tag, box sixing. It also includes a CSS reset tool called Preflight, more of that in a bit.</p>
-<p>The @component styles consists of mainly media queries for the container.</p>
-<p>@utilities is where the bulk of Tailwind CSS styles live.</p>
-<p>You can see how this gets converted into CSS in the <code>build/css/styles.css</code> file and they can also be found in <code>node_modules/tailwind/dist</code>.</p>
-<hr>
-<h1 id="preflight">Preflight <a class="direct-link" href="#preflight"> </a></h1>
+<li><code>flex(-TYP)(-DIR)</code>
 <ul>
-<li>Opinionated <a href="https://github.com/sindresorhus/modern-normalize">modern-normalize</a></li>
-<li>Margins removed</li>
-<li>Headings, lists unstyled</li>
-<li><code>block-level</code> images</li>
-<li><code>border</code>, <code>button</code> borders</li>
+<li><strong>TYP</strong><br><br>
+<code>row</code> <code>col</code></li>
+<li><strong>DIR</strong><br><br>
+<code>reverse</code></li>
 </ul>
-<p><a href="https://tailwindcss.com/docs/preflight">https://tailwindcss.com/docs/preflight</a></p>
+</li>
+</ul>
+<p><a href="https://tailwindcss.com/docs/flex-direction" target="_blank"><code class="code-exciting">Docs</code></a> <a href="https://codepen.io/planetoftheweb/pen/jOMBmpN?editors=1000" target="_blank"><code class="code-royal">Try it</code></a></p>
 <blockquote>
 <blockquote></blockquote>
 </blockquote>
-<p>Preflight is an opinionated version of the popular <strong>normalize</strong> project. It's job is to make different browsers display the same page as close as possible, since browsers often use their own similar default styles. However, preflight goes beyond normalize in that it resets and clears out the styling from some major tags.</p>
-<p>First, it removes all margins from headings and lists. As a designer, I'm almost always overriding the default margins, so pre-flights assumes you'll be doing that anyways.</p>
-<p>Next, it removes all styles from all headings and lists. I'm never happy with those styles and spend a lot of time overwriting things, so once I get past being concerned by this move, it does makes a lot sense.</p>
-<p>Images are set to <code>display: block</code> and <code>vertical-align: middle</code>. The default for images is display inline and I almost never want my images to display as inline.</p>
-<p>Two more that get modified are the borders as well as the button styles. These are more for conveniently setting up how the border classes work in Tailwind, assuming that you're going to add a border to buttons and setting the border styles to a one pixel buttons.</p>
-<p>At first, these style changes are really disconcerting, but after a while you'll realize how nice these changes work, so give them a chance.</p>
+<p>You can control the direction that flexbox operates in a few different ways. In addition to adding a flex class, you can add a direction type with a direction option.</p>
 <hr>
-<h1 id="preflight-off">Preflight Off <a class="direct-link" href="#preflight-off"> </a></h1>
-<pre><code class="language-js">// tailwind.config.js
-  corePlugins: {
-    preflight: false
-  }
-</code></pre>
+<h1 id="flex-wrap">Flex Wrap <a class="direct-link" href="#flex-wrap"> </a></h1>
+<p><code>flex-wrap</code> <code>flex-wrap-reverse</code> <code>flex-nowrap</code></p>
+<p><a href="https://tailwindcss.com/docs/flex-wrap" target="_blank"><code class="code-exciting">Docs</code></a> <a href="https://codepen.io/planetoftheweb/pen/NWRpgRq?editors=1000" target="_blank"><code class="code-royal">Try it</code></a></p>
 <blockquote>
 <blockquote></blockquote>
 </blockquote>
-<p>If you're not happy with the preflight changes, you can easily turn it off by modifying the corePlugins object in the <code>tailwind.config.js</code> file. Now, this might turn things off that you don't want like give you the browser default serif font, but it can be useful if you're using Tailwind CSS with another library or your own resets.</p>
-<p>By the way, corePlugins is where you can also customize other parts of the library.</p>
+<p>You can tell an item to wrap to a next line or not with these classes. The default is for items not to wrap, but you can also have them wrap in reverse.</p>
 <hr>
-<h1 id="modifying-styles">Modifying styles <a class="direct-link" href="#modifying-styles"> </a></h1>
-<pre><code class="language-scss">@layer base {
-  h1 {
-    color: #00bff3;
-    @apply text-6xl;
-  }
-}
-</code></pre>
-<p>Use on <code>base</code>, <code>components</code> or <code>layout</code></p>
+<h1 id="flex">Flex <a class="direct-link" href="#flex"> </a></h1>
+<p><code>flex-1</code> <code>flex-auto</code> <code>flex-initial</code> <code>flex-none</code></p>
+<p><a href="https://tailwindcss.com/docs/flex-wrap" target="_blank"><code class="code-exciting">Docs</code></a> <a href="https://codepen.io/planetoftheweb/pen/bGwqRLp?editors=1000" target="_blank"><code class="code-royal">Try it</code></a></p>
 <blockquote>
 <blockquote></blockquote>
 </blockquote>
-<p>You can also modify the base file and override whatever style you want. So, for example we can modify the level one headings so that they match our logo.</p>
-<p>There's also a way to add a style from Tailwind CSS using the <code>@apply</code> directive. This works like a sass mixin and you simply call it using a name from any Tailwind CSS style.</p>
-<p>You can use apply not just to modify something in the base layer, but on any other of the three tailwind CSS default files.</p>
-<p>You can use this same process to create additional components or layouts by using the @layer and @apply directives on components or even on specific tags like we've done here with the h1 tag.</p>
+<p>Flex elements can grown and shrink, so there's a set of classes that let you control that.</p>
+<p><code>flex-1</code> lets an item grow and shrink as needed, but ignores the original size.</p>
+<p><code>flex-auto</code> lets an item grow and shrink as needed, taking into account the original size.</p>
+<p><code>flex-initial</code> lets an item shrink, but not grow.</p>
+<p><code>flex-none</code> prevents an item from growing or shrinking.</p>
 <hr>
-<!-- .slide: data-state="layout-title" data-transition="zoom" class="bg-dark"-->
-<h1 id="practice">Practice <a class="direct-link" href="#practice"> </a></h1>
-<div class="btn-group mt-3" role="group" aria-label="Basic example">
-  <a type="button" class="animate__animated animate__backInLeft btn btn-lg btn-exciting text-white" href="https://github.com/LinkedInLearning/tailwind-css-2841311/tree/01_02b" target="_blank">Start</a>
-  <a type="button" class="animate__animated animate__zoomInDown btn btn-lg btn-royal text-white" href="htthttps://github.com/LinkedInLearning/vue3-esst-2834032/compare/01_02b..01_02e" target="_blank">Diff</a>
-  <a type="button" class="animate__animated animate__backInRight animate__slow btn btn-lg btn-primary text-white" href="https://github.com/LinkedInLearning/tailwind-css-2841311/tree/01_02e" target="_blank">End</a>
-</div>
-<ol>
-<li>Standard modules<br><code>@base</code>, <code>@components</code>, <code>@utilities</code></li>
-<li>Discussed Preflight</li>
-<li>Modify styles with<br><code>@layer</code>, <code>@apply</code></li>
-</ol>
+<h1 id="flex-grow">Flex Grow <a class="direct-link" href="#flex-grow"> </a></h1>
+<p><code>flex-grow-0</code> <code>flex-grow</code></p>
+<p><a href="https://tailwindcss.com/docs/flex-grow" target="_blank"><code class="code-exciting">Docs</code></a> <a href="https://codepen.io/planetoftheweb/pen/PoGpKoz?editors=1000" target="_blank"><code class="code-royal">Try it</code></a></p>
 <blockquote>
 <blockquote></blockquote>
 </blockquote>
-<p>Here's where you can find what we did in this video. We looked at Tailwind's standard modules. base, components and utilities, then we discussed what the preflight styles do in Tailwinds.</p>
-<p>We also learned how we can modify styles with <code>@layer</code> and <code>@apply</code></p>
+<p>There's a couple of tags that you can also use to control wether an item grows to fit space as well, but it's a bit different than the previous items.</p>
+<p><code>flex-grow</code> lets an item grow to fit the available space.</p>
+<p><code>flex-grow-0</code> prevents and item from growning.</p>
+<hr>
+<h1 id="flex-shrink">Flex Shrink <a class="direct-link" href="#flex-shrink"> </a></h1>
+<p><code>flex-shrink-0</code> <code>flex-shrink</code></p>
+<p><a href="https://tailwindcss.com/docs/flex-shrink" target="_blank"><code class="code-exciting">Docs</code></a> <a href="https://codepen.io/planetoftheweb/pen/rNMyzxq?editors=1000" target="_blank"><code class="code-royal">Try it</code></a></p>
+<blockquote>
+<blockquote></blockquote>
+</blockquote>
+<p>Like grow, the shrink classes control how an element shrinks.</p>
+<p><code>flex-shrink-0</code> prevents an item from shrinking</p>
+<p><code>flex-shrink</code> allows an item to shrink if needed.</p>
+<hr>
+<h1 id="order">Order <a class="direct-link" href="#order"> </a></h1>
+<ul>
+<li><code>order(-ORD)</code>
+<ul>
+<li><strong>ORD</strong><br><br>
+<code>1</code> <code>2</code> <code>3</code> <code>4</code> <code>5</code> <code>6</code> <code>7</code> <code>8</code> <code>9</code> <code>10</code> <code>11</code> <code>12</code><BR><br>
+<code>first</code> <code>last</code> <code>none</code></li>
+</ul>
+</li>
+</ul>
+<p><a href="https://tailwindcss.com/docs/order" target="_blank"><code class="code-exciting">Docs</code></a> <a href="https://codepen.io/planetoftheweb/pen/ExgWvXJ?editors=1000" target="_blank"><code class="code-royal">Try it</code></a></p>
+<blockquote>
+<blockquote></blockquote>
+</blockquote>
+<p>Order lets you control the order that the items in a container appear in. You can assign more than one item the same order and they sort of work like layers, keeping items with the same order together.</p>
+<p>There's a couple of named classes. <code>first</code> attempts to put an item first and has precendence over the other numbers. <code>last</code> does the same thing for the end. None is like a special order of zero.</p>
 
         </main>
         <aside class="aside aside-supplemental col col-md-3 col-lg-2 d-none d-md-block">
@@ -339,22 +332,25 @@
             <div class="">
                 <ol>
                     
-                    <li><a href="#basic-configuration">Basic Configuration  </a>
+                    <li><a href="#flexbox">Flexbox  </a>
             		</li>
 
-                    <li><a href="#standard-modules">Standard Modules  </a>
+                    <li><a href="#flex-direction">Flex Direction  </a>
             		</li>
 
-                    <li><a href="#preflight">Preflight  </a>
+                    <li><a href="#flex-wrap">Flex Wrap  </a>
             		</li>
 
-                    <li><a href="#preflight-off">Preflight Off  </a>
+                    <li><a href="#flex">Flex  </a>
             		</li>
 
-                    <li><a href="#modifying-styles">Modifying styles  </a>
+                    <li><a href="#flex-grow">Flex Grow  </a>
             		</li>
 
-                    <li><a href="#practice">Practice  </a>
+                    <li><a href="#flex-shrink">Flex Shrink  </a>
+            		</li>
+
+                    <li><a href="#order">Order  </a>
             		</li>
                 </ol>
             </div>
