@@ -244,59 +244,25 @@
 
         <main class="main col col-md-6 col-lg-8">
           <!-- .slide: data-state="layout-title" class="bg-dark"-->
-<h1 id="extracting-components">Extracting Components <a class="direct-link" href="#extracting-components"> </a></h1>
+<h1 id="extracting-classes">Extracting Classes <a class="direct-link" href="#extracting-classes"> </a></h1>
 <div class="slide-link"><a href="https://go.raybo.org/2cDk"><i class="fab fa-slideshare"></i> go.raybo.org/2cDk</a></div>
 <blockquote>
 <blockquote></blockquote>
 </blockquote>
-<p>If you just use Tailwind classes, you'll end up writing a bunch of code that at some point gets to be overwhelming. Let's take a look at how we can simplify that.</p>
+<p>If you just use Tailwind classes, you'll end up writing a bunch of code that at some point gets to be overwhelming. Let's practice extracting our buttons as separate classes.</p>
 <hr>
-<h1 id="modifying-containers">Modifying Containers <a class="direct-link" href="#modifying-containers"> </a></h1>
-<pre><code class="language-js">// tailwind.config.js
-
-module.exports = {
-  theme: {
-    screens: {
-      'sm': '640px',
-      'md': '768px',
-      'lg': '1024px',
-      'xl': '1280px',
-      '2xl': '1536px'
-    }
-  }
-}
-</code></pre>
-<p><a href="https://tailwindcss.com/docs/breakpoints" target="_blank"><code class="code-exciting">Docs</code></a></p>
-<blockquote>
-<blockquote></blockquote>
-</blockquote>
-<p>Here is how the default breakpoints are set up. You can modify the values for any of these breakpoints, add more of them, or rename the existing breakpoints to whatever you want.</p>
-<p>You can take a look at the documentation for more samples.</p>
-<hr>
-<h1 id="adding-variants">Adding Variants <a class="direct-link" href="#adding-variants"> </a></h1>
-<pre><code class="language-js">// tailwind.config.js
-
-module.exports = {
-  variants: {
-    extend: {
-      backgroundColor: ['active']
-    }
-  }
-}
-</code></pre>
-<p><a href="https://tailwindcss.com/docs/configuring-variants#overriding-default-variants" target="_blank"><code class="code-exciting">Docs</code></a></p>
-<blockquote>
-<blockquote></blockquote>
-</blockquote>
-<p>Another way to extend the functionality of elements is to extend the variants available to specific classes. Not all variants are turned on by default and here, I'm telling Tailwind to add an active variant to the background color.</p>
-<p>On every class' page, you'll find the options for adding variants if they're available.</p>
-<hr>
+<!-- .slide: data-state="layout-title" data-transition="zoom" class="bg-dark"-->
 <h1 id="practice">Practice <a class="direct-link" href="#practice"> </a></h1>
 <div class="btn-group mt-3" role="group" aria-label="Basic example">
-  <a type="button" class="animate__animated animate__backInLeft btn btn-lg btn-exciting text-white" href="https://github.com/LinkedInLearning/tailwind-css-2841311/tree/01_04b" target="_blank">Start</a>
-  <a type="button" class="animate__animated animate__zoomInDown btn btn-lg btn-royal text-white" href="https://github.com/LinkedInLearning/vue3-esst-2834032/compare/01_04b..01_04e" target="_blank">Diff</a>
-  <a type="button" class="animate__animated animate__backInRight animate__slow btn btn-lg btn-primary text-white" href="https://github.com/LinkedInLearning/tailwind-css-2841311/tree/01_04e" target="_blank">End</a>
+  <a type="button" class="animate__animated animate__backInLeft btn btn-lg btn-exciting text-white" href="https://github.com/LinkedInLearning/tailwind-css-2841311/tree/01_05b" target="_blank">Start</a>
+  <a type="button" class="animate__animated animate__zoomInDown btn btn-lg btn-royal text-white" href="https://github.com/LinkedInLearning/vue3-esst-2834032/compare/01_05b..01_04e" target="_blank">Diff</a>
+  <a type="button" class="animate__animated animate__backInRight animate__slow btn btn-lg btn-primary text-white" href="https://github.com/LinkedInLearning/tailwind-css-2841311/tree/01_05e" target="_blank">End</a>
 </div>
+<ul>
+<li>Use @layer to extend components</li>
+<li>Use @apply to create generic button</li>
+<li>Create styles for different colors</li>
+</ul>
 <blockquote>
 <blockquote></blockquote>
 </blockquote>
@@ -309,13 +275,7 @@ module.exports = {
             <div class="">
                 <ol>
                     
-                    <li><a href="#extracting-components">Extracting Components  </a>
-            		</li>
-
-                    <li><a href="#modifying-containers">Modifying Containers  </a>
-            		</li>
-
-                    <li><a href="#adding-variants">Adding Variants  </a>
+                    <li><a href="#extracting-classes">Extracting Classes  </a>
             		</li>
 
                     <li><a href="#practice">Practice  </a>
