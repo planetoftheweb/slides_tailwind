@@ -1,9 +1,6 @@
-## Contributing
+Contribution Agreement
+======================
 
-### Bug Reports
-When reporting a bug make sure to include information about which browser and operating system you are on as well as the necessary steps to reproduce the issue. If possible please include a link to a sample presentation where the bug can be tested.
+This repository does not accept pull requests (PRs). All pull requests will be closed.
 
-### Pull Requests
-- Should follow the coding style of the file you work in
-- Should be made towards the **dev branch**
-- Should be submitted from a feature/topic branch (not your master)
+However, if any contributions (through pull requests, issues, feedback or otherwise) are provided, as a contributor, you represent that the code you submit is your original work or that of your employer (in which case you represent you have the right to bind your employer). By submitting code (or otherwise providing feedback), you (and, if applicable, your employer) are licensing the submitted code (and/or feedback) to LinkedIn and the open source community subject to the BSD 2-Clause license.
