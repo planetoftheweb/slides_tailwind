@@ -2,11 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-        <title>05_02
-          --
-          Grids</title>
-      <link rel="stylesheet" href="../../../css/twemoji-amazing.css"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"><link rel="stylesheet" href="../../../css/twemoji-amazing.css"/>
     <link rel="stylesheet" href="../../../css/bootstrap-rayveal.css"/>
     <link rel="stylesheet" href="../../../css/fontawesome.css"/>
     <link rel="stylesheet" href="../../../css/twemoji-amazing.css"/>
@@ -150,11 +146,11 @@
                     </a>
                   </div>
                 
-                  <div class="d-flex justify-content-end align-items-right border-bottom p-2  bg-primary ">
-                    <a class="text-decoration-none  fw-bolder link-light  link-primary" href="../../../notes/slides/05_02/index.html">
-                      <i class="fas fa-file-alt mr-2 lh-1  text-light "></i>05_02
+                  <div class="d-flex justify-content-end align-items-right border-bottom p-2 ">
+                    <a class="text-decoration-none  link-secondary  link-primary" href="../../../notes/slides/05_02/index.html">
+                      <i class="fas fa-file-alt mr-2 lh-1  text-primary "></i>05_02
                       Grids</a>
-                    <a class=" link-light  flex-fill ml-3 text-right" href="../../../?d=05_02&#">
+                    <a class=" link-secondary  flex-fill ml-3 text-right" href="../../../?d=05_02&#">
                       <i class="fab fa-slideshare"></i>
                     </a>
                   </div>
@@ -244,143 +240,50 @@
 
         <main class="main col col-md-6 col-lg-8">
           <!-- .slide: data-state="layout-title" class="bg-dark"-->
-<h1 id="grids">Grids <a class="direct-link" href="#grids"> </a></h1>
-<div class="slide-link"><a href="https://go.raybo.org/2cEo"><i class="fab fa-slideshare"></i> go.raybo.org/2cEo</a></div>
+<h1 id="spacing-typography">Spacing Typography <a class="direct-link" href="#spacing-typography"> </a></h1>
+<div class="slide-link"><a href="https://go.raybo.org/2YMA"><i class="fab fa-slideshare"></i> go.raybo.org/2YMA</a></div>
 <blockquote>
 <blockquote></blockquote>
 </blockquote>
-<p>Tailwind has a full compliment of classes to help you manage your grid layouts.</p>
+<p>Some classes let you control the spacing between lines of text and characters.</p>
 <hr>
-<h1 id="grid-template-columns">Grid Template Columns <a class="direct-link" href="#grid-template-columns"> </a></h1>
+<!-- .slide: data-state="layout-code-list" -->
+<h1 id="line-height">Line Height <a class="direct-link" href="#line-height"> </a></h1>
 <ul>
-<li><code>grid-cols(-AMT)</code>
+<li><code>leading-TYP</code>
 <ul>
-<li><strong>AMT</strong><br><br>
-<code>1</code> <code>2</code> <code>3</code> <code>4</code> <code>5</code> <code>6</code><BR><code>7</code> <code>8</code> <code>9</code> <code>10</code> <code>11</code> <code>12</code><BR><br>
-<code>none</code></li>
+<li><strong>TYP</strong> (line-height...in rem)<br><br>
+<code>3</code> .75 <code>4</code> 1 <code>5</code> 1.25 <code>6</code> 1.5<br><code>7</code> 1.75 <code>8</code> 2 <code>9</code> 2.25 <code>10</code> 2.5</li>
+<li><strong>TYP</strong> (line-height...relative)<br><br>
+<code>none</code>  1 <code>tight</code> 1.25 <code>snug</code>  1.375<br><code>normal</code>  1.5 <code>relaxed</code> 1.625 <code>loose</code> 2</li>
 </ul>
 </li>
 </ul>
-<p><a href="https://tailwindcss.com/docs/grid-template-columns" target="_blank"><code class="code-exciting">Docs</code></a> <a href="https://codepen.io/planetoftheweb/pen/poEeZZP?editors=1000" target="_blank"><code class="code-royal">Try it</code></a></p>
+<p><a href="https://tailwindcss.com/docs/line-height" target="_blank"><code class="code-exciting">Docs</code></a> <a href="https://codepen.io/planetoftheweb/pen/MWjWwwY?editors=1000" target="_blank"><code class="code-royal">Try it</code></a></p>
 <blockquote>
 <blockquote></blockquote>
 </blockquote>
-<p>You can control up to a 12 columns using grid containers. using grid-cols, you add an amount from 1 to 12 or they keyword none.</p>
-<p>Remember that you can use these with responsive variants to control how they are displayed depending on the size of the viewport.</p>
+<p>With leading, you have two options, you can specify one of eight sizes that are sized in rem, which is relative to the root font sizes. Usually 16px.</p>
+<p>You can also size relative to the line height in the current font size.</p>
+<p>Just like with the other items, you can customize in the config file with using <code>theme.extend.lineHeight</code>, overriding existing items or adding new ones. You can turn this feature off using corePlugins.lineHeight and set it to false.</p>
 <hr>
-<h1 id="gap">Gap <a class="direct-link" href="#gap"> </a></h1>
+<!-- .slide: data-state="layout-code-list" -->
+<h1 id="letter-spacing">Letter Spacing <a class="direct-link" href="#letter-spacing"> </a></h1>
 <ul>
-<li><code>gap(-DIR)(-SIZ)</code>
+<li><code>tracking-TYP</code>
 <ul>
-<li><strong>DIR</strong><br>
-<code>x</code> <code>y</code></li>
-<li><strong>SIZ</strong><br><br>
-<code>0</code> <code>0.5</code> <code>1</code> <code>1.5</code> <code>2</code> <code>2.5</code> <code>3</code> <code>3.5</code> <code>4</code> <code>5</code><br><br>
-<code>6</code> <code>7</code> <code>8</code> <code>9</code> <code>10</code> <code>11</code> <code>12</code> <code>14</code> <code>16</code> <code>20</code><br><br>
-<code>24</code> <code>28</code> <code>32</code> <code>36</code> <code>40</code> <code>44</code> <code>48</code> <code>52</code> <code>56</code><br><br>
-<code>60</code> <code>64</code> <code>72</code> <code>80</code> <code>96</code><br><code>px</code></li>
+<li><strong>TYP</strong> (letter-spaci ng...in ems)<br><br>
+<code>tighter</code> -.05 <code>tight</code> -.025 <code>normal</code> 0<br><code>wide</code> .025 <code>wider</code> .05 <code>widest</code> .1</li>
 </ul>
 </li>
 </ul>
-<p><a href="https://tailwindcss.com/docs/gap" target="_blank"><code class="code-exciting">Docs</code></a> <a href="https://codepen.io/planetoftheweb/pen/MWjmOxo?editors=1000" target="_blank"><code class="code-royal">Try it</code></a></p>
+<p><a href="https://tailwindcss.com/docs/letter-spacing" target="_blank"><code class="code-exciting">Docs</code></a> <a href="https://codepen.io/planetoftheweb/pen/GRjRgvv?editors=1000" target="_blank"><code class="code-royal">Try it</code></a></p>
 <blockquote>
 <blockquote></blockquote>
 </blockquote>
-<p>Gaps are how you place spacing inside rows and columns and you can specify an optional direction here so you can have a different horizontal and vertical gaps, plus the traditional size scale from 0 to 96, plus px, which is the same as one pixel.</p>
+<p>Letter is under the tracking class for some reason and you can see that the measurements here are very minor. A little letter spacing goes a long way. I think these are a good set of measurements.</p>
 <hr>
-<h1 id="grid-template-columns-1">Grid Template Columns <a class="direct-link" href="#grid-template-columns-1"> </a></h1>
-<ul>
-<li><code>col(-TYP)(-AMT)</code>
-<ul>
-<li><strong>TYP</strong><br><br>
-<code>auto</code> <code>span</code> <code>start</code> <code>end</code></li>
-<li><strong>AMT</strong><br><br>
-<code>1</code> <code>2</code> <code>3</code> <code>4</code> <code>5</code> <code>6</code><br><br>
-<code>7</code> <code>8</code> <code>9</code> <code>10</code> <code>11</code> <code>12</code><br><br>
-<code>full</code></li>
-</ul>
-</li>
-</ul>
-<p><a href="https://tailwindcss.com/docs/grid-column" target="_blank"><code class="code-exciting">Docs</code></a> <a href="https://codepen.io/planetoftheweb/pen/KKgWjbW?editors=1000" target="_blank"><code class="code-royal">Try it</code></a></p>
-<blockquote>
-<blockquote></blockquote>
-</blockquote>
-<p>When working with columns, you can also control how many columns each element takes.</p>
-<p>The types can be <code>auto</code>, which lets the browser decide, then span, which lets you spacify a number of columns the element takes up.</p>
-<p><code>start</code> and <code>end</code> are pretty interesting because they let you pick the grid lines where the elements start and ends. Now, the grid lines start at 1 so the numbering is a little weird.</p>
-<p>Definitely better to look at these in context.</p>
-<p>In the example, you'll notice that sometimes, you can't use the width of items because it can affect the spanning.</p>
-<p>Also that when you use end, you have to go one column past where you think you'd go.</p>
-<hr>
-<h1 id="grid-template-rows">Grid Template Rows <a class="direct-link" href="#grid-template-rows"> </a></h1>
-<ul>
-<li><code>grid-rows(-AMT)</code>
-<ul>
-<li><strong>AMT</strong><br><br>
-<code>1</code> <code>2</code> <code>3</code> <code>4</code> <code>5</code> <code>6</code><BR><br>
-<code>none</code></li>
-</ul>
-</li>
-</ul>
-<p><a href="https://tailwindcss.com/docs/grid-template-rows" target="_blank"><code class="code-exciting">Docs</code></a> <a href="https://codepen.io/planetoftheweb/pen/yLaMRxy?editors=1000" target="_blank"><code class="code-royal">Try it</code></a></p>
-<blockquote>
-<blockquote></blockquote>
-</blockquote>
-<p>You can set up your grid so that it lets you control the amount of rows instead of columns, but the setup is a bit different, so the example here will help.</p>
-<p>In the example, you can see that I've set this up with the <code>grid-flow-col</code> class, so that the columns flow up and down and then use the grid-rows class to control how many columns these display in.</p>
-<hr>
-<h1 id="grid-row-start%2Fend">Grid Row Start/End <a class="direct-link" href="#grid-row-start%2Fend"> </a></h1>
-<ul>
-<li><code>col(-TYP)(-AMT)</code>
-<ul>
-<li><strong>TYP</strong><br><br>
-<code>auto</code> <code>span</code> <code>start</code> <code>end</code></li>
-<li><strong>AMT</strong><br><br>
-<code>1</code> <code>2</code> <code>3</code> <code>4</code> <code>5</code> <code>6</code> <code>7</code><BR><br>
-<code>full</code></li>
-</ul>
-</li>
-</ul>
-<p><a href="https://tailwindcss.com/docs/grid-row" target="_blank"><code class="code-exciting">Docs</code></a> <a href="https://codepen.io/planetoftheweb/pen/XWjMvGw?editors=1000" target="_blank"><code class="code-royal">Try it</code></a></p>
-<blockquote>
-<blockquote></blockquote>
-</blockquote>
-<p>These classes are similar to what we do with rows, but because there are only six columns, there are only seven numbers. Remember that the grid lines start at one and the last one would be seven.</p>
-<p>In the example just like with rows you can see that sometimes you ahve to turn off the height in this case to properly adjust the spanning.</p>
-<hr>
-<h1 id="grid-auto-flow">Grid Auto Flow <a class="direct-link" href="#grid-auto-flow"> </a></h1>
-<p><code>grid-flow-row</code> <code>grid-flow-col</code> <code>grid-flow-row-dense</code> <code>grid-flow-col-dense</code></p>
-<p><a href="https://tailwindcss.com/docs/grid-auto-flow" target="_blank"><code class="code-exciting">Docs</code></a> <a href="https://codepen.io/planetoftheweb/pen/PoGmYEa?editors=1000" target="_blank"><code class="code-royal">Try it</code></a></p>
-<blockquote>
-<blockquote></blockquote>
-</blockquote>
-<p>There's a few classes that let you change how items are placed on the grid. The key things is that the dense option allows the grid to fit the content.</p>
-<p>This is just the type of thing that is best seen as an example. Take a look what what's happening here with the fifth element starting at a later space. Using <code>grid-flow-row</code> will leave a hole in the layout, but with the dense option the sixth element will fill the spot.</p>
-<p>This can help build a better layout.</p>
-<hr>
-<h1 id="grid-auto-columns">Grid Auto Columns <a class="direct-link" href="#grid-auto-columns"> </a></h1>
-<p><code>auto-cols-auto</code> <code>auto-cols-min</code> <code>auto-cols-max</code> <code>auto-cols-fr</code></p>
-<p><a href="https://tailwindcss.com/docs/grid-auto-columns" target="_blank"><code class="code-exciting">Docs</code></a> <a href="https://codepen.io/planetoftheweb/pen/vYXmWGa?editors=1000" target="_blank"><code class="code-royal">Try it</code></a></p>
-<blockquote>
-<blockquote></blockquote>
-</blockquote>
-<p>There's a few classes that let you control what happens when there are too many items for the slots you've specified on a grid.</p>
-<p>So if say nine items will fit on your specified grid slots, but you have 12, the browser lets you control how those extra items are displayed.</p>
-<p>This is definitely better with an example, so take a peek.</p>
-<p>You'll see that I have the aforementioned example where where I have a 3x3 grid where I'm forcing a column flow with <code>grid-flow-col</code>. When I do this, the order of the columns go from top left down.</p>
-<p>Notice the last column. It's shorter than the other ones. Because it doesn't fit on my speficied grid, it's sized differently.</p>
-<p>I'm specifying <code>auto-cols-min</code>, so the min is saying to use the smallest piece of content that will fit as the width. In this case, that's the word <code>automation</code>.</p>
-<p>If I switch this to <code>auto-cols-max</code>, it will try to fit ALL of the content in the box. Switch it to <code>auto-cols-auto</code> and it will let the browser decide, which again, tries to fit everything it can.</p>
-<p>Finally, if you choose <code>auto-cols-fr</code>, the width will match the width of the other elements.</p>
-<hr>
-<h1 id="grid-auto-rows">Grid Auto Rows <a class="direct-link" href="#grid-auto-rows"> </a></h1>
-<p><code>auto-rows-auto</code> <code>auto-rows-min</code> <code>auto-rows-max</code> <code>auto-rows-fr</code></p>
-<p><a href="https://tailwindcss.com/docs/grid-auto-rows" target="_blank"><code class="code-exciting">Docs</code></a> <a href="https://codepen.io/planetoftheweb/pen/PoGmOeM?editors=1000" target="_blank"><code class="code-royal">Try it</code></a></p>
-<blockquote>
-<blockquote></blockquote>
-</blockquote>
-<p>Grid Auto Rows is pretty similar to columns, but of course it works with rows instead. If you look at the example though, you'll see that using <code>auto-rows-fr</code> works well, but the other values are pretty similar.</p>
-<p>That's because the making something the minimum height of an element doesn't make as much sense.</p>
+<!-- .slide: data-state="layout-title" data-transition="zoom" class="bg-dark"-->
 
         </main>
         <aside class="aside aside-supplemental col col-md-3 col-lg-2 d-none d-md-block">
@@ -389,31 +292,13 @@
             <div class="">
                 <ol>
                     
-                    <li><a href="#grids">Grids  </a>
+                    <li><a href="#spacing-typography">Spacing Typography  </a>
             		</li>
 
-                    <li><a href="#grid-template-columns">Grid Template Columns  </a>
+                    <li><a href="#line-height">Line Height  </a>
             		</li>
 
-                    <li><a href="#gap">Gap  </a>
-            		</li>
-
-                    <li><a href="#grid-template-columns-1">Grid Template Columns  </a>
-            		</li>
-
-                    <li><a href="#grid-template-rows">Grid Template Rows  </a>
-            		</li>
-
-                    <li><a href="#grid-row-start%2Fend">Grid Row Start/End  </a>
-            		</li>
-
-                    <li><a href="#grid-auto-flow">Grid Auto Flow  </a>
-            		</li>
-
-                    <li><a href="#grid-auto-columns">Grid Auto Columns  </a>
-            		</li>
-
-                    <li><a href="#grid-auto-rows">Grid Auto Rows  </a>
+                    <li><a href="#letter-spacing">Letter Spacing  </a>
             		</li>
                 </ol>
             </div>
