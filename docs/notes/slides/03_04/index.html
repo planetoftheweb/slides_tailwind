@@ -54,7 +54,7 @@
                   <div class="d-flex justify-content-end align-items-right border-bottom p-2 ">
                     <a class="text-decoration-none  link-secondary  link-primary" href="../../../notes/slides/01_02/index.html">
                       <i class="fas fa-file-alt mr-2 lh-1  text-primary "></i>01_02
-                      Basic Configuration</a>
+                      Installing with NPM</a>
                     <a class=" link-secondary  flex-fill ml-3 text-right" href="../../../?d=01_02&#">
                       <i class="fab fa-slideshare"></i>
                     </a>
@@ -81,7 +81,7 @@
                   <div class="d-flex justify-content-end align-items-right border-bottom p-2 ">
                     <a class="text-decoration-none  link-secondary  link-primary" href="../../../notes/slides/01_05/index.html">
                       <i class="fas fa-file-alt mr-2 lh-1  text-primary "></i>01_05
-                      Extracting Classes</a>
+                      Working with JIT</a>
                     <a class=" link-secondary  flex-fill ml-3 text-right" href="../../../?d=01_05&#">
                       <i class="fab fa-slideshare"></i>
                     </a>
@@ -263,6 +263,24 @@
                       <i class="fas fa-file-alt mr-2 lh-1  text-primary "></i>06_03
                       Animations</a>
                     <a class=" link-secondary  flex-fill ml-3 text-right" href="../../../?d=06_03&#">
+                      <i class="fab fa-slideshare"></i>
+                    </a>
+                  </div>
+                
+                  <div class="d-flex justify-content-end align-items-right border-bottom p-2 ">
+                    <a class="text-decoration-none  link-secondary  link-primary" href="../../../notes/slides/06_04/index.html">
+                      <i class="fas fa-file-alt mr-2 lh-1  text-primary "></i>06_04
+                      Filters</a>
+                    <a class=" link-secondary  flex-fill ml-3 text-right" href="../../../?d=06_04&#">
+                      <i class="fab fa-slideshare"></i>
+                    </a>
+                  </div>
+                
+                  <div class="d-flex justify-content-end align-items-right border-bottom p-2 ">
+                    <a class="text-decoration-none  link-secondary  link-primary" href="../../../notes/slides/06_05/index.html">
+                      <i class="fas fa-file-alt mr-2 lh-1  text-primary "></i>06_05
+                      Mixing Utilities</a>
+                    <a class=" link-secondary  flex-fill ml-3 text-right" href="../../../?d=06_05&#">
                       <i class="fab fa-slideshare"></i>
                     </a>
                   </div>
@@ -579,7 +597,7 @@
 <hr>
 <h1 id="background-size">Background Size <a class="direct-link" href="#background-size"> </a></h1>
 <ul>
-<li><code>bg(-SIZ)</code>
+<li><code>bg(-TYP)</code>
 <ul>
 <li><strong>TYP</strong><br><br>
 <code>auto</code> <code>cover</code> <code>contain</code></li>
@@ -591,12 +609,12 @@
 <blockquote></blockquote>
 </blockquote>
 <p>Let's move on to background images. This sounds weird, but there isn't a way to specify the URL of an image you want to use for the background, so you can do that using the style attribute (take a look at the example).</p>
-<p>But you can specify most css properties like the background size. You can use <code>auto</code>, which just shows the image in it's natural size; or <code>cover</code>, which tries to fit the image  so that it completely fills the background, resizing as necessary...this is a pretty common type; Finally, there's <code>contain</code>, which makes the whole image fit in the box.</p>
+<p>But you can specify most css properties like the background size. You can use <code>auto</code>, which just shows the image in it's natural size; or <code>cover</code>, which tries to fit the image so that it completely fills the background, resizing as necessary...this is a pretty common type; Finally, there's <code>contain</code>, which makes the whole image fit in the box.</p>
 <p>This is one of those sets of classes that you're probably want to use with other classes so take a look at the example.</p>
 <hr>
 <h1 id="background-repeat">Background Repeat <a class="direct-link" href="#background-repeat"> </a></h1>
 <ul>
-<li><code>bg(-REP)</code>
+<li><code>bg(-TYP)</code>
 <ul>
 <li><strong>TYP</strong><br><br>
 <code>repeat</code> <code>no-repeat</code> <code>repeat-x</code> <code>repeat-y</code> <code>repeat-round</code> <code>repeat-space</code></li>
@@ -608,12 +626,12 @@
 <blockquote></blockquote>
 </blockquote>
 <p>Let's move on to background images. This sounds weird, but there isn't a way to specify the URL of an image you want to use for the background, so you can do that using the style attribute (take a look at the example).</p>
-<p>But you can specify most css properties like the background size. You can use <code>auto</code>, which just shows the image in it's natural size; or <code>cover</code>, which tries to fit the image  so that it completely fills the background, resizing as necessary...this is a pretty common type; Finally, there's <code>contain</code>, which makes the whole image fit in the box.</p>
+<p>But you can specify most css properties like the background size. You can use <code>auto</code>, which just shows the image in it's natural size; or <code>cover</code>, which tries to fit the image so that it completely fills the background, resizing as necessary...this is a pretty common type; Finally, there's <code>contain</code>, which makes the whole image fit in the box.</p>
 <p>This is one of those sets of classes that you're probably want to use with other classes so take a look at the example.</p>
 <hr>
 <h1 id="background-position">Background Position <a class="direct-link" href="#background-position"> </a></h1>
 <ul>
-<li><code>bg(-POS)</code>
+<li><code>bg(-TYP)</code>
 <ul>
 <li><strong>TYP</strong><br><br>
 <code>bottom</code> <code>center</code> <code>left</code> <code>left-bottom</code> <code>left-top</code> <code>right</code> <code>right-bottom</code> <code>right-top</code> <code>top</code></li>
@@ -625,6 +643,33 @@
 <blockquote></blockquote>
 </blockquote>
 <p>Positions are available for when you are not repeating an element and follow a traditional TRBL or top right bottom left order with corners added as well, so you end up with left-bottom, left-top, etc.</p>
+<hr>
+<h1 id="background-origin">Background Origin <a class="direct-link" href="#background-origin"> </a></h1>
+<ul>
+<li><code>bg-origin(-TYP)</code>
+<ul>
+<li><strong>TYP</strong><br><br>
+<code>padding</code> <code>border</code> <code>content</code></li>
+</ul>
+</li>
+</ul>
+<p><a href="https://tailwindcss.com/docs/background-origin" target="_blank"><code class="code-exciting">Docs</code></a> <a href="https://codepen.io/planetoftheweb/pen/JjRXyvv?editors=1000" target="_blank"><code class="code-royal">Try it</code></a></p>
+<blockquote>
+<blockquote></blockquote>
+</blockquote>
+<p>The background origin controls where an element's background is positioned in relationship to borders. This correlates to the background-origin property and has three possible values.</p>
+<p>Padding means that the background will draw from the upper left corner of the padding edge. This is the default value</p>
+<p>Border means that the background will draw from the upper left corner of the border.</p>
+<p>Finally content will try to fit the background image from the upper left corner of the content.</p>
+<p>If you take a look at the example, you can see that this looks great specially when the sizes of the internal elements are consistent.</p>
+<hr>
+<h1 id="box-decoration-break">Box Decoration Break <a class="direct-link" href="#box-decoration-break"> </a></h1>
+<p><code>decoration-slice</code> <code>decoration-clone</code></p>
+<p><a href="https://tailwindcss.com/docs/box-decoration-break" target="_blank"><code class="code-exciting">Docs</code></a> <a href="" target="_blank"><code class="code-royal">Try it</code></a></p>
+<blockquote>
+<blockquote></blockquote>
+</blockquote>
+<p>Inline elements will sometimes take up more than one line inside a container. This property controls wether the element will appy things like margin, padding box-shadow and others to each of the lines or to the entire element. <code>decoration-slice</code> will initiate this behavior, and <code>decoration-clone</code> will reset things.</p>
 
         </main>
         <aside class="aside aside-supplemental col col-md-3 col-lg-2 d-none d-md-block">
@@ -655,6 +700,12 @@
             		</li>
 
                     <li><a href="#background-position">Background Position  </a>
+            		</li>
+
+                    <li><a href="#background-origin">Background Origin  </a>
+            		</li>
+
+                    <li><a href="#box-decoration-break">Box Decoration Break  </a>
             		</li>
                 </ol>
             </div>

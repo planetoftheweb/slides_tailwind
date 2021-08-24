@@ -3,9 +3,9 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-        <title>03_02
+        <title>06_05
           --
-          Rings</title>
+          Mixing Utilities</title>
       <link rel="stylesheet" href="../../../css/twemoji-amazing.css"/>
     <link rel="stylesheet" href="../../../css/bootstrap-rayveal.css"/>
     <link rel="stylesheet" href="../../../css/fontawesome.css"/>
@@ -132,11 +132,11 @@
                     </a>
                   </div>
                 
-                  <div class="d-flex justify-content-end align-items-right border-bottom p-2  bg-primary ">
-                    <a class="text-decoration-none  fw-bolder link-light  link-primary" href="../../../notes/slides/03_02/index.html">
-                      <i class="fas fa-file-alt mr-2 lh-1  text-light "></i>03_02
+                  <div class="d-flex justify-content-end align-items-right border-bottom p-2 ">
+                    <a class="text-decoration-none  link-secondary  link-primary" href="../../../notes/slides/03_02/index.html">
+                      <i class="fas fa-file-alt mr-2 lh-1  text-primary "></i>03_02
                       Rings</a>
-                    <a class=" link-light  flex-fill ml-3 text-right" href="../../../?d=03_02&#">
+                    <a class=" link-secondary  flex-fill ml-3 text-right" href="../../../?d=03_02&#">
                       <i class="fab fa-slideshare"></i>
                     </a>
                   </div>
@@ -276,11 +276,11 @@
                     </a>
                   </div>
                 
-                  <div class="d-flex justify-content-end align-items-right border-bottom p-2 ">
-                    <a class="text-decoration-none  link-secondary  link-primary" href="../../../notes/slides/06_05/index.html">
-                      <i class="fas fa-file-alt mr-2 lh-1  text-primary "></i>06_05
+                  <div class="d-flex justify-content-end align-items-right border-bottom p-2  bg-primary ">
+                    <a class="text-decoration-none  fw-bolder link-light  link-primary" href="../../../notes/slides/06_05/index.html">
+                      <i class="fas fa-file-alt mr-2 lh-1  text-light "></i>06_05
                       Mixing Utilities</a>
-                    <a class=" link-secondary  flex-fill ml-3 text-right" href="../../../?d=06_05&#">
+                    <a class=" link-light  flex-fill ml-3 text-right" href="../../../?d=06_05&#">
                       <i class="fab fa-slideshare"></i>
                     </a>
                   </div>
@@ -343,281 +343,79 @@
 
         <main class="main col col-md-6 col-lg-8">
           <!-- .slide: data-state="layout-title" class="bg-dark"-->
-<h1 id="rings">Rings <a class="direct-link" href="#rings"> </a></h1>
+<h1 id="mixing-utilities">Mixing Utilities <a class="direct-link" href="#mixing-utilities"> </a></h1>
 <div class="slide-link"><a href="https://go.raybo.org/2cDr"><i class="fab fa-slideshare"></i> go.raybo.org/2cDr</a></div>
 <blockquote>
-<blockquote></blockquote>
+<blockquote>
+<p>There are different ways to control how elements mix and filter with other elements. Let's take a look at some of those classes.</p>
 </blockquote>
-<p>Rings are very similar to borders, but use shadows instead and some options that are slightly different.</p>
+</blockquote>
 <hr>
-<h1 id="ring-width">Ring Width <a class="direct-link" href="#ring-width"> </a></h1>
+<h1 id="backdrop-filter">Backdrop Filter <a class="direct-link" href="#backdrop-filter"> </a></h1>
+<p><code>backdrop-filter</code><br>
+<code>backdrop-filter-none</code></p>
 <ul>
-<li><code>ring(-AMT)</code>
+<li>
+<p><code>backdrop(-TYP)</code></p>
 <ul>
-<li><strong>AMT</strong> (--tw-ring-offset-width)<br><br>
-<code>0</code> <code>1</code> <code>2</code> <code>4</code> <code>8</code> <code>inset</code></li>
+<li><strong>AMT</strong><br><br>
+<code>blur</code> <code>brightness</code> <code>contrast</code> <code>grayscale</code> <code>hue-rotate</code><br><br>
+<code>invert</code> <code>opacity</code> <code>saturate</code> <code>sepia</code></li>
+</ul>
+</li>
+<li>
+<p><code>backdrop-opacity(-AMT)</code></p>
+<ul>
+<li><strong>AMT</strong><br><br>
+<code>0</code> <code>5</code> <code>10</code> <code>20</code> <code>25</code> <code>30</code> <code>40</code> <code>50</code><br><br>
+<code>60</code> <code>70</code> <code>75</code> <code>80</code> <code>90</code> <code>95</code> <code>100</code></li>
 </ul>
 </li>
 </ul>
-<p><a href="https://tailwindcss.com/docs/ring-width" target="_blank"><code class="code-exciting">Docs</code></a> <a href="https://codepen.io/planetoftheweb/pen/mdreowK?editors=1000" target="_blank"><code class="code-royal">Try it</code></a></p>
+<p><a href="https://tailwindcss.com/docs/backdrop-filter" target="_blank"><code class="code-exciting">Docs</code></a> <a href="https://codepen.io/planetoftheweb/pen/QWgLZJW?editors=1000" target="_blank"><code class="code-royal">Try it</code></a></p>
 <blockquote>
 <blockquote></blockquote>
 </blockquote>
-<p>Rings are another type of style. It's similar to borders, but it uses box-shadows instead.</p>
-<p>There are four sizes besides 0, but interestingly enough, if you just use ring without a size you get an extra size, which is the equivalent of three pixels. You can also add an inset option to any of these sizes to make the box shadow display inside.</p>
+<p>Backdrop filter helps you control how an element filters what's behind it. Most of the filter options are available here, but not all, so dropshadow is missing, for example.</p>
+<p>Also, there is an additional property for controlling the strength of this effect called backdrop-opacity, which receives the same values as the opacity property.</p>
 <hr>
-<h1 id="ring-opacity">Ring Opacity <a class="direct-link" href="#ring-opacity"> </a></h1>
+<h1 id="isolation">Isolation <a class="direct-link" href="#isolation"> </a></h1>
+<p><code>isolate</code> <code>isolation-auto</code></p>
+<p><a href="https://tailwindcss.com/docs/isolation" target="_blank"><code class="code-exciting">Docs</code></a> <a href="https://codepen.io/planetoftheweb/pen/gORYZPw?editors=1000" target="_blank"><code class="code-royal">Try it</code></a></p>
+<blockquote>
+<blockquote></blockquote>
+</blockquote>
+<p>Isolation is a CSS property that works with mix blend modes. Normally the mix-blend-mode will make the element it's assigned to interact with every element underneath. By turning on the isolation, you can limit the blend mode to interact only with certain elements. You'll want to see this one, so look at the example.</p>
+<hr>
+<h1 id="background-blend-mode">Background Blend Mode <a class="direct-link" href="#background-blend-mode"> </a></h1>
 <ul>
-<li><code>ring-opacity-AMT</code>
+<li><code>bg-blend(-typ)</code>
 <ul>
-<li><strong>AMT</strong> (--tw-ring-opacity)<br><br>
-<code>0</code> <code>5</code> <code>10</code> <code>20</code> <code>25</code> <code>30</code> <code>40</code> <code>50</code><br><code>60</code> <code>70</code> <code>75</code> <code>80</code> <code>90</code> <code>95</code> <code>100</code></li>
+<li><strong>TYP</strong><br><br>
+<code>normal</code> <code>multiply</code> <code>screen</code> <code>overlay</code> <code>darken</code> <code>lighten</code> <code>color-dodge</code> <code>color-burn</code> <code>hard-light</code> <code>soft-light</code> <code>difference</code> <code>exclusion</code> <code>hue</code> <code>saturation</code></li>
 </ul>
 </li>
 </ul>
-<p><a href="https://tailwindcss.com/docs/ring-opacity" target="_blank"><code class="code-exciting">Docs</code></a> <a href="https://codepen.io/planetoftheweb/pen/LYRpawm?editors=1000" target="_blank"><code class="code-royal">Try it</code></a></p>
+<p><a href="https://tailwindcss.com/docs/background-blend-mode" target="_blank"><code class="code-exciting">Docs</code></a> <a href="https://codepen.io/planetoftheweb/pen/ZEyzmmr?editors=1000" target="_blank"><code class="code-royal">Try it</code></a></p>
 <blockquote>
 <blockquote></blockquote>
 </blockquote>
-<p>Opacity is similar to the border opacity with each value listed here being the equivalent in decimal measurements. So 20 means an opacity of .2. Again the nice thing here is that you can do the opacity of just the outline in the same place that you set the background color and border with. It's part of Tailwind's charm by using a variable.</p>
+<p>If an element has a background image as well as a background color, you can use the background blend mode to control how the image blends with its background color.</p>
 <hr>
-<h1 id="ring-color">Ring Color <a class="direct-link" href="#ring-color"> </a></h1>
+<h1 id="mix-blend-mode">Mix Blend Mode <a class="direct-link" href="#mix-blend-mode"> </a></h1>
 <ul>
-<li><code>ring-COL-STR</code><div style="font-size: .8em; line-height: 50%">
-  <code style="color: transparent; background: transparent;">transparent</code>
-  <code style="color: var(--bs-gray); background: transparent;">transparent</code>
-  <code style="color: black; background: transparent;">black</code>
-  <code style="color: white;">white</code><br>
-  <code style="color: rgb(107, 114, 128); background: transparent" contenteditable = "false" style="cursor: pointer !important;">gray</code>
-  <code class="text-red-500">red</code>
-  <code style="color: rgb(252, 211, 77); background: transparent">yellow</code>
-  <code style="color: rgb(16, 185, 129); background: transparent">green</code>
-  <code style="color: rgb(59, 130, 246); background: transparent">blue</code>
-  <code style="color: rgb(99, 102, 241); background: transparent">indigo</code>
-  <code style="color: rgb(139, 92, 246); background: transparent">purple</code>
-  <code style="color: rgb(236, 72, 153); background: transparent">pink</code><br>
-  <code style="color: rgb(249, 250, 251); background: transparent">50</code>
-  <code style="color: rgb(243, 244, 246); background: transparent">100</code>
-  <code style="color: rgb(229, 231, 235); background: transparent">200</code>
-  <code style="color: rgb(209, 213, 219); background: transparent">300</code>
-  <code style="color: rgb(156, 163, 175); background: transparent">400</code>
-  <code style="color: rgb(107, 114, 128); background: transparent">500</code>
-  <code style="color: rgb(75, 85, 99); background: transparent">600</code>
-  <code style="color: rgb(55, 65, 81); background: transparent">700</code>
-  <code style="color: rgb(31, 41, 55); background: transparent">800</code>
-  <code style="color: rgb(17, 24, 3); background: transparent">900</code><br>
-  <code style="color: rgb(254, 242, 242); background: transparent">50</code>
-  <code style="color: rgb(254, 226, 226); background: transparent">100</code>
-  <code style="color: rgb(254, 202, 202); background: transparent">200</code>
-  <code style="color: rgb(252, 165, 165); background: transparent">300</code>
-  <code style="color: rgb(248, 113, 113); background: transparent">400</code>
-  <code style="color: rgb(239, 68, 68); background: transparent">500</code>
-  <code style="color: rgb(220, 38, 38); background: transparent">600</code>
-  <code style="color: rgb(185, 28, 28); background: transparent">700</code>
-  <code style="color: rgb(153, 27, 27); background: transparent">800</code>
-  <code style="color: rgb(127, 29, 29); background: transparent">900</code><br>
-  <code style="color: rgb(255, 251, 235); background: transparent">50</code>
-  <code style="color: rgb(254, 243, 199); background: transparent">100</code>
-  <code style="color: rgb(253, 230, 138); background: transparent">200</code>
-  <code style="color: rgb(252, 211, 77); background: transparent">300</code>
-  <code style="color: rgb(251, 191, 36); background: transparent">400</code>
-  <code style="color: rgb(245, 158, 11); background: transparent">500</code>
-  <code style="color: rgb(217, 119, 6); background: transparent">600</code>
-  <code style="color: rgb(180, 83, 9); background: transparent">700</code>
-  <code style="color: rgb(146, 64, 14); background: transparent">800</code>
-  <code style="color: rgb(120, 53, 15); background: transparent">900</code><br>
-  <code style="color: rgb(236, 253, 245); background: transparent">50</code>
-  <code style="color: rgb(209, 250, 229); background: transparent">100</code>
-  <code style="color: rgb(167, 243, 208); background: transparent">200</code>
-  <code style="color: rgb(110, 231, 183); background: transparent">300</code>
-  <code style="color: rgb(52, 211, 153); background: transparent">400</code>
-  <code style="color: rgb(16, 185, 129); background: transparent">500</code>
-  <code style="color: rgb(5, 150, 105); background: transparent">600</code>
-  <code style="color: rgb(4, 120, 87); background: transparent">700</code>
-  <code style="color: rgb(6, 95, 70); background: transparent">800</code>
-  <code style="color: rgb(6, 78, 59); background: transparent">900</code><br>
-  <code style="color: rgb(239, 246, 255); background: transparent">50</code>
-  <code style="color: rgb(219, 234, 254); background: transparent">100</code>
-  <code style="color: rgb(191, 219, 254); background: transparent">200</code>
-  <code style="color: rgb(147, 197, 253); background: transparent">300</code>
-  <code style="color: rgb(96, 165, 250); background: transparent">400</code>
-  <code style="color: rgb(59, 130, 246); background: transparent">500</code>
-  <code style="color: rgb(37, 99, 235); background: transparent">600</code>
-  <code style="color: rgb(29, 78, 216); background: transparent">700</code>
-  <code style="color: rgb(30, 64, 175); background: transparent">800</code>
-  <code style="color: rgb(30, 58, 138); background: transparent">900</code><br>
-  <code style="color: rgb(238, 242, 255); background: transparent">50</code>
-  <code style="color: rgb(224, 231, 255); background: transparent">100</code>
-  <code style="color: rgb(199, 210, 254); background: transparent">200</code>
-  <code style="color: rgb(165, 180, 252); background: transparent">300</code>
-  <code style="color: rgb(129, 140, 248); background: transparent">400</code>
-  <code style="color: rgb(99, 102, 241); background: transparent">500</code>
-  <code style="color: rgb(79, 70, 229); background: transparent">600</code>
-  <code style="color: rgb(67, 56, 202); background: transparent">700</code>
-  <code style="color: rgb(55, 48, 163); background: transparent">800</code>
-  <code style="color: rgb(49, 46, 129); background: transparent">900</code><br>
-  <code style="color: rgb(245, 243, 255); background: transparent">50</code>
-  <code style="color: rgb(237, 233, 254); background: transparent">100</code>
-  <code style="color: rgb(221, 214, 254); background: transparent">200</code>
-  <code style="color: rgb(196, 181, 253); background: transparent">300</code>
-  <code style="color: rgb(167, 139, 250); background: transparent">400</code>
-  <code style="color: rgb(139, 92, 246); background: transparent">500</code>
-  <code style="color: rgb(124, 58, 237); background: transparent">600</code>
-  <code style="color: rgb(109, 40, 217); background: transparent">700</code>
-  <code style="color: rgb(91, 33, 182); background: transparent">800</code>
-  <code style="color: rgb(76, 29, 149); background: transparent">900</code><br>
-  <code style="color: rgb(253, 242, 248); background: transparent">50</code>
-  <code style="color: rgb(252, 231, 243); background: transparent">100</code>
-  <code style="color: rgb(251, 207, 232); background: transparent">200</code>
-  <code style="color: rgb(249, 168, 212); background: transparent">300</code>
-  <code style="color: rgb(244, 114, 182); background: transparent">400</code>
-  <code style="color: rgb(236, 72, 153); background: transparent">500</code>
-  <code style="color: rgb(219, 39, 119); background: transparent">600</code>
-  <code style="color: rgb(190, 24, 93); background: transparent">700</code>
-  <code style="color: rgb(157, 23, 77); background: transparent">800</code>
-  <code style="color: rgb(131, 24, 67); background: transparent">900</code>
-</div>
-</li>
-</ul>
-<p><a href="https://tailwindcss.com/docs/ring-color" target="_blank"><code class="code-exciting">Docs</code></a> <a href="https://codepen.io/planetoftheweb/pen/XWjmQpV?editors=1000" target="_blank"><code class="code-royal">Try it</code></a></p>
-<blockquote>
-<blockquote></blockquote>
-</blockquote>
-<p>Colors and it's options are exactly the same as borders, so there's not much to say here, other than the default color for a ring is blue, so if you don't specify a color, but have a ring, it will be a light blue.</p>
-<p>Just like with the ring color, a variable controls the color so that you can set all options at the same level.</p>
-<hr>
-<h1 id="ring-offset-width">Ring Offset Width <a class="direct-link" href="#ring-offset-width"> </a></h1>
+<li><code>mix-blend(-typ)</code>
 <ul>
-<li><code>ring-offset-WDT</code>
-<ul>
-<li><strong>WDT</strong>  (--tw-ring-offset-width)<br><br>
-<code>0</code> <code>1</code> <code>2</code> <code>4</code> <code>8</code></li>
+<li><strong>TYP</strong><br><br>
+<code>normal</code> <code>multiply</code> <code>screen</code> <code>overlay</code> <code>darken</code> <code>lighten</code> <code>color-dodge</code> <code>color-burn</code> <code>hard-light</code> <code>soft-light</code> <code>difference</code> <code>exclusion</code> <code>hue</code> <code>saturation</code></li>
 </ul>
 </li>
 </ul>
-<p><a href="https://tailwindcss.com/docs/ring-offset-width" target="_blank"><code class="code-exciting">Docs</code></a> <a href="https://codepen.io/planetoftheweb/pen/RwGWOjX?editors=1000" target="_blank"><code class="code-royal">Try it</code></a></p>
+<p><a href="https://tailwindcss.com/docs/mix-blend-mode" target="_blank"><code class="code-exciting">Docs</code></a> <a href="https://codepen.io/planetoftheweb/pen/dyWBPmZ" target="_blank"><code class="code-royal">Try it</code></a></p>
 <blockquote>
 <blockquote></blockquote>
 </blockquote>
-<p>The offset width lets you simulate an offset of the ring by adding a solid white border of a certain size.</p>
-<hr>
-<h1 id="ring-offset-color">Ring Offset Color <a class="direct-link" href="#ring-offset-color"> </a></h1>
-<ul>
-<li><code>ring-offset-COL-STR</code><div style="font-size: .8em; line-height: 50%">
-  <code style="color: transparent; background: transparent;">transparent</code>
-  <code style="color: var(--bs-gray); background: transparent;">transparent</code>
-  <code style="color: black; background: transparent;">black</code>
-  <code style="color: white;">white</code><br>
-  <code style="color: rgb(107, 114, 128); background: transparent" contenteditable = "false" style="cursor: pointer !important;">gray</code>
-  <code class="text-red-500">red</code>
-  <code style="color: rgb(252, 211, 77); background: transparent">yellow</code>
-  <code style="color: rgb(16, 185, 129); background: transparent">green</code>
-  <code style="color: rgb(59, 130, 246); background: transparent">blue</code>
-  <code style="color: rgb(99, 102, 241); background: transparent">indigo</code>
-  <code style="color: rgb(139, 92, 246); background: transparent">purple</code>
-  <code style="color: rgb(236, 72, 153); background: transparent">pink</code><br>
-  <code style="color: rgb(249, 250, 251); background: transparent">50</code>
-  <code style="color: rgb(243, 244, 246); background: transparent">100</code>
-  <code style="color: rgb(229, 231, 235); background: transparent">200</code>
-  <code style="color: rgb(209, 213, 219); background: transparent">300</code>
-  <code style="color: rgb(156, 163, 175); background: transparent">400</code>
-  <code style="color: rgb(107, 114, 128); background: transparent">500</code>
-  <code style="color: rgb(75, 85, 99); background: transparent">600</code>
-  <code style="color: rgb(55, 65, 81); background: transparent">700</code>
-  <code style="color: rgb(31, 41, 55); background: transparent">800</code>
-  <code style="color: rgb(17, 24, 3); background: transparent">900</code><br>
-  <code style="color: rgb(254, 242, 242); background: transparent">50</code>
-  <code style="color: rgb(254, 226, 226); background: transparent">100</code>
-  <code style="color: rgb(254, 202, 202); background: transparent">200</code>
-  <code style="color: rgb(252, 165, 165); background: transparent">300</code>
-  <code style="color: rgb(248, 113, 113); background: transparent">400</code>
-  <code style="color: rgb(239, 68, 68); background: transparent">500</code>
-  <code style="color: rgb(220, 38, 38); background: transparent">600</code>
-  <code style="color: rgb(185, 28, 28); background: transparent">700</code>
-  <code style="color: rgb(153, 27, 27); background: transparent">800</code>
-  <code style="color: rgb(127, 29, 29); background: transparent">900</code><br>
-  <code style="color: rgb(255, 251, 235); background: transparent">50</code>
-  <code style="color: rgb(254, 243, 199); background: transparent">100</code>
-  <code style="color: rgb(253, 230, 138); background: transparent">200</code>
-  <code style="color: rgb(252, 211, 77); background: transparent">300</code>
-  <code style="color: rgb(251, 191, 36); background: transparent">400</code>
-  <code style="color: rgb(245, 158, 11); background: transparent">500</code>
-  <code style="color: rgb(217, 119, 6); background: transparent">600</code>
-  <code style="color: rgb(180, 83, 9); background: transparent">700</code>
-  <code style="color: rgb(146, 64, 14); background: transparent">800</code>
-  <code style="color: rgb(120, 53, 15); background: transparent">900</code><br>
-  <code style="color: rgb(236, 253, 245); background: transparent">50</code>
-  <code style="color: rgb(209, 250, 229); background: transparent">100</code>
-  <code style="color: rgb(167, 243, 208); background: transparent">200</code>
-  <code style="color: rgb(110, 231, 183); background: transparent">300</code>
-  <code style="color: rgb(52, 211, 153); background: transparent">400</code>
-  <code style="color: rgb(16, 185, 129); background: transparent">500</code>
-  <code style="color: rgb(5, 150, 105); background: transparent">600</code>
-  <code style="color: rgb(4, 120, 87); background: transparent">700</code>
-  <code style="color: rgb(6, 95, 70); background: transparent">800</code>
-  <code style="color: rgb(6, 78, 59); background: transparent">900</code><br>
-  <code style="color: rgb(239, 246, 255); background: transparent">50</code>
-  <code style="color: rgb(219, 234, 254); background: transparent">100</code>
-  <code style="color: rgb(191, 219, 254); background: transparent">200</code>
-  <code style="color: rgb(147, 197, 253); background: transparent">300</code>
-  <code style="color: rgb(96, 165, 250); background: transparent">400</code>
-  <code style="color: rgb(59, 130, 246); background: transparent">500</code>
-  <code style="color: rgb(37, 99, 235); background: transparent">600</code>
-  <code style="color: rgb(29, 78, 216); background: transparent">700</code>
-  <code style="color: rgb(30, 64, 175); background: transparent">800</code>
-  <code style="color: rgb(30, 58, 138); background: transparent">900</code><br>
-  <code style="color: rgb(238, 242, 255); background: transparent">50</code>
-  <code style="color: rgb(224, 231, 255); background: transparent">100</code>
-  <code style="color: rgb(199, 210, 254); background: transparent">200</code>
-  <code style="color: rgb(165, 180, 252); background: transparent">300</code>
-  <code style="color: rgb(129, 140, 248); background: transparent">400</code>
-  <code style="color: rgb(99, 102, 241); background: transparent">500</code>
-  <code style="color: rgb(79, 70, 229); background: transparent">600</code>
-  <code style="color: rgb(67, 56, 202); background: transparent">700</code>
-  <code style="color: rgb(55, 48, 163); background: transparent">800</code>
-  <code style="color: rgb(49, 46, 129); background: transparent">900</code><br>
-  <code style="color: rgb(245, 243, 255); background: transparent">50</code>
-  <code style="color: rgb(237, 233, 254); background: transparent">100</code>
-  <code style="color: rgb(221, 214, 254); background: transparent">200</code>
-  <code style="color: rgb(196, 181, 253); background: transparent">300</code>
-  <code style="color: rgb(167, 139, 250); background: transparent">400</code>
-  <code style="color: rgb(139, 92, 246); background: transparent">500</code>
-  <code style="color: rgb(124, 58, 237); background: transparent">600</code>
-  <code style="color: rgb(109, 40, 217); background: transparent">700</code>
-  <code style="color: rgb(91, 33, 182); background: transparent">800</code>
-  <code style="color: rgb(76, 29, 149); background: transparent">900</code><br>
-  <code style="color: rgb(253, 242, 248); background: transparent">50</code>
-  <code style="color: rgb(252, 231, 243); background: transparent">100</code>
-  <code style="color: rgb(251, 207, 232); background: transparent">200</code>
-  <code style="color: rgb(249, 168, 212); background: transparent">300</code>
-  <code style="color: rgb(244, 114, 182); background: transparent">400</code>
-  <code style="color: rgb(236, 72, 153); background: transparent">500</code>
-  <code style="color: rgb(219, 39, 119); background: transparent">600</code>
-  <code style="color: rgb(190, 24, 93); background: transparent">700</code>
-  <code style="color: rgb(157, 23, 77); background: transparent">800</code>
-  <code style="color: rgb(131, 24, 67); background: transparent">900</code>
-</div>
-</li>
-</ul>
-<p><a href="https://tailwindcss.com/docs/ring-color" target="_blank"><code class="code-exciting">Docs</code></a> <a href="https://codepen.io/planetoftheweb/pen/qBaOwMg" target="_blank"><code class="code-royal">Try it</code></a></p>
-<blockquote>
-<blockquote></blockquote>
-</blockquote>
-<p>You can also set the color of the ring's space to whatever color you want, which gives you some other options for styles. The color are the usual variables, which includes black, white and transparent, plus the current color option as well.</p>
-<hr>
-<h1 id="ring-focus-variants">Ring Focus Variants <a class="direct-link" href="#ring-focus-variants"> </a></h1>
-<ul>
-<li><code>focus:</code></li>
-<li><code>inset:</code></li>
-</ul>
-<p><a href="https://tailwindcss.com/docs/ring-width#focus-rings" target="_blank"><code class="code-exciting">Docs</code></a> <a href="https://codepen.io/planetoftheweb/pen/mdmgWrG?editors=1000" target="_blank"><code class="code-royal">Try it</code></a></p>
-<blockquote>
-<blockquote></blockquote>
-</blockquote>
-<p>There are two other properties you can use to modify the rings. These are prefixes that you use as modifier. Focus lets you control the look fields when they gain focus, so this is really good for things like buttons and other input fields in forms.</p>
-<p>By default, rings are drawn on the outside of an element, but there's a variant you can use to switch that so it displays inside the element.</p>
-<hr>
-<!-- .slide: data-state="layout-title" class="bg-dark"-->
+<p>The mix blend mode allows you to control how an element looks when it sits on top of another element. It will combine both elements, sort of similar to the bg-blend.</p>
 
         </main>
         <aside class="aside aside-supplemental col col-md-3 col-lg-2 d-none d-md-block">
@@ -626,25 +424,19 @@
             <div class="">
                 <ol>
                     
-                    <li><a href="#rings">Rings  </a>
+                    <li><a href="#mixing-utilities">Mixing Utilities  </a>
             		</li>
 
-                    <li><a href="#ring-width">Ring Width  </a>
+                    <li><a href="#backdrop-filter">Backdrop Filter  </a>
             		</li>
 
-                    <li><a href="#ring-opacity">Ring Opacity  </a>
+                    <li><a href="#isolation">Isolation  </a>
             		</li>
 
-                    <li><a href="#ring-color">Ring Color  </a>
+                    <li><a href="#background-blend-mode">Background Blend Mode  </a>
             		</li>
 
-                    <li><a href="#ring-offset-width">Ring Offset Width  </a>
-            		</li>
-
-                    <li><a href="#ring-offset-color">Ring Offset Color  </a>
-            		</li>
-
-                    <li><a href="#ring-focus-variants">Ring Focus Variants  </a>
+                    <li><a href="#mix-blend-mode">Mix Blend Mode  </a>
             		</li>
                 </ol>
             </div>
