@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
         <title>01_05
           --
-          Extracting Classes</title>
+          Adding Styles</title>
       <link rel="stylesheet" href="../../../css/twemoji-amazing.css"/>
     <link rel="stylesheet" href="../../../css/bootstrap-rayveal.css"/>
     <link rel="stylesheet" href="../../../css/fontawesome.css"/>
@@ -72,7 +72,7 @@
                   <div class="d-flex justify-content-end align-items-right border-bottom p-2 ">
                     <a class="text-decoration-none  link-secondary  link-primary" href="../../../notes/slides/01_04/index.html">
                       <i class="fas fa-file-alt mr-2 lh-1  text-primary "></i>01_04
-                      Configuring Variants</a>
+                      Customizing Builds</a>
                     <a class=" link-secondary  flex-fill ml-3 text-right" href="../../../?d=01_04&#">
                       <i class="fab fa-slideshare"></i>
                     </a>
@@ -81,7 +81,7 @@
                   <div class="d-flex justify-content-end align-items-right border-bottom p-2  bg-primary ">
                     <a class="text-decoration-none  fw-bolder link-light  link-primary" href="../../../notes/slides/01_05/index.html">
                       <i class="fas fa-file-alt mr-2 lh-1  text-light "></i>01_05
-                      Extracting Classes</a>
+                      Adding Styles</a>
                     <a class=" link-light  flex-fill ml-3 text-right" href="../../../?d=01_05&#">
                       <i class="fab fa-slideshare"></i>
                     </a>
@@ -352,29 +352,40 @@
 
         <main class="main col col-md-6 col-lg-8">
           <!-- .slide: data-state="layout-title" class="bg-dark"-->
-<h1 id="extracting-classes">Extracting Classes <a class="direct-link" href="#extracting-classes"> </a></h1>
+<h1 id="adding-styles">Adding Styles <a class="direct-link" href="#adding-styles"> </a></h1>
 <div class="slide-link"><a href="https://go.raybo.org/2cDk"><i class="fab fa-slideshare"></i> go.raybo.org/2cDk</a></div>
 <blockquote>
 <blockquote></blockquote>
 </blockquote>
-<p>If you just use Tailwind classes, you'll end up writing a bunch of code that at some point gets to be overwhelming. Let's practice extracting our buttons as separate classes.</p>
+<p>One of the things that people find annoying about the way Tailwind CSS works is that for some items, you end up adding a crazy amount of classes. Let's talk about how to create your own custom classes.</p>
 <hr>
-<!-- .slide: data-state="layout-title" data-transition="zoom" class="bg-dark"-->
-<h1 id="practice">Practice <a class="direct-link" href="#practice"> </a></h1>
-<div class="btn-group mt-3" role="group" aria-label="Basic example">
-  <a type="button" class="animate__animated animate__backInLeft btn btn-lg btn-exciting text-white" href="https://github.com/LinkedInLearning/tailwind-css-2841311/tree/01_05b" target="_blank">Start</a>
-  <a type="button" class="animate__animated animate__zoomInDown btn btn-lg btn-royal text-white" href="https://github.com/LinkedInLearning/vue3-esst-2834032/compare/01_05b..01_04e" target="_blank">Diff</a>
-  <a type="button" class="animate__animated animate__backInRight animate__slow btn btn-lg btn-primary text-white" href="https://github.com/LinkedInLearning/tailwind-css-2841311/tree/01_05e" target="_blank">End</a>
-</div>
+<h1 id="adding-source-css">Adding Source CSS <a class="direct-link" href="#adding-source-css"> </a></h1>
 <ul>
-<li>Use @layer to extend components</li>
-<li>Use @apply to create generic button</li>
-<li>Create styles for different colors</li>
+<li><code>src/styles.css</code></li>
+<li><code>tailwindcss -i ./src/styles.css</code></li>
+</ul>
+<pre><code class="language-css">@tailwind base;
+@tailwind components;
+@tailwind utilities;
+</code></pre>
+<blockquote>
+<blockquote></blockquote>
+</blockquote>
+<p>To customize Tailwind, you can also add a CSS file as an input and really control how the CSS is generated. Tailwind has three main layers.</p>
+<p>Base is a series of styles that all talwind styles needs. It has a reset and other styles to modify how an HTML looks by default. If you were going to override something like a headline you'd modify things in the base.</p>
+<p>Components has the CSS needed to build different components. That's a good place to add styles for custom components you'll want to generate.</p>
+<p>Utilities has the styles it needs to output certain utilities, so that's a good place to customize things like hover and focus variants.</p>
+<hr>
+<h1 id="layer-and-apply">Layer and Apply <a class="direct-link" href="#layer-and-apply"> </a></h1>
+<ul>
+<li>@layer</li>
+<li>@apply</li>
 </ul>
 <blockquote>
 <blockquote></blockquote>
 </blockquote>
-<p>Here's what we did and where you can find the code in Github. Remember that the code is always at <code>raybo.org/slides_tailwind</code></p>
+<p>There are two commands you can use to create the custom classes. The first is @layer, which is used to target one of the three pieces like @base or @components.</p>
+<p>Once you target a layer, you can modify a style in that layer using the @apply command.</p>
 
         </main>
         <aside class="aside aside-supplemental col col-md-3 col-lg-2 d-none d-md-block">
@@ -383,10 +394,13 @@
             <div class="">
                 <ol>
                     
-                    <li><a href="#extracting-classes">Extracting Classes  </a>
+                    <li><a href="#adding-styles">Adding Styles  </a>
             		</li>
 
-                    <li><a href="#practice">Practice  </a>
+                    <li><a href="#adding-source-css">Adding Source CSS  </a>
+            		</li>
+
+                    <li><a href="#layer-and-apply">Layer and Apply  </a>
             		</li>
                 </ol>
             </div>

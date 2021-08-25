@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
         <title>01_04
           --
-          Customizing Tailwind</title>
+          Customizing Builds</title>
       <link rel="stylesheet" href="../../../css/twemoji-amazing.css"/>
     <link rel="stylesheet" href="../../../css/bootstrap-rayveal.css"/>
     <link rel="stylesheet" href="../../../css/fontawesome.css"/>
@@ -72,8 +72,17 @@
                   <div class="d-flex justify-content-end align-items-right border-bottom p-2  bg-primary ">
                     <a class="text-decoration-none  fw-bolder link-light  link-primary" href="../../../notes/slides/01_04/index.html">
                       <i class="fas fa-file-alt mr-2 lh-1  text-light "></i>01_04
-                      Customizing Tailwind</a>
+                      Customizing Builds</a>
                     <a class=" link-light  flex-fill ml-3 text-right" href="../../../?d=01_04&#">
+                      <i class="fab fa-slideshare"></i>
+                    </a>
+                  </div>
+                
+                  <div class="d-flex justify-content-end align-items-right border-bottom p-2 ">
+                    <a class="text-decoration-none  link-secondary  link-primary" href="../../../notes/slides/01_05/index.html">
+                      <i class="fas fa-file-alt mr-2 lh-1  text-primary "></i>01_05
+                      Adding Styles</a>
+                    <a class=" link-secondary  flex-fill ml-3 text-right" href="../../../?d=01_05&#">
                       <i class="fab fa-slideshare"></i>
                     </a>
                   </div>
@@ -343,23 +352,33 @@
 
         <main class="main col col-md-6 col-lg-8">
           <!-- .slide: data-state="layout-title" class="bg-dark"-->
-<h1 id="customizing-tailwind">Customizing Tailwind <a class="direct-link" href="#customizing-tailwind"> </a></h1>
+<h1 id="customizing-builds">Customizing Builds <a class="direct-link" href="#customizing-builds"> </a></h1>
 <div class="slide-link"><a href="https://go.raybo.org/2Xup"><i class="fab fa-slideshare"></i> go.raybo.org/2Xup</a></div>
 <blockquote>
 <blockquote></blockquote>
 </blockquote>
-<p>There are a couple of ways you to modify tailwind. You can control how certain classes are built as well as generate new classes based on existing styles.</p>
+<p>One way you can change Tailwind is by using the tailwind config file to change how themes are built.</p>
 <hr>
-<h1 id="customizing-builds">Customizing Builds <a class="direct-link" href="#customizing-builds"> </a></h1>
-<pre><code class="language-js">// tailwind.config.js
-
-module.exports = {
+<h1 id="extending">Extending <a class="direct-link" href="#extending"> </a></h1>
+<pre><code class="language-js">module.exports = {
   theme: {
     extend: {
       screens: {
         huge: '2000px',
       },
     },
+  },
+};
+</code></pre>
+<blockquote>
+<blockquote></blockquote>
+</blockquote>
+<p>The extend portion and adding an additional breakpoint. You can add a breakpoint to the grid by adding a screens object to the extend object. Screens is the name of the object that holds the definition of the Grid Tailwind Uses.</p>
+<hr>
+<h1 id="changing">Changing <a class="direct-link" href="#changing"> </a></h1>
+<pre><code class="language-js">module.exports = {
+  theme: {
+    extend: {},
     screens: {
       sm: '640px',
       md: '768px',
@@ -373,38 +392,7 @@ module.exports = {
 <blockquote>
 <blockquote></blockquote>
 </blockquote>
-<p>One way you can change Tailwind is by using the tailwind config file to change how themes are built. You can for example change the way the default grid works, by modifying the existing classes that make up that build.</p>
-<p>For example we can add a breakpoint by using the extend portion and adding an additional breakpoint. You can make up the name of it like this.</p>
-<p>You can also add the screens option underneath extend to change how all the breakpoints are built. So if we just want to have a single breakpoint, we can just modify the list.</p>
-<hr>
-<h1 id="adding-source-css">Adding Source CSS <a class="direct-link" href="#adding-source-css"> </a></h1>
-<ul>
-<li><code>src/styles.css</code></li>
-<li><code>tailwindcss -i ./src/styles.css</code></li>
-</ul>
-<pre><code class="language-css">@tailwind base;
-@tailwind components;
-@tailwind utilities;
-</code></pre>
-<blockquote>
-<blockquote></blockquote>
-</blockquote>
-<p>One of the things that people find annoying about the way Tailwind CSS works is that for some items, you end up adding a crazy amount of classes. Let's talk about how to create your own custom classes.</p>
-<p>To customize Tailwind, you can also add a CSS file as an input and really control how the CSS is generated. Tailwind has three main layers.</p>
-<p>Base is a series of styles that all talwind styles needs. It has a reset and other styles to modify how an HTML looks by default. If you were going to override something like a headline you'd modify things in the base.</p>
-<p>Components has the CSS needed to build different components. That's a good place to add styles for custom components you'll want to generate.</p>
-<p>Utilities has the styles it needs to output certain utilities, so that's a good place to customize things like hover and focus variants.</p>
-<hr>
-<h1 id="layer-and-apply">Layer and Apply <a class="direct-link" href="#layer-and-apply"> </a></h1>
-<ul>
-<li>@layer</li>
-<li>@apply</li>
-</ul>
-<blockquote>
-<blockquote></blockquote>
-</blockquote>
-<p>There are two commands you can use to create the custom classes. The first is @layer, which is used to target one of the three pieces like @base or @components.</p>
-<p>Once you target a layer, you can modify a style in that layer using the @apply command.</p>
+<p>If you want to change the definitions of objects, just add them as objects inside the theme. This here is the definition for all of the breakpoints in tailwinds. You could change the name of a breakpoint here, or delete breakpoints you dont' want Tailwind CSS to know about.</p>
 
         </main>
         <aside class="aside aside-supplemental col col-md-3 col-lg-2 d-none d-md-block">
@@ -413,16 +401,13 @@ module.exports = {
             <div class="">
                 <ol>
                     
-                    <li><a href="#customizing-tailwind">Customizing Tailwind  </a>
-            		</li>
-
                     <li><a href="#customizing-builds">Customizing Builds  </a>
             		</li>
 
-                    <li><a href="#adding-source-css">Adding Source CSS  </a>
+                    <li><a href="#extending">Extending  </a>
             		</li>
 
-                    <li><a href="#layer-and-apply">Layer and Apply  </a>
+                    <li><a href="#changing">Changing  </a>
             		</li>
                 </ol>
             </div>
