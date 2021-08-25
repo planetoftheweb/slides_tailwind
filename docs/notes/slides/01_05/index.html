@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
         <title>01_05
           --
-          Working with JIT</title>
+          Extracting Classes</title>
       <link rel="stylesheet" href="../../../css/twemoji-amazing.css"/>
     <link rel="stylesheet" href="../../../css/bootstrap-rayveal.css"/>
     <link rel="stylesheet" href="../../../css/fontawesome.css"/>
@@ -81,7 +81,7 @@
                   <div class="d-flex justify-content-end align-items-right border-bottom p-2  bg-primary ">
                     <a class="text-decoration-none  fw-bolder link-light  link-primary" href="../../../notes/slides/01_05/index.html">
                       <i class="fas fa-file-alt mr-2 lh-1  text-light "></i>01_05
-                      Working with JIT</a>
+                      Extracting Classes</a>
                     <a class=" link-light  flex-fill ml-3 text-right" href="../../../?d=01_05&#">
                       <i class="fab fa-slideshare"></i>
                     </a>
@@ -331,6 +331,15 @@
                   </div>
                 
                   <div class="d-flex justify-content-end align-items-right border-bottom p-2 ">
+                    <a class="text-decoration-none  link-secondary  link-primary" href="../../../notes/slides/08_01/index.html">
+                      <i class="fas fa-file-alt mr-2 lh-1  text-primary "></i>08_01
+                      Working with JIT</a>
+                    <a class=" link-secondary  flex-fill ml-3 text-right" href="../../../?d=08_01&#">
+                      <i class="fab fa-slideshare"></i>
+                    </a>
+                  </div>
+                
+                  <div class="d-flex justify-content-end align-items-right border-bottom p-2 ">
                     <a class="text-decoration-none  link-secondary  link-primary" href="../../../notes/slides/99_01/index.html">
                       <i class="fas fa-file-alt mr-2 lh-1  text-primary "></i>99_01
                       Next Steps</a>
@@ -343,162 +352,29 @@
 
         <main class="main col col-md-6 col-lg-8">
           <!-- .slide: data-state="layout-title" class="bg-dark"-->
-<h1 id="working-with-jit">Working with JIT <a class="direct-link" href="#working-with-jit"> </a></h1>
+<h1 id="extracting-classes">Extracting Classes <a class="direct-link" href="#extracting-classes"> </a></h1>
 <div class="slide-link"><a href="https://go.raybo.org/2cDk"><i class="fab fa-slideshare"></i> go.raybo.org/2cDk</a></div>
 <blockquote>
 <blockquote></blockquote>
 </blockquote>
-<p>Although Just in Time mode has just been added to Tailwind, it's the future of the platform.</p>
+<p>If you just use Tailwind classes, you'll end up writing a bunch of code that at some point gets to be overwhelming. Let's practice extracting our buttons as separate classes.</p>
 <hr>
-<h1 id="jit-advantages">JIT Advantages <a class="direct-link" href="#jit-advantages"> </a></h1>
-<ul>
-<li>Small files</li>
-<li>Variants enabled/stackable</li>
-<li>Arbitrary values</li>
-</ul>
-<blockquote>
-<blockquote></blockquote>
-</blockquote>
-<p>In Just in Time mode, the main advantage is that it generates files that are based only on the existing classes on your projects, so the files will be much smaller.</p>
-<p>Also, all variants will automatically be enabled. That means you won't have to modify the config file to turn them on.</p>
-<p>Another HUGE advantage is that you can use any value you want, not just the ones available as official classes. Keep that in mind when looking through the rest of this course.</p>
-<hr>
-<h1 id="arbitraty-values">Arbitraty Values <a class="direct-link" href="#arbitraty-values"> </a></h1>
-<pre><code class="language-css">/* color */
-bg-[#f5e6c0]
-
-/* width */
-w-[150px]
-</code></pre>
-<blockquote>
-<blockquote></blockquote>
-</blockquote>
-<p>Another cool feature is that you can now specify custom values. Although you can still use any of the built in values I'll be showing you in this course, the arbitrary values are super powerful since it creates only the styles for those.</p>
-<hr>
-<h1 id="before%2Fafter-variants">Before/After Variants <a class="direct-link" href="#before%2Fafter-variants"> </a></h1>
-<p><code>before:</code> <code>after:</code></p>
-<blockquote>
-<blockquote></blockquote>
-</blockquote>
-<p>You now have access to before and after variants within JIT mode only. So example you can go to the <a href="https://emojipedia.org/">emojipedia</a> and add an icon to your page.</p>
-<hr>
-<h1 id="before%2Fafter-variants-1">Before/After Variants <a class="direct-link" href="#before%2Fafter-variants-1"> </a></h1>
-<p><code>first-letter:</code> <code>first-line:</code></p>
-<blockquote>
-<blockquote></blockquote>
-</blockquote>
-<p>You can also use first letter and first line variants, which let you modify some text on your page. For example <code>first-line:text-4xl</code> will make only the first line bigger.</p>
-<hr>
-<h1 id="pseudo-classes">Pseudo Classes <a class="direct-link" href="#pseudo-classes"> </a></h1>
-<p><code>only</code> <code>first-of-type</code> <code>last-of-type</code> <code>only-of-type</code> <code>target</code> <code>default</code> <code>indeterminate</code> <code>placeholder-shown</code> <code>autofill</code> <code>required</code> <code>valid</code> <code>invalid</code> <code>in-range</code> <code>out-of-range</code></p>
-<blockquote>
-<blockquote></blockquote>
-</blockquote>
-<p>JIT now offers additional CSS Pseudo-class support. Here's the full list of additional pseudo-classes you can use with the platform. They correspond to css pseudo-classes.</p>
-<hr>
-<h1 id="caret-color">Caret Color <a class="direct-link" href="#caret-color"> </a></h1>
-<ul>
-<li><code>caret-COL-STR</code></li>
-</ul>
-<div style="font-size: .8em; line-height: 50%">
-    <code style="color: transparent; background: transparent;">transparent</code>
-    <code style="color: black; background: transparent;">current</code>
-    <code style="color: black; background: transparent;">black</code>
-    <code style="color: white;">white</code><br>
-    <code style="color: rgb(107, 114, 128); background: transparent" contenteditable = "false" style="cursor: pointer !important;">gray</code>
-    <code class="text-red-500">red</code>
-    <code style="color: rgb(252, 211, 77); background: transparent">yellow</code>
-    <code style="color: rgb(16, 185, 129); background: transparent">green</code>
-    <code style="color: rgb(59, 130, 246); background: transparent">blue</code>
-    <code style="color: rgb(99, 102, 241); background: transparent">indigo</code>
-    <code style="color: rgb(139, 92, 246); background: transparent">purple</code>
-    <code style="color: rgb(236, 72, 153); background: transparent">pink</code><br>
-    <code style="color: rgb(249, 250, 251); background: transparent">50</code>
-    <code style="color: rgb(243, 244, 246); background: transparent">100</code>
-    <code style="color: rgb(229, 231, 235); background: transparent">200</code>
-    <code style="color: rgb(209, 213, 219); background: transparent">300</code>
-    <code style="color: rgb(156, 163, 175); background: transparent">400</code>
-    <code style="color: rgb(107, 114, 128); background: transparent">500</code>
-    <code style="color: rgb(75, 85, 99); background: transparent">600</code>
-    <code style="color: rgb(55, 65, 81); background: transparent">700</code>
-    <code style="color: rgb(31, 41, 55); background: transparent">800</code>
-    <code style="color: rgb(17, 24, 3); background: transparent">900</code><br>
-    <code style="color: rgb(254, 242, 242); background: transparent">50</code>
-    <code style="color: rgb(254, 226, 226); background: transparent">100</code>
-    <code style="color: rgb(254, 202, 202); background: transparent">200</code>
-    <code style="color: rgb(252, 165, 165); background: transparent">300</code>
-    <code style="color: rgb(248, 113, 113); background: transparent">400</code>
-    <code style="color: rgb(239, 68, 68); background: transparent">500</code>
-    <code style="color: rgb(220, 38, 38); background: transparent">600</code>
-    <code style="color: rgb(185, 28, 28); background: transparent">700</code>
-    <code style="color: rgb(153, 27, 27); background: transparent">800</code>
-    <code style="color: rgb(127, 29, 29); background: transparent">900</code><br>
-    <code style="color: rgb(255, 251, 235); background: transparent">50</code>
-    <code style="color: rgb(254, 243, 199); background: transparent">100</code>
-    <code style="color: rgb(253, 230, 138); background: transparent">200</code>
-    <code style="color: rgb(252, 211, 77); background: transparent">300</code>
-    <code style="color: rgb(251, 191, 36); background: transparent">400</code>
-    <code style="color: rgb(245, 158, 11); background: transparent">500</code>
-    <code style="color: rgb(217, 119, 6); background: transparent">600</code>
-    <code style="color: rgb(180, 83, 9); background: transparent">700</code>
-    <code style="color: rgb(146, 64, 14); background: transparent">800</code>
-    <code style="color: rgb(120, 53, 15); background: transparent">900</code><br>
-    <code style="color: rgb(236, 253, 245); background: transparent">50</code>
-    <code style="color: rgb(209, 250, 229); background: transparent">100</code>
-    <code style="color: rgb(167, 243, 208); background: transparent">200</code>
-    <code style="color: rgb(110, 231, 183); background: transparent">300</code>
-    <code style="color: rgb(52, 211, 153); background: transparent">400</code>
-    <code style="color: rgb(16, 185, 129); background: transparent">500</code>
-    <code style="color: rgb(5, 150, 105); background: transparent">600</code>
-    <code style="color: rgb(4, 120, 87); background: transparent">700</code>
-    <code style="color: rgb(6, 95, 70); background: transparent">800</code>
-    <code style="color: rgb(6, 78, 59); background: transparent">900</code><br>
-    <code style="color: rgb(239, 246, 255); background: transparent">50</code>
-    <code style="color: rgb(219, 234, 254); background: transparent">100</code>
-    <code style="color: rgb(191, 219, 254); background: transparent">200</code>
-    <code style="color: rgb(147, 197, 253); background: transparent">300</code>
-    <code style="color: rgb(96, 165, 250); background: transparent">400</code>
-    <code style="color: rgb(59, 130, 246); background: transparent">500</code>
-    <code style="color: rgb(37, 99, 235); background: transparent">600</code>
-    <code style="color: rgb(29, 78, 216); background: transparent">700</code>
-    <code style="color: rgb(30, 64, 175); background: transparent">800</code>
-    <code style="color: rgb(30, 58, 138); background: transparent">900</code><br>
-    <code style="color: rgb(238, 242, 255); background: transparent">50</code>
-    <code style="color: rgb(224, 231, 255); background: transparent">100</code>
-    <code style="color: rgb(199, 210, 254); background: transparent">200</code>
-    <code style="color: rgb(165, 180, 252); background: transparent">300</code>
-    <code style="color: rgb(129, 140, 248); background: transparent">400</code>
-    <code style="color: rgb(99, 102, 241); background: transparent">500</code>
-    <code style="color: rgb(79, 70, 229); background: transparent">600</code>
-    <code style="color: rgb(67, 56, 202); background: transparent">700</code>
-    <code style="color: rgb(55, 48, 163); background: transparent">800</code>
-    <code style="color: rgb(49, 46, 129); background: transparent">900</code><br>
-    <code style="color: rgb(245, 243, 255); background: transparent">50</code>
-    <code style="color: rgb(237, 233, 254); background: transparent">100</code>
-    <code style="color: rgb(221, 214, 254); background: transparent">200</code>
-    <code style="color: rgb(196, 181, 253); background: transparent">300</code>
-    <code style="color: rgb(167, 139, 250); background: transparent">400</code>
-    <code style="color: rgb(139, 92, 246); background: transparent">500</code>
-    <code style="color: rgb(124, 58, 237); background: transparent">600</code>
-    <code style="color: rgb(109, 40, 217); background: transparent">700</code>
-    <code style="color: rgb(91, 33, 182); background: transparent">800</code>
-    <code style="color: rgb(76, 29, 149); background: transparent">900</code><br>
-    <code style="color: rgb(253, 242, 248); background: transparent">50</code>
-    <code style="color: rgb(252, 231, 243); background: transparent">100</code>
-    <code style="color: rgb(251, 207, 232); background: transparent">200</code>
-    <code style="color: rgb(249, 168, 212); background: transparent">300</code>
-    <code style="color: rgb(244, 114, 182); background: transparent">400</code>
-    <code style="color: rgb(236, 72, 153); background: transparent">500</code>
-    <code style="color: rgb(219, 39, 119); background: transparent">600</code>
-    <code style="color: rgb(190, 24, 93); background: transparent">700</code>
-    <code style="color: rgb(157, 23, 77); background: transparent">800</code>
-    <code style="color: rgb(131, 24, 67); background: transparent">900</code>
+<!-- .slide: data-state="layout-title" data-transition="zoom" class="bg-dark"-->
+<h1 id="practice">Practice <a class="direct-link" href="#practice"> </a></h1>
+<div class="btn-group mt-3" role="group" aria-label="Basic example">
+  <a type="button" class="animate__animated animate__backInLeft btn btn-lg btn-exciting text-white" href="https://github.com/LinkedInLearning/tailwind-css-2841311/tree/01_05b" target="_blank">Start</a>
+  <a type="button" class="animate__animated animate__zoomInDown btn btn-lg btn-royal text-white" href="https://github.com/LinkedInLearning/vue3-esst-2834032/compare/01_05b..01_04e" target="_blank">Diff</a>
+  <a type="button" class="animate__animated animate__backInRight animate__slow btn btn-lg btn-primary text-white" href="https://github.com/LinkedInLearning/tailwind-css-2841311/tree/01_05e" target="_blank">End</a>
 </div>
-<p><a href="https://tailwindcss.com/docs/background-color" target="_blank"><code class="code-exciting">Docs</code></a></p>
+<ul>
+<li>Use @layer to extend components</li>
+<li>Use @apply to create generic button</li>
+<li>Create styles for different colors</li>
+</ul>
 <blockquote>
 <blockquote></blockquote>
 </blockquote>
-<p>You can now change the color of the cursor to any of the default colors in JIT mode, but also using any of the custom class names.</p>
+<p>Here's what we did and where you can find the code in Github. Remember that the code is always at <code>raybo.org/slides_tailwind</code></p>
 
         </main>
         <aside class="aside aside-supplemental col col-md-3 col-lg-2 d-none d-md-block">
@@ -507,25 +383,10 @@ w-[150px]
             <div class="">
                 <ol>
                     
-                    <li><a href="#working-with-jit">Working with JIT  </a>
+                    <li><a href="#extracting-classes">Extracting Classes  </a>
             		</li>
 
-                    <li><a href="#jit-advantages">JIT Advantages  </a>
-            		</li>
-
-                    <li><a href="#arbitraty-values">Arbitraty Values  </a>
-            		</li>
-
-                    <li><a href="#before%2Fafter-variants">Before/After Variants  </a>
-            		</li>
-
-                    <li><a href="#before%2Fafter-variants-1">Before/After Variants  </a>
-            		</li>
-
-                    <li><a href="#pseudo-classes">Pseudo Classes  </a>
-            		</li>
-
-                    <li><a href="#caret-color">Caret Color  </a>
+                    <li><a href="#practice">Practice  </a>
             		</li>
                 </ol>
             </div>

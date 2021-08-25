@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
         <title>01_04
           --
-          Configuring Variants</title>
+          Customizing Tailwind</title>
       <link rel="stylesheet" href="../../../css/twemoji-amazing.css"/>
     <link rel="stylesheet" href="../../../css/bootstrap-rayveal.css"/>
     <link rel="stylesheet" href="../../../css/fontawesome.css"/>
@@ -72,17 +72,8 @@
                   <div class="d-flex justify-content-end align-items-right border-bottom p-2  bg-primary ">
                     <a class="text-decoration-none  fw-bolder link-light  link-primary" href="../../../notes/slides/01_04/index.html">
                       <i class="fas fa-file-alt mr-2 lh-1  text-light "></i>01_04
-                      Configuring Variants</a>
+                      Customizing Tailwind</a>
                     <a class=" link-light  flex-fill ml-3 text-right" href="../../../?d=01_04&#">
-                      <i class="fab fa-slideshare"></i>
-                    </a>
-                  </div>
-                
-                  <div class="d-flex justify-content-end align-items-right border-bottom p-2 ">
-                    <a class="text-decoration-none  link-secondary  link-primary" href="../../../notes/slides/01_05/index.html">
-                      <i class="fas fa-file-alt mr-2 lh-1  text-primary "></i>01_05
-                      Working with JIT</a>
-                    <a class=" link-secondary  flex-fill ml-3 text-right" href="../../../?d=01_05&#">
                       <i class="fab fa-slideshare"></i>
                     </a>
                   </div>
@@ -331,6 +322,15 @@
                   </div>
                 
                   <div class="d-flex justify-content-end align-items-right border-bottom p-2 ">
+                    <a class="text-decoration-none  link-secondary  link-primary" href="../../../notes/slides/08_01/index.html">
+                      <i class="fas fa-file-alt mr-2 lh-1  text-primary "></i>08_01
+                      Working with JIT</a>
+                    <a class=" link-secondary  flex-fill ml-3 text-right" href="../../../?d=08_01&#">
+                      <i class="fab fa-slideshare"></i>
+                    </a>
+                  </div>
+                
+                  <div class="d-flex justify-content-end align-items-right border-bottom p-2 ">
                     <a class="text-decoration-none  link-secondary  link-primary" href="../../../notes/slides/99_01/index.html">
                       <i class="fas fa-file-alt mr-2 lh-1  text-primary "></i>99_01
                       Next Steps</a>
@@ -343,82 +343,68 @@
 
         <main class="main col col-md-6 col-lg-8">
           <!-- .slide: data-state="layout-title" class="bg-dark"-->
-<h1 id="configuring-variants">Configuring Variants <a class="direct-link" href="#configuring-variants"> </a></h1>
+<h1 id="customizing-tailwind">Customizing Tailwind <a class="direct-link" href="#customizing-tailwind"> </a></h1>
 <div class="slide-link"><a href="https://go.raybo.org/2Xup"><i class="fab fa-slideshare"></i> go.raybo.org/2Xup</a></div>
 <blockquote>
 <blockquote></blockquote>
 </blockquote>
-<p>Using the <code>tailwind.config.js</code> file you can configure just about any part of Tailwind, we'll take a look at an example with breakpoints, but this applies to any other classes.</p>
+<p>There are a couple of ways you to modify tailwind. You can control how certain classes are built as well as generate new classes based on existing styles.</p>
 <hr>
-<h1 id="modifying-variants">Modifying Variants <a class="direct-link" href="#modifying-variants"> </a></h1>
+<h1 id="customizing-builds">Customizing Builds <a class="direct-link" href="#customizing-builds"> </a></h1>
 <pre><code class="language-js">// tailwind.config.js
 
 module.exports = {
   theme: {
-    screens: {
-      'sm': '640px',
-      'md': '768px',
-      'lg': '1024px',
-      'xl': '1280px',
-      '2xl': '1536px'
-    }
-  }
-}
-</code></pre>
-<p><a href="https://tailwindcss.com/docs/breakpoints" target="_blank"><code class="code-exciting">Docs</code></a></p>
-<blockquote>
-<blockquote></blockquote>
-</blockquote>
-<p>Here is how the default breakpoints are set up. You can modify the values for any of these breakpoints, add more of them, or rename the existing breakpoints to whatever you want.</p>
-<p>You can take a look at the documentation for more samples.</p>
-<hr>
-<!-- .slide: data-state="layout-longcode" data-transition="zoom" -->
-<h1 id="variants-code">Variants Code <a class="direct-link" href="#variants-code"> </a></h1>
-<pre><code class="language-html">&lt;div class=&quot;w-full&quot;&gt;
-  &lt;div class=&quot;container mx-auto flex items-center px-4 py-2&quot;&gt;
-    &lt;div&gt;
-      &lt;div class=&quot;text-gray-500 sm:text-purple-500 text-5xl font-light  mb-1&quot;&gt;Bubbles&lt;/div&gt;
-      &lt;p class=&quot;text-sm sm:text-md md:text-lg lg:text-xl xl:text-2xl 2xl:text-3xl font-light&quot;&gt;Bubble Gum robot, or “Bubbles” for short, is from a family of track-footed robots that originated from an experiment melding candy vending machines with robotics in the early 1980s. Bubbles is a favorite of Binaryville, not just because she generously dispenses candy, but also because she has one of the more &quot;bubbly&quot; personalities of the villagers.&lt;/p&gt;
-      &lt;div class=&quot;active:bg-red-600 hover:bg-purple-500 hover:text-white cursor-pointer border-purple-500 border-4 rounded-md inline-block p-2 mt-2 mb-4&quot;&gt;More info&lt;/div&gt;
-    &lt;/div&gt;
-  &lt;/div&gt;
-&lt;/div&gt; 
-</code></pre>
-<hr>
-<h1 id="toggle-inactive-variants">Toggle Inactive Variants <a class="direct-link" href="#toggle-inactive-variants"> </a></h1>
-<pre><code class="language-js">// tailwind.config.js
-
-module.exports = {
-  variants: {
     extend: {
-      backgroundColor: ['active']
-    }
-  }
-}
+      screens: {
+        huge: '2000px',
+      },
+    },
+    screens: {
+      sm: '640px',
+      md: '768px',
+      lg: '1024px',
+      xl: '1280px',
+      '2xl': '1536px',
+    },
+  },
+};
 </code></pre>
-<p><a href="https://tailwindcss.com/docs/configuring-variants#overriding-default-variants" target="_blank"><code class="code-exciting">Docs</code></a></p>
 <blockquote>
 <blockquote></blockquote>
 </blockquote>
-<p>Another way to extend the functionality of elements is to extend the variants available to specific classes. Not all variants are turned on by default and here, I'm telling Tailwind to add an active variant to the background color.</p>
-<p>On every class' page in the docs, you'll find the options for adding variants if they're available.</p>
+<p>One way you can change Tailwind is by using the tailwind config file to change how themes are built. You can for example change the way the default grid works, by modifying the existing classes that make up that build.</p>
+<p>For example we can add a breakpoint by using the extend portion and adding an additional breakpoint. You can make up the name of it like this.</p>
+<p>You can also add the screens option underneath extend to change how all the breakpoints are built. So if we just want to have a single breakpoint, we can just modify the list.</p>
 <hr>
-<!-- .slide: data-state="layout-title" data-transition="zoom" class="bg-dark"-->
-<h1 id="the-code">The Code <a class="direct-link" href="#the-code"> </a></h1>
-<div class="btn-group mt-3" role="group" aria-label="Basic example">
-  <a type="button" class="animate__animated animate__backInLeft btn btn-lg btn-exciting text-white" href="https://github.com/LinkedInLearning/tailwind-css-2841311/tree/01_04b" target="_blank">Start</a>
-  <a type="button" class="animate__animated animate__zoomInDown btn btn-lg btn-royal text-white" href="https://github.com/LinkedInLearning/vue3-esst-2834032/compare/01_04b..01_04e" target="_blank">Diff</a>
-  <a type="button" class="animate__animated animate__backInRight animate__slow btn btn-lg btn-primary text-white" href="https://github.com/LinkedInLearning/tailwind-css-2841311/tree/01_04e" target="_blank">End</a>
-</div>
-<ol>
-<li>Learned to modify variants</li>
-<li>Changed the default breakpoints</li>
-<li>Made <code>active</code> variant for backgrounds</li>
-</ol>
+<h1 id="adding-source-css">Adding Source CSS <a class="direct-link" href="#adding-source-css"> </a></h1>
+<ul>
+<li><code>src/styles.css</code></li>
+<li><code>tailwindcss -i ./src/styles.css</code></li>
+</ul>
+<pre><code class="language-css">@tailwind base;
+@tailwind components;
+@tailwind utilities;
+</code></pre>
 <blockquote>
 <blockquote></blockquote>
 </blockquote>
-<p>Here's what we did and where you can find the code in Github. Remember that the code is always at <code>raybo.org/slides_tailwind</code></p>
+<p>One of the things that people find annoying about the way Tailwind CSS works is that for some items, you end up adding a crazy amount of classes. Let's talk about how to create your own custom classes.</p>
+<p>To customize Tailwind, you can also add a CSS file as an input and really control how the CSS is generated. Tailwind has three main layers.</p>
+<p>Base is a series of styles that all talwind styles needs. It has a reset and other styles to modify how an HTML looks by default. If you were going to override something like a headline you'd modify things in the base.</p>
+<p>Components has the CSS needed to build different components. That's a good place to add styles for custom components you'll want to generate.</p>
+<p>Utilities has the styles it needs to output certain utilities, so that's a good place to customize things like hover and focus variants.</p>
+<hr>
+<h1 id="layer-and-apply">Layer and Apply <a class="direct-link" href="#layer-and-apply"> </a></h1>
+<ul>
+<li>@layer</li>
+<li>@apply</li>
+</ul>
+<blockquote>
+<blockquote></blockquote>
+</blockquote>
+<p>There are two commands you can use to create the custom classes. The first is @layer, which is used to target one of the three pieces like @base or @components.</p>
+<p>Once you target a layer, you can modify a style in that layer using the @apply command.</p>
 
         </main>
         <aside class="aside aside-supplemental col col-md-3 col-lg-2 d-none d-md-block">
@@ -427,19 +413,16 @@ module.exports = {
             <div class="">
                 <ol>
                     
-                    <li><a href="#configuring-variants">Configuring Variants  </a>
+                    <li><a href="#customizing-tailwind">Customizing Tailwind  </a>
             		</li>
 
-                    <li><a href="#modifying-variants">Modifying Variants  </a>
+                    <li><a href="#customizing-builds">Customizing Builds  </a>
             		</li>
 
-                    <li><a href="#variants-code">Variants Code  </a>
+                    <li><a href="#adding-source-css">Adding Source CSS  </a>
             		</li>
 
-                    <li><a href="#toggle-inactive-variants">Toggle Inactive Variants  </a>
-            		</li>
-
-                    <li><a href="#the-code">The Code  </a>
+                    <li><a href="#layer-and-apply">Layer and Apply  </a>
             		</li>
                 </ol>
             </div>
