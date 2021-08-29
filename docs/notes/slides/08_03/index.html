@@ -371,7 +371,7 @@
         <main class="main col col-md-6 col-lg-8">
           <!-- .slide: data-state="layout-title" class="bg-dark"-->
 <h1 id="jit-improvements">JIT Improvements <a class="direct-link" href="#jit-improvements"> </a></h1>
-<div class="slide-link"><a href="https://go.raybo.org/2cDk"><i class="fab fa-slideshare"></i> go.raybo.org/2cDk</a></div>
+<div class="slide-link"><a href="https://go.raybo.org/5Yfd"><i class="fab fa-slideshare"></i> go.raybo.org/5Yfd</a></div>
 <blockquote>
 <blockquote></blockquote>
 </blockquote>
@@ -379,17 +379,10 @@
 <hr>
 <h1 id="opacity-shorthand">Opacity Shorthand <a class="direct-link" href="#opacity-shorthand"> </a></h1>
 <p><strong>Before</strong></p>
-<pre><code class="language-html">&amp;lt;body class=&quot;
-  selection:bg-purple-800
-  selection:bg-opacity-50
-  selection:text-white
-&quot;&gt;&amp;lt;/body&gt;
+<pre><code class="language-html">&amp;lt;body class=&quot; selection:bg-purple-800 selection:bg-opacity-50 selection:text-white &quot;&gt;&amp;lt;/body&gt;
 </code></pre>
 <p><strong>After</strong></p>
-<pre><code class="language-html">&amp;lt;body class=&quot;
-  selection:bg-purple-800/50
-  selection:text-white
-&quot;&gt;&amp;lt;/body&gt;
+<pre><code class="language-html">&amp;lt;body class=&quot; selection:bg-purple-800/50 selection:text-white &quot;&gt;&amp;lt;/body&gt;
 </code></pre>
 <blockquote>
 <blockquote></blockquote>
@@ -614,16 +607,37 @@
 <p>If you're using <code>filter</code> and <code>transform</code> in your code, you don't have to prefix them if you're using JIT mode.</p>
 <hr>
 <h1 id="peer">Peer <a class="direct-link" href="#peer"> </a></h1>
+<p><code>peer-*</code></p>
 <blockquote>
 <blockquote></blockquote>
 </blockquote>
+<p>Another addition is the peer variants. It's a full set of classes that let you target sibling elements instead of parent elements.</p>
+<p>You can use this to create all types of effects, for example style an element when a checkbox is checked or create floating labels.</p>
+<p>you have to be careful because it can only target previous siblings.</p>
+<pre><code class="language-html">&lt;li class=&quot;peer-focus-within:bg-red-300 first-of-type:font-bold first-of-type:text-red-500&quot;&gt;Red&lt;/li&gt;
+&lt;li class=&quot;peer first-of-type:font-bold first-of-type:text-red-500 empty:bg-yellow-200&quot; contenteditable=&quot;true&quot;&gt;&lt;/li&gt;
+&lt;li class=&quot;peer-focus-within:bg-red-300 first-of-type:font-bold first-of-type:text-red-500&quot;&gt;Bubbles&lt;/li&gt;
+</code></pre>
 <hr>
-<h1 id="%40apply">@Apply <a class="direct-link" href="#%40apply"> </a></h1>
+<h1 id="important-apply">Important Apply <a class="direct-link" href="#important-apply"> </a></h1>
+<ul>
+<li><code>!important</code></li>
+</ul>
 <blockquote>
 <blockquote></blockquote>
 </blockquote>
-<p>!important</p>
-<p><a href="https://www.themes.dev/blog/what-is-new-in-tailwind-css-version-2-2/">https://www.themes.dev/blog/what-is-new-in-tailwind-css-version-2-2/</a></p>
+<p>You can also create applies with the important CSS keyword to make sure that some of your styles aren't overriden.</p>
+<pre><code class="language-css">@apply active:bg-gray-500
+  hover:bg-gray-500
+  hover:text-white cursor-pointer
+  border-gray-500
+  rounded-md
+  inline-block
+  p-2
+  mt-2
+  mb-4;
+@apply border-4 !important;
+</code></pre>
 
         </main>
         <aside class="aside aside-supplemental col col-md-3 col-lg-2 d-none d-md-block">
@@ -650,7 +664,7 @@
                     <li><a href="#peer">Peer  </a>
             		</li>
 
-                    <li><a href="#%40apply">@Apply  </a>
+                    <li><a href="#important-apply">Important Apply  </a>
             		</li>
                 </ol>
             </div>
